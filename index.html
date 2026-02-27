@@ -1,1 +1,665 @@
-placeholder
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Black Cat Analytics — Know Your Real Airbnb Profit</title>
+  <meta name="description" content="Track every dollar in, every dollar out. AI-powered profit tracking for Airbnb hosts. Join the waitlist.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            base: { 950: '#0a0a0a', 900: '#171717', 800: '#1e1e1e', 700: '#262626', 600: '#333333' },
+            accent: { green: '#22c55e', blue: '#3b82f6', purple: '#a855f7', red: '#ef4444', cyan: '#06b6d4' }
+          },
+          fontFamily: {
+            display: ['Outfit', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body class="bg-base-950 text-white font-body antialiased">
+
+  <!-- Noise overlay -->
+  <div class="noise-overlay"></div>
+
+  <!-- ======================== NAVBAR ======================== -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-2 group">
+          <span class="text-2xl">🐈‍⬛</span>
+          <span class="font-display font-bold text-lg tracking-tight text-white">Black Cat <span class="text-accent-green">Analytics</span></span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#features" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Features</a>
+          <a href="#pricing" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Pricing</a>
+          <a href="#faq" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">FAQ</a>
+          <a href="#waitlist-bottom" class="cta-button-sm text-sm font-semibold px-5 py-2.5 rounded-full text-white">Join the Waitlist</a>
+        </div>
+
+        <!-- Mobile Hamburger -->
+        <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2 z-50" aria-label="Menu">
+          <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+          <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+          <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu md:hidden">
+      <div class="px-6 pt-20 pb-8 flex flex-col gap-6">
+        <a href="#features" class="mobile-nav-link text-xl font-display font-semibold text-white">Features</a>
+        <a href="#pricing" class="mobile-nav-link text-xl font-display font-semibold text-white">Pricing</a>
+        <a href="#faq" class="mobile-nav-link text-xl font-display font-semibold text-white">FAQ</a>
+        <a href="#waitlist-bottom" class="cta-button-sm text-center text-base font-semibold px-6 py-3 rounded-full text-white mt-4">Join the Waitlist</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ======================== HERO ======================== -->
+  <section id="hero" class="relative min-h-screen flex flex-col items-center justify-center pt-20 pb-16 px-4 overflow-hidden">
+    <!-- Gradient mesh background -->
+    <div class="hero-gradient"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto text-center">
+      <!-- Badge -->
+      <div class="reveal inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-neutral-700/50 bg-neutral-900/60 backdrop-blur-sm mb-8">
+        <span class="w-2 h-2 bg-accent-green rounded-full animate-pulse"></span>
+        <span class="text-xs font-medium text-neutral-300 tracking-wide uppercase">Launching Summer 2026</span>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="reveal font-display font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[1.08] mb-6">
+        Know Your Real<br>
+        <span class="hero-gradient-text">Airbnb Profit</span>
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="reveal text-base sm:text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+        Most hosts guess. You'll know. Track every dollar in, every dollar out — and let AI find the money you're leaving on the table.
+      </p>
+
+      <!-- Email Capture Form -->
+      <div class="reveal" id="hero-form-wrapper">
+        <form id="hero-form" class="waitlist-form flex flex-col sm:flex-row items-center gap-3 max-w-md mx-auto mb-4">
+          <input type="email" required placeholder="Enter your email" class="email-input flex-1 w-full sm:w-auto px-5 py-3.5 rounded-xl bg-base-900 border border-neutral-700/50 text-white placeholder-neutral-500 text-sm focus:outline-none focus:border-accent-blue/50 focus:ring-1 focus:ring-accent-blue/30 transition-all">
+          <button type="submit" class="cta-button w-full sm:w-auto px-6 py-3.5 rounded-xl font-semibold text-sm text-white whitespace-nowrap">
+            Join the Waitlist — It's Free
+          </button>
+        </form>
+        <p class="text-xs text-neutral-500">Launching Summer 2026 · Be first in line</p>
+      </div>
+
+      <!-- Success message (hidden by default) -->
+      <div id="hero-form-success" class="hidden">
+        <div class="success-message flex flex-col items-center gap-3">
+          <div class="success-checkmark">
+            <svg class="w-12 h-12 text-accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <p class="text-lg font-display font-semibold text-white">You're on the list!</p>
+          <p class="text-sm text-neutral-400">We'll email you when we launch.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dashboard Mockup -->
+    <div class="reveal reveal-delay-2 relative z-10 w-full max-w-5xl mx-auto mt-12 sm:mt-16 px-2">
+      <div class="dashboard-mockup">
+        <!-- Window chrome -->
+        <div class="flex items-center gap-2 px-5 py-3 border-b border-neutral-800/50">
+          <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+          <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+          <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+          <span class="ml-4 text-xs text-neutral-600 font-mono">tryblackcat.com/dashboard</span>
+        </div>
+
+        <!-- Dashboard content -->
+        <div class="p-4 sm:p-6">
+          <!-- Header -->
+          <div class="flex items-center justify-between mb-5">
+            <div>
+              <h3 class="text-sm font-display font-semibold text-white mb-1">Property Overview</h3>
+              <p class="text-xs text-neutral-500">February 2026 · Downtown Loft</p>
+            </div>
+            <div class="hidden sm:flex items-center gap-2">
+              <span class="px-3 py-1 text-xs rounded-md bg-accent-green/10 text-accent-green border border-accent-green/20">Live</span>
+              <span class="px-3 py-1 text-xs rounded-md bg-base-800 text-neutral-400 border border-neutral-700/30">Export</span>
+            </div>
+          </div>
+
+          <!-- KPI Grid -->
+          <div class="grid grid-cols-2 lg:grid-cols-5 gap-3">
+            <!-- Net Profit -->
+            <div class="kpi-card kpi-green">
+              <div class="kpi-card-inner">
+                <p class="text-[10px] sm:text-xs text-neutral-500 uppercase tracking-wider mb-1">Net Profit</p>
+                <p class="text-lg sm:text-2xl font-display font-bold text-accent-green">$4,280</p>
+                <p class="text-[10px] sm:text-xs text-accent-green/70 mt-1">↑ 12.3% vs last mo</p>
+              </div>
+            </div>
+
+            <!-- Revenue -->
+            <div class="kpi-card kpi-blue">
+              <div class="kpi-card-inner">
+                <p class="text-[10px] sm:text-xs text-neutral-500 uppercase tracking-wider mb-1">Revenue</p>
+                <p class="text-lg sm:text-2xl font-display font-bold text-accent-blue">$8,750</p>
+                <p class="text-[10px] sm:text-xs text-accent-blue/70 mt-1">↑ 8.1% vs last mo</p>
+              </div>
+            </div>
+
+            <!-- Expenses -->
+            <div class="kpi-card kpi-red">
+              <div class="kpi-card-inner">
+                <p class="text-[10px] sm:text-xs text-neutral-500 uppercase tracking-wider mb-1">Expenses</p>
+                <p class="text-lg sm:text-2xl font-display font-bold text-accent-red">$4,470</p>
+                <p class="text-[10px] sm:text-xs text-accent-red/70 mt-1">↓ 3.2% vs last mo</p>
+              </div>
+            </div>
+
+            <!-- Occupancy -->
+            <div class="kpi-card kpi-cyan">
+              <div class="kpi-card-inner">
+                <p class="text-[10px] sm:text-xs text-neutral-500 uppercase tracking-wider mb-1">Occupancy</p>
+                <p class="text-lg sm:text-2xl font-display font-bold text-accent-cyan">87.3%</p>
+                <p class="text-[10px] sm:text-xs text-accent-cyan/70 mt-1">↑ 4.1% vs last mo</p>
+              </div>
+            </div>
+
+            <!-- Profit Margin -->
+            <div class="kpi-card kpi-purple col-span-2 lg:col-span-1">
+              <div class="kpi-card-inner">
+                <p class="text-[10px] sm:text-xs text-neutral-500 uppercase tracking-wider mb-1">Profit Margin</p>
+                <p class="text-lg sm:text-2xl font-display font-bold text-accent-purple">48.9%</p>
+                <p class="text-[10px] sm:text-xs text-accent-purple/70 mt-1">↑ 2.8% vs last mo</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mini chart area -->
+          <div class="mt-4 grid grid-cols-1 lg:grid-cols-3 gap-3">
+            <!-- Revenue chart mock -->
+            <div class="lg:col-span-2 rounded-xl bg-base-950/60 border border-neutral-800/30 p-4">
+              <div class="flex items-center justify-between mb-3">
+                <p class="text-xs text-neutral-400 font-medium">Revenue vs Expenses</p>
+                <p class="text-[10px] text-neutral-600">Last 7 days</p>
+              </div>
+              <div class="chart-bars flex items-end gap-1.5 sm:gap-2 h-20 sm:h-24">
+                <div class="chart-bar-group">
+                  <div class="chart-bar bg-accent-blue/60" style="height: 65%"></div>
+                  <div class="chart-bar bg-accent-red/40" style="height: 35%"></div>
+                </div>
+                <div class="chart-bar-group">
+                  <div class="chart-bar bg-accent-blue/60" style="height: 80%"></div>
+                  <div class="chart-bar bg-accent-red/40" style="height: 45%"></div>
+                </div>
+                <div class="chart-bar-group">
+                  <div class="chart-bar bg-accent-blue/60" style="height: 55%"></div>
+                  <div class="chart-bar bg-accent-red/40" style="height: 30%"></div>
+                </div>
+                <div class="chart-bar-group">
+                  <div class="chart-bar bg-accent-blue/60" style="height: 90%"></div>
+                  <div class="chart-bar bg-accent-red/40" style="height: 50%"></div>
+                </div>
+                <div class="chart-bar-group">
+                  <div class="chart-bar bg-accent-blue/60" style="height: 72%"></div>
+                  <div class="chart-bar bg-accent-red/40" style="height: 38%"></div>
+                </div>
+                <div class="chart-bar-group">
+                  <div class="chart-bar bg-accent-blue/60" style="height: 95%"></div>
+                  <div class="chart-bar bg-accent-red/40" style="height: 42%"></div>
+                </div>
+                <div class="chart-bar-group">
+                  <div class="chart-bar bg-accent-blue/60" style="height: 85%"></div>
+                  <div class="chart-bar bg-accent-red/40" style="height: 48%"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recent transactions -->
+            <div class="rounded-xl bg-base-950/60 border border-neutral-800/30 p-4">
+              <p class="text-xs text-neutral-400 font-medium mb-3">Recent Transactions</p>
+              <div class="flex flex-col gap-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs text-neutral-300">Airbnb Payout</span>
+                  <span class="text-xs text-accent-green font-medium">+$1,240</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-xs text-neutral-300">Cleaning Fee</span>
+                  <span class="text-xs text-accent-red font-medium">-$180</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-xs text-neutral-300">VRBO Payout</span>
+                  <span class="text-xs text-accent-green font-medium">+$890</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-xs text-neutral-300">Maintenance</span>
+                  <span class="text-xs text-accent-red font-medium">-$340</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-xs text-neutral-300">Airbnb Payout</span>
+                  <span class="text-xs text-accent-green font-medium">+$1,650</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Glow effect under mockup -->
+      <div class="dashboard-glow"></div>
+    </div>
+  </section>
+
+  <!-- ======================== PROBLEM ======================== -->
+  <section id="problem" class="relative py-24 sm:py-32 px-4 overflow-hidden">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="reveal font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight mb-4">
+          Airbnb Shows Revenue.<br><span class="text-neutral-500">Not Profit.</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <!-- Card 1 -->
+        <div class="reveal problem-card group">
+          <div class="problem-card-inner">
+            <div class="w-12 h-12 rounded-xl bg-accent-red/10 border border-accent-red/20 flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-accent-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <h3 class="font-display font-bold text-lg text-white mb-3">Hidden Expenses</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed">Cleaning fees, maintenance, supplies, mortgage — they add up fast and Airbnb doesn't track them.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="reveal reveal-delay-1 problem-card group">
+          <div class="problem-card-inner">
+            <div class="w-12 h-12 rounded-xl bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+              </svg>
+            </div>
+            <h3 class="font-display font-bold text-lg text-white mb-3">Tax Season Chaos</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed">Scrambling for receipts and spreadsheets every April. Schedule E shouldn't take a weekend.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="reveal reveal-delay-2 problem-card group">
+          <div class="problem-card-inner">
+            <div class="w-12 h-12 rounded-xl bg-accent-purple/10 border border-accent-purple/20 flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-accent-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+              </svg>
+            </div>
+            <h3 class="font-display font-bold text-lg text-white mb-3">No Real Visibility</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed">You know what you earned. But do you know what you actually kept?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== FEATURES ======================== -->
+  <section id="features" class="relative py-24 sm:py-32 px-4 overflow-hidden">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="reveal font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight mb-4">
+          Everything You Need to Run<br><span class="hero-gradient-text">a Profitable Rental</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Feature 1 -->
+        <div class="reveal feature-card group">
+          <div class="feature-card-inner">
+            <span class="text-2xl mb-4 block">📊</span>
+            <h3 class="font-display font-bold text-base text-white mb-2">Smart Dashboard</h3>
+            <p class="text-xs text-neutral-400 leading-relaxed">See net profit, revenue, expenses, and occupancy at a glance. Filter by property, date range, or booking source.</p>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="reveal reveal-delay-1 feature-card group">
+          <div class="feature-card-inner">
+            <span class="text-2xl mb-4 block">📤</span>
+            <h3 class="font-display font-bold text-base text-white mb-2">Easy CSV Import</h3>
+            <p class="text-xs text-neutral-400 leading-relaxed">Upload your Airbnb earnings CSV and watch your data come to life. Bulk import hundreds of transactions in seconds.</p>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="reveal feature-card group">
+          <div class="feature-card-inner">
+            <span class="text-2xl mb-4 block">🔄</span>
+            <h3 class="font-display font-bold text-base text-white mb-2">iCal Sync</h3>
+            <p class="text-xs text-neutral-400 leading-relaxed">Auto-sync bookings from Airbnb, VRBO, and Booking.com. No manual entry needed.</p>
+          </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="reveal reveal-delay-1 feature-card group">
+          <div class="feature-card-inner">
+            <span class="text-2xl mb-4 block">🧹</span>
+            <h3 class="font-display font-bold text-base text-white mb-2">Cleaner Management</h3>
+            <p class="text-xs text-neutral-400 leading-relaxed">Assign cleaners, track jobs, detect scheduling conflicts, and manage your cleaning team in one place.</p>
+          </div>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="reveal feature-card group">
+          <div class="feature-card-inner">
+            <span class="text-2xl mb-4 block">🤖</span>
+            <h3 class="font-display font-bold text-base text-white mb-2">AI Profit Autopilot</h3>
+            <p class="text-xs text-neutral-400 leading-relaxed">Get AI-powered insights and recommendations to boost your bottom line. Spots trends you'd miss.</p>
+          </div>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="reveal reveal-delay-1 feature-card group">
+          <div class="feature-card-inner">
+            <span class="text-2xl mb-4 block">📋</span>
+            <h3 class="font-display font-bold text-base text-white mb-2">Tax Reports</h3>
+            <p class="text-xs text-neutral-400 leading-relaxed">Generate Schedule E reports at tax time. Export everything your accountant needs in one click.</p>
+          </div>
+        </div>
+
+        <!-- Feature 7 -->
+        <div class="reveal feature-card group">
+          <div class="feature-card-inner">
+            <span class="text-2xl mb-4 block">💰</span>
+            <h3 class="font-display font-bold text-base text-white mb-2">Budget Tracking</h3>
+            <p class="text-xs text-neutral-400 leading-relaxed">Set monthly budgets per property and get alerts when you're close to overspending.</p>
+          </div>
+        </div>
+
+        <!-- Feature 8 -->
+        <div class="reveal reveal-delay-1 feature-card group">
+          <div class="feature-card-inner">
+            <span class="text-2xl mb-4 block">🔧</span>
+            <h3 class="font-display font-bold text-base text-white mb-2">Maintenance Tracking</h3>
+            <p class="text-xs text-neutral-400 leading-relaxed">Log repairs, track costs, and never lose track of property upkeep.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== PRICING ======================== -->
+  <section id="pricing" class="relative py-24 sm:py-32 px-4 overflow-hidden">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="reveal font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight mb-4">
+          Simple, Transparent Pricing
+        </h2>
+        <p class="reveal text-base text-neutral-400 max-w-lg mx-auto">All plans include a 14-day free trial. No credit card required.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <!-- Free -->
+        <div class="reveal pricing-card">
+          <div class="pricing-card-inner">
+            <h3 class="font-display font-bold text-lg text-white mb-1">Free</h3>
+            <div class="flex items-baseline gap-1 mb-5">
+              <span class="font-display font-extrabold text-3xl text-white">$0</span>
+              <span class="text-sm text-neutral-500">/mo</span>
+            </div>
+            <ul class="flex flex-col gap-2.5 mb-6">
+              <li class="pricing-feature">1 property</li>
+              <li class="pricing-feature">Basic analytics</li>
+              <li class="pricing-feature">CSV upload</li>
+              <li class="pricing-feature">Monthly reports</li>
+            </ul>
+            <a href="#waitlist-bottom" class="block text-center px-5 py-2.5 rounded-xl border border-neutral-700 text-sm font-medium text-neutral-300 hover:border-neutral-500 hover:text-white transition-all duration-200">Get Started</a>
+          </div>
+        </div>
+
+        <!-- Starter -->
+        <div class="reveal reveal-delay-1 pricing-card">
+          <div class="pricing-card-inner">
+            <h3 class="font-display font-bold text-lg text-white mb-1">Starter</h3>
+            <div class="flex items-baseline gap-1 mb-5">
+              <span class="font-display font-extrabold text-3xl text-white">$29</span>
+              <span class="text-sm text-neutral-500">/mo</span>
+            </div>
+            <ul class="flex flex-col gap-2.5 mb-6">
+              <li class="pricing-feature">3 properties</li>
+              <li class="pricing-feature">Budget tracking</li>
+              <li class="pricing-feature">Tax reports (Schedule E)</li>
+              <li class="pricing-feature">iCal sync</li>
+              <li class="pricing-feature">Email support</li>
+            </ul>
+            <a href="#waitlist-bottom" class="block text-center px-5 py-2.5 rounded-xl border border-neutral-700 text-sm font-medium text-neutral-300 hover:border-neutral-500 hover:text-white transition-all duration-200">Get Started</a>
+          </div>
+        </div>
+
+        <!-- Pro (Highlighted) -->
+        <div class="reveal reveal-delay-1 pricing-card pricing-card-popular">
+          <div class="pricing-card-inner-popular">
+            <div class="popular-badge">Most Popular</div>
+            <h3 class="font-display font-bold text-lg text-white mb-1">Pro</h3>
+            <div class="flex items-baseline gap-1 mb-5">
+              <span class="font-display font-extrabold text-3xl text-white">$79</span>
+              <span class="text-sm text-neutral-500">/mo</span>
+            </div>
+            <ul class="flex flex-col gap-2.5 mb-6">
+              <li class="pricing-feature">10 properties</li>
+              <li class="pricing-feature">Everything in Starter</li>
+              <li class="pricing-feature">Advanced analytics</li>
+              <li class="pricing-feature">Cleaner management</li>
+              <li class="pricing-feature">QuickBooks export</li>
+              <li class="pricing-feature">Priority support</li>
+            </ul>
+            <a href="#waitlist-bottom" class="cta-button block text-center px-5 py-2.5 rounded-xl text-sm font-semibold text-white">Get Started</a>
+          </div>
+        </div>
+
+        <!-- Business -->
+        <div class="reveal reveal-delay-2 pricing-card">
+          <div class="pricing-card-inner">
+            <h3 class="font-display font-bold text-lg text-white mb-1">Business</h3>
+            <div class="flex items-baseline gap-1 mb-5">
+              <span class="font-display font-extrabold text-3xl text-white">$199</span>
+              <span class="text-sm text-neutral-500">/mo</span>
+            </div>
+            <ul class="flex flex-col gap-2.5 mb-6">
+              <li class="pricing-feature">Unlimited properties</li>
+              <li class="pricing-feature">Everything in Pro</li>
+              <li class="pricing-feature">API access</li>
+              <li class="pricing-feature">White-label reports</li>
+              <li class="pricing-feature">Dedicated support</li>
+            </ul>
+            <a href="#waitlist-bottom" class="block text-center px-5 py-2.5 rounded-xl border border-neutral-700 text-sm font-medium text-neutral-300 hover:border-neutral-500 hover:text-white transition-all duration-200">Get Started</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="reveal text-center text-sm text-neutral-500 mt-8">Save 20% with annual billing</p>
+    </div>
+  </section>
+
+  <!-- ======================== FAQ ======================== -->
+  <section id="faq" class="relative py-24 sm:py-32 px-4 overflow-hidden">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="reveal font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight mb-4">
+          Frequently Asked Questions
+        </h2>
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <div class="reveal faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="font-display font-semibold text-sm text-white">When does Black Cat Analytics launch?</span>
+            <svg class="faq-chevron w-5 h-5 text-neutral-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p class="text-sm text-neutral-400 leading-relaxed pb-4 pt-1 px-5">We're planning to launch in Summer 2026. Join the waitlist to be the first to know and get early access.</p>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-1 faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="font-display font-semibold text-sm text-white">Does it connect directly to Airbnb?</span>
+            <svg class="faq-chevron w-5 h-5 text-neutral-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p class="text-sm text-neutral-400 leading-relaxed pb-4 pt-1 px-5">We support CSV import from Airbnb and iCal sync for bookings from Airbnb, VRBO, and Booking.com. Direct API integration with Airbnb is on our roadmap.</p>
+          </div>
+        </div>
+
+        <div class="reveal faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="font-display font-semibold text-sm text-white">Is my financial data secure?</span>
+            <svg class="faq-chevron w-5 h-5 text-neutral-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p class="text-sm text-neutral-400 leading-relaxed pb-4 pt-1 px-5">Absolutely. All data is encrypted in transit and at rest. We take security seriously — your financial data stays private and protected.</p>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-1 faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="font-display font-semibold text-sm text-white">Can I track multiple properties?</span>
+            <svg class="faq-chevron w-5 h-5 text-neutral-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p class="text-sm text-neutral-400 leading-relaxed pb-4 pt-1 px-5">Yes! Our Starter plan supports 3 properties, Pro supports 10, and Business gives you unlimited. Each property gets its own dashboard and reports.</p>
+          </div>
+        </div>
+
+        <div class="reveal faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="font-display font-semibold text-sm text-white">Do you offer refunds?</span>
+            <svg class="faq-chevron w-5 h-5 text-neutral-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p class="text-sm text-neutral-400 leading-relaxed pb-4 pt-1 px-5">Every plan starts with a 14-day free trial so you can try before you commit. You can cancel anytime with no questions asked.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== TRUST ======================== -->
+  <section id="trust" class="relative py-24 sm:py-32 px-4 overflow-hidden">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="reveal font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight mb-4">
+          Built for Airbnb Hosts,<br><span class="text-neutral-500">By Someone Who Gets It</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div class="reveal trust-card">
+          <div class="trust-card-inner">
+            <div class="w-14 h-14 rounded-2xl bg-accent-green/10 border border-accent-green/20 flex items-center justify-center mb-5 mx-auto">
+              <svg class="w-7 h-7 text-accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <h3 class="font-display font-bold text-lg text-white mb-2 text-center">14-Day Free Trial</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed text-center">Try everything risk-free. No credit card needed to start.</p>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-1 trust-card">
+          <div class="trust-card-inner">
+            <div class="w-14 h-14 rounded-2xl bg-accent-blue/10 border border-accent-blue/20 flex items-center justify-center mb-5 mx-auto">
+              <svg class="w-7 h-7 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+            </div>
+            <h3 class="font-display font-bold text-lg text-white mb-2 text-center">Cancel Anytime</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed text-center">No long-term contracts. No cancellation fees. Leave whenever you want.</p>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-2 trust-card">
+          <div class="trust-card-inner">
+            <div class="w-14 h-14 rounded-2xl bg-accent-purple/10 border border-accent-purple/20 flex items-center justify-center mb-5 mx-auto">
+              <svg class="w-7 h-7 text-accent-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+              </svg>
+            </div>
+            <h3 class="font-display font-bold text-lg text-white mb-2 text-center">Your Data, Encrypted & Secure</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed text-center">Bank-level encryption keeps your financial data private and protected.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== FINAL CTA ======================== -->
+  <section id="waitlist-bottom" class="relative py-24 sm:py-32 px-4 overflow-hidden">
+    <div class="cta-section-bg"></div>
+    <div class="relative z-10 max-w-3xl mx-auto text-center">
+      <h2 class="reveal font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight mb-4">
+        Stop Guessing.<br><span class="hero-gradient-text">Start Profiting.</span>
+      </h2>
+      <p class="reveal text-base sm:text-lg text-neutral-400 max-w-lg mx-auto mb-10">
+        Join the waitlist and be the first to try Black Cat Analytics when we launch.
+      </p>
+
+      <!-- Email Capture Form -->
+      <div class="reveal" id="bottom-form-wrapper">
+        <form id="bottom-form" class="waitlist-form flex flex-col sm:flex-row items-center gap-3 max-w-md mx-auto mb-4">
+          <input type="email" required placeholder="Enter your email" class="email-input flex-1 w-full sm:w-auto px-5 py-3.5 rounded-xl bg-base-900 border border-neutral-700/50 text-white placeholder-neutral-500 text-sm focus:outline-none focus:border-accent-blue/50 focus:ring-1 focus:ring-accent-blue/30 transition-all">
+          <button type="submit" class="cta-button w-full sm:w-auto px-6 py-3.5 rounded-xl font-semibold text-sm text-white whitespace-nowrap">
+            Join the Waitlist
+          </button>
+        </form>
+        <p class="text-xs text-neutral-500">No spam. Just launch updates.</p>
+      </div>
+
+      <!-- Success message (hidden by default) -->
+      <div id="bottom-form-success" class="hidden">
+        <div class="success-message flex flex-col items-center gap-3">
+          <div class="success-checkmark">
+            <svg class="w-12 h-12 text-accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <p class="text-lg font-display font-semibold text-white">You're on the list!</p>
+          <p class="text-sm text-neutral-400">We'll email you when we launch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer class="border-t border-neutral-800/50 py-10 px-4">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="text-lg">🐈‍⬛</span>
+        <span class="font-display font-semibold text-sm text-neutral-400">© 2026 Black Cat Analytics</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="#" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">Privacy Policy</a>
+        <a href="#" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">Terms of Service</a>
+        <a href="mailto:support@tryblackcat.com" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">support@tryblackcat.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
