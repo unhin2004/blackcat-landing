@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Every Airbnb Tax Deduction You Can Claim in 2026 — Black Cat Analytics</title>
+  <meta name="description" content="The complete Schedule E guide for Airbnb hosts. Every deduction category, real-dollar examples, depreciation strategies, and common mistakes to avoid in 2026.">
+  <meta name="keywords" content="airbnb tax deductions 2026, schedule e airbnb, airbnb depreciation, rental property deductions, airbnb tax write offs">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            base: { 950: '#0a0a0a', 900: '#171717', 800: '#1e1e1e', 700: '#262626', 600: '#333333' },
+            accent: { green: '#22c55e', blue: '#3b82f6', purple: '#a855f7', red: '#ef4444', cyan: '#06b6d4' }
+          },
+          fontFamily: {
+            display: ['Outfit', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="bg-base-950 text-white font-body antialiased">
+
+  <div class="noise-overlay"></div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <a href="../" class="flex items-center gap-2 group">
+          <span class="text-2xl">🐈‍⬛</span>
+          <span class="font-display font-bold text-lg tracking-tight text-white">Black Cat <span class="text-accent-green">Analytics</span></span>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="../#features" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Features</a>
+          <a href="../#pricing" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Pricing</a>
+          <a href="./" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Blog</a>
+          <a href="../#waitlist-bottom" class="cta-button-sm text-sm font-semibold px-5 py-2.5 rounded-full text-white">Join the Waitlist</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2 z-50" aria-label="Menu">
+          <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+          <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+          <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="mobile-menu md:hidden">
+      <div class="px-6 pt-20 pb-8 flex flex-col gap-6">
+        <a href="../#features" class="mobile-nav-link text-xl font-display font-semibold text-white">Features</a>
+        <a href="../#pricing" class="mobile-nav-link text-xl font-display font-semibold text-white">Pricing</a>
+        <a href="./" class="mobile-nav-link text-xl font-display font-semibold text-white">Blog</a>
+        <a href="../#waitlist-bottom" class="cta-button-sm text-center text-base font-semibold px-6 py-3 rounded-full text-white mt-4">Join the Waitlist</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ARTICLE -->
+  <main class="relative pt-32 sm:pt-40 pb-24 px-4">
+    <article class="max-w-3xl mx-auto">
+      <!-- Header -->
+      <div class="mb-12">
+        <a href="./" class="inline-flex items-center gap-1.5 text-xs text-neutral-500 hover:text-neutral-300 transition-colors mb-6">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          Back to Blog
+        </a>
+        <div class="flex items-center gap-3 mb-5">
+          <span class="px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-accent-purple/10 text-accent-purple border border-accent-purple/20">Taxes</span>
+          <span class="text-xs text-neutral-500">14 min read</span>
+        </div>
+        <h1 class="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight leading-tight mb-4">
+          Every Airbnb Tax Deduction You Can Claim in 2026
+        </h1>
+        <p class="text-base sm:text-lg text-neutral-400 leading-relaxed">
+          The complete Schedule E guide for short-term rental hosts. Stop leaving money on the table.
+        </p>
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="bg-yellow-500/5 border border-yellow-500/20 rounded-xl p-5 mb-10">
+        <p class="text-xs text-yellow-500/80 leading-relaxed"><strong>Disclaimer:</strong> This article is for informational purposes only and does not constitute tax, legal, or financial advice. Tax rules change frequently and vary based on individual circumstances. Always consult a qualified tax professional or CPA before making decisions about your rental property taxes.</p>
+      </div>
+
+      <!-- Content -->
+      <div class="blog-content">
+        <p>If you're an Airbnb host heading into tax season, you're likely leaving money on the table. Most hosts know they can deduct a few obvious expenses, but the full list of available write-offs is far longer — and far more valuable — than most people realize. Between operating costs, depreciation, capital improvements, and business expenses, a well-documented Schedule E can significantly reduce the taxes you owe on your rental income.</p>
+
+        <p>This guide walks through every major deduction category available to Airbnb hosts, with real-dollar examples, common mistakes to avoid, and a system for keeping records year-round.</p>
+
+        <h2>What Is Schedule E and Why Does It Matter?</h2>
+
+        <p>Most Airbnb hosts who don't provide "substantial services" to guests (such as daily maid service, meals, or guided tours) report rental income and expenses on <strong>IRS Schedule E (Supplemental Income and Loss)</strong>, which is attached to your Form 1040. Schedule E is specifically designed for rental property income, and it's where you deduct your expenses against your gross rental income to arrive at taxable net income — or a deductible loss.</p>
+
+        <p>A minority of hosts — those who materially participate in the rental and provide hotel-like services — may file on Schedule C instead, which has different implications. If you're unsure which applies to you, a CPA can clarify quickly.</p>
+
+        <p>The key principle: <strong>every legitimate, ordinary, and necessary expense related to your rental is deductible</strong>. The IRS isn't generous by nature, but the tax code is surprisingly accommodating for rental property owners who keep good records.</p>
+
+        <h2>Property Operating Expenses</h2>
+
+        <p>These are the day-to-day costs of running your rental. They're fully deductible in the year they're paid.</p>
+
+        <h3>Mortgage Interest</h3>
+        <p>If your Airbnb is a dedicated rental property (not your primary residence), you can deduct <strong>100% of the mortgage interest</strong> you paid during the year — with no cap. On a $350,000 mortgage at 6.5% interest, you might deduct $22,000+ in interest in the early years of the loan.</p>
+
+        <h3>Property Taxes</h3>
+        <p>On a pure rental property, property taxes are fully deductible as a business expense, not subject to the $10,000 SALT cap that limits personal deductions. If your annual property tax bill is $4,500, that's $4,500 off your rental income.</p>
+
+        <h3>Insurance Premiums</h3>
+        <p>Homeowners insurance, short-term rental coverage, liability insurance, and private mortgage insurance (PMI) are all deductible. STR-specific policies typically run $1,200–$3,000 per year — deduct every dollar.</p>
+
+        <h3>Utilities</h3>
+        <p>All utilities paid on your rental property are deductible:</p>
+        <ul>
+          <li>Electricity ($1,200–$2,400/year)</li>
+          <li>Water and sewer ($600–$1,200/year)</li>
+          <li>Natural gas ($500–$1,500/year)</li>
+          <li>Internet ($600–$1,200/year)</li>
+          <li>Cable or streaming services provided to guests ($300–$600/year)</li>
+          <li>Trash removal ($300–$600/year)</li>
+        </ul>
+
+        <h3>HOA and Condo Fees</h3>
+        <p>If your rental property sits in a homeowners association or condo community, those monthly dues are fully deductible. At $300/month, that's $3,600 per year.</p>
+
+        <h3>Cleaning and Turnover Costs</h3>
+        <p>Cleaning is one of the most significant recurring expenses. You can deduct professional cleaning fees between guest stays ($75–$200 per turnover), laundry services for linens and towels, and cleaning supplies. For a busy host with 100 turnovers per year at $100 each, that's a $10,000 deduction.</p>
+
+        <h3>Repairs and Maintenance</h3>
+        <p>Routine repairs — fixing a leaky faucet, patching drywall, replacing a broken window, repainting after a guest — are fully deductible in the year they're completed. The IRS draws an important distinction: <strong>repairs restore the property to its previous condition; improvements add value or extend useful life</strong>. Repairs are expensed immediately; improvements must be depreciated.</p>
+
+        <p>Examples of deductible repairs:</p>
+        <ul>
+          <li>Plumbing repairs: $200–$800</li>
+          <li>Appliance repairs: $150–$500</li>
+          <li>HVAC servicing and filter replacements: $100–$300/year</li>
+          <li>Touch-up painting: $300–$1,500</li>
+        </ul>
+
+        <h3>Supplies and Guest Amenities</h3>
+        <p>Everything you purchase to make the guest experience work is deductible — toiletries ($200–$600/year), kitchen essentials ($100–$400/year), linens, towels, bedding, and replacement items like broken glasses or missing remotes.</p>
+
+        <h2>Business Expenses</h2>
+
+        <p>These are costs tied to running your rental as a business, not directly tied to the physical property.</p>
+
+        <h3>Platform Fees and Commissions</h3>
+        <p>Airbnb's host service fee (typically 3–15% depending on fee structure) is 100% deductible. If you earned $40,000 in gross bookings and paid $2,000 in platform fees, deduct the full $2,000.</p>
+
+        <h3>Property Management Fees</h3>
+        <p>If you use a property manager or co-host, their fees are fully deductible. Management companies typically charge 15–30% of rental revenue.</p>
+
+        <h3>Advertising and Marketing</h3>
+        <p>Professional photography for your listing ($200–$600), paid listing upgrades, a dedicated rental website ($100–$300/year), and social media ads — all deductible.</p>
+
+        <h3>Professional Services</h3>
+        <p>Tax preparation fees, legal fees, accounting software, and rental management software subscriptions ($30–$100/month) are all deductible. Tools like Black Cat Analytics, which auto-generates Schedule E reports from your booking and expense data, fall squarely in this category.</p>
+
+        <h3>Home Office Deduction</h3>
+        <p>If you manage your rental from a dedicated workspace in your home, you may qualify. The simplified method allows $5 per square foot, up to 300 square feet ($1,500 max). The space must be used <strong>regularly and exclusively</strong> for your rental business.</p>
+
+        <h3>Vehicle and Travel Expenses</h3>
+        <p>Trips to your rental property for inspections, repairs, or supply runs are deductible. Use the IRS standard mileage rate (67 cents per mile for 2024) or deduct actual vehicle expenses. For overnight trips to a remote rental, you can deduct airfare, lodging, and 50% of meals when the primary purpose is business.</p>
+
+        <h2>Depreciation: Your Largest Deduction</h2>
+
+        <p>Depreciation is the most powerful and most underutilized deduction available to rental property owners. It lets you deduct the cost of your property over time — without spending any additional cash.</p>
+
+        <h3>Structural Depreciation</h3>
+        <p>The IRS requires residential rental property to be depreciated over <strong>27.5 years</strong> using the straight-line method. For a building with a cost basis of $275,000, that's <strong>$10,000 per year</strong> in depreciation — every year, regardless of what you spent in cash.</p>
+
+        <h3>Appliances, Furnishings, and Equipment</h3>
+        <p>Items like refrigerators, washing machines, furniture sets, and smart home devices depreciate over <strong>5 to 7 years</strong>. With accelerated methods, you can front-load these deductions significantly.</p>
+
+        <h3>Section 179 and Bonus Depreciation</h3>
+        <p><strong>Section 179</strong> allows immediate expensing of qualifying personal property up to $2.5 million. <strong>Bonus depreciation</strong> allows 100% first-year deduction on qualifying assets placed in service after January 19, 2025. A $6,000 furniture set could be fully deducted in year one.</p>
+
+        <h3>Cost Segregation</h3>
+        <p>A cost segregation study identifies property components that can be reclassified to shorter depreciation lives: landscaping (15 years), specialized lighting (7 years), carpeting (5 years). For properties worth $300,000 or more, the accelerated deductions often justify the study cost ($3,000–$10,000).</p>
+
+        <h2>Capital Improvements</h2>
+
+        <p>Capital improvements add value, extend the property's useful life, or adapt it to a new use. They must be <strong>depreciated</strong> rather than expensed immediately (unless Section 179 or bonus depreciation applies).</p>
+
+        <ul>
+          <li><strong>New roof:</strong> depreciated over 27.5 years (or Section 179)</li>
+          <li><strong>New HVAC system:</strong> 27.5 years (or Section 179)</li>
+          <li><strong>Kitchen remodel:</strong> 27.5 years for structural; 5–7 years for appliances</li>
+          <li><strong>Deck or patio addition:</strong> 15 years (land improvement)</li>
+          <li><strong>New fence:</strong> 15 years</li>
+        </ul>
+
+        <p>Any time a contractor does work, get a detailed invoice that breaks out labor from materials, and identify whether each line item is a repair (immediate deduction) or improvement (depreciation).</p>
+
+        <h2>Other Deductions Hosts Often Miss</h2>
+
+        <ul>
+          <li><strong>Loan interest on improvements</strong> — If you financed a renovation with a HELOC, the interest is deductible.</li>
+          <li><strong>Lodging taxes paid</strong> — Any lodging taxes you paid out of pocket are deductible.</li>
+          <li><strong>Education and professional development</strong> — Books, courses, and conferences related to rental management.</li>
+          <li><strong>Business meals (50%)</strong> — Meals with your property manager, contractor, or accountant to discuss rental business.</li>
+        </ul>
+
+        <h2>Common Mistakes Airbnb Hosts Make on Taxes</h2>
+
+        <div class="flex flex-col gap-4 my-6">
+          <div class="bg-base-900 border border-neutral-800/50 rounded-xl p-5">
+            <p class="text-sm text-neutral-300"><strong class="text-accent-red">Mistake 1:</strong> Confusing repairs with improvements. Replacing a worn carpet is a repair; installing hardwood floors where there was carpet before is an improvement.</p>
+          </div>
+          <div class="bg-base-900 border border-neutral-800/50 rounded-xl p-5">
+            <p class="text-sm text-neutral-300"><strong class="text-accent-red">Mistake 2:</strong> Skipping depreciation. The IRS may still require you to pay depreciation recapture tax when you sell — meaning you pay the tax without ever having taken the benefit.</p>
+          </div>
+          <div class="bg-base-900 border border-neutral-800/50 rounded-xl p-5">
+            <p class="text-sm text-neutral-300"><strong class="text-accent-red">Mistake 3:</strong> Ignoring the personal use day rule. If you use the property for more than 14 days or 10% of total rental days, the IRS may classify it as a personal residence.</p>
+          </div>
+          <div class="bg-base-900 border border-neutral-800/50 rounded-xl p-5">
+            <p class="text-sm text-neutral-300"><strong class="text-accent-red">Mistake 4:</strong> Misclassifying Schedule C vs. Schedule E. Schedule C may allow more aggressive loss deductions but triggers self-employment tax (~15.3%).</p>
+          </div>
+          <div class="bg-base-900 border border-neutral-800/50 rounded-xl p-5">
+            <p class="text-sm text-neutral-300"><strong class="text-accent-red">Mistake 5:</strong> Not tracking mileage. A host driving 3,000 miles/year for property trips at the IRS standard rate leaves $2,000+ in deductions unclaimed.</p>
+          </div>
+          <div class="bg-base-900 border border-neutral-800/50 rounded-xl p-5">
+            <p class="text-sm text-neutral-300"><strong class="text-accent-red">Mistake 6:</strong> Missing platform fee documentation. Review your Airbnb transaction history at year-end to capture the exact amount.</p>
+          </div>
+          <div class="bg-base-900 border border-neutral-800/50 rounded-xl p-5">
+            <p class="text-sm text-neutral-300"><strong class="text-accent-red">Mistake 7:</strong> Poor records on mixed-use properties. Without a detailed calendar, expense allocation becomes a guessing game.</p>
+          </div>
+        </div>
+
+        <h2>Record-Keeping Tips</h2>
+
+        <p><strong>Separate your finances.</strong> Open a dedicated bank account and credit card for your rental business. This alone eliminates 80% of year-end sorting.</p>
+
+        <p><strong>Keep digital copies of all receipts.</strong> Use a folder system by month or expense category. For expenses under $75, a bank statement line item usually suffices.</p>
+
+        <p><strong>Maintain a rental calendar.</strong> Track every rental day, personal use day, and vacant day. Essential for the personal-use day calculation.</p>
+
+        <p><strong>Log mileage in real time.</strong> Mileage apps like MileIQ log trips automatically. Reconstructing from memory doesn't satisfy IRS requirements.</p>
+
+        <p><strong>Track expenses by Schedule E line item.</strong> Organize receipts to match Schedule E categories: advertising, auto, cleaning, commissions, insurance, legal fees, management fees, mortgage interest, repairs, supplies, taxes, utilities, depreciation.</p>
+
+        <p><strong>Use tools built for hosts.</strong> <a href="https://tryblackcat.com" class="text-accent-green hover:underline">Black Cat Analytics</a> automatically generates your Schedule E report from your booking and expense data, so your deduction categories are already organized when you sit down with your accountant.</p>
+
+        <h2>How Much Can You Actually Save?</h2>
+
+        <p>A host earning $40,000/year with a $300,000 property might have deductions that look like this:</p>
+
+        <div class="overflow-x-auto my-6">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-neutral-800">
+                <th class="text-left py-3 pr-4 font-semibold text-neutral-300">Deduction</th>
+                <th class="text-right py-3 pl-4 font-semibold text-neutral-300">Estimated Annual Amount</th>
+              </tr>
+            </thead>
+            <tbody class="text-neutral-400">
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4">Mortgage interest</td><td class="text-right py-2.5 pl-4">$14,000</td></tr>
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4">Property taxes</td><td class="text-right py-2.5 pl-4">$4,500</td></tr>
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4">Depreciation (building)</td><td class="text-right py-2.5 pl-4">$8,000</td></tr>
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4">Cleaning and supplies</td><td class="text-right py-2.5 pl-4">$5,000</td></tr>
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4">Insurance</td><td class="text-right py-2.5 pl-4">$2,000</td></tr>
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4">Platform fees</td><td class="text-right py-2.5 pl-4">$2,400</td></tr>
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4">Utilities</td><td class="text-right py-2.5 pl-4">$3,600</td></tr>
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4">Repairs and maintenance</td><td class="text-right py-2.5 pl-4">$2,000</td></tr>
+              <tr class="border-b border-neutral-800"><td class="py-2.5 pr-4">Other (management, marketing, etc.)</td><td class="text-right py-2.5 pl-4">$3,000</td></tr>
+              <tr><td class="py-3 pr-4 font-bold text-white">Total deductions</td><td class="text-right py-3 pl-4 font-bold text-accent-green">$44,500</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>In this scenario, the host's taxable rental income is reduced to near zero — or even a deductible loss. At a 24% federal tax bracket, every $10,000 in legitimate deductions saves $2,400 in taxes.</p>
+
+        <h2>The Bottom Line</h2>
+
+        <p>The tax code gives Airbnb hosts a genuinely robust set of tools to reduce their tax burden — but only if those deductions are claimed correctly, documented thoroughly, and organized in a way that survives scrutiny. The hosts who pay the most in taxes are usually the ones who didn't track expenses during the year, not the ones who faced particularly aggressive IRS rules.</p>
+
+        <p>Start with the basics (operating expenses, platform fees, depreciation), work your way through the less obvious deductions (mileage, home office, loan interest), and build a record-keeping habit that makes year-end reporting straightforward rather than stressful.</p>
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="bg-yellow-500/5 border border-yellow-500/20 rounded-xl p-5 mt-10 mb-6">
+        <p class="text-xs text-yellow-500/80 leading-relaxed">This article is for informational purposes only. It does not constitute tax advice and should not be relied upon as such. Tax laws change frequently, and individual situations vary. Consult a licensed CPA or tax professional for advice specific to your rental property and tax situation.</p>
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-10 p-8 rounded-2xl bg-base-900 border border-neutral-800/50 text-center">
+        <p class="font-display font-bold text-lg text-white mb-2">Auto-generate your Schedule E report</p>
+        <p class="text-sm text-neutral-400 mb-5">Black Cat Analytics organizes your deductions and generates tax-ready reports from your booking data.</p>
+        <a href="https://tryblackcat.com/#waitlist-bottom" class="cta-button inline-block px-8 py-3 rounded-xl font-semibold text-sm text-white">Join the Waitlist</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-neutral-800/50 py-10 px-4">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="text-lg">🐈‍⬛</span>
+        <span class="font-display font-semibold text-sm text-neutral-400">&copy; 2026 Black Cat Analytics</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="../privacy.html" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">Privacy Policy</a>
+        <a href="../terms.html" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">Terms of Service</a>
+        <a href="mailto:support@tryblackcat.com" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">support@tryblackcat.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../app.js"></script>
+</body>
+</html>

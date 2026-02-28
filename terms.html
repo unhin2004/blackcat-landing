@@ -1,1 +1,253 @@
-PLACEHOLDER_TERMS
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service — Black Cat Analytics</title>
+  <meta name="description" content="Terms of Service for Black Cat Analytics. Read the terms governing your use of our Airbnb profit tracking service.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            base: { 950: '#0a0a0a', 900: '#171717', 800: '#1e1e1e', 700: '#262626', 600: '#333333' },
+            accent: { green: '#22c55e', blue: '#3b82f6', purple: '#a855f7', red: '#ef4444', cyan: '#06b6d4' }
+          },
+          fontFamily: {
+            display: ['Outfit', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body class="bg-base-950 text-white font-body antialiased">
+
+  <div class="noise-overlay"></div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <a href="./" class="flex items-center gap-2 group">
+          <span class="text-2xl">🐈‍⬛</span>
+          <span class="font-display font-bold text-lg tracking-tight text-white">Black Cat <span class="text-accent-green">Analytics</span></span>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="./#features" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Features</a>
+          <a href="./#pricing" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Pricing</a>
+          <a href="./blog/" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Blog</a>
+          <a href="./#waitlist-bottom" class="cta-button-sm text-sm font-semibold px-5 py-2.5 rounded-full text-white">Join the Waitlist</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2 z-50" aria-label="Menu">
+          <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+          <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+          <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="mobile-menu md:hidden">
+      <div class="px-6 pt-20 pb-8 flex flex-col gap-6">
+        <a href="./#features" class="mobile-nav-link text-xl font-display font-semibold text-white">Features</a>
+        <a href="./#pricing" class="mobile-nav-link text-xl font-display font-semibold text-white">Pricing</a>
+        <a href="./blog/" class="mobile-nav-link text-xl font-display font-semibold text-white">Blog</a>
+        <a href="./#waitlist-bottom" class="cta-button-sm text-center text-base font-semibold px-6 py-3 rounded-full text-white mt-4">Join the Waitlist</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTENT -->
+  <main class="relative pt-32 sm:pt-40 pb-24 px-4">
+    <article class="max-w-3xl mx-auto">
+      <div class="mb-12">
+        <h1 class="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight mb-4">Terms of Service</h1>
+        <div class="flex items-center gap-4 text-sm text-neutral-500">
+          <span>Effective Date: March 1, 2026</span>
+          <span class="w-1 h-1 rounded-full bg-neutral-700"></span>
+          <span>Last Updated: March 1, 2026</span>
+        </div>
+      </div>
+
+      <div class="legal-content">
+        <h2>Introduction</h2>
+        <p>These Terms of Service ("Terms") govern your access to and use of Black Cat Analytics, including the website at <a href="https://tryblackcat.com">tryblackcat.com</a> and the dashboard application at <a href="https://airbnb-profit-dashboard.vercel.app">airbnb-profit-dashboard.vercel.app</a> (collectively, the "Service"), operated by Black Cat Analytics ("we," "us," or "our").</p>
+        <p>By creating an account or using the Service, you agree to be bound by these Terms. If you do not agree, do not use the Service.</p>
+        <p>For questions, contact us at <a href="mailto:support@tryblackcat.com">support@tryblackcat.com</a>.</p>
+
+        <h2>1. Eligibility</h2>
+        <p>To use Black Cat Analytics, you must:</p>
+        <ul>
+          <li>Be at least <strong>18 years of age</strong> (or the age of legal majority in your jurisdiction)</li>
+          <li>Have the legal capacity to enter into a binding agreement</li>
+          <li>Not be prohibited from using the Service under any applicable law</li>
+        </ul>
+        <p>By creating an account, you represent and warrant that you meet these requirements. The Service is not intended for individuals under the age of 13. See our <a href="./privacy.html">Privacy Policy</a> for details on our approach to children's data.</p>
+
+        <h2>2. Account Creation and Responsibilities</h2>
+        <h3>2.1 Account Registration</h3>
+        <p>To access the Service, you must create an account by providing your name and a valid email address. You agree to provide accurate, current, and complete information during registration and to keep your account information up to date.</p>
+
+        <h3>2.2 Account Security</h3>
+        <p>You are responsible for maintaining the confidentiality of your login credentials and for all activity that occurs under your account. You agree to:</p>
+        <ul>
+          <li>Use a strong, unique password for your account</li>
+          <li>Notify us immediately at <a href="mailto:support@tryblackcat.com">support@tryblackcat.com</a> if you suspect unauthorized access</li>
+          <li>Not share your account credentials with others</li>
+        </ul>
+        <p>We are not liable for losses resulting from unauthorized use of your account due to your failure to keep credentials secure.</p>
+
+        <h3>2.3 One Account Per User</h3>
+        <p>Each account is for a single individual user. You may not create multiple accounts to circumvent restrictions or obtain multiple free trials.</p>
+
+        <h2>3. Acceptable Use</h2>
+        <h3>3.1 Permitted Use</h3>
+        <p>You may use Black Cat Analytics solely for lawful purposes in connection with tracking and analyzing the financial performance of your short-term rental properties.</p>
+
+        <h3>3.2 Prohibited Conduct</h3>
+        <p>You agree not to:</p>
+        <ul>
+          <li>Use the Service for any unlawful purpose or in violation of any applicable laws or regulations</li>
+          <li>Upload or transmit data that you do not have the right to share</li>
+          <li>Attempt to gain unauthorized access to any part of the Service, our servers, or any connected systems</li>
+          <li>Reverse engineer, decompile, disassemble, or attempt to extract the source code of the Service</li>
+          <li>Use automated scripts, bots, or scrapers to access or extract data from the Service</li>
+          <li>Resell, sublicense, or otherwise commercialize access to the Service without our written consent</li>
+          <li>Interfere with or disrupt the integrity or performance of the Service</li>
+          <li>Impersonate another person or entity</li>
+          <li>Upload or transmit viruses, malware, or any other malicious code</li>
+        </ul>
+        <p>We reserve the right to suspend or terminate accounts that violate this section.</p>
+
+        <h2>4. Subscription and Billing</h2>
+        <h3>4.1 Free Trial</h3>
+        <p>Black Cat Analytics offers a <strong>14-day free trial</strong> for new users. No payment is required during the trial period.</p>
+
+        <h3>4.2 Paid Plans</h3>
+        <p>After your trial period, continued access requires a paid subscription. Pricing and plan details are described on our website at <a href="https://tryblackcat.com">tryblackcat.com</a>. We reserve the right to change pricing with reasonable advance notice.</p>
+
+        <h3>4.3 Payment Processing</h3>
+        <p>All payments are processed by <strong>Stripe</strong>. Your payment information is handled directly by Stripe and is subject to <a href="https://stripe.com/legal" target="_blank" rel="noopener">Stripe's Terms of Service</a> and <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>. We do not store full payment card details on our systems.</p>
+
+        <h3>4.4 Billing Cycle</h3>
+        <p>Subscriptions are billed on a <strong>monthly or annual basis</strong>. Your subscription renews automatically at the end of each billing period unless you cancel before the renewal date.</p>
+
+        <h3>4.5 Taxes</h3>
+        <p>You are responsible for any applicable taxes associated with your subscription.</p>
+
+        <h2>5. Cancellation and Refunds</h2>
+        <h3>5.1 Cancellation</h3>
+        <p>You may cancel your subscription at any time through your account settings. Cancellation takes effect at the end of your current billing period.</p>
+
+        <h3>5.2 Refunds</h3>
+        <p>We do not provide refunds for partial billing periods. If you believe you were charged in error, contact us at <a href="mailto:support@tryblackcat.com">support@tryblackcat.com</a> within <strong>30 days</strong> of the charge.</p>
+
+        <h3>5.3 Free Trial Cancellation</h3>
+        <p>You may cancel at any time during the 14-day free trial at no charge. If you do not cancel before the trial ends, you will be charged for the first billing period.</p>
+
+        <h2>6. Intellectual Property</h2>
+        <h3>6.1 Our Intellectual Property</h3>
+        <p>The Service and all of its content — including the software, source code, design, graphics, logos, text, and features — are owned by or licensed to Black Cat Analytics and are protected by intellectual property laws.</p>
+
+        <h3>6.2 License to Use the Service</h3>
+        <p>Subject to your compliance with these Terms and payment of applicable fees, we grant you a limited, non-exclusive, non-transferable, revocable license to access and use the Service for your personal or internal business purposes.</p>
+
+        <h2>7. Your Data and Content</h2>
+        <h3>7.1 You Own Your Data</h3>
+        <p>You retain full ownership of all data you upload to the Service, including your Airbnb revenue data, expense records, property information, and task data ("User Content"). We do not claim any ownership over your User Content.</p>
+
+        <h3>7.2 License to Us</h3>
+        <p>By uploading User Content, you grant us a limited, non-exclusive license to process, store, and display that data <strong>solely</strong> for the purpose of providing you with the Service. We do not use your data for any other purpose.</p>
+
+        <h3>7.3 Your Responsibility for Your Data</h3>
+        <p>You represent and warrant that you have the right to upload any data you submit, that your User Content does not violate any third-party rights, and that you are responsible for maintaining backup copies of your important data.</p>
+
+        <h3>7.4 Data Export and Deletion</h3>
+        <p>You can export your data at any time from within the dashboard. You can delete your account via <strong>Settings &gt; Danger Zone</strong>. See our <a href="./privacy.html">Privacy Policy</a> for details on data retention following deletion.</p>
+
+        <h2>8. Disclaimers</h2>
+        <h3>8.1 No Financial or Tax Advice</h3>
+        <p>Black Cat Analytics is a <strong>financial tracking tool only</strong>. Nothing in the Service constitutes financial advice, investment advice, tax advice, accounting advice, or any other professional advisory service. Consult a qualified professional before making any financial or tax-related decisions.</p>
+
+        <h3>8.2 No Affiliation with Airbnb</h3>
+        <p>Black Cat Analytics is an independent product and is not affiliated with, endorsed by, or sponsored by Airbnb, Inc. "Airbnb" is a trademark of Airbnb, Inc.</p>
+
+        <h3>8.3 Service Availability</h3>
+        <p>The Service is provided <strong>"as is"</strong> and <strong>"as available"</strong> without warranties of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement.</p>
+
+        <h2>9. Limitation of Liability</h2>
+        <p>To the fullest extent permitted by applicable law, <strong>Black Cat Analytics shall not be liable for any indirect, incidental, special, consequential, or punitive damages</strong>, including but not limited to loss of profits, loss of data, loss of goodwill, or business interruption.</p>
+        <p>Our total cumulative liability shall not exceed the greater of the total amount you paid us in the <strong>12 months</strong> immediately preceding the claim, or <strong>$100 USD</strong>.</p>
+
+        <h2>10. Termination</h2>
+        <h3>10.1 Termination by You</h3>
+        <p>You may terminate your account at any time by cancelling your subscription and deleting your account, or by contacting us at <a href="mailto:support@tryblackcat.com">support@tryblackcat.com</a>.</p>
+
+        <h3>10.2 Termination by Us</h3>
+        <p>We reserve the right to suspend or terminate your account if you violate these Terms, if we have reason to believe your account is being used fraudulently, if required by law, or if we discontinue the Service (with reasonable advance notice).</p>
+
+        <h3>10.3 Effect of Termination</h3>
+        <p>Upon termination, your right to access the Service immediately ceases. We will delete your data in accordance with our Privacy Policy. Sections that by their nature should survive termination will continue to apply.</p>
+
+        <h2>11. Governing Law</h2>
+        <p>These Terms are governed by the laws of the <strong>United States</strong>, without regard to its conflict of law provisions.</p>
+
+        <h2>12. Dispute Resolution</h2>
+        <h3>12.1 Informal Resolution First</h3>
+        <p>Before initiating any formal dispute, you agree to first contact us at <a href="mailto:support@tryblackcat.com">support@tryblackcat.com</a> and provide a written description of your dispute. We will try to resolve the dispute informally within <strong>30 days</strong>.</p>
+
+        <h3>12.2 Binding Arbitration</h3>
+        <p>If we cannot resolve the dispute informally, you and Black Cat Analytics agree to resolve any dispute through <strong>binding arbitration</strong>, rather than in court, except that either party may bring claims in small claims court if they qualify.</p>
+
+        <h3>12.3 Class Action Waiver</h3>
+        <p><strong>You and Black Cat Analytics each waive any right to bring or participate in a class action lawsuit or class-wide arbitration.</strong> All disputes must be brought on an individual basis.</p>
+
+        <h3>12.4 Exceptions</h3>
+        <p>Either party may seek injunctive or equitable relief in court to prevent unauthorized use of intellectual property or to preserve the status quo pending arbitration.</p>
+
+        <h2>13. Changes to These Terms</h2>
+        <p>We may update these Terms from time to time. When we make material changes, we will notify you by email and/or by posting a prominent notice within the Service at least <strong>14 days</strong> before the changes take effect.</p>
+
+        <h2>14. General Provisions</h2>
+        <ul>
+          <li><strong>Entire Agreement</strong> — These Terms, together with our Privacy Policy, constitute the entire agreement between you and Black Cat Analytics.</li>
+          <li><strong>Severability</strong> — If any provision is found unenforceable, the remaining provisions continue in full force.</li>
+          <li><strong>Waiver</strong> — Our failure to enforce any right does not constitute a waiver of that right.</li>
+          <li><strong>Assignment</strong> — You may not assign your rights without our written consent. We may assign ours without restriction.</li>
+          <li><strong>No Agency</strong> — Nothing in these Terms creates any agency, partnership, or joint venture.</li>
+          <li><strong>Force Majeure</strong> — We are not liable for failures due to causes beyond our reasonable control.</li>
+        </ul>
+
+        <h2>15. Contact Us</h2>
+        <p>If you have questions about these Terms, please contact us:</p>
+        <p><strong>Black Cat Analytics</strong><br>
+        Email: <a href="mailto:support@tryblackcat.com">support@tryblackcat.com</a><br>
+        Website: <a href="https://tryblackcat.com">tryblackcat.com</a></p>
+        <p>We aim to respond to all inquiries within <strong>5 business days</strong>.</p>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-neutral-800/50 py-10 px-4">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="text-lg">🐈‍⬛</span>
+        <span class="font-display font-semibold text-sm text-neutral-400">&copy; 2026 Black Cat Analytics</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="./privacy.html" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">Privacy Policy</a>
+        <a href="./terms.html" class="text-xs text-neutral-300 transition-colors">Terms of Service</a>
+        <a href="mailto:support@tryblackcat.com" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">support@tryblackcat.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>

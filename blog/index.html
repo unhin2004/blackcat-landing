@@ -1,1 +1,149 @@
-PLACEHOLDER_BLOG_INDEX
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Black Cat Analytics</title>
+  <meta name="description" content="Airbnb hosting tips, profit strategies, and tax guides from Black Cat Analytics. Learn how to maximize your short-term rental income.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            base: { 950: '#0a0a0a', 900: '#171717', 800: '#1e1e1e', 700: '#262626', 600: '#333333' },
+            accent: { green: '#22c55e', blue: '#3b82f6', purple: '#a855f7', red: '#ef4444', cyan: '#06b6d4' }
+          },
+          fontFamily: {
+            display: ['Outfit', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="bg-base-950 text-white font-body antialiased">
+
+  <!-- Noise overlay -->
+  <div class="noise-overlay"></div>
+
+  <!-- ======================== NAVBAR ======================== -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <a href="../" class="flex items-center gap-2 group">
+          <span class="text-2xl">🐈‍⬛</span>
+          <span class="font-display font-bold text-lg tracking-tight text-white">Black Cat <span class="text-accent-green">Analytics</span></span>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="../#features" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Features</a>
+          <a href="../#pricing" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Pricing</a>
+          <a href="./" class="nav-link text-sm text-white transition-colors duration-200">Blog</a>
+          <a href="../#waitlist-bottom" class="cta-button-sm text-sm font-semibold px-5 py-2.5 rounded-full text-white">Join the Waitlist</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2 z-50" aria-label="Menu">
+          <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+          <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+          <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="mobile-menu md:hidden">
+      <div class="px-6 pt-20 pb-8 flex flex-col gap-6">
+        <a href="../#features" class="mobile-nav-link text-xl font-display font-semibold text-white">Features</a>
+        <a href="../#pricing" class="mobile-nav-link text-xl font-display font-semibold text-white">Pricing</a>
+        <a href="./" class="mobile-nav-link text-xl font-display font-semibold text-white">Blog</a>
+        <a href="../#waitlist-bottom" class="cta-button-sm text-center text-base font-semibold px-6 py-3 rounded-full text-white mt-4">Join the Waitlist</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ======================== BLOG LISTING ======================== -->
+  <main class="relative pt-32 sm:pt-40 pb-24 px-4">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16">
+        <h1 class="reveal font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight mb-4">
+          The Black Cat <span class="hero-gradient-text">Blog</span>
+        </h1>
+        <p class="reveal text-base sm:text-lg text-neutral-400 max-w-xl mx-auto">
+          Practical guides on Airbnb profit tracking, tax deductions, and running a smarter rental business.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Blog Post Card 1 -->
+        <a href="./how-to-calculate-airbnb-profit.html" class="reveal blog-card group">
+          <div class="blog-card-inner">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-accent-green/10 text-accent-green border border-accent-green/20">Profit</span>
+              <span class="text-xs text-neutral-500">10 min read</span>
+            </div>
+            <h2 class="font-display font-bold text-lg sm:text-xl text-white mb-3 group-hover:text-accent-green transition-colors duration-200">
+              How to Calculate Your Real Airbnb Profit (Not Just Revenue)
+            </h2>
+            <p class="text-sm text-neutral-400 leading-relaxed mb-4">
+              Most hosts confuse revenue with profit. Learn the hidden expenses eating your margins and the formula to calculate what you actually keep.
+            </p>
+            <span class="text-xs text-accent-blue font-medium group-hover:underline">Read article &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Blog Post Card 2 -->
+        <a href="./airbnb-tax-deductions-2026.html" class="reveal reveal-delay-1 blog-card group">
+          <div class="blog-card-inner">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-accent-purple/10 text-accent-purple border border-accent-purple/20">Taxes</span>
+              <span class="text-xs text-neutral-500">14 min read</span>
+            </div>
+            <h2 class="font-display font-bold text-lg sm:text-xl text-white mb-3 group-hover:text-accent-purple transition-colors duration-200">
+              Every Airbnb Tax Deduction You Can Claim in 2026
+            </h2>
+            <p class="text-sm text-neutral-400 leading-relaxed mb-4">
+              The complete Schedule E guide for short-term rental hosts. Depreciation, operating expenses, and deductions most hosts miss entirely.
+            </p>
+            <span class="text-xs text-accent-blue font-medium group-hover:underline">Read article &rarr;</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- ======================== CTA ======================== -->
+  <section class="relative py-20 px-4 overflow-hidden">
+    <div class="cta-section-bg"></div>
+    <div class="relative z-10 max-w-2xl mx-auto text-center">
+      <h2 class="reveal font-display font-bold text-2xl sm:text-3xl tracking-tight mb-4">
+        Track Your Real Profit
+      </h2>
+      <p class="reveal text-sm sm:text-base text-neutral-400 mb-8">
+        Join the waitlist and be the first to try Black Cat Analytics when we launch.
+      </p>
+      <a href="../#waitlist-bottom" class="cta-button inline-block px-8 py-3.5 rounded-xl font-semibold text-sm text-white">
+        Join the Waitlist
+      </a>
+    </div>
+  </section>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer class="border-t border-neutral-800/50 py-10 px-4">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="text-lg">🐈‍⬛</span>
+        <span class="font-display font-semibold text-sm text-neutral-400">&copy; 2026 Black Cat Analytics</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="../privacy.html" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">Privacy Policy</a>
+        <a href="../terms.html" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">Terms of Service</a>
+        <a href="mailto:support@tryblackcat.com" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">support@tryblackcat.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../app.js"></script>
+</body>
+</html>

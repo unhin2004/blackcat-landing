@@ -1,1 +1,240 @@
-PLACEHOLDER_PRIVACY
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Black Cat Analytics</title>
+  <meta name="description" content="Privacy Policy for Black Cat Analytics. Learn how we collect, use, and protect your data.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            base: { 950: '#0a0a0a', 900: '#171717', 800: '#1e1e1e', 700: '#262626', 600: '#333333' },
+            accent: { green: '#22c55e', blue: '#3b82f6', purple: '#a855f7', red: '#ef4444', cyan: '#06b6d4' }
+          },
+          fontFamily: {
+            display: ['Outfit', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body class="bg-base-950 text-white font-body antialiased">
+
+  <div class="noise-overlay"></div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <a href="./" class="flex items-center gap-2 group">
+          <span class="text-2xl">🐈‍⬛</span>
+          <span class="font-display font-bold text-lg tracking-tight text-white">Black Cat <span class="text-accent-green">Analytics</span></span>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="./#features" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Features</a>
+          <a href="./#pricing" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Pricing</a>
+          <a href="./blog/" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Blog</a>
+          <a href="./#waitlist-bottom" class="cta-button-sm text-sm font-semibold px-5 py-2.5 rounded-full text-white">Join the Waitlist</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2 z-50" aria-label="Menu">
+          <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+          <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+          <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="mobile-menu md:hidden">
+      <div class="px-6 pt-20 pb-8 flex flex-col gap-6">
+        <a href="./#features" class="mobile-nav-link text-xl font-display font-semibold text-white">Features</a>
+        <a href="./#pricing" class="mobile-nav-link text-xl font-display font-semibold text-white">Pricing</a>
+        <a href="./blog/" class="mobile-nav-link text-xl font-display font-semibold text-white">Blog</a>
+        <a href="./#waitlist-bottom" class="cta-button-sm text-center text-base font-semibold px-6 py-3 rounded-full text-white mt-4">Join the Waitlist</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTENT -->
+  <main class="relative pt-32 sm:pt-40 pb-24 px-4">
+    <article class="max-w-3xl mx-auto">
+      <div class="mb-12">
+        <h1 class="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight mb-4">Privacy Policy</h1>
+        <div class="flex items-center gap-4 text-sm text-neutral-500">
+          <span>Effective Date: March 1, 2026</span>
+          <span class="w-1 h-1 rounded-full bg-neutral-700"></span>
+          <span>Last Updated: March 1, 2026</span>
+        </div>
+      </div>
+
+      <div class="legal-content">
+        <h2>Introduction</h2>
+        <p>Black Cat Analytics ("we," "us," or "our") operates the website <a href="https://tryblackcat.com">tryblackcat.com</a> and the dashboard application at <a href="https://airbnb-profit-dashboard.vercel.app">airbnb-profit-dashboard.vercel.app</a> (collectively, the "Service"). Black Cat Analytics is an Airbnb profit tracking tool designed to help short-term rental hosts understand their revenue, expenses, and overall profitability.</p>
+        <p>This Privacy Policy explains what personal information we collect, how we use it, who we share it with, and what rights you have over your data. We've written it in plain language because we believe you deserve to understand how your information is handled — not just that it is handled.</p>
+        <p>By creating an account or using the Service, you agree to the practices described in this policy. If you do not agree, please do not use the Service.</p>
+        <p>For questions or concerns, contact us at <a href="mailto:support@tryblackcat.com">support@tryblackcat.com</a>.</p>
+
+        <h2>1. Information We Collect</h2>
+
+        <h3>1.1 Information You Provide Directly</h3>
+        <p>When you create an account and use Black Cat Analytics, you provide us with:</p>
+        <ul>
+          <li><strong>Account information</strong> — your name and email address</li>
+          <li><strong>Airbnb revenue data</strong> — CSV files you upload containing your Airbnb booking and revenue history</li>
+          <li><strong>Expense data</strong> — expenses you manually enter or import for your properties</li>
+          <li><strong>Property information</strong> — details about the properties you manage (e.g., names, addresses, or identifiers)</li>
+          <li><strong>Cleaning and task data</strong> — records of cleaning schedules, tasks, or operational notes you add within the Service</li>
+        </ul>
+
+        <h3>1.2 Information Collected Automatically</h3>
+        <p>When you use the Service, we automatically collect limited technical information necessary to operate it:</p>
+        <ul>
+          <li><strong>Session data</strong> — we use essential session cookies to keep you logged in (see Section 5 for details)</li>
+          <li><strong>Log data</strong> — server logs may include your IP address, browser type, and pages accessed, used for security and error diagnosis</li>
+          <li><strong>Error reports</strong> — if the Service encounters an error, diagnostic information is sent to Sentry to help us fix bugs</li>
+        </ul>
+
+        <h3>1.3 Payment Information</h3>
+        <p>When you subscribe to a paid plan, payment is processed by <strong>Stripe</strong>. We do not store your full credit card number, CVV, or bank account details on our systems. Stripe handles all payment data under their own privacy policy and PCI-DSS compliance program.</p>
+
+        <h2>2. How We Use Your Information</h2>
+        <div class="overflow-x-auto my-4">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-neutral-800">
+                <th class="text-left py-3 pr-4 font-semibold text-neutral-300">Purpose</th>
+                <th class="text-left py-3 pl-4 font-semibold text-neutral-300">Legal Basis (GDPR)</th>
+              </tr>
+            </thead>
+            <tbody class="text-neutral-400">
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4">Providing, operating, and maintaining the Service</td><td class="py-2.5 pl-4">Performance of contract</td></tr>
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4">Processing your subscription and billing</td><td class="py-2.5 pl-4">Performance of contract</td></tr>
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4">Personalizing your dashboard and reports</td><td class="py-2.5 pl-4">Performance of contract</td></tr>
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4">Sending transactional emails</td><td class="py-2.5 pl-4">Performance of contract</td></tr>
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4">Monitoring errors and fixing bugs</td><td class="py-2.5 pl-4">Legitimate interest</td></tr>
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4">Ensuring security and preventing fraud</td><td class="py-2.5 pl-4">Legitimate interest / Legal obligation</td></tr>
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4">Responding to your support requests</td><td class="py-2.5 pl-4">Performance of contract</td></tr>
+              <tr><td class="py-2.5 pr-4">Complying with legal obligations</td><td class="py-2.5 pl-4">Legal obligation</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>We do <strong>not</strong> use your data for advertising, sell it to third parties, or use it to train AI models.</p>
+
+        <h2>3. Data Retention</h2>
+        <p>We retain your data for as long as your account is active. If you delete your account, we will delete your personal data and associated property, revenue, and expense records within <strong>30 days</strong>, except where we are required to retain certain records by law (e.g., billing records for tax compliance purposes, which may be retained for up to 7 years).</p>
+        <p>Error logs and server logs are retained for a maximum of <strong>90 days</strong>.</p>
+        <p>You can request deletion at any time (see Section 8 — Your Rights).</p>
+
+        <h2>4. Third-Party Services</h2>
+        <p>We use a small number of trusted third-party services to operate Black Cat Analytics:</p>
+        <ul>
+          <li><strong>Stripe</strong> — processes subscription payments. Your payment details go directly to Stripe and are governed by <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Stripe's Privacy Policy</a>.</li>
+          <li><strong>Sentry</strong> — provides error monitoring. Sentry does not receive your Airbnb revenue data. Learn more at <a href="https://sentry.io/privacy/" target="_blank" rel="noopener">Sentry's Privacy Policy</a>.</li>
+          <li><strong>Vercel</strong> — hosts our application. Learn more at <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">Vercel's Privacy Policy</a>.</li>
+          <li><strong>PostgreSQL / Prisma</strong> — stores your account data, property data, revenue records, and expense records. Data is not shared outside the scope of operating the Service.</li>
+        </ul>
+        <p>We do not use any advertising networks, marketing analytics platforms, social media trackers, or data brokers.</p>
+
+        <h2>5. Cookies</h2>
+        <p>We use <strong>only essential session cookies</strong> — small files stored on your device to keep you authenticated while you use the Service.</p>
+        <div class="overflow-x-auto my-4">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-neutral-800">
+                <th class="text-left py-3 pr-4 font-semibold text-neutral-300">Cookie Type</th>
+                <th class="text-left py-3 px-4 font-semibold text-neutral-300">Purpose</th>
+                <th class="text-left py-3 pl-4 font-semibold text-neutral-300">Retention</th>
+              </tr>
+            </thead>
+            <tbody class="text-neutral-400">
+              <tr><td class="py-2.5 pr-4">Session cookie</td><td class="py-2.5 px-4">Maintains your logged-in state</td><td class="py-2.5 pl-4">Deleted when you log out or close your browser</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>We do <strong>not</strong> use tracking cookies, advertising cookies, or third-party analytics cookies.</p>
+
+        <h2>6. Data Security</h2>
+        <p>We take reasonable technical and organizational measures to protect your data, including:</p>
+        <ul>
+          <li>Encrypted data transmission via HTTPS/TLS</li>
+          <li>Authentication-based access controls so only you can access your account</li>
+          <li>Error monitoring via Sentry to detect and address application vulnerabilities</li>
+          <li>Database access restricted to application services only — no public database access</li>
+        </ul>
+        <p>No method of transmission over the Internet or electronic storage is 100% secure. While we work hard to protect your information, we cannot guarantee absolute security. In the event of a data breach that affects your personal data, we will notify you as required by applicable law.</p>
+
+        <h2>7. Children's Privacy</h2>
+        <p>Black Cat Analytics is not intended for use by individuals under the age of <strong>13</strong>, and we do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us at <a href="mailto:support@tryblackcat.com">support@tryblackcat.com</a> and we will promptly delete it.</p>
+
+        <h2>8. Your Rights</h2>
+
+        <h3>All Users</h3>
+        <ul>
+          <li><strong>Access</strong> — You can request a copy of the personal data we hold about you.</li>
+          <li><strong>Correction</strong> — You can update your name and email directly in your account settings.</li>
+          <li><strong>Deletion</strong> — You can delete your account and all associated data via Settings &gt; Danger Zone. You may also submit a deletion request to <a href="mailto:support@tryblackcat.com">support@tryblackcat.com</a>.</li>
+          <li><strong>Data Export</strong> — You can export your data from within the dashboard.</li>
+        </ul>
+
+        <h3>European Union / EEA Users (GDPR)</h3>
+        <ul>
+          <li><strong>Right to restriction</strong> — You can ask us to limit how we process your data in certain circumstances.</li>
+          <li><strong>Right to data portability</strong> — You can request your data in a structured, machine-readable format.</li>
+          <li><strong>Right to object</strong> — You can object to processing based on legitimate interests.</li>
+          <li><strong>Right to lodge a complaint</strong> — You have the right to lodge a complaint with your national data protection authority.</li>
+        </ul>
+        <p>To exercise any of these rights, contact us at <a href="mailto:support@tryblackcat.com">support@tryblackcat.com</a>. We will respond within 30 days.</p>
+
+        <h3>California Residents (CCPA / CPRA)</h3>
+        <ul>
+          <li><strong>Right to know</strong> — The right to know what personal information we collect, use, and share.</li>
+          <li><strong>Right to delete</strong> — The right to request deletion of your personal information.</li>
+          <li><strong>Right to correct</strong> — The right to request correction of inaccurate personal information.</li>
+          <li><strong>Right to opt out of sale</strong> — We do <strong>not</strong> sell your personal information.</li>
+          <li><strong>Non-discrimination</strong> — We will not discriminate against you for exercising your privacy rights.</li>
+        </ul>
+        <p>To exercise your California rights, contact us at <a href="mailto:support@tryblackcat.com">support@tryblackcat.com</a>. We will acknowledge your request within 10 business days and respond within 45 calendar days.</p>
+
+        <h2>9. International Data Transfers</h2>
+        <p>Black Cat Analytics is operated from the United States. If you are accessing the Service from outside the United States, your information may be transferred to and processed in the United States or other countries where our service providers operate.</p>
+        <p>Where required by law, we rely on appropriate safeguards for international transfers, including Standard Contractual Clauses (SCCs) where applicable.</p>
+
+        <h2>10. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. When we make material changes, we will notify you by email and/or by posting a prominent notice on the Service before the change takes effect. We will also update the "Last Updated" date at the top of this page.</p>
+        <p>Your continued use of the Service after changes take effect constitutes your acceptance of the updated policy.</p>
+
+        <h2>11. Contact Us</h2>
+        <p>If you have questions, concerns, or requests related to this Privacy Policy, please contact us:</p>
+        <p><strong>Black Cat Analytics</strong><br>
+        Email: <a href="mailto:support@tryblackcat.com">support@tryblackcat.com</a><br>
+        Website: <a href="https://tryblackcat.com">tryblackcat.com</a></p>
+        <p>We aim to respond to all privacy-related inquiries within <strong>5 business days</strong>.</p>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-neutral-800/50 py-10 px-4">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="text-lg">🐈‍⬛</span>
+        <span class="font-display font-semibold text-sm text-neutral-400">&copy; 2026 Black Cat Analytics</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="./privacy.html" class="text-xs text-neutral-300 transition-colors">Privacy Policy</a>
+        <a href="./terms.html" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">Terms of Service</a>
+        <a href="mailto:support@tryblackcat.com" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">support@tryblackcat.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>

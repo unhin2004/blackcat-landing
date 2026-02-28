@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Calculate Your Real Airbnb Profit — Black Cat Analytics</title>
+  <meta name="description" content="Learn how to calculate real Airbnb profit — not just revenue. Includes a step-by-step formula, hidden expense checklist, real number example, and tips to improve your profit margin.">
+  <meta name="keywords" content="how to calculate airbnb profit, airbnb profit calculator, airbnb profit margin, airbnb expense tracking, is airbnb profitable">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            base: { 950: '#0a0a0a', 900: '#171717', 800: '#1e1e1e', 700: '#262626', 600: '#333333' },
+            accent: { green: '#22c55e', blue: '#3b82f6', purple: '#a855f7', red: '#ef4444', cyan: '#06b6d4' }
+          },
+          fontFamily: {
+            display: ['Outfit', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="bg-base-950 text-white font-body antialiased">
+
+  <div class="noise-overlay"></div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <a href="../" class="flex items-center gap-2 group">
+          <span class="text-2xl">🐈‍⬛</span>
+          <span class="font-display font-bold text-lg tracking-tight text-white">Black Cat <span class="text-accent-green">Analytics</span></span>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="../#features" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Features</a>
+          <a href="../#pricing" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Pricing</a>
+          <a href="./" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Blog</a>
+          <a href="../#waitlist-bottom" class="cta-button-sm text-sm font-semibold px-5 py-2.5 rounded-full text-white">Join the Waitlist</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2 z-50" aria-label="Menu">
+          <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+          <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+          <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="mobile-menu md:hidden">
+      <div class="px-6 pt-20 pb-8 flex flex-col gap-6">
+        <a href="../#features" class="mobile-nav-link text-xl font-display font-semibold text-white">Features</a>
+        <a href="../#pricing" class="mobile-nav-link text-xl font-display font-semibold text-white">Pricing</a>
+        <a href="./" class="mobile-nav-link text-xl font-display font-semibold text-white">Blog</a>
+        <a href="../#waitlist-bottom" class="cta-button-sm text-center text-base font-semibold px-6 py-3 rounded-full text-white mt-4">Join the Waitlist</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ARTICLE -->
+  <main class="relative pt-32 sm:pt-40 pb-24 px-4">
+    <article class="max-w-3xl mx-auto">
+      <!-- Header -->
+      <div class="mb-12">
+        <a href="./" class="inline-flex items-center gap-1.5 text-xs text-neutral-500 hover:text-neutral-300 transition-colors mb-6">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          Back to Blog
+        </a>
+        <div class="flex items-center gap-3 mb-5">
+          <span class="px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-accent-green/10 text-accent-green border border-accent-green/20">Profit</span>
+          <span class="text-xs text-neutral-500">10 min read</span>
+        </div>
+        <h1 class="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight leading-tight mb-4">
+          How to Calculate Your Real Airbnb Profit <span class="text-neutral-500">(Not Just Revenue)</span>
+        </h1>
+        <p class="text-base sm:text-lg text-neutral-400 leading-relaxed">
+          Most hosts confuse revenue with profit. Here's how to find the real number — and what to do about it.
+        </p>
+      </div>
+
+      <!-- Content -->
+      <div class="blog-content">
+        <p>You check your Airbnb dashboard and see $4,200 came in last month. Feels great. But when you actually look at your bank account, you're wondering where it all went.</p>
+
+        <p>You're not alone. Most Airbnb hosts confuse revenue with profit. They know their nightly rate and their occupancy percentage, but they're mentally glossing over a dozen line items that quietly drain the difference between gross income and what they actually keep. The result: hosts who think they're running a profitable operation are often making far less than they realize — and some are barely breaking even.</p>
+
+        <p>This post is about fixing that. We'll walk through the hidden expenses most hosts miss, build a proper profit calculation formula, run through a realistic example with real numbers, and cover a few levers you can pull to actually improve your margin.</p>
+
+        <h2>Why "Revenue" Is a Misleading Number</h2>
+
+        <p>Airbnb hosts tend to anchor on gross revenue — the total booking income before anything comes out. That number is easy to find on your dashboard and it feels good to look at.</p>
+
+        <p>But gross revenue is not profit. It's not even close to profit for most hosts.</p>
+
+        <p>According to industry analysis, operating expenses typically consume 25–45% of gross revenue for self-managed properties, and that range climbs even higher if you're using a property manager. After accounting for all costs, profit margins for Airbnb hosts typically land between 20% and 60% — and on the low end of that range, a host bringing in $50,000 per year in revenue might be keeping only $10,000.</p>
+
+        <p>The gap between revenue and profit is where a lot of hosting dreams quietly die. The fix is simply knowing what's actually in that gap.</p>
+
+        <h2>The Hidden Expenses Most Hosts Don't Track</h2>
+
+        <p>Let's go through the costs that don't always make it into mental math — but absolutely need to make it into your actual accounting.</p>
+
+        <h3>Airbnb's Host Service Fee</h3>
+
+        <p>Airbnb charges hosts a service fee on every booking. Under the standard host-only fee structure, this is typically 14–16% of the booking subtotal. Hosts on the split-fee model pay around 3%, but guests pay more — which can suppress demand.</p>
+
+        <p>Either way, that fee comes out before you see a dollar. If you're not explicitly accounting for it, you're overstating your income from the start.</p>
+
+        <h3>Utilities (More Than You Think)</h3>
+
+        <p>Guests use energy at a completely different rate than a typical resident. A family of four on vacation is running the A/C all day, taking long showers, running the dishwasher constantly, and leaving lights on. Water, electricity, gas, and internet add up fast.</p>
+
+        <p>A realistic annual utility baseline for an Airbnb is at minimum $2,500/year, and that climbs steeply for larger properties or high-occupancy listings. Many hosts discover this too late — after getting their first winter utility bill and doing a double take.</p>
+
+        <h3>Consumables and Supplies</h3>
+
+        <p>This is the category hosts most consistently underestimate. Every stay burns through toiletries, paper products, coffee, cleaning supplies, and kitchen staples. Expect to spend at least $50/month on restocking alone for a modest property — and more for a fully-stocked, amenity-rich listing.</p>
+
+        <h3>Maintenance and Replacement</h3>
+
+        <p>Your property is being used by strangers, often back-to-back, with no one treating it the way an owner would. Appliances wear out faster. Linens need replacing more often. Furniture gets damaged. Electronics disappear or break.</p>
+
+        <p>A useful rule of thumb: budget 1–2% of the property's value per year for maintenance and replacement costs. For a $300,000 property, that's $3,000–$6,000/year — which works out to $250–$500/month.</p>
+
+        <p>The hosts who skip this budgeting line look profitable on paper until the HVAC goes out or they need to replace the entire set of bedding.</p>
+
+        <h3>Insurance</h3>
+
+        <p>Standard homeowner's insurance typically doesn't cover short-term rental activity. You need a dedicated short-term rental insurance policy, which starts around $100–$150/month. Skipping this to save money isn't a real savings — it's an unaccounted liability sitting on your balance sheet.</p>
+
+        <h3>Taxes</h3>
+
+        <p>This is the one that catches hosts the most off guard. Airbnb rental income is taxable, and depending on your location, you may also owe local occupancy or hotel taxes on top of federal and state income tax.</p>
+
+        <p>If you're treating your Airbnb as a "side hustle" rather than a business, you're probably leaving deductions on the table and potentially underpaying estimated taxes. The tax bill that arrives in April can destroy a year of seemingly decent margins.</p>
+
+        <h3>Your Time (the One Nobody Counts)</h3>
+
+        <p>Managing an Airbnb takes real time — answering messages, coordinating cleaners, handling check-in issues, managing reviews, adjusting pricing. If you're doing it yourself, that time has value.</p>
+
+        <p>If you're spending 20 hours a month managing your property and your time is worth $50/hour, that's $1,000/month in implicit cost that never shows up on any ledger. For a solo host doing $3,000/month in revenue, unaccounted time cost can wipe out a significant portion of real profit.</p>
+
+        <h2>The Airbnb Profit Calculation Formula</h2>
+
+        <p>Once you've identified all your cost categories, the formula is straightforward:</p>
+
+        <div class="bg-base-900 border border-neutral-800/50 rounded-xl p-5 my-6 font-mono text-sm text-neutral-300 leading-loose">
+          Net Profit = Gross Revenue<br>
+          &nbsp;&nbsp;&minus; Airbnb Host Fee<br>
+          &nbsp;&nbsp;&minus; Cleaning Costs (net of what guests pay)<br>
+          &nbsp;&nbsp;&minus; Utilities<br>
+          &nbsp;&nbsp;&minus; Supplies &amp; Consumables<br>
+          &nbsp;&nbsp;&minus; Maintenance Reserve<br>
+          &nbsp;&nbsp;&minus; Insurance<br>
+          &nbsp;&nbsp;&minus; Taxes (income + occupancy)<br>
+          &nbsp;&nbsp;&minus; Property Management Fee (if applicable)<br>
+          &nbsp;&nbsp;&minus; Mortgage / Rent (if applicable)<br>
+          &nbsp;&nbsp;&minus; HOA Fees (if applicable)
+        </div>
+
+        <p><strong>Airbnb profit margin</strong> is then:</p>
+
+        <div class="bg-base-900 border border-neutral-800/50 rounded-xl p-5 my-6 font-mono text-sm text-neutral-300">
+          Profit Margin (%) = Net Profit &divide; Gross Revenue &times; 100
+        </div>
+
+        <p>This sounds obvious when written out. The problem is most hosts only mentally track three or four of those line items and then wonder where the money went.</p>
+
+        <h2>Real-Numbers Example: A 2-Bedroom Urban Listing</h2>
+
+        <p>Let's run a realistic scenario.</p>
+
+        <p><strong>Property:</strong> 2-bedroom apartment, mid-size U.S. city<br>
+        <strong>Nightly rate:</strong> $150<br>
+        <strong>Occupancy rate:</strong> 65% (roughly 20 nights/month)<br>
+        <strong>Gross monthly revenue:</strong> $3,000</p>
+
+        <div class="overflow-x-auto my-6">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-neutral-800">
+                <th class="text-left py-3 pr-4 font-semibold text-neutral-300">Expense</th>
+                <th class="text-right py-3 pl-4 font-semibold text-neutral-300">Monthly Amount</th>
+              </tr>
+            </thead>
+            <tbody class="text-neutral-400">
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4">Airbnb host fee (15%)</td><td class="text-right py-2.5 pl-4">$450</td></tr>
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4">Cleaning (3 cleanings/week, $80 each)</td><td class="text-right py-2.5 pl-4">$960</td></tr>
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4">Cleaning fee collected from guests</td><td class="text-right py-2.5 pl-4 text-accent-green">&minus;$600</td></tr>
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4 font-medium text-neutral-300">Net cleaning cost</td><td class="text-right py-2.5 pl-4 font-medium text-neutral-300">$360</td></tr>
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4">Utilities (electricity, water, gas, internet)</td><td class="text-right py-2.5 pl-4">$280</td></tr>
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4">Supplies &amp; consumables</td><td class="text-right py-2.5 pl-4">$75</td></tr>
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4">Maintenance reserve (1.5% of $280k / 12)</td><td class="text-right py-2.5 pl-4">$350</td></tr>
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4">Short-term rental insurance</td><td class="text-right py-2.5 pl-4">$130</td></tr>
+              <tr class="border-b border-neutral-800"><td class="py-2.5 pr-4">Income tax provision (~25%)</td><td class="text-right py-2.5 pl-4">~$340</td></tr>
+              <tr class="border-b border-neutral-700"><td class="py-3 pr-4 font-bold text-white">Total Expenses</td><td class="text-right py-3 pl-4 font-bold text-white">$1,985</td></tr>
+              <tr class="border-b border-neutral-700"><td class="py-3 pr-4 font-bold text-accent-green">Net Monthly Profit</td><td class="text-right py-3 pl-4 font-bold text-accent-green">~$1,015</td></tr>
+              <tr><td class="py-3 pr-4 font-bold text-accent-blue">Profit Margin</td><td class="text-right py-3 pl-4 font-bold text-accent-blue">~34%</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>That's a 34% margin — not bad. But notice what happened: $3,000 in revenue became just over $1,000 in actual profit. A host who looked only at their dashboard number and called it "making $3,000 a month" is off by about $2,000.</p>
+
+        <p>Now imagine that same host skips the maintenance reserve, underestimates utilities, and doesn't provision for taxes. They feel like they're clearing $2,000–$2,500/month. Then one month the water heater dies ($1,200), their tax bill comes in higher than expected, and they're suddenly stressed about a business they thought was thriving.</p>
+
+        <p>This is the story of the majority of Airbnb hosts.</p>
+
+        <h2>Is Airbnb Profitable? It Depends on Whether You're Honest About Costs</h2>
+
+        <p>Is Airbnb profitable? Yes — but only for hosts who actually track their numbers.</p>
+
+        <p>The average Airbnb host in the U.S. earns around $14,000 annually in gross revenue. After expenses, what remains depends entirely on how tightly the operation is managed and whether the host is accounting for everything.</p>
+
+        <p>Hosts who operate with full cost visibility tend to make better decisions: they price correctly, they know which months are truly profitable, and they avoid the trap of reinvesting in a listing that isn't performing. Hosts who don't track expenses properly often don't realize there's a problem until it's significant.</p>
+
+        <h2>How to Improve Your Airbnb Profit Margin</h2>
+
+        <p>Once you know your real margin, here are the highest-leverage places to look for improvement.</p>
+
+        <h3>1. Audit Your Cleaning Costs</h3>
+
+        <p>Cleaning is typically one of the largest variable expenses. If you're paying a cleaning service and not charging enough in cleaning fees to offset it, that gap is pure margin erosion. Track the actual cost per clean and compare it to what you collect. Adjust your cleaning fee if there's a shortfall.</p>
+
+        <h3>2. Optimize Your Pricing Dynamically</h3>
+
+        <p>Flat nightly rates leave money on the table. Properties in markets with seasonal demand swings can see revenue triple from off-peak to peak seasons. Dynamic pricing — adjusting rates based on local demand, events, and booking lead time — is one of the few ways to increase revenue without increasing costs.</p>
+
+        <h3>3. Reduce Utility Consumption Between Stays</h3>
+
+        <p>Smart thermostats set to eco mode during turnover periods, LED lighting throughout, and energy-efficient appliances all reduce the utility bill without affecting guest experience. Small changes compound over a full year of bookings.</p>
+
+        <h3>4. Build a Proper Maintenance Reserve (Before You Need It)</h3>
+
+        <p>The hosts who get hurt by maintenance costs are the ones who weren't setting anything aside. If you treat maintenance as a fixed monthly line item rather than a surprise, it stops being a profit-killer and becomes a planned expense.</p>
+
+        <h3>5. Track Every Expense, Every Month</h3>
+
+        <p>This is the foundational one. You cannot optimize what you cannot see. Even a simple spreadsheet where you log every expense by category each month will tell you more about your business than your Airbnb dashboard ever will.</p>
+
+        <p>A tool like <a href="https://tryblackcat.com" class="text-accent-green hover:underline">Black Cat Analytics</a> is built specifically for this — designed to help hosts track real profit (not just revenue), see their actual expense breakdown, and understand where their margin is going.</p>
+
+        <h2>What to Do Right Now</h2>
+
+        <p>Start with a one-month audit. Pull every expense from last month — platform fees, cleaning, utilities, supplies, insurance, maintenance, anything that touched your property. Add them up and subtract from your gross revenue.</p>
+
+        <p>If the number surprises you, that's useful information. If it matches what you expected, even better — now you have a baseline.</p>
+
+        <p>The goal isn't to be discouraged by the real numbers. It's to make decisions based on them. Hosts who know their actual profit margin price their listings differently, manage costs differently, and make better decisions about whether to expand, optimize, or exit.</p>
+
+        <p class="text-lg font-display font-semibold text-neutral-300 mt-8">Revenue is vanity. Profit is reality.</p>
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-16 p-8 rounded-2xl bg-base-900 border border-neutral-800/50 text-center">
+        <p class="font-display font-bold text-lg text-white mb-2">Track your real profit with Black Cat Analytics</p>
+        <p class="text-sm text-neutral-400 mb-5">Stop guessing. Start knowing exactly what your Airbnb properties earn.</p>
+        <a href="https://tryblackcat.com/#waitlist-bottom" class="cta-button inline-block px-8 py-3 rounded-xl font-semibold text-sm text-white">Join the Waitlist</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-neutral-800/50 py-10 px-4">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="text-lg">🐈‍⬛</span>
+        <span class="font-display font-semibold text-sm text-neutral-400">&copy; 2026 Black Cat Analytics</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="../privacy.html" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">Privacy Policy</a>
+        <a href="../terms.html" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">Terms of Service</a>
+        <a href="mailto:support@tryblackcat.com" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">support@tryblackcat.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../app.js"></script>
+</body>
+</html>
