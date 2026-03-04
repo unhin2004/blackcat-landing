@@ -81,45 +81,6 @@
     revealElements.forEach(el => el.classList.add('visible'));
   }, 3000);
 
-  // ---------- Waitlist Form Handling ----------
-  function handleFormSubmit(formId, wrapperId, successId) {
-    const form = document.getElementById(formId);
-    const wrapper = document.getElementById(wrapperId);
-    const success = document.getElementById(successId);
-
-    if (!form || !wrapper || !success) return;
-
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      const email = form.querySelector('input[type="email"]').value;
-      if (!email) return;
-
-      // Hide form, show success
-      wrapper.classList.add('hidden');
-      success.classList.remove('hidden');
-
-      // Also update the other form if it hasn't been submitted
-      const otherFormIds = {
-        'hero-form': { wrapper: 'bottom-form-wrapper', success: 'bottom-form-success' },
-        'bottom-form': { wrapper: 'hero-form-wrapper', success: 'hero-form-success' }
-      };
-
-      const other = otherFormIds[formId];
-      if (other) {
-        const otherWrapper = document.getElementById(other.wrapper);
-        const otherSuccess = document.getElementById(other.success);
-        if (otherWrapper && !otherWrapper.classList.contains('hidden')) {
-          otherWrapper.classList.add('hidden');
-          otherSuccess.classList.remove('hidden');
-        }
-      }
-    });
-  }
-
-  handleFormSubmit('hero-form', 'hero-form-wrapper', 'hero-form-success');
-  handleFormSubmit('bottom-form', 'bottom-form-wrapper', 'bottom-form-success');
-
   // ---------- FAQ Accordion ----------
   const faqItems = document.querySelectorAll('.faq-item');
 
