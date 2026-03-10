@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airbnb vs VRBO: Which Is More Profitable for Hosts? — Black Cat Analytics</title>
+  <meta name="description" content="Airbnb vs VRBO — which platform actually makes hosts more money? A side-by-side breakdown of fees, guest quality, occupancy rates, and net profit.">
+  <meta name="keywords" content="airbnb vs vrbo, airbnb vs vrbo for hosts, which is more profitable airbnb or vrbo, vrbo host fees, airbnb host fees comparison">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            base: { 950: '#0a0a0a', 900: '#171717', 800: '#1e1e1e', 700: '#262626', 600: '#333333' },
+            accent: { green: '#22c55e', blue: '#3b82f6', purple: '#a855f7', red: '#ef4444', cyan: '#06b6d4' }
+          },
+          fontFamily: {
+            display: ['Outfit', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="bg-base-950 text-white font-body antialiased">
+
+  <div class="noise-overlay"></div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <a href="../" class="flex items-center gap-2 group">
+          <span class="text-2xl">🐈‍⬛</span>
+          <span class="font-display font-bold text-lg tracking-tight text-white">Black Cat <span class="text-accent-green">Analytics</span></span>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="../#features" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Features</a>
+          <a href="../#pricing" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Pricing</a>
+          <a href="./" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Blog</a>
+          <a href="../#waitlist-bottom" class="cta-button-sm text-sm font-semibold px-5 py-2.5 rounded-full text-white">Join the Waitlist</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2 z-50" aria-label="Menu">
+          <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+          <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+          <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="mobile-menu md:hidden">
+      <div class="px-6 pt-20 pb-8 flex flex-col gap-6">
+        <a href="../#features" class="mobile-nav-link text-xl font-display font-semibold text-white">Features</a>
+        <a href="../#pricing" class="mobile-nav-link text-xl font-display font-semibold text-white">Pricing</a>
+        <a href="./" class="mobile-nav-link text-xl font-display font-semibold text-white">Blog</a>
+        <a href="../#waitlist-bottom" class="cta-button-sm text-center text-base font-semibold px-6 py-3 rounded-full text-white mt-4">Join the Waitlist</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ARTICLE -->
+  <main class="relative pt-32 sm:pt-40 pb-24 px-4">
+    <article class="max-w-3xl mx-auto">
+      <!-- Header -->
+      <div class="mb-12">
+        <a href="./" class="inline-flex items-center gap-1.5 text-xs text-neutral-500 hover:text-neutral-300 transition-colors mb-6">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          Back to Blog
+        </a>
+        <div class="flex items-center gap-3 mb-5">
+          <span class="px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-accent-blue/10 text-accent-blue border border-accent-blue/20">Strategy</span>
+          <span class="text-xs text-neutral-500">12 min read</span>
+        </div>
+        <h1 class="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight leading-tight mb-4">
+          Airbnb vs VRBO: <span class="text-neutral-500">Which Is More Profitable for Hosts?</span>
+        </h1>
+        <p class="text-base sm:text-lg text-neutral-400 leading-relaxed">
+          The platform you list on affects more than just your booking volume. Here's a real breakdown of fees, guest behavior, and net profit — so you can decide where your property actually belongs.
+        </p>
+      </div>
+
+      <!-- Content -->
+      <div class="blog-content">
+        <p>Every host eventually asks the same question: should I be on Airbnb, VRBO, or both? The answer sounds obvious — list everywhere, maximize exposure — but the reality is more nuanced than that. Platform fees are different. Guest expectations are different. The types of properties that perform well are different.</p>
+
+        <p>And when you're actually trying to maximize <em>profit</em> — not just bookings — those differences matter a lot.</p>
+
+        <p>This post breaks down Airbnb vs VRBO across every dimension that affects your bottom line: fee structures, guest demographics, property fit, occupancy patterns, and total net profit. By the end, you'll know which platform is likely better for your specific property, and whether dual-listing is worth the operational overhead.</p>
+
+        <h2>The Fee Structures Are Fundamentally Different</h2>
+
+        <p>This is where most hosts start the comparison, and for good reason — platform fees directly reduce your take-home pay on every booking.</p>
+
+        <h3>Airbnb's Fee Model</h3>
+
+        <p>Airbnb offers two fee structures:</p>
+
+        <p><strong>Host-only fee (most common):</strong> Hosts pay 14–16% of the booking subtotal. Guests see no additional service fee, which makes listings look cheaper and can improve conversion. However, you absorb the full cost on your side.</p>
+
+        <p><strong>Split fee:</strong> Hosts pay around 3% and guests pay 14–16%. Your cut is better, but guests see a higher total price — which can reduce booking rates, especially for price-sensitive travelers.</p>
+
+        <p>Most professional hosts use the host-only model because cleaner pricing improves conversion enough to offset the higher fee.</p>
+
+        <h3>VRBO's Fee Model</h3>
+
+        <p>VRBO uses a straightforward <strong>host service fee of 8%</strong> on every booking. Guests also pay a separate traveler service fee (typically 6–12% of the booking total), which means VRBO guests are accustomed to seeing higher checkout prices.</p>
+
+        <p>At first glance, 8% looks significantly cheaper than Airbnb's 14–16%. But the comparison isn't that clean.</p>
+
+        <div class="bg-base-900 border border-neutral-800/50 rounded-xl p-5 my-6">
+          <p class="text-sm font-semibold text-neutral-300 mb-3">Fee comparison on a $2,000 booking:</p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b border-neutral-800">
+                  <th class="text-left py-2 pr-4 font-semibold text-neutral-400">Platform</th>
+                  <th class="text-right py-2 px-4 font-semibold text-neutral-400">Host Fee</th>
+                  <th class="text-right py-2 px-4 font-semibold text-neutral-400">Host Keeps</th>
+                  <th class="text-right py-2 pl-4 font-semibold text-neutral-400">Guest Pays Total</th>
+                </tr>
+              </thead>
+              <tbody class="text-neutral-400">
+                <tr class="border-b border-neutral-800/50">
+                  <td class="py-2.5 pr-4">Airbnb (host-only)</td>
+                  <td class="text-right py-2.5 px-4">15% = $300</td>
+                  <td class="text-right py-2.5 px-4 text-accent-green">$1,700</td>
+                  <td class="text-right py-2.5 pl-4">$2,000</td>
+                </tr>
+                <tr class="border-b border-neutral-800/50">
+                  <td class="py-2.5 pr-4">Airbnb (split fee)</td>
+                  <td class="text-right py-2.5 px-4">3% = $60</td>
+                  <td class="text-right py-2.5 px-4 text-accent-green">$1,940</td>
+                  <td class="text-right py-2.5 pl-4">~$2,280</td>
+                </tr>
+                <tr>
+                  <td class="py-2.5 pr-4">VRBO</td>
+                  <td class="text-right py-2.5 px-4">8% = $160</td>
+                  <td class="text-right py-2.5 px-4 text-accent-green">$1,840</td>
+                  <td class="text-right py-2.5 pl-4">~$2,360</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-xs text-neutral-500 mt-3">* Guest totals are estimates; actual traveler service fees vary by booking.</p>
+        </div>
+
+        <p>VRBO does put more money in your pocket per booking — but guests also pay a higher total price. If your VRBO listing gets fewer bookings because guests perceive it as more expensive, the per-booking advantage evaporates quickly.</p>
+
+        <h2>Guest Demographics: Who's Actually Booking?</h2>
+
+        <p>This is the more important differentiator for most hosts, and it's the one people talk about least.</p>
+
+        <h3>Airbnb Guests</h3>
+
+        <p>Airbnb has a much broader, more diverse guest base. You'll get solo travelers, couples, business travelers, young groups, and budget-conscious guests alongside families. Airbnb guests skew younger and are more accustomed to urban apartments, shared spaces, and unique/unconventional listings.</p>
+
+        <p>The downside: more diversity in guest behavior. A significant portion of negative host experiences — parties, property damage, difficult guests — are reported more frequently on Airbnb, partly because of its larger volume and partly because of its younger demographic mix.</p>
+
+        <h3>VRBO Guests</h3>
+
+        <p>VRBO's guest base is distinctly different: overwhelmingly families and groups booking entire homes for vacation stays of 4–7+ nights. VRBO does not allow shared spaces or private rooms — only entire properties. The platform's positioning as a "vacation rental" destination attracts guests who are typically older, traveling with children, and looking for a home-like experience rather than a crash pad.</p>
+
+        <p>Hosts consistently report that VRBO guests treat properties more carefully, are less likely to throw parties, and generate fewer post-stay complaints. Longer stays also mean fewer turnovers per month — which reduces cleaning costs and wear-and-tear.</p>
+
+        <h2>Which Property Types Perform Better on Each Platform?</h2>
+
+        <p>The guest demographic difference translates directly into property fit.</p>
+
+        <h3>Better on Airbnb:</h3>
+        <ul>
+          <li>Urban apartments and condos in city centers</li>
+          <li>Studio or 1-bedroom units</li>
+          <li>Unique or "Instagrammable" properties (tiny homes, treehouses, converted spaces)</li>
+          <li>Rooms within a shared home (Airbnb allows this; VRBO does not)</li>
+          <li>Properties near major airports or business districts</li>
+          <li>Listings targeting short 1–3 night stays</li>
+        </ul>
+
+        <h3>Better on VRBO:</h3>
+        <ul>
+          <li>Entire vacation homes in beach, mountain, or lake destinations</li>
+          <li>3+ bedroom properties with space for families or groups</li>
+          <li>Suburban or rural properties</li>
+          <li>Listings with a pool, hot tub, or outdoor entertaining space</li>
+          <li>Properties near national parks, ski resorts, or beach towns</li>
+          <li>Listings targeting longer stays of 4–7+ nights</li>
+        </ul>
+
+        <p>If you have a 1-bedroom apartment in downtown Chicago, VRBO will likely underperform because your property doesn't match what VRBO guests are looking for. If you have a 4-bedroom lake house in the Ozarks, Airbnb might get you bookings but VRBO will likely get you <em>better</em> bookings — longer stays, more careful guests, and less turnover.</p>
+
+        <h2>Occupancy Rates: The Number That Changes Everything</h2>
+
+        <p>A lower fee means nothing if your occupancy drops. This is the key variable that hosts need to track for their specific market.</p>
+
+        <p>Across the industry, Airbnb generally achieves higher occupancy rates in urban and suburban markets due to its larger user base and broader audience. VRBO tends to achieve comparable or higher occupancy in pure vacation markets — beach towns, mountain destinations, lake communities — where its audience actively searches.</p>
+
+        <p>For a concrete illustration: a host with a beach house in Destin, Florida might see nearly identical occupancy on both platforms during peak summer season, but noticeably better VRBO occupancy in shoulder season because VRBO's family-focused guests plan longer vacations. An urban condo host in Nashville, on the other hand, might see 60–70% occupancy on Airbnb and only 40% on VRBO — simply because VRBO guests aren't looking for a 1-night stay in a city apartment.</p>
+
+        <p>The practical implication: <strong>don't assume VRBO's lower fees mean higher profit if your occupancy falls</strong>. The math often works out in Airbnb's favor for urban properties, and in VRBO's favor for vacation properties.</p>
+
+        <h2>A Real-Numbers Comparison</h2>
+
+        <p>Let's run two scenarios — one urban, one vacation — to see how the platforms compare on actual net profit.</p>
+
+        <h3>Scenario A: 2-Bedroom Urban Condo (Nashville, TN)</h3>
+        <p><strong>Nightly rate:</strong> $175 &nbsp;|&nbsp; <strong>Property value:</strong> $320,000</p>
+
+        <div class="overflow-x-auto my-6">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-neutral-800">
+                <th class="text-left py-3 pr-4 font-semibold text-neutral-300">Metric</th>
+                <th class="text-right py-3 px-4 font-semibold text-accent-green">Airbnb</th>
+                <th class="text-right py-3 pl-4 font-semibold text-accent-blue">VRBO</th>
+              </tr>
+            </thead>
+            <tbody class="text-neutral-400">
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4">Monthly occupancy</td><td class="text-right py-2.5 px-4">68% (21 nights)</td><td class="text-right py-2.5 pl-4">44% (14 nights)</td></tr>
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4">Gross revenue</td><td class="text-right py-2.5 px-4">$3,675</td><td class="text-right py-2.5 pl-4">$2,450</td></tr>
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4">Platform fee</td><td class="text-right py-2.5 px-4 text-accent-red">−$551 (15%)</td><td class="text-right py-2.5 pl-4 text-accent-red">−$196 (8%)</td></tr>
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4">Net after platform fee</td><td class="text-right py-2.5 px-4">$3,124</td><td class="text-right py-2.5 pl-4">$2,254</td></tr>
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4">Cleaning (per turnover)</td><td class="text-right py-2.5 px-4 text-accent-red">−$420 (21 × $20 net)</td><td class="text-right py-2.5 pl-4 text-accent-red">−$280 (14 × $20 net)</td></tr>
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4">Other expenses (utilities, supplies, maintenance, insurance)</td><td class="text-right py-2.5 px-4 text-accent-red">−$835</td><td class="text-right py-2.5 pl-4 text-accent-red">−$835</td></tr>
+              <tr class="border-b border-neutral-700"><td class="py-3 pr-4 font-bold text-white">Estimated Net Profit</td><td class="text-right py-3 px-4 font-bold text-accent-green">$1,869</td><td class="text-right py-3 pl-4 font-bold text-accent-blue">$1,139</td></tr>
+              <tr><td class="py-3 pr-4 font-semibold text-neutral-300">Profit Margin</td><td class="text-right py-3 px-4 font-semibold text-accent-green">51%</td><td class="text-right py-3 pl-4 font-semibold text-accent-blue">46%</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>In this urban scenario, Airbnb wins — not because of fees (VRBO's are lower), but because occupancy drives revenue far more than platform fee percentages do.</p>
+
+        <h3>Scenario B: 4-Bedroom Beach House (30A, FL)</h3>
+        <p><strong>Nightly rate:</strong> $450 &nbsp;|&nbsp; <strong>Property value:</strong> $750,000</p>
+
+        <div class="overflow-x-auto my-6">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-neutral-800">
+                <th class="text-left py-3 pr-4 font-semibold text-neutral-300">Metric</th>
+                <th class="text-right py-3 px-4 font-semibold text-accent-green">Airbnb</th>
+                <th class="text-right py-3 pl-4 font-semibold text-accent-blue">VRBO</th>
+              </tr>
+            </thead>
+            <tbody class="text-neutral-400">
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4">Monthly occupancy (peak)</td><td class="text-right py-2.5 px-4">72% (22 nights)</td><td class="text-right py-2.5 pl-4">78% (24 nights)</td></tr>
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4">Gross revenue</td><td class="text-right py-2.5 px-4">$9,900</td><td class="text-right py-2.5 pl-4">$10,800</td></tr>
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4">Platform fee</td><td class="text-right py-2.5 px-4 text-accent-red">−$1,485 (15%)</td><td class="text-right py-2.5 pl-4 text-accent-red">−$864 (8%)</td></tr>
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4">Net after platform fee</td><td class="text-right py-2.5 px-4">$8,415</td><td class="text-right py-2.5 pl-4">$9,936</td></tr>
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4">Cleaning (fewer turnovers, longer stays)</td><td class="text-right py-2.5 px-4 text-accent-red">−$660 (11 turns × $60 net)</td><td class="text-right py-2.5 pl-4 text-accent-red">−$480 (8 turns × $60 net)</td></tr>
+              <tr class="border-b border-neutral-800/50"><td class="py-2.5 pr-4">Other expenses</td><td class="text-right py-2.5 px-4 text-accent-red">−$1,900</td><td class="text-right py-2.5 pl-4 text-accent-red">−$1,900</td></tr>
+              <tr class="border-b border-neutral-700"><td class="py-3 pr-4 font-bold text-white">Estimated Net Profit</td><td class="text-right py-3 px-4 font-bold text-accent-green">$5,855</td><td class="text-right py-3 pl-4 font-bold text-accent-blue">$7,556</td></tr>
+              <tr><td class="py-3 pr-4 font-semibold text-neutral-300">Profit Margin</td><td class="text-right py-3 px-4 font-semibold text-accent-green">59%</td><td class="text-right py-3 pl-4 font-semibold text-accent-blue">70%</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>For the beach house, VRBO wins decisively — higher occupancy, lower fees, and fewer cleanings due to longer stays. The combination of all three advantages adds up to nearly $1,700 more per month in net profit during peak season.</p>
+
+        <h2>Should You List on Both Platforms?</h2>
+
+        <p>The obvious answer is yes — more exposure means more bookings. But dual-listing has real costs that hosts often underestimate.</p>
+
+        <p><strong>The case for dual-listing:</strong> You fill gaps in your calendar that one platform alone wouldn't fill. If your property does well on Airbnb but has open weeks in shoulder season, VRBO might capture family bookings looking for longer stays during those gaps. During peak seasons, you can let one platform's calendar block the other automatically via iCal sync.</p>
+
+        <p><strong>The case against (or for caution):</strong> Managing two platforms means double the messaging, double the calendar management, double the review management, and increased risk of double-bookings if your sync isn't reliable. For hosts managing multiple properties, this overhead compounds quickly.</p>
+
+        <p>The practical playbook for most hosts: <strong>start with the platform that fits your property type best, get your operations dialed in, then add the second platform once your systems are solid.</strong> Going multi-platform before your operations are tight is a recipe for mistakes — and a bad review on either platform can cost you far more than the extra bookings were worth.</p>
+
+        <h2>The Variable Nobody Talks About: Guest Quality vs. Cost</h2>
+
+        <p>There's one more factor that doesn't show up cleanly in fee comparisons: the cost of problem guests.</p>
+
+        <p>A single party incident — broken furniture, deep cleaning, neighbor complaints — can cost $500–$2,000+ and generate a wave of stress that doesn't show up in your P&L until you're staring at the damage deposit dispute. If VRBO's family-oriented guest base genuinely reduces the frequency of these incidents (and host reports suggest it does, for whole-home vacation properties), that's a real economic advantage that's hard to quantify but very real when it happens.</p>
+
+        <p>This is another reason why vacation properties and family-oriented homes often show better actual profitability on VRBO than raw fee comparisons would suggest.</p>
+
+        <h2>The Bottom Line</h2>
+
+        <p>There's no universal winner. The right platform depends entirely on your property type and market.</p>
+
+        <div class="bg-base-900 border border-neutral-800/50 rounded-xl p-6 my-6">
+          <p class="font-semibold text-white mb-4">Quick decision guide:</p>
+          <div class="space-y-3 text-sm">
+            <div class="flex gap-3"><span class="text-accent-green font-bold shrink-0">→</span><span><strong class="text-neutral-300">Urban apartment, studio, or 1–2BR in a city?</strong> Start with Airbnb. Better occupancy and broader audience will likely outweigh the higher fee.</span></div>
+            <div class="flex gap-3"><span class="text-accent-blue font-bold shrink-0">→</span><span><strong class="text-neutral-300">Entire vacation home, 3+ bedrooms, beach/mountain/lake?</strong> VRBO first. Lower fees, longer stays, and better guest fit usually win.</span></div>
+            <div class="flex gap-3"><span class="text-accent-purple font-bold shrink-0">→</span><span><strong class="text-neutral-300">Mid-size suburban home?</strong> Test both for 60–90 days each and let your own occupancy data decide.</span></div>
+            <div class="flex gap-3"><span class="text-neutral-400 font-bold shrink-0">→</span><span><strong class="text-neutral-300">Already established on one platform?</strong> Add the second only after your operations (calendar sync, cleaner scheduling, messaging) are running smoothly.</span></div>
+          </div>
+        </div>
+
+        <p>The most important thing you can do is track your actual net profit — not just revenue — on each platform separately. Most hosts who dual-list have no idea which platform is actually more profitable for them because they're looking at gross bookings rather than per-platform margin.</p>
+
+        <p>A tool like <a href="https://tryblackcat.com" class="text-accent-green hover:underline">Black Cat Analytics</a> lets you break down revenue, expenses, and net profit by property — so if you're listing on multiple platforms, you can connect your iCal feeds and see exactly which platform is driving real profit, not just bookings.</p>
+
+        <p class="text-lg font-display font-semibold text-neutral-300 mt-8">More bookings isn't the goal. More profit is.</p>
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-16 p-8 rounded-2xl bg-base-900 border border-neutral-800/50 text-center">
+        <p class="font-display font-bold text-lg text-white mb-2">See your real profit across every platform</p>
+        <p class="text-sm text-neutral-400 mb-5">Black Cat Analytics tracks every dollar in and out — so you know which platform actually makes you money.</p>
+        <a href="https://tryblackcat.com/#waitlist-bottom" class="cta-button inline-block px-8 py-3 rounded-xl font-semibold text-sm text-white">Join the Waitlist</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-neutral-800/50 py-10 px-4">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="text-lg">🐈‍⬛</span>
+        <span class="font-display font-semibold text-sm text-neutral-400">&copy; 2026 Black Cat Analytics</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="../privacy.html" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">Privacy Policy</a>
+        <a href="../terms.html" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">Terms of Service</a>
+        <a href="mailto:support@tryblackcat.com" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">support@tryblackcat.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../app.js"></script>
+</body>
+</html>
