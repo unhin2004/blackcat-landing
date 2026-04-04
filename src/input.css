@@ -1,0 +1,18 @@
+/* Tailwind source file — compiled via `npm run build:css` */
+@import "tailwindcss";
+
+/* Custom theme matching the previous CDN config */
+@theme {
+  --color-base-950: #0a0a0a;
+  --color-base-900: #171717;
+  --color-base-800: #1e1e1e;
+  --color-base-700: #262626;
+  --color-base-600: #333333;
+  --color-accent-green: #22c55e;
+  --color-accent-blue: #3b82f6;
+  --color-accent-purple: #a855f7;
+  --color-accent-red: #ef4444;
+  --color-accent-cyan: #06b6d4;
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
