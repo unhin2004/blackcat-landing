@@ -418,6 +418,41 @@ body {
   padding: 32px 24px;
 }
 
+/* ---------- Testimonial Cards ---------- */
+.testimonial-card {
+  position: relative;
+  border-radius: 16px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.01) 100%);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.12) 0%, rgba(59, 130, 246, 0.08) 100%);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.testimonial-card-inner {
+  background: rgba(14, 14, 14, 0.95);
+  border-radius: 15px;
+  padding: 28px 24px;
+  height: 100%;
+}
+
+/* ---------- Demo Video ---------- */
+.demo-video-wrapper {
+  background:
+    radial-gradient(ellipse 60% 60% at 50% 50%, rgba(34, 197, 94, 0.06) 0%, transparent 70%),
+    rgba(23, 23, 23, 0.8);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.demo-video-wrapper:hover {
+  border-color: rgba(34, 197, 94, 0.3) !important;
+  box-shadow: 0 12px 48px rgba(34, 197, 94, 0.1);
+}
+
 /* ---------- FAQ ---------- */
 .faq-item {
   border-radius: 12px;
