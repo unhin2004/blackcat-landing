@@ -48,15 +48,16 @@ function stylePercent(cell) {
 }
 
 function addBranding(ws, wb, title, subtitle) {
-  ws.getRow(1).height = 40;
+  ws.getRow(1).height = 48;
+  ws.getColumn(1).width = 6;
   // Add logo image
   const logoId = wb.addImage({
-    filename: path.join(__dirname, '..', 'logo-icon.png'),
+    filename: path.join(__dirname, '..', 'logo-icon-black.png'),
     extension: 'png',
   });
   ws.addImage(logoId, {
     tl: { col: 0, row: 0 },
-    ext: { width: 32, height: 32 },
+    ext: { width: 44, height: 44 },
     editAs: 'oneCell',
   });
 
