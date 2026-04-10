@@ -84,6 +84,30 @@
           "@type": "Answer",
           "text": "Yes! Free and Starter plans support 1 property, Pro supports up to 5, and Business gives you unlimited. Each property gets its own dashboard and reports."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "What CSV format do I need?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We accept the standard Airbnb earnings CSV export — the same file you download from your Airbnb transaction history. Just upload it directly with no reformatting needed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does setup take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Under 5 minutes. Sign up, add your property, upload your Airbnb CSV, and you'll see your full dashboard immediately."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I import from VRBO or Booking.com?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! We support iCal sync for bookings from Airbnb, VRBO, and Booking.com. Hostaway PMS integration brings in everything automatically."
+        }
       }
     ]
   }
@@ -118,7 +142,7 @@
       <div class="flex items-center justify-between h-16 lg:h-20">
         <!-- Logo -->
         <a href="#" class="flex items-center gap-2 group">
-          <img src="./logo-icon.png" alt="Black Cat" class="w-7 h-7 object-contain">
+          <img src="./logo-icon.png" alt="Black Cat" class="w-7 h-7 object-contain" width="28" height="28" fetchpriority="high">
           <span class="font-display font-bold text-lg tracking-tight text-white">Black Cat <span class="text-accent-green">Analytics</span></span>
         </a>
 
@@ -668,6 +692,36 @@
             <p class="text-sm text-neutral-400 leading-relaxed pb-4 pt-1 px-5">Every plan starts with a 14-day free trial so you can try before you commit. You can cancel anytime with no questions asked.</p>
           </div>
         </div>
+
+        <div class="reveal reveal-delay-1 faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="font-display font-semibold text-sm text-white">What CSV format do I need?</span>
+            <svg class="faq-chevron w-5 h-5 text-neutral-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p class="text-sm text-neutral-400 leading-relaxed pb-4 pt-1 px-5">We accept the standard Airbnb earnings CSV export — the same file you download from your Airbnb transaction history. Just upload it directly, no reformatting needed. We also support custom expense CSVs.</p>
+          </div>
+        </div>
+
+        <div class="reveal faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="font-display font-semibold text-sm text-white">How long does setup take?</span>
+            <svg class="faq-chevron w-5 h-5 text-neutral-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p class="text-sm text-neutral-400 leading-relaxed pb-4 pt-1 px-5">Under 5 minutes. Sign up, add your property, and upload your Airbnb CSV. You'll see your full dashboard with revenue, expense breakdowns, and net profit immediately. No technical setup required.</p>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-1 faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="font-display font-semibold text-sm text-white">Can I import from VRBO or Booking.com?</span>
+            <svg class="faq-chevron w-5 h-5 text-neutral-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p class="text-sm text-neutral-400 leading-relaxed pb-4 pt-1 px-5">Yes! We support iCal sync for bookings from Airbnb, VRBO, and Booking.com. For revenue data, you can import Airbnb CSVs directly and add bookings from other platforms via iCal or manual entry. Hostaway PMS integration brings in everything automatically.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -814,7 +868,7 @@
   <footer class="border-t border-neutral-800/50 py-10 px-4">
     <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-2">
-        <img src="./logo-icon.png" alt="Black Cat" class="w-5 h-5 object-contain">
+        <img src="./logo-icon.png" alt="Black Cat" class="w-5 h-5 object-contain" width="20" height="20" loading="lazy">
         <span class="font-display font-semibold text-sm text-neutral-400">© 2026 Black Cat Analytics</span>
       </div>
       <div class="flex items-center gap-6">

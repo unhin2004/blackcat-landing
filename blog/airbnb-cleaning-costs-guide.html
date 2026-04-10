@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Track Airbnb Cleaning Costs (And Stop Overpaying) — Black Cat Analytics</title>
+  <meta name="description" content="Cleaning is the #1 variable expense for Airbnb hosts. Learn how to track cleaning costs per turnover, spot overcharges, compare to market rates, and reduce your biggest recurring expense.">
+  <meta name="keywords" content="airbnb cleaning costs, cleaning fee per turnover, airbnb cleaning expenses, short term rental cleaning, airbnb cleaning management">
+  <link rel="canonical" href="https://www.tryblackcat.com/blog/airbnb-cleaning-costs-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.tryblackcat.com/blog/airbnb-cleaning-costs-guide.html">
+  <meta property="og:title" content="How to Track Airbnb Cleaning Costs (And Stop Overpaying)">
+  <meta property="og:description" content="Cleaning is the #1 variable expense for Airbnb hosts. Learn to track per-turnover costs, spot overcharges, and cut your biggest recurring expense.">
+  <meta property="og:image" content="https://www.tryblackcat.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@tryblackcat">
+  <meta name="twitter:title" content="How to Track Airbnb Cleaning Costs (And Stop Overpaying)">
+  <meta name="twitter:description" content="Cleaning is the #1 variable expense for Airbnb hosts. Learn to track per-turnover costs and cut your biggest recurring expense.">
+  <meta name="twitter:image" content="https://www.tryblackcat.com/og-image.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Track Airbnb Cleaning Costs (And Stop Overpaying)",
+    "description": "Cleaning is the #1 variable expense for Airbnb hosts. Learn how to track cleaning costs per turnover, spot overcharges, and reduce your biggest recurring expense.",
+    "url": "https://www.tryblackcat.com/blog/airbnb-cleaning-costs-guide.html",
+    "publisher": { "@type": "Organization", "name": "Black Cat Analytics", "url": "https://www.tryblackcat.com" },
+    "datePublished": "2026-04-10"
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="../dist/output.css">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="bg-base-950 text-white font-body antialiased">
+
+  <div class="noise-overlay"></div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <a href="../" class="flex items-center gap-2 group">
+          <img src="../logo-icon.png" alt="Black Cat" class="w-7 h-7 object-contain">
+          <span class="font-display font-bold text-lg tracking-tight text-white">Black Cat <span class="text-accent-green">Analytics</span></span>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="../#features" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Features</a>
+          <a href="../#pricing" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Pricing</a>
+          <a href="./" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Blog</a>
+          <a href="https://app.tryblackcat.com/signup" class="cta-button-sm text-sm font-semibold px-5 py-2.5 rounded-full text-white">Get Started Free</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2 z-50" aria-label="Menu">
+          <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+          <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+          <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="mobile-menu md:hidden">
+      <div class="px-6 pt-20 pb-8 flex flex-col gap-6">
+        <a href="../#features" class="mobile-nav-link text-xl font-display font-semibold text-white">Features</a>
+        <a href="../#pricing" class="mobile-nav-link text-xl font-display font-semibold text-white">Pricing</a>
+        <a href="./" class="mobile-nav-link text-xl font-display font-semibold text-white">Blog</a>
+        <a href="https://app.tryblackcat.com/signup" class="cta-button-sm text-center text-base font-semibold px-6 py-3 rounded-full text-white mt-4">Get Started Free</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ARTICLE -->
+  <main class="relative pt-32 sm:pt-40 pb-24 px-4">
+    <article class="max-w-3xl mx-auto">
+      <!-- Header -->
+      <div class="mb-12">
+        <a href="./" class="inline-flex items-center gap-1.5 text-xs text-neutral-500 hover:text-neutral-300 transition-colors mb-6">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          Back to Blog
+        </a>
+        <div class="flex items-center gap-3 mb-5">
+          <span class="px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-accent-red/10 text-accent-red border border-accent-red/20">Operations</span>
+          <span class="text-xs text-neutral-500">9 min read</span>
+        </div>
+        <h1 class="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight leading-tight mb-4">
+          How to Track Airbnb Cleaning Costs (And Stop Overpaying)
+        </h1>
+        <p class="text-base sm:text-lg text-neutral-400 leading-relaxed">
+          Cleaning is your biggest variable expense. Here's how to get it under control.
+        </p>
+      </div>
+
+      <!-- Content -->
+      <div class="blog-content">
+        <p>Ask an Airbnb host what their biggest expense is and they'll almost always say "mortgage" or "property management." But for most self-managed hosts, <strong>cleaning is the #1 variable cost</strong> — and unlike a mortgage, it's the one you have the most control over.</p>
+
+        <p>The problem: most hosts don't track cleaning costs with any precision. They Venmo their cleaner, maybe glance at the total occasionally, and move on. Meanwhile, cleaning quietly eats 10–20% of their gross revenue — sometimes more.</p>
+
+        <h2>The Real Cost of Cleaning</h2>
+
+        <p>Let's put real numbers on it. A typical Airbnb host with a 2-bedroom property in a mid-tier market might see:</p>
+
+        <ul>
+          <li><strong>Professional clean per turnover:</strong> $120</li>
+          <li><strong>Turnovers per month:</strong> 8–10 (at ~80% occupancy with average 2.5-night stays)</li>
+          <li><strong>Monthly cleaning cost:</strong> $960–$1,200</li>
+          <li><strong>Annual cleaning cost:</strong> $11,500–$14,400</li>
+        </ul>
+
+        <p>If your property grosses $40,000/year, you're spending 29–36% of revenue just on cleaning. Even at $80,000/year in revenue, cleaning is still 14–18%. That's before laundry, supplies, and deep cleans.</p>
+
+        <p>The hosts who optimize this expense save $2,000–$5,000/year. The ones who don't track it at all don't even know they're overpaying.</p>
+
+        <h2>What Most Hosts Get Wrong</h2>
+
+        <h3>1. Not tracking per-turnover costs</h3>
+        <p>You should know your exact cost per turnover, broken down into the cleaning fee, laundry, and supplies. "I pay my cleaner $120" isn't enough — what about the $25 in laundry service and $8 in supplies per turnover? Your true cost is $153, not $120.</p>
+
+        <h3>2. Not comparing to the cleaning fee you charge guests</h3>
+        <p>If you charge guests a $100 cleaning fee and your actual cleaning cost is $153, you're subsidizing every single booking by $53. Over 100 turnovers, that's $5,300 coming out of your profit that you might not even notice.</p>
+
+        <h3>3. Not benchmarking against market rates</h3>
+        <p>Cleaning rates vary dramatically by market. A 2-bedroom in Nashville might cost $100 to clean, while the same size in San Francisco runs $180. If you're paying $160 in a $100 market, you need to know that.</p>
+
+        <h3>4. Not tracking cleaning quality alongside cost</h3>
+        <p>The cheapest cleaner isn't always the best deal. A cleaner who costs $20 less per turnover but generates bad reviews or guest complaints will cost you far more in lost bookings and lower search ranking.</p>
+
+        <h2>How to Set Up Cleaning Cost Tracking</h2>
+
+        <h3>Step 1: Record every payment</h3>
+        <p>Every time you pay a cleaner, record the date, property, cleaner name, and amount. If you pay via Venmo or Zelle, screenshot or export the transaction. If cash, write it down immediately.</p>
+
+        <h3>Step 2: Calculate your all-in turnover cost</h3>
+        <p>Your true per-turnover cleaning cost includes:</p>
+        <ul>
+          <li>Cleaner payment</li>
+          <li>Laundry (if outsourced) or water/energy/detergent (if in-unit)</li>
+          <li>Cleaning supplies consumed per turn</li>
+          <li>Linen replacement cost amortized per turn</li>
+        </ul>
+
+        <p>For example:</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Cost per Turnover</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Cleaner payment</td><td>$120</td></tr>
+            <tr><td>Laundry service</td><td>$25</td></tr>
+            <tr><td>Cleaning supplies</td><td>$8</td></tr>
+            <tr><td>Linen replacement (amortized)</td><td>$4</td></tr>
+            <tr><td><strong>Total per turnover</strong></td><td><strong>$157</strong></td></tr>
+          </tbody>
+        </table>
+
+        <h3>Step 3: Track the cleaning-to-revenue ratio</h3>
+        <p>Divide total cleaning costs by gross revenue each month. This single metric tells you whether cleaning is in control or creeping up. A healthy range for most markets is 10–18% of gross revenue.</p>
+
+        <div class="bg-accent-green/5 border border-accent-green/20 rounded-xl p-5 my-8">
+          <p class="text-sm text-neutral-300 leading-relaxed"><strong class="text-accent-green">Quick check:</strong> If your cleaning-to-revenue ratio is above 20%, something needs attention. Either your cleaning costs are high for the market, your nightly rate is too low, or your average stay length is too short (more turnovers = more cleaning).</p>
+        </div>
+
+        <h3>Step 4: Compare across cleaners and time</h3>
+        <p>If you use multiple cleaners, track which cleaner cleans which property and compare their rates and your guest ratings after their cleans. If you use one cleaner, compare month-over-month to catch rate creep.</p>
+
+        <h2>5 Ways to Reduce Cleaning Costs</h2>
+
+        <h3>1. Increase minimum stay length</h3>
+        <p>The single most effective lever. Going from a 1-night minimum to a 2-night minimum cuts your turnovers (and cleaning costs) roughly in half while typically only reducing revenue by 10–15%. A 3-night minimum is even more impactful for properties in vacation markets.</p>
+
+        <h3>2. Negotiate volume pricing</h3>
+        <p>If you provide a cleaner with 8–12 turnovers per month reliably, you have leverage. Many cleaners will discount $10–$20 per clean for guaranteed volume. That's $100–$240/month in savings.</p>
+
+        <h3>3. Provide supplies and equipment</h3>
+        <p>Stock the property with your own vacuum, mop, and cleaning products bought in bulk. Cleaners who bring their own supplies charge more. Your bulk-purchased supplies cost a fraction of the markup.</p>
+
+        <h3>4. Optimize your cleaning checklist</h3>
+        <p>A clear, property-specific cleaning checklist reduces the time each clean takes (which reduces cost) and ensures consistency. Replace "clean the kitchen" with specific tasks: "wipe counters, clean stovetop, empty dishwasher, check fridge for left items, restock dish soap."</p>
+
+        <h3>5. Consider hybrid DIY for same-day turnovers</h3>
+        <p>Some hosts handle quick same-day turnovers themselves (laundry swap, surface clean, restock) and use professional cleaners only for full cleans between longer stays. This can cut cleaning costs by 30–40% — if you live close enough and have the time.</p>
+
+        <h2>What to Track in Your Tool</h2>
+
+        <p>Whether you use a spreadsheet or a dedicated tool, here are the data points to capture for every cleaning:</p>
+
+        <ul>
+          <li>Date</li>
+          <li>Property</li>
+          <li>Cleaner name</li>
+          <li>Amount paid</li>
+          <li>Payment method</li>
+          <li>Type (standard turnover, deep clean, checkout only)</li>
+          <li>Associated booking (optional but useful for matching to cleaning fee revenue)</li>
+        </ul>
+
+        <p>With <a href="https://app.tryblackcat.com/signup" class="text-accent-green hover:underline">Black Cat Analytics</a>, cleaning expenses are tracked as a category and automatically included in your per-property profit calculation. The cleaner management feature lets you assign cleaners to turnovers and track costs alongside bookings — so you can see at a glance whether your cleaning fee covers the actual cost.</p>
+
+        <h2>The Bottom Line</h2>
+
+        <p>Cleaning isn't optional and it shouldn't be invisible. It's the expense you have the most control over, the one that scales with your success, and the one most hosts underestimate by $2,000–$5,000/year.</p>
+
+        <p>Track it per turnover. Compare it to your cleaning fee. Benchmark it against the market. Optimize the levers you can control. Your profit margin will thank you.</p>
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-16 p-8 rounded-2xl bg-gradient-to-br from-accent-green/10 to-accent-blue/10 border border-accent-green/20 text-center">
+        <h3 class="font-display font-bold text-xl text-white mb-3">Track Cleaning Costs Per Property</h3>
+        <p class="text-sm text-neutral-400 mb-6 max-w-md mx-auto">Black Cat Analytics tracks every expense category — including cleaning — and shows your real profit per property. Free for your first listing.</p>
+        <a href="https://app.tryblackcat.com/signup" class="cta-button inline-block px-8 py-3.5 rounded-xl font-semibold text-sm text-white">Get Started Free</a>
+      </div>
+
+      <!-- Related -->
+      <div class="mt-12 pt-8 border-t border-neutral-800/50">
+        <h4 class="font-display font-semibold text-sm text-neutral-400 mb-4">Related Articles</h4>
+        <div class="flex flex-col gap-3">
+          <a href="./airbnb-expense-categories-complete-list.html" class="text-sm text-accent-blue hover:underline">Airbnb Expense Categories: The Complete List for Hosts →</a>
+          <a href="./how-to-calculate-airbnb-profit.html" class="text-sm text-accent-blue hover:underline">How to Calculate Your Real Airbnb Profit →</a>
+          <a href="./airbnb-tax-deductions-2026.html" class="text-sm text-accent-blue hover:underline">Every Airbnb Tax Deduction You Can Claim in 2026 →</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-neutral-800/50 py-10 px-4">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="text-lg">🐈‍⬛</span>
+        <span class="font-display font-semibold text-sm text-neutral-400">&copy; 2026 Black Cat Analytics</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="../privacy.html" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">Privacy Policy</a>
+        <a href="../terms.html" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">Terms of Service</a>
+        <a href="mailto:support@tryblackcat.com" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">support@tryblackcat.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../app.js"></script>
+</body>
+</html>

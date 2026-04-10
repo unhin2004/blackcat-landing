@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>OG Image Generator</title>
+  <style>
+    body { margin: 0; padding: 40px; background: #333; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+    .instructions { color: #fff; font-family: system-ui; font-size: 14px; text-align: center; max-width: 600px; }
+    .og-image {
+      width: 1200px;
+      height: 630px;
+      background: linear-gradient(135deg, #0a0a0a 0%, #111 40%, #0a1a0a 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: system-ui, -apple-system, sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+    .og-image::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 30% 40%, rgba(34, 197, 94, 0.08) 0%, transparent 50%),
+                  radial-gradient(circle at 70% 60%, rgba(59, 130, 246, 0.06) 0%, transparent 50%);
+    }
+    .og-content { position: relative; z-index: 1; text-align: center; }
+    .og-logo {
+      font-size: 64px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 8px;
+      letter-spacing: -1px;
+    }
+    .og-logo span { color: #22c55e; }
+    .og-tagline {
+      font-size: 32px;
+      font-weight: 600;
+      background: linear-gradient(90deg, #22c55e, #60a5fa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+    }
+    .og-sub {
+      font-size: 22px;
+      color: #9ca3af;
+      margin-bottom: 40px;
+    }
+    .og-features {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 40px;
+    }
+    .og-pill {
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.25);
+      border-radius: 10px;
+      padding: 10px 20px;
+      font-size: 18px;
+      color: #86efac;
+    }
+    .og-cta {
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: #fff;
+      font-size: 20px;
+      font-weight: 700;
+      padding: 14px 40px;
+      border-radius: 12px;
+      letter-spacing: 0.5px;
+    }
+    .og-url {
+      position: absolute;
+      bottom: 24px;
+      font-size: 16px;
+      color: #4b5563;
+    }
+    .og-border {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #22c55e, #60a5fa, #a78bfa);
+    }
+  </style>
+</head>
+<body>
+  <div class="instructions">
+    <h2>OG Image Preview (1200x630)</h2>
+    <p>Right-click the image below → "Save image as" or use a screenshot tool to capture it at exactly 1200x630 pixels.<br>
+    Replace <code>og-image.png</code> in the blackcat-landing folder with the saved image.</p>
+  </div>
+  <div class="og-image">
+    <div class="og-content">
+      <div class="og-logo">Black Cat <span>Analytics</span></div>
+      <div class="og-tagline">Know Your Real Airbnb Profit</div>
+      <div class="og-sub">AI-powered profit tracking for short-term rental hosts</div>
+      <div class="og-features">
+        <div class="og-pill">📊 Revenue & Expenses</div>
+        <div class="og-pill">🤖 AI Insights</div>
+        <div class="og-pill">🧾 Tax Reports</div>
+        <div class="og-pill">📈 Occupancy Tracking</div>
+      </div>
+      <div class="og-cta">Start Free Today</div>
+    </div>
+    <div class="og-url">tryblackcat.com</div>
+    <div class="og-border"></div>
+  </div>
+</body>
+</html>
