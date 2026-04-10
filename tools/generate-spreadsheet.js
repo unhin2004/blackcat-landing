@@ -47,13 +47,24 @@ function stylePercent(cell) {
   cell.numFmt = '0.0%';
 }
 
-function addBranding(ws, title, subtitle) {
-  ws.mergeCells('A1:H1');
-  const titleCell = ws.getCell('A1');
-  titleCell.value = `🐈‍⬛ Black Cat Analytics — ${title}`;
+function addBranding(ws, wb, title, subtitle) {
+  ws.getRow(1).height = 40;
+  // Add logo image
+  const logoId = wb.addImage({
+    filename: path.join(__dirname, '..', 'logo-icon.png'),
+    extension: 'png',
+  });
+  ws.addImage(logoId, {
+    tl: { col: 0, row: 0 },
+    ext: { width: 32, height: 32 },
+    editAs: 'oneCell',
+  });
+
+  ws.mergeCells('B1:H1');
+  const titleCell = ws.getCell('B1');
+  titleCell.value = `Black Cat Analytics — ${title}`;
   titleCell.font = { bold: true, size: 16, color: { argb: BRAND.dark }, name: 'Calibri' };
   titleCell.alignment = { vertical: 'middle' };
-  ws.getRow(1).height = 36;
 
   ws.mergeCells('A2:H2');
   const subCell = ws.getCell('A2');
@@ -76,7 +87,7 @@ async function generate() {
   wsInstr.getColumn('A').width = 80;
 
   const instructions = [
-    ['🐈‍⬛ Black Cat Analytics — Airbnb Profit Tracker'],
+    ['Black Cat Analytics — Airbnb Profit Tracker'],
     [''],
     ['GETTING STARTED'],
     ['1. Go to the "Revenue & Expenses" tab and log every booking payout and expense.'],
@@ -131,7 +142,7 @@ async function generate() {
   // SHEET 2: Revenue & Expense Log
   // ═══════════════════════════════════════════
   const wsLog = wb.addWorksheet('Revenue & Expenses', { tabColor: { argb: BRAND.blue } });
-  addBranding(wsLog, 'Revenue & Expense Log', 'Log every Airbnb payout and expense here. The other sheets pull from this data.');
+  addBranding(wsLog, wb, 'Revenue & Expense Log', 'Log every Airbnb payout and expense here. The other sheets pull from this data.');
 
   const logHeaders = ['Date', 'Type', 'Category', 'Property', 'Description', 'Amount', 'Tax Deductible', 'Notes'];
   const logWidths = [14, 12, 20, 22, 30, 14, 16, 30];
@@ -229,7 +240,7 @@ async function generate() {
   // SHEET 3: Monthly Dashboard
   // ═══════════════════════════════════════════
   const wsDash = wb.addWorksheet('Monthly Dashboard', { tabColor: { argb: BRAND.green } });
-  addBranding(wsDash, 'Monthly Dashboard', 'Auto-calculated from your Revenue & Expenses log. Do not edit the formula cells.');
+  addBranding(wsDash, wb, 'Monthly Dashboard', 'Auto-calculated from your Revenue & Expenses log. Do not edit the formula cells.');
 
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   const dashHeaders = ['Metric', ...months, 'YTD Total'];
@@ -320,7 +331,7 @@ async function generate() {
   // SHEET 4: Per-Property Summary
   // ═══════════════════════════════════════════
   const wsProp = wb.addWorksheet('Per-Property', { tabColor: { argb: BRAND.purple } });
-  addBranding(wsProp, 'Per-Property Summary', 'Performance breakdown by listing. Add your property names in column A.');
+  addBranding(wsProp, wb, 'Per-Property Summary', 'Performance breakdown by listing. Add your property names in column A.');
 
   const propHeaders = ['Property Name', 'Total Revenue', 'Total Expenses', 'Net Profit', 'Profit Margin', '# Bookings', 'Avg Booking Revenue', 'Top Expense Category'];
   const propWidths = [22, 16, 16, 16, 14, 12, 18, 22];
@@ -393,7 +404,7 @@ async function generate() {
   // SHEET 5: Schedule E Tax Report
   // ═══════════════════════════════════════════
   const wsTax = wb.addWorksheet('Schedule E Tax Report', { tabColor: { argb: BRAND.red } });
-  addBranding(wsTax, 'Schedule E Tax Report', 'Auto-calculated deductions mapped to IRS Schedule E line items. Adjust "Fair Rental Days" and "Personal Use Days" below.');
+  addBranding(wsTax, wb, 'Schedule E Tax Report', 'Auto-calculated deductions mapped to IRS Schedule E line items. Adjust "Fair Rental Days" and "Personal Use Days" below.');
 
   const taxWidths = [10, 28, 22, 16, 16];
   taxWidths.forEach((w, i) => { wsTax.getColumn(i + 1).width = w; });
@@ -512,7 +523,7 @@ async function generate() {
   // SHEET 6: Cleaning Cost Tracker
   // ═══════════════════════════════════════════
   const wsClean = wb.addWorksheet('Cleaning Tracker', { tabColor: { argb: BRAND.cyan } });
-  addBranding(wsClean, 'Cleaning Cost Tracker', 'Track per-turnover cleaning costs by property. Spot overcharges and optimize your biggest variable expense.');
+  addBranding(wsClean, wb, 'Cleaning Cost Tracker', 'Track per-turnover cleaning costs by property. Spot overcharges and optimize your biggest variable expense.');
 
   const cleanHeaders = ['Date', 'Property', 'Cleaner Name', 'Hours', 'Cost', 'Guest Checkout', 'Deep Clean?', 'Rating (1-5)', 'Notes'];
   const cleanWidths = [14, 22, 18, 10, 12, 18, 14, 14, 30];
