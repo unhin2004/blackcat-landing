@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Airbnb Profit Calculator — Know Your Real Earnings | Black Cat Analytics</title>
+  <meta name="description" content="Free Airbnb profit calculator. Enter your nightly rate, occupancy, and expenses to see your real profit margin — not just revenue. Used by 200+ hosts.">
+  <meta name="keywords" content="airbnb profit calculator, airbnb income calculator, airbnb profit margin calculator, is airbnb profitable, airbnb expense calculator, rental property profit calculator">
+  <link rel="canonical" href="https://www.tryblackcat.com/tools/airbnb-profit-calculator.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.tryblackcat.com/tools/airbnb-profit-calculator.html">
+  <meta property="og:title" content="Free Airbnb Profit Calculator — Know Your Real Earnings">
+  <meta property="og:description" content="Enter your nightly rate, occupancy, and expenses to see your real profit margin — not just revenue.">
+  <meta property="og:image" content="https://www.tryblackcat.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@tryblackcat">
+  <meta name="twitter:title" content="Free Airbnb Profit Calculator — Know Your Real Earnings">
+  <meta name="twitter:description" content="Enter your nightly rate, occupancy, and expenses to see your real profit margin — not just revenue.">
+  <meta name="twitter:image" content="https://www.tryblackcat.com/og-image.png">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Airbnb Profit Calculator",
+    "url": "https://www.tryblackcat.com/tools/airbnb-profit-calculator.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "description": "Free Airbnb profit calculator. Enter your revenue, expenses, and occupancy to calculate real profit margin.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "Black Cat Analytics",
+      "url": "https://www.tryblackcat.com"
+    }
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a good Airbnb profit margin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A healthy Airbnb profit margin is typically between 30% and 50% after all expenses. Properties with margins below 20% should review their pricing strategy and expense management. Self-managed properties tend to have higher margins than those using property managers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What expenses do most Airbnb hosts forget?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The most commonly forgotten Airbnb expenses are: Airbnb's host service fee (14-16%), maintenance reserves (1-2% of property value per year), income tax provisions, supplies and consumables ($50-100/month), and the opportunity cost of your own time managing the property."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does an average Airbnb host make?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The average Airbnb host in the U.S. earns about $14,000 per year in gross revenue. However, after all expenses (cleaning, platform fees, utilities, maintenance, insurance, taxes), actual profit is typically 30-50% of that — around $4,200 to $7,000 per year for a single property."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0Y5H3YVKT4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0Y5H3YVKT4');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="../dist/output.css">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .calc-input {
+      background: rgba(23, 23, 23, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 12px 16px;
+      color: #fff;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15px;
+      width: 100%;
+      transition: border-color 0.2s, background 0.2s;
+      -moz-appearance: textfield;
+    }
+    .calc-input::-webkit-outer-spin-button,
+    .calc-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    .calc-input:focus {
+      outline: none;
+      border-color: rgba(59, 130, 246, 0.5);
+      background: rgba(23, 23, 23, 0.95);
+    }
+    .calc-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: #a3a3a3;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .calc-label .hint {
+      font-weight: 400;
+      color: #737373;
+      font-size: 11px;
+    }
+    .result-card {
+      background: rgba(15, 15, 15, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+    }
+    .result-value {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 28px;
+      line-height: 1.2;
+    }
+    .result-label {
+      font-size: 12px;
+      color: #a3a3a3;
+      margin-top: 4px;
+    }
+    .margin-bar {
+      height: 8px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.06);
+      overflow: hidden;
+      margin-top: 12px;
+    }
+    .margin-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.5s ease, background 0.3s ease;
+    }
+    .expense-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      font-size: 13px;
+    }
+    .expense-row:last-child { border-bottom: none; }
+    .expense-name { color: #a3a3a3; }
+    .expense-amount { color: #e5e5e5; font-weight: 600; font-variant-numeric: tabular-nums; }
+    .toggle-section {
+      cursor: pointer;
+      user-select: none;
+    }
+    .toggle-section .chevron {
+      transition: transform 0.2s ease;
+    }
+    .toggle-section.open .chevron {
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+<body class="bg-base-950 text-white font-body antialiased">
+
+  <div class="noise-overlay"></div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <a href="../" class="flex items-center gap-2 group">
+          <img src="../logo-icon.png" alt="Black Cat" class="w-7 h-7 object-contain">
+          <span class="font-display font-bold text-lg tracking-tight text-white">Black Cat <span class="text-accent-green">Analytics</span></span>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="../#features" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Features</a>
+          <a href="../#pricing" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Pricing</a>
+          <a href="../blog/" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Blog</a>
+          <a href="https://app.tryblackcat.com/demo" class="nav-link text-sm text-accent-green hover:text-green-300 transition-colors duration-200 font-medium">Live Demo</a>
+          <a href="https://app.tryblackcat.com/signup" class="cta-button-sm text-sm font-semibold px-5 py-2.5 rounded-full text-white">Get Started Free</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2 z-50" aria-label="Menu">
+          <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+          <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+          <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="mobile-menu md:hidden">
+      <div class="px-6 pt-20 pb-8 flex flex-col gap-6">
+        <a href="../#features" class="mobile-nav-link text-xl font-display font-semibold text-white">Features</a>
+        <a href="../#pricing" class="mobile-nav-link text-xl font-display font-semibold text-white">Pricing</a>
+        <a href="../blog/" class="mobile-nav-link text-xl font-display font-semibold text-white">Blog</a>
+        <a href="https://app.tryblackcat.com/demo" class="mobile-nav-link text-xl font-display font-semibold text-accent-green">Live Demo</a>
+        <a href="https://app.tryblackcat.com/signup" class="cta-button-sm text-center text-base font-semibold px-6 py-3 rounded-full text-white mt-4">Get Started Free</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="relative pt-32 sm:pt-40 pb-8 px-4">
+    <div class="hero-gradient"></div>
+    <div class="relative z-10 max-w-3xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-neutral-700/50 bg-neutral-900/60 backdrop-blur-sm mb-6">
+        <span class="text-xs font-medium text-neutral-300 tracking-wide uppercase">Free Tool</span>
+      </div>
+      <h1 class="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight leading-tight mb-4">
+        Airbnb Profit Calculator
+      </h1>
+      <p class="text-base sm:text-lg text-neutral-400 max-w-2xl mx-auto leading-relaxed">
+        Most hosts only track revenue. Enter your real numbers below to see what you <em>actually</em> keep after every expense.
+      </p>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section class="relative pb-20 px-4">
+    <div class="relative z-10 max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- LEFT: INPUTS -->
+        <div class="space-y-6">
+
+          <!-- Revenue Section -->
+          <div class="bg-base-900 border border-neutral-800/50 rounded-2xl p-6">
+            <h2 class="font-display font-bold text-base text-white mb-5 flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-accent-green/10 text-accent-green text-xs flex items-center justify-center font-bold">1</span>
+              Revenue
+            </h2>
+            <div class="space-y-4">
+              <div>
+                <label class="calc-label" for="nightlyRate">Average nightly rate <span class="hint">(after smart pricing)</span></label>
+                <div class="relative">
+                  <span class="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-500 text-sm">$</span>
+                  <input type="number" id="nightlyRate" class="calc-input pl-8" value="150" min="0" step="5">
+                </div>
+              </div>
+              <div>
+                <label class="calc-label" for="occupancy">Occupancy rate <span class="hint">(%)</span></label>
+                <div class="relative">
+                  <input type="number" id="occupancy" class="calc-input pr-8" value="65" min="0" max="100" step="1">
+                  <span class="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500 text-sm">%</span>
+                </div>
+              </div>
+              <div>
+                <label class="calc-label" for="cleaningFeeCollected">Cleaning fee per booking <span class="hint">(charged to guest)</span></label>
+                <div class="relative">
+                  <span class="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-500 text-sm">$</span>
+                  <input type="number" id="cleaningFeeCollected" class="calc-input pl-8" value="75" min="0" step="5">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Expenses Section -->
+          <div class="bg-base-900 border border-neutral-800/50 rounded-2xl p-6">
+            <h2 class="font-display font-bold text-base text-white mb-5 flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-accent-red/10 text-accent-red text-xs flex items-center justify-center font-bold">2</span>
+              Monthly Expenses
+            </h2>
+            <div class="space-y-4">
+              <div>
+                <label class="calc-label" for="cleaningCost">Cleaning cost per turnover <span class="hint">(what you pay cleaner)</span></label>
+                <div class="relative">
+                  <span class="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-500 text-sm">$</span>
+                  <input type="number" id="cleaningCost" class="calc-input pl-8" value="85" min="0" step="5">
+                </div>
+              </div>
+              <div>
+                <label class="calc-label" for="mortgage">Mortgage / Rent <span class="hint">(monthly)</span></label>
+                <div class="relative">
+                  <span class="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-500 text-sm">$</span>
+                  <input type="number" id="mortgage" class="calc-input pl-8" value="0" min="0" step="50">
+                </div>
+              </div>
+              <div>
+                <label class="calc-label" for="utilities">Utilities <span class="hint">(electric, water, gas, internet)</span></label>
+                <div class="relative">
+                  <span class="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-500 text-sm">$</span>
+                  <input type="number" id="utilities" class="calc-input pl-8" value="250" min="0" step="10">
+                </div>
+              </div>
+              <div>
+                <label class="calc-label" for="insurance">Short-term rental insurance</label>
+                <div class="relative">
+                  <span class="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-500 text-sm">$</span>
+                  <input type="number" id="insurance" class="calc-input pl-8" value="120" min="0" step="10">
+                </div>
+              </div>
+              <div>
+                <label class="calc-label" for="supplies">Supplies &amp; consumables</label>
+                <div class="relative">
+                  <span class="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-500 text-sm">$</span>
+                  <input type="number" id="supplies" class="calc-input pl-8" value="60" min="0" step="5">
+                </div>
+              </div>
+              <div>
+                <label class="calc-label" for="maintenance">Maintenance reserve</label>
+                <div class="relative">
+                  <span class="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-500 text-sm">$</span>
+                  <input type="number" id="maintenance" class="calc-input pl-8" value="300" min="0" step="25">
+                </div>
+              </div>
+
+              <!-- Advanced toggle -->
+              <div class="pt-2">
+                <div class="toggle-section flex items-center gap-2 text-sm text-neutral-500 hover:text-neutral-300 transition-colors" id="advancedToggle">
+                  <svg class="w-4 h-4 chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                  More expenses
+                </div>
+                <div id="advancedFields" class="hidden space-y-4 mt-4">
+                  <div>
+                    <label class="calc-label" for="propMgmt">Property management fee <span class="hint">(monthly)</span></label>
+                    <div class="relative">
+                      <span class="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-500 text-sm">$</span>
+                      <input type="number" id="propMgmt" class="calc-input pl-8" value="0" min="0" step="25">
+                    </div>
+                  </div>
+                  <div>
+                    <label class="calc-label" for="hoa">HOA fees <span class="hint">(monthly)</span></label>
+                    <div class="relative">
+                      <span class="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-500 text-sm">$</span>
+                      <input type="number" id="hoa" class="calc-input pl-8" value="0" min="0" step="25">
+                    </div>
+                  </div>
+                  <div>
+                    <label class="calc-label" for="otherExpenses">Other monthly expenses</label>
+                    <div class="relative">
+                      <span class="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-500 text-sm">$</span>
+                      <input type="number" id="otherExpenses" class="calc-input pl-8" value="0" min="0" step="10">
+                    </div>
+                  </div>
+                  <div>
+                    <label class="calc-label" for="taxRate">Estimated tax rate <span class="hint">(%)</span></label>
+                    <div class="relative">
+                      <input type="number" id="taxRate" class="calc-input pr-8" value="25" min="0" max="60" step="1">
+                      <span class="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500 text-sm">%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: RESULTS -->
+        <div class="space-y-6">
+          <!-- Summary Cards -->
+          <div class="grid grid-cols-2 gap-4">
+            <div class="result-card">
+              <div class="result-value text-white" id="resRevenue">$2,925</div>
+              <div class="result-label">Monthly Revenue</div>
+            </div>
+            <div class="result-card">
+              <div class="result-value text-accent-green" id="resProfit">$1,012</div>
+              <div class="result-label">Monthly Profit</div>
+            </div>
+            <div class="result-card">
+              <div class="result-value text-accent-blue" id="resMargin">34.6%</div>
+              <div class="result-label">Profit Margin</div>
+              <div class="margin-bar">
+                <div class="margin-bar-fill" id="marginBar" style="width: 34.6%; background: #22c55e;"></div>
+              </div>
+            </div>
+            <div class="result-card">
+              <div class="result-value text-accent-purple" id="resAnnual">$12,144</div>
+              <div class="result-label">Annual Profit</div>
+            </div>
+          </div>
+
+          <!-- Breakdown -->
+          <div class="bg-base-900 border border-neutral-800/50 rounded-2xl p-6">
+            <h3 class="font-display font-bold text-sm text-white mb-4">Expense Breakdown</h3>
+            <div id="expenseBreakdown" class="space-y-0">
+              <!-- Filled by JS -->
+            </div>
+            <div class="mt-4 pt-4 border-t border-neutral-700/50">
+              <div class="flex justify-between items-center">
+                <span class="text-sm font-semibold text-white">Total Expenses</span>
+                <span class="text-sm font-bold text-accent-red" id="resTotalExpenses">$1,913</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Verdict -->
+          <div class="bg-base-900 border border-neutral-800/50 rounded-2xl p-6" id="verdictCard">
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-full flex items-center justify-center text-lg flex-shrink-0" id="verdictIcon">✅</div>
+              <div>
+                <p class="text-sm font-semibold text-white" id="verdictTitle">Healthy margin</p>
+                <p class="text-xs text-neutral-400 mt-1" id="verdictText">Your profit margin is above 30%. You're running a solid operation.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <div class="bg-gradient-to-br from-accent-blue/10 to-accent-purple/10 border border-accent-blue/20 rounded-2xl p-6 text-center">
+            <p class="font-display font-bold text-base text-white mb-2">Want to track this automatically?</p>
+            <p class="text-xs text-neutral-400 mb-4">Black Cat Analytics tracks your real profit every month — not just revenue. Connect your Airbnb data and see your actual numbers.</p>
+            <a href="https://app.tryblackcat.com/signup" class="cta-button inline-block px-6 py-3 rounded-xl font-semibold text-sm text-white">Start Tracking Free</a>
+            <p class="text-[10px] text-neutral-500 mt-2">Free for 1 property · No credit card</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTEXT SECTION -->
+  <section class="relative pb-20 px-4">
+    <div class="relative z-10 max-w-3xl mx-auto">
+      <div class="blog-content">
+        <h2>How to Use This Airbnb Profit Calculator</h2>
+        <p>This calculator takes your actual hosting numbers — nightly rate, occupancy, and real expenses — and shows you what you're <strong>actually keeping</strong> after everything is deducted.</p>
+        <p>Most Airbnb dashboards show gross revenue. That number feels good but it's not your profit. This calculator accounts for Airbnb's 14-16% host service fee, cleaning costs (net of what guests pay), utilities, insurance, maintenance, and taxes.</p>
+
+        <h2>What Is a Good Airbnb Profit Margin?</h2>
+        <p>Based on industry data, here's how to interpret your margin:</p>
+        <ul>
+          <li><strong>40%+ margin:</strong> Excellent. You're running a tight, efficient operation.</li>
+          <li><strong>25-40% margin:</strong> Healthy. Most well-managed properties land here.</li>
+          <li><strong>15-25% margin:</strong> Thin. One bad month or unexpected repair could eat your profit.</li>
+          <li><strong>Below 15%:</strong> Warning zone. Review your pricing and expenses carefully.</li>
+        </ul>
+
+        <h2>Expenses Most Hosts Forget</h2>
+        <p>The most common reason hosts overestimate their profit: they forget expenses. Here are the ones that slip through the cracks most often:</p>
+        <ul>
+          <li><strong>Airbnb's host service fee</strong> (14-16% of every booking)</li>
+          <li><strong>Income taxes</strong> on rental income (20-35% depending on bracket)</li>
+          <li><strong>Maintenance reserve</strong> (budget 1-2% of property value per year)</li>
+          <li><strong>Supplies and consumables</strong> (toiletries, coffee, paper products)</li>
+          <li><strong>Your time</strong> — if you spend 15 hours/month managing at $50/hr, that's $750 in implicit cost</li>
+        </ul>
+
+        <h2>How to Improve Your Airbnb Profit Margin</h2>
+        <p>Once you know your real number, here are the highest-impact levers:</p>
+        <ol>
+          <li><strong>Adjust your cleaning fee</strong> — if you're absorbing part of the cleaning cost, increase the guest fee to close the gap.</li>
+          <li><strong>Dynamic pricing</strong> — flat rates leave money on the table during peak demand.</li>
+          <li><strong>Reduce turnover costs</strong> — longer minimum stays mean fewer cleanings per month.</li>
+          <li><strong>Track every expense monthly</strong> — you can't optimize what you can't see.</li>
+        </ol>
+        <p>A tool like <a href="https://tryblackcat.com" class="text-accent-green hover:underline">Black Cat Analytics</a> automates this entire process — tracking your real profit, expenses by category, and giving you AI-powered insights on where to improve your margin.</p>
+      </div>
+
+      <!-- FAQ -->
+      <div class="mt-16">
+        <h2 class="font-display font-bold text-xl text-white mb-6">Frequently Asked Questions</h2>
+        <div class="space-y-4">
+          <div class="bg-base-900 border border-neutral-800/50 rounded-xl p-5">
+            <h3 class="font-display font-semibold text-sm text-white">What is a good Airbnb profit margin?</h3>
+            <p class="text-sm text-neutral-400 mt-2">A healthy Airbnb profit margin is typically between 30% and 50% after all expenses. Properties with margins below 20% should review their pricing strategy and expense management.</p>
+          </div>
+          <div class="bg-base-900 border border-neutral-800/50 rounded-xl p-5">
+            <h3 class="font-display font-semibold text-sm text-white">What expenses do most Airbnb hosts forget?</h3>
+            <p class="text-sm text-neutral-400 mt-2">The most commonly forgotten expenses are Airbnb's host service fee (14-16%), maintenance reserves, income tax provisions, supplies and consumables, and the opportunity cost of your own time.</p>
+          </div>
+          <div class="bg-base-900 border border-neutral-800/50 rounded-xl p-5">
+            <h3 class="font-display font-semibold text-sm text-white">How much does an average Airbnb host make?</h3>
+            <p class="text-sm text-neutral-400 mt-2">The average U.S. Airbnb host earns about $14,000/year in gross revenue. After all expenses, actual profit is typically 30-50% of that — around $4,200 to $7,000 per year for a single property.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-neutral-800/50 py-10 px-4">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="text-lg">🐈‍⬛</span>
+        <span class="font-display font-semibold text-sm text-neutral-400">&copy; 2026 Black Cat Analytics</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="../privacy.html" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">Privacy Policy</a>
+        <a href="../terms.html" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">Terms of Service</a>
+        <a href="mailto:support@tryblackcat.com" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">support@tryblackcat.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../app.js"></script>
+  <script>
+  (function() {
+    // Elements
+    const inputs = ['nightlyRate','occupancy','cleaningFeeCollected','cleaningCost','mortgage','utilities','insurance','supplies','maintenance','propMgmt','hoa','otherExpenses','taxRate'];
+    const els = {};
+    inputs.forEach(id => els[id] = document.getElementById(id));
+
+    // Toggle advanced
+    const toggle = document.getElementById('advancedToggle');
+    const advFields = document.getElementById('advancedFields');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('open');
+      advFields.classList.toggle('hidden');
+      calculate();
+    });
+
+    // Calculate on any input change
+    inputs.forEach(id => {
+      els[id].addEventListener('input', calculate);
+    });
+
+    function calculate() {
+      const rate = Math.max(0, parseFloat(els.nightlyRate.value) || 0);
+      const occ = Math.min(100, Math.max(0, parseFloat(els.occupancy.value) || 0)) / 100;
+      const cleanFeeGuest = Math.max(0, parseFloat(els.cleaningFeeCollected.value) || 0);
+      const cleanCost = Math.max(0, parseFloat(els.cleaningCost.value) || 0);
+      const mortgageVal = Math.max(0, parseFloat(els.mortgage.value) || 0);
+      const util = Math.max(0, parseFloat(els.utilities.value) || 0);
+      const ins = Math.max(0, parseFloat(els.insurance.value) || 0);
+      const sup = Math.max(0, parseFloat(els.supplies.value) || 0);
+      const maint = Math.max(0, parseFloat(els.maintenance.value) || 0);
+      const mgmt = Math.max(0, parseFloat(els.propMgmt.value) || 0);
+      const hoaVal = Math.max(0, parseFloat(els.hoa.value) || 0);
+      const other = Math.max(0, parseFloat(els.otherExpenses.value) || 0);
+      const taxPct = Math.min(60, Math.max(0, parseFloat(els.taxRate.value) || 0)) / 100;
+
+      // Monthly nights booked
+      const nightsPerMonth = 30 * occ;
+      // Average stay length assumption: 3 nights
+      const avgStayLength = 3;
+      const bookingsPerMonth = nightsPerMonth / avgStayLength;
+
+      // Revenue
+      const grossRevenue = rate * nightsPerMonth;
+      const cleaningRevenue = cleanFeeGuest * bookingsPerMonth;
+      const totalRevenue = grossRevenue + cleaningRevenue;
+
+      // Airbnb host fee (15% average)
+      const airbnbFee = grossRevenue * 0.15;
+
+      // Cleaning expense
+      const cleaningExpense = cleanCost * bookingsPerMonth;
+      const netCleaning = Math.max(0, cleaningExpense - cleaningRevenue);
+
+      // Fixed monthly expenses
+      const fixedExpenses = mortgageVal + util + ins + sup + maint + mgmt + hoaVal + other;
+
+      // Pre-tax expenses
+      const preTaxExpenses = airbnbFee + netCleaning + fixedExpenses;
+
+      // Tax (on pre-expense income approximation)
+      const taxableIncome = Math.max(0, grossRevenue - preTaxExpenses);
+      const taxExpense = taxableIncome * taxPct;
+
+      // Total expenses
+      const totalExpenses = preTaxExpenses + taxExpense;
+
+      // Profit
+      const profit = grossRevenue - totalExpenses;
+      const margin = grossRevenue > 0 ? (profit / grossRevenue) * 100 : 0;
+      const annual = profit * 12;
+
+      // Update results
+      document.getElementById('resRevenue').textContent = formatCurrency(grossRevenue);
+      document.getElementById('resProfit').textContent = formatCurrency(profit);
+      document.getElementById('resProfit').className = 'result-value ' + (profit >= 0 ? 'text-accent-green' : 'text-accent-red');
+      document.getElementById('resMargin').textContent = margin.toFixed(1) + '%';
+      document.getElementById('resAnnual').textContent = formatCurrency(annual);
+      document.getElementById('resAnnual').className = 'result-value ' + (annual >= 0 ? 'text-accent-purple' : 'text-accent-red');
+
+      // Margin bar
+      const bar = document.getElementById('marginBar');
+      const clampedMargin = Math.max(0, Math.min(100, margin));
+      bar.style.width = clampedMargin + '%';
+      if (margin >= 30) bar.style.background = '#22c55e';
+      else if (margin >= 15) bar.style.background = '#eab308';
+      else bar.style.background = '#ef4444';
+
+      // Expense breakdown
+      const expenses = [
+        { name: 'Airbnb host fee (15%)', amount: airbnbFee },
+        { name: 'Net cleaning cost', amount: netCleaning },
+        { name: 'Mortgage / Rent', amount: mortgageVal, hide: mortgageVal === 0 },
+        { name: 'Utilities', amount: util },
+        { name: 'Insurance', amount: ins },
+        { name: 'Supplies', amount: sup },
+        { name: 'Maintenance reserve', amount: maint },
+        { name: 'Property management', amount: mgmt, hide: mgmt === 0 },
+        { name: 'HOA fees', amount: hoaVal, hide: hoaVal === 0 },
+        { name: 'Other expenses', amount: other, hide: other === 0 },
+        { name: 'Estimated taxes', amount: taxExpense }
+      ];
+
+      const breakdownEl = document.getElementById('expenseBreakdown');
+      breakdownEl.innerHTML = expenses
+        .filter(e => !e.hide)
+        .map(e => `<div class="expense-row"><span class="expense-name">${e.name}</span><span class="expense-amount">${formatCurrency(e.amount)}</span></div>`)
+        .join('');
+
+      document.getElementById('resTotalExpenses').textContent = formatCurrency(totalExpenses);
+
+      // Verdict
+      const icon = document.getElementById('verdictIcon');
+      const title = document.getElementById('verdictTitle');
+      const text = document.getElementById('verdictText');
+
+      if (margin >= 30) {
+        icon.textContent = '✅';
+        title.textContent = 'Healthy margin';
+        text.textContent = 'Your profit margin is above 30%. You\'re running a solid operation.';
+      } else if (margin >= 15) {
+        icon.textContent = '⚠️';
+        title.textContent = 'Thin margin — room to improve';
+        text.textContent = 'Your margin is between 15-30%. One bad month could wipe your profit. Review pricing and expenses.';
+      } else if (margin >= 0) {
+        icon.textContent = '🔴';
+        title.textContent = 'Dangerously low margin';
+        text.textContent = 'You\'re barely breaking even. Urgently review your pricing, cleaning costs, and occupancy.';
+      } else {
+        icon.textContent = '❌';
+        title.textContent = 'You\'re losing money';
+        text.textContent = 'Your expenses exceed your revenue. This property is not profitable at these numbers.';
+      }
+    }
+
+    function formatCurrency(num) {
+      const abs = Math.abs(Math.round(num));
+      const formatted = '$' + abs.toLocaleString('en-US');
+      return num < 0 ? '-' + formatted : formatted;
+    }
+
+    // Initial calculation
+    calculate();
+  })();
+  </script>
+</body>
+</html>
