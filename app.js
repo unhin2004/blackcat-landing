@@ -182,4 +182,39 @@
 
   kpiCards.forEach(card => kpiObserver.observe(card));
 
+  // ---------- Cookie Consent ----------
+  const cookieBanner = document.getElementById('cookie-banner');
+  const cookieAccept = document.getElementById('cookie-accept');
+  const cookieDecline = document.getElementById('cookie-decline');
+
+  if (cookieBanner && !localStorage.getItem('cookie-consent')) {
+    cookieBanner.style.display = '';
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        cookieBanner.classList.remove('translate-y-full');
+      });
+    });
+  }
+
+  function hideBanner() {
+    if (cookieBanner) {
+      cookieBanner.classList.add('translate-y-full');
+      setTimeout(() => { cookieBanner.style.display = 'none'; }, 300);
+    }
+  }
+
+  if (cookieAccept) {
+    cookieAccept.addEventListener('click', () => {
+      localStorage.setItem('cookie-consent', 'accepted');
+      hideBanner();
+    });
+  }
+
+  if (cookieDecline) {
+    cookieDecline.addEventListener('click', () => {
+      localStorage.setItem('cookie-consent', 'declined');
+      hideBanner();
+    });
+  }
+
 })();
