@@ -11,6 +11,15 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="./dist/output.css">
   <link rel="stylesheet" href="./style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0Y5H3YVKT4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0Y5H3YVKT4');
+  </script>
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
 </head>
 <body class="bg-base-950 text-white font-body antialiased">
 
@@ -21,14 +30,16 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 lg:h-20">
         <a href="./" class="flex items-center gap-2 group">
-          <span class="text-2xl">🐈‍⬛</span>
+          <img src="./logo-icon.png" alt="Black Cat" class="w-7 h-7 object-contain" width="28" height="28">
           <span class="font-display font-bold text-lg tracking-tight text-white">Black Cat <span class="text-accent-green">Analytics</span></span>
         </a>
         <div class="hidden md:flex items-center gap-8">
           <a href="./#features" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Features</a>
           <a href="./#pricing" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Pricing</a>
+          <a href="./tools/airbnb-profit-calculator.html" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Calculator</a>
+          <a href="./tools/airbnb-profit-tracker-spreadsheet.html" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Spreadsheet</a>
           <a href="./blog/" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Blog</a>
-          <a href="./#waitlist-bottom" class="cta-button-sm text-sm font-semibold px-5 py-2.5 rounded-full text-white">Join the Waitlist</a>
+          <a href="https://app.tryblackcat.com/signup" class="cta-button-sm text-sm font-semibold px-5 py-2.5 rounded-full text-white">Get Started Free</a>
         </div>
         <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2 z-50" aria-label="Menu">
           <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
@@ -41,8 +52,10 @@
       <div class="px-6 pt-20 pb-8 flex flex-col gap-6">
         <a href="./#features" class="mobile-nav-link text-xl font-display font-semibold text-white">Features</a>
         <a href="./#pricing" class="mobile-nav-link text-xl font-display font-semibold text-white">Pricing</a>
+        <a href="./tools/airbnb-profit-calculator.html" class="mobile-nav-link text-xl font-display font-semibold text-white">Calculator</a>
+        <a href="./tools/airbnb-profit-tracker-spreadsheet.html" class="mobile-nav-link text-xl font-display font-semibold text-white">Spreadsheet</a>
         <a href="./blog/" class="mobile-nav-link text-xl font-display font-semibold text-white">Blog</a>
-        <a href="./#waitlist-bottom" class="cta-button-sm text-center text-base font-semibold px-6 py-3 rounded-full text-white mt-4">Join the Waitlist</a>
+        <a href="https://app.tryblackcat.com/signup" class="cta-button-sm text-center text-base font-semibold px-6 py-3 rounded-full text-white mt-4">Get Started Free</a>
       </div>
     </div>
   </nav>
