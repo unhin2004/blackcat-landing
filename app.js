@@ -5,6 +5,96 @@
 (function () {
   'use strict';
 
+  // ---------- GA4 helpers ----------
+  function trackEvent(name, params) {
+    try {
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', name, params || {});
+      }
+    } catch (e) { /* noop */ }
+  }
+
+  // Persist first-touch UTM params for cross-domain attribution into the app.
+  // Stored in sessionStorage; appended to every outbound link to app.tryblackcat.com.
+  var UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+  var UTM_STORE = 'bc_utm_v1';
+
+  function captureUtmFromUrl() {
+    try {
+      var params = new URLSearchParams(window.location.search);
+      var existing = sessionStorage.getItem(UTM_STORE);
+      if (existing) return; // first-touch wins
+      var payload = {};
+      var hasAny = false;
+      UTM_KEYS.forEach(function (k) {
+        var v = params.get(k);
+        if (v) { payload[k] = v.slice(0, 200); hasAny = true; }
+      });
+      if (document.referrer && document.referrer.indexOf(window.location.origin) !== 0) {
+        payload.referrer = document.referrer.slice(0, 500);
+        hasAny = true;
+      }
+      if (hasAny) sessionStorage.setItem(UTM_STORE, JSON.stringify(payload));
+    } catch (e) { /* noop */ }
+  }
+
+  function readUtm() {
+    try {
+      var raw = sessionStorage.getItem(UTM_STORE);
+      if (!raw) return {};
+      var parsed = JSON.parse(raw);
+      return (parsed && typeof parsed === 'object') ? parsed : {};
+    } catch (e) { return {}; }
+  }
+
+  function appendUtmToUrl(url) {
+    try {
+      var u = new URL(url);
+      if (u.hostname.indexOf('tryblackcat.com') === -1) return url;
+      var utm = readUtm();
+      UTM_KEYS.forEach(function (k) {
+        if (utm[k] && !u.searchParams.has(k)) u.searchParams.set(k, utm[k]);
+      });
+      return u.toString();
+    } catch (e) { return url; }
+  }
+
+  captureUtmFromUrl();
+
+  // Hook conversion clicks on every signup / demo CTA. Also rewrites the href
+  // to carry UTM params across the app subdomain.
+  document.querySelectorAll('a[href*="app.tryblackcat.com/signup"]').forEach(function (a) {
+    a.href = appendUtmToUrl(a.href);
+    a.addEventListener('click', function () {
+      var location = a.getAttribute('data-cta-location') || 'unknown';
+      trackEvent('signup_cta_click', { cta_location: location });
+    });
+  });
+
+  document.querySelectorAll('a[href*="app.tryblackcat.com/demo"]').forEach(function (a) {
+    a.href = appendUtmToUrl(a.href);
+    a.addEventListener('click', function () {
+      var location = a.getAttribute('data-cta-location') || 'unknown';
+      trackEvent('demo_cta_click', { cta_location: location });
+    });
+  });
+
+  // Scroll-depth milestones (one-shot each) — tells us if the hero is failing.
+  var scrollMilestones = [25, 50, 75, 100];
+  var firedMilestones = {};
+  function checkScrollDepth() {
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (docHeight <= 0) return;
+    var pct = Math.round((window.scrollY / docHeight) * 100);
+    scrollMilestones.forEach(function (m) {
+      if (!firedMilestones[m] && pct >= m) {
+        firedMilestones[m] = true;
+        trackEvent('scroll_depth', { percent: m });
+      }
+    });
+  }
+  window.addEventListener('scroll', checkScrollDepth, { passive: true });
+
   // ---------- Navbar Scroll Effect ----------
   const navbar = document.getElementById('navbar');
   let lastScroll = 0;

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>See your real Airbnb profit in 5 minutes — Black Cat Analytics</title>
+  <meta name="description" content="Most Airbnb hosts confuse revenue with profit. Upload your Airbnb CSV and see exactly what you keep — cleaning, fees, taxes, all of it. 14-day Pro trial, no credit card.">
+  <link rel="canonical" href="https://www.tryblackcat.com/welcome.html">
+  <meta name="robots" content="noindex,follow">
+  <meta name="theme-color" content="#0a0a0a">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.tryblackcat.com/welcome.html">
+  <meta property="og:title" content="See your real Airbnb profit in 5 minutes">
+  <meta property="og:description" content="Upload your Airbnb CSV and see exactly what you keep. 14-day Pro trial, no credit card.">
+  <meta property="og:image" content="https://www.tryblackcat.com/og-image.png">
+  <meta property="og:site_name" content="Black Cat Analytics">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="See your real Airbnb profit in 5 minutes">
+  <meta name="twitter:description" content="Upload your Airbnb CSV and see exactly what you keep. 14-day Pro trial, no credit card.">
+  <meta name="twitter:image" content="https://www.tryblackcat.com/og-image.png">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0Y5H3YVKT4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0Y5H3YVKT4');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./dist/output.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
+
+  <style>
+    /* Welcome page-only tweaks: minimize hero weight for fastest LCP */
+    .welcome-hero {
+      background: radial-gradient(circle at 50% 0%, rgba(34, 197, 94, 0.08) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.06) 0%, transparent 50%),
+                  #0a0a0a;
+    }
+    .welcome-card {
+      background: linear-gradient(135deg, rgba(38, 38, 38, 0.6) 0%, rgba(23, 23, 23, 0.6) 100%);
+      border: 1px solid rgba(82, 82, 82, 0.3);
+      backdrop-filter: blur(8px);
+    }
+  </style>
+</head>
+<body class="bg-base-950 text-white font-body antialiased">
+
+  <!-- ======================== MINIMAL NAVBAR ======================== -->
+  <!-- One link only: the logo. No nav distractions on a paid landing page. -->
+  <header class="absolute top-0 left-0 right-0 z-50 py-6 px-4 sm:px-8">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2">
+        <picture>
+          <source srcset="./logo-icon.webp" type="image/webp">
+          <img src="./logo-icon.png" alt="Black Cat Analytics" class="w-7 h-7 object-contain" width="28" height="28" fetchpriority="high">
+        </picture>
+        <span class="font-display font-bold text-lg tracking-tight text-white">Black Cat <span class="text-accent-green">Analytics</span></span>
+      </a>
+      <a href="https://app.tryblackcat.com/login" class="text-sm text-neutral-400 hover:text-white transition-colors">Sign in</a>
+    </div>
+  </header>
+
+  <!-- ======================== HERO ======================== -->
+  <section class="welcome-hero relative min-h-screen flex flex-col items-center justify-center pt-24 pb-12 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+
+      <!-- Trust badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent-green/30 bg-accent-green/5 mb-6">
+        <span class="w-2 h-2 bg-accent-green rounded-full animate-pulse"></span>
+        <span class="text-xs font-medium text-accent-green tracking-wide uppercase">14-day Pro trial · No credit card</span>
+      </div>
+
+      <!-- Headline (in 1 line, single concept) -->
+      <h1 class="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl tracking-tight leading-[1.05] mb-5">
+        Revenue is not profit.
+        <br>
+        <span class="hero-gradient-text">See what you actually keep.</span>
+      </h1>
+
+      <!-- Subhead: very specific outcome -->
+      <p class="text-base sm:text-lg text-neutral-300 max-w-xl mx-auto mb-8 leading-relaxed">
+        Upload one Airbnb CSV. In 5 minutes you'll see your real net profit per property — after cleaning, fees, taxes, and every expense most hosts forget to count.
+      </p>
+
+      <!-- Single primary CTA above the fold -->
+      <div class="flex flex-col items-center gap-3 mb-6">
+        <a href="https://app.tryblackcat.com/signup"
+           data-cta-location="welcome_hero"
+           class="cta-button inline-block w-full sm:w-auto px-10 py-4 rounded-xl font-semibold text-base text-white">
+          Start my 14-day Pro trial — free
+        </a>
+        <p class="text-xs text-neutral-500">No credit card · Cancel anytime · Drops to Free after trial</p>
+      </div>
+
+      <!-- 3 quick trust points -->
+      <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-neutral-400 mt-6">
+        <span class="flex items-center gap-2"><span class="text-accent-green">✓</span> Setup under 5 min</span>
+        <span class="flex items-center gap-2"><span class="text-accent-green">✓</span> Works with Airbnb, VRBO, Booking.com</span>
+        <span class="flex items-center gap-2"><span class="text-accent-green">✓</span> Schedule E tax-ready</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== "WHAT YOU'LL SEE" ======================== -->
+  <section class="py-20 sm:py-28 px-4 bg-base-900">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-white mb-4">In 5 minutes you'll know</h2>
+        <p class="text-base text-neutral-400 max-w-xl mx-auto">Three numbers most hosts never see clearly.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="welcome-card rounded-2xl p-6">
+          <div class="text-4xl font-display font-extrabold text-accent-green mb-2">$X,XXX</div>
+          <h3 class="font-display font-semibold text-white text-lg mb-2">Your real profit</h3>
+          <p class="text-sm text-neutral-400 leading-relaxed">Revenue minus every expense — including the ones Airbnb's payout summary hides.</p>
+        </div>
+
+        <div class="welcome-card rounded-2xl p-6">
+          <div class="text-4xl font-display font-extrabold text-accent-blue mb-2">XX%</div>
+          <h3 class="font-display font-semibold text-white text-lg mb-2">Your profit margin</h3>
+          <p class="text-sm text-neutral-400 leading-relaxed">Per property, per month. So you know which listings are actually earning and which ones just look busy.</p>
+        </div>
+
+        <div class="welcome-card rounded-2xl p-6">
+          <div class="text-4xl font-display font-extrabold text-accent-purple mb-2">$XXX</div>
+          <h3 class="font-display font-semibold text-white text-lg mb-2">What you're missing</h3>
+          <p class="text-sm text-neutral-400 leading-relaxed">AI flags the expenses, deductions, and pricing leaks most hosts never catch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== HOW IT WORKS ======================== -->
+  <section class="py-20 sm:py-28 px-4">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14">
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-white mb-4">How it works</h2>
+      </div>
+
+      <ol class="space-y-6">
+        <li class="flex gap-5">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-accent-green/10 border border-accent-green/30 flex items-center justify-center font-display font-bold text-accent-green">1</div>
+          <div>
+            <h3 class="font-display font-semibold text-white text-lg mb-1">Sign up free</h3>
+            <p class="text-sm text-neutral-400">14 days of Pro tier on us. No credit card. Email + password or sign in with Google.</p>
+          </div>
+        </li>
+        <li class="flex gap-5">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-accent-blue/10 border border-accent-blue/30 flex items-center justify-center font-display font-bold text-accent-blue">2</div>
+          <div>
+            <h3 class="font-display font-semibold text-white text-lg mb-1">Upload your Airbnb CSV</h3>
+            <p class="text-sm text-neutral-400">Download from Airbnb → Earnings → Transaction History. Drag it into Black Cat. Done.</p>
+          </div>
+        </li>
+        <li class="flex gap-5">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-accent-purple/10 border border-accent-purple/30 flex items-center justify-center font-display font-bold text-accent-purple">3</div>
+          <div>
+            <h3 class="font-display font-semibold text-white text-lg mb-1">See your real numbers</h3>
+            <p class="text-sm text-neutral-400">Profit, margin, occupancy, expenses, AI insights, tax-ready reports — all in one dashboard.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ======================== FAQ (light) ======================== -->
+  <section class="py-20 sm:py-24 px-4 bg-base-900">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="font-display font-bold text-3xl text-white text-center mb-10">Questions hosts always ask</h2>
+
+      <div class="space-y-4">
+        <details class="welcome-card rounded-xl p-5 group">
+          <summary class="font-display font-semibold text-white cursor-pointer list-none flex justify-between items-center">
+            <span>Is my credit card charged when I sign up?</span>
+            <span class="text-accent-green group-open:rotate-45 transition-transform">+</span>
+          </summary>
+          <p class="text-sm text-neutral-400 mt-3 leading-relaxed">No. The 14-day Pro trial is fully free and doesn't ask for a card. If you don't upgrade, your account just drops to the Free tier — your data stays with you.</p>
+        </details>
+
+        <details class="welcome-card rounded-xl p-5 group">
+          <summary class="font-display font-semibold text-white cursor-pointer list-none flex justify-between items-center">
+            <span>What if I don't use Airbnb?</span>
+            <span class="text-accent-green group-open:rotate-45 transition-transform">+</span>
+          </summary>
+          <p class="text-sm text-neutral-400 mt-3 leading-relaxed">We support VRBO and Booking.com via iCal sync, and you can add expenses manually for any platform. If you host on Airbnb plus another platform, you can see all your numbers in one place.</p>
+        </details>
+
+        <details class="welcome-card rounded-xl p-5 group">
+          <summary class="font-display font-semibold text-white cursor-pointer list-none flex justify-between items-center">
+            <span>How long does it really take to set up?</span>
+            <span class="text-accent-green group-open:rotate-45 transition-transform">+</span>
+          </summary>
+          <p class="text-sm text-neutral-400 mt-3 leading-relaxed">Most hosts are looking at their full dashboard inside 5 minutes. Sign up → add property → upload CSV. We auto-categorize the rest.</p>
+        </details>
+
+        <details class="welcome-card rounded-xl p-5 group">
+          <summary class="font-display font-semibold text-white cursor-pointer list-none flex justify-between items-center">
+            <span>Is my financial data safe?</span>
+            <span class="text-accent-green group-open:rotate-45 transition-transform">+</span>
+          </summary>
+          <p class="text-sm text-neutral-400 mt-3 leading-relaxed">Yes. All data is encrypted in transit and at rest. We never share or sell your data. Payments are processed by Stripe — we never see your card number.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== FINAL CTA ======================== -->
+  <section class="welcome-hero py-24 sm:py-32 px-4">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-white mb-4 leading-tight">
+        Stop guessing.<br>
+        <span class="hero-gradient-text">Start knowing.</span>
+      </h2>
+      <p class="text-base sm:text-lg text-neutral-300 mb-8 max-w-lg mx-auto">
+        14 days of Pro. No credit card. Cancel anytime.
+      </p>
+      <a href="https://app.tryblackcat.com/signup"
+         data-cta-location="welcome_footer"
+         class="cta-button inline-block px-10 py-4 rounded-xl font-semibold text-base text-white">
+        Start my free trial
+      </a>
+      <p class="text-xs text-neutral-500 mt-4">Already have an account? <a href="https://app.tryblackcat.com/login" class="text-neutral-400 hover:text-white underline">Sign in</a></p>
+    </div>
+  </section>
+
+  <!-- ======================== MINIMAL FOOTER ======================== -->
+  <footer class="border-t border-neutral-800/40 py-8 px-4">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-neutral-500">
+      <span>&copy; 2026 Black Cat Analytics</span>
+      <div class="flex items-center gap-5">
+        <a href="./privacy.html" class="hover:text-neutral-300 transition-colors">Privacy</a>
+        <a href="./terms.html" class="hover:text-neutral-300 transition-colors">Terms</a>
+        <a href="mailto:support@tryblackcat.com" class="hover:text-neutral-300 transition-colors">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
