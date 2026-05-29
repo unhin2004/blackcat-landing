@@ -20,6 +20,14 @@
   </script>
   <link rel="icon" type="image/x-icon" href="./favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
+    <!-- Microsoft Clarity (session replay + heatmaps) -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "wykpb8uzfm");
+    </script>
 </head>
 <body class="bg-base-950 text-white font-body antialiased">
 
@@ -136,12 +144,14 @@
           <li><strong>Stripe</strong> — processes subscription payments. Your payment details go directly to Stripe and are governed by <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Stripe's Privacy Policy</a>.</li>
           <li><strong>Sentry</strong> — provides error monitoring. Sentry does not receive your Airbnb revenue data. Learn more at <a href="https://sentry.io/privacy/" target="_blank" rel="noopener">Sentry's Privacy Policy</a>.</li>
           <li><strong>Vercel</strong> — hosts our application. Learn more at <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">Vercel's Privacy Policy</a>.</li>
+          <li><strong>Google Analytics</strong> — provides aggregate, anonymised usage statistics (page views, session duration) for our marketing site and dashboard. We do not link analytics data to identifiable users. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</li>
+          <li><strong>Microsoft Clarity</strong> — provides session-replay and heatmaps so we can see where new users get stuck. Clarity masks sensitive form inputs (passwords, payment fields) by default. See <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener">Microsoft's Privacy Statement</a>.</li>
           <li><strong>PostgreSQL / Prisma</strong> — stores your account data, property data, revenue records, and expense records. Data is not shared outside the scope of operating the Service.</li>
         </ul>
-        <p>We do not use any advertising networks, marketing analytics platforms, social media trackers, or data brokers.</p>
+        <p>We do not use any advertising networks, social media trackers, or data brokers.</p>
 
         <h2>5. Cookies</h2>
-        <p>We use <strong>only essential session cookies</strong> — small files stored on your device to keep you authenticated while you use the Service.</p>
+        <p>We use a small number of cookies to keep you logged in and to understand how the Service is used. None are used for advertising.</p>
         <div class="overflow-x-auto my-4">
           <table class="w-full text-sm">
             <thead>
@@ -153,10 +163,12 @@
             </thead>
             <tbody class="text-neutral-400">
               <tr><td class="py-2.5 pr-4">Session cookie</td><td class="py-2.5 px-4">Maintains your logged-in state</td><td class="py-2.5 pl-4">Deleted when you log out or close your browser</td></tr>
+              <tr><td class="py-2.5 pr-4">Google Analytics (_ga, _ga_*)</td><td class="py-2.5 px-4">Aggregate, anonymised usage analytics</td><td class="py-2.5 pl-4">Up to 2 years</td></tr>
+              <tr><td class="py-2.5 pr-4">Microsoft Clarity (_clck, _clsk)</td><td class="py-2.5 px-4">Session-replay + heatmaps for product improvement</td><td class="py-2.5 pl-4">Up to 1 year</td></tr>
             </tbody>
           </table>
         </div>
-        <p>We do <strong>not</strong> use tracking cookies, advertising cookies, or third-party analytics cookies.</p>
+        <p>We do <strong>not</strong> use advertising or social-media tracking cookies.</p>
 
         <h2>6. Data Security</h2>
         <p>We take reasonable technical and organizational measures to protect your data, including:</p>
