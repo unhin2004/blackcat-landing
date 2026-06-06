@@ -247,7 +247,22 @@
       </div>
     </div>
 
-    <!-- Dashboard Mockup -->
+    <!-- Dashboard Mockup
+         TODO Sam: this HTML mockup uses the OLD demo dataset (3 properties,
+         $4,280 net) and an older layout. Take a real screenshot of your
+         current Overview page (the one at app.tryblackcat.com/ when logged
+         in — full date picker, real KPI numbers), save as
+         screenshots/hero-dashboard.png, and replace this entire <div
+         class="reveal reveal-delay-2 ..."> block with:
+
+             <div class="reveal reveal-delay-2 relative z-10 w-full max-w-5xl mx-auto mt-12 sm:mt-16 px-2">
+               <img src="./screenshots/hero-dashboard.png"
+                    alt="Black Cat Analytics dashboard — Overview page"
+                    class="w-full rounded-2xl border border-neutral-800/60 shadow-2xl"
+                    width="1400" height="900" loading="eager" />
+             </div>
+
+         Crop to ~1400×900, scrub real $ numbers if you want them private. -->
     <div class="reveal reveal-delay-2 relative z-10 w-full max-w-5xl mx-auto mt-12 sm:mt-16 px-2">
       <div class="dashboard-mockup">
         <!-- Window chrome -->
@@ -740,6 +755,114 @@
     </div>
   </section>
 
+  <!-- ======================== COMPARISON ========================
+       Added June 2026. STR hosts comparison-shop us against Stessa and
+       Hostaway. Pretending those don't exist makes us look naïve —
+       acknowledging them with an honest, specific comparison converts
+       comparison-shopping buyers far better than silence. Tone is
+       respectful (not snide) — Stessa is genuinely a great solo-host
+       tool, Hostaway is a real PMS — we just serve a different wedge.
+  -->
+  <section id="comparison" class="relative py-24 sm:py-32 px-4 overflow-hidden">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="reveal font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight mb-4">
+          You&apos;re probably comparing us to<br><span class="hero-gradient-text">Stessa or Hostaway.</span>
+        </h2>
+        <p class="reveal text-base text-neutral-400 max-w-2xl mx-auto">
+          Honest answer: it depends on what you&apos;re trying to do.
+        </p>
+      </div>
+
+      <!-- Mobile: stacked cards (default). Desktop: comparison table. -->
+      <div class="reveal hidden md:block rounded-2xl border border-neutral-800/60 bg-base-900/50 overflow-hidden">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-neutral-800/60 bg-base-950/50">
+              <th class="text-left p-4 font-display font-semibold text-neutral-400 text-xs uppercase tracking-wider">&nbsp;</th>
+              <th class="text-left p-4 font-display font-semibold text-neutral-300">Stessa</th>
+              <th class="text-left p-4 font-display font-semibold text-neutral-300">Hostaway</th>
+              <th class="text-left p-4 font-display font-semibold text-white bg-accent-green/5 border-l border-accent-green/20">Black Cat</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-neutral-800/40">
+            <tr>
+              <td class="p-4 text-neutral-500 align-top">Built for</td>
+              <td class="p-4 text-neutral-300 align-top">Solo long-term-rental hosts. STR is a bolt-on.</td>
+              <td class="p-4 text-neutral-300 align-top">PMS &mdash; channel management &amp; messaging. Finance is a checkbox feature.</td>
+              <td class="p-4 text-white align-top bg-accent-green/5 border-l border-accent-green/20">STR financials specifically. Solo hosts and property managers.</td>
+            </tr>
+            <tr>
+              <td class="p-4 text-neutral-500 align-top">Multi-platform bookings<br><span class="text-[10px] uppercase tracking-wider text-neutral-600">VRBO, Booking.com, direct</span></td>
+              <td class="p-4 text-neutral-300 align-top">Airbnb-first, others limited</td>
+              <td class="p-4 text-neutral-300 align-top">Yes</td>
+              <td class="p-4 text-white align-top bg-accent-green/5 border-l border-accent-green/20">Yes &mdash; unified in one view</td>
+            </tr>
+            <tr>
+              <td class="p-4 text-neutral-500 align-top">Bank sync (Plaid)</td>
+              <td class="p-4 text-neutral-300 align-top">Yes</td>
+              <td class="p-4 text-neutral-300 align-top">Add-on / paid integrations</td>
+              <td class="p-4 text-white align-top bg-accent-green/5 border-l border-accent-green/20">Yes &mdash; deduplicated against CSV uploads so you don&apos;t double-count</td>
+            </tr>
+            <tr>
+              <td class="p-4 text-neutral-500 align-top">Per-property Schedule E</td>
+              <td class="p-4 text-neutral-300 align-top">Exports raw transactions, no Schedule E worksheet</td>
+              <td class="p-4 text-neutral-300 align-top">Not really</td>
+              <td class="p-4 text-white align-top bg-accent-green/5 border-l border-accent-green/20">Worksheet + PDF per property, with depreciation</td>
+            </tr>
+            <tr>
+              <td class="p-4 text-neutral-500 align-top">Property manager tier<br><span class="text-[10px] uppercase tracking-wider text-neutral-600">Owner statements, per-owner tax</span></td>
+              <td class="p-4 text-neutral-300 align-top">No</td>
+              <td class="p-4 text-neutral-300 align-top">Limited</td>
+              <td class="p-4 text-white align-top bg-accent-green/5 border-l border-accent-green/20">Full PM tier &mdash; owner statements + per-owner Schedule E PDFs + commission math</td>
+            </tr>
+            <tr>
+              <td class="p-4 text-neutral-500 align-top">Cleaner management</td>
+              <td class="p-4 text-neutral-300 align-top">No</td>
+              <td class="p-4 text-neutral-300 align-top">Yes</td>
+              <td class="p-4 text-white align-top bg-accent-green/5 border-l border-accent-green/20">Yes &mdash; auto-assign, payouts via Stripe Connect, photo verification</td>
+            </tr>
+            <tr>
+              <td class="p-4 text-neutral-500 align-top">AI insights &amp; chat</td>
+              <td class="p-4 text-neutral-300 align-top">No</td>
+              <td class="p-4 text-neutral-300 align-top">No</td>
+              <td class="p-4 text-white align-top bg-accent-green/5 border-l border-accent-green/20">Forecast, benchmarks, plain-English Q&amp;A on your data</td>
+            </tr>
+            <tr>
+              <td class="p-4 text-neutral-500 align-top">Free tier</td>
+              <td class="p-4 text-neutral-300 align-top">Yes (ad-supported)</td>
+              <td class="p-4 text-neutral-300 align-top">No</td>
+              <td class="p-4 text-white align-top bg-accent-green/5 border-l border-accent-green/20">Yes &mdash; 1 property, no ads, no credit card</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Mobile: stacked summary cards (the table doesn't fit on a phone). -->
+      <div class="reveal md:hidden grid grid-cols-1 gap-4">
+        <div class="rounded-2xl border border-neutral-800/60 bg-base-900/50 p-5">
+          <h3 class="font-display font-bold text-white mb-1">Stessa</h3>
+          <p class="text-xs text-neutral-500 uppercase tracking-wider mb-3">Solo long-term-rental hosts</p>
+          <p class="text-sm text-neutral-400 leading-relaxed">Great for SFR landlords doing basic books. STR features (Airbnb categorization, Schedule E, occupancy) are a bolt-on. Free tier is ad-supported. No PM tier.</p>
+        </div>
+        <div class="rounded-2xl border border-neutral-800/60 bg-base-900/50 p-5">
+          <h3 class="font-display font-bold text-white mb-1">Hostaway</h3>
+          <p class="text-xs text-neutral-500 uppercase tracking-wider mb-3">PMS &mdash; channel management</p>
+          <p class="text-sm text-neutral-400 leading-relaxed">Real platform for managing multiple listings across channels. Finance and Schedule E are checkbox features &mdash; not the focus. No free tier.</p>
+        </div>
+        <div class="rounded-2xl border border-accent-green/30 bg-accent-green/5 p-5">
+          <h3 class="font-display font-bold text-white mb-1">Black Cat</h3>
+          <p class="text-xs text-accent-green uppercase tracking-wider mb-3">STR financials, correct</p>
+          <p class="text-sm text-neutral-300 leading-relaxed">Multi-platform bookings unified. Bank sync deduplicated against CSV. Per-property Schedule E. Full PM tier with owner statements + per-owner tax PDFs. Free for 1 property.</p>
+        </div>
+      </div>
+
+      <p class="reveal text-xs text-neutral-500 text-center mt-6 max-w-2xl mx-auto">
+        Comparisons reflect Stessa and Hostaway&apos;s public features as of June 2026. If you&apos;re using either and we got something wrong, email <a href="mailto:support@tryblackcat.com" class="text-accent-blue hover:underline">support@tryblackcat.com</a> &mdash; we&apos;ll fix it.
+      </p>
+    </div>
+  </section>
+
   <!-- ======================== PRICING ======================== -->
   <section id="pricing" class="relative py-24 sm:py-32 px-4 overflow-hidden">
     <div class="max-w-6xl mx-auto">
@@ -1020,48 +1143,108 @@
   </section>
 
   <!-- ======================== TRUST ======================== -->
+  <!-- ======================== TRUST ========================
+       Rewritten June 2026. The old section was three platitude cards
+       (14-day trial / cancel anytime / "bank-level encryption"). Every
+       SaaS landing page has those — they actively signal "we couldn't
+       think of anything specific." For a FINANCIAL product, trust comes
+       from naming the actual mechanisms: who handles the money paths,
+       who built it, what happens to your data, and what we don't do.
+  -->
   <section id="trust" class="relative py-24 sm:py-32 px-4 overflow-hidden">
     <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-16">
+      <div class="text-center mb-12">
         <h2 class="reveal font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight mb-4">
-          Built for Airbnb Hosts,<br><span class="text-neutral-500">By Someone Who Gets It</span>
+          You&apos;re trusting us with your<br><span class="hero-gradient-text">money data.</span> Here&apos;s the deal.
         </h2>
+        <p class="reveal text-base text-neutral-400 max-w-2xl mx-auto">
+          No vague reassurances. Specific mechanisms.
+        </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <!-- The trust stack: 4 specific cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-12">
+        <!-- 1. Bank connection — Plaid -->
         <div class="reveal trust-card">
           <div class="trust-card-inner">
-            <div class="w-14 h-14 rounded-2xl bg-accent-green/10 border border-accent-green/20 flex items-center justify-center mb-5 mx-auto">
-              <svg class="w-7 h-7 text-accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-              </svg>
+            <div class="flex items-center gap-3 mb-3">
+              <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-white text-[#111111] text-xs font-bold tracking-tight">Plaid</span>
+              <span class="text-xs text-neutral-500 uppercase tracking-wider">Bank connection</span>
             </div>
-            <h3 class="font-display font-bold text-lg text-white mb-2 text-center">14-Day Free Trial</h3>
-            <p class="text-sm text-neutral-400 leading-relaxed text-center">Try everything risk-free. No credit card needed to start.</p>
+            <h3 class="font-display font-bold text-lg text-white mb-2">Your bank password never touches our servers.</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed">
+              Plaid handles the bank login — the same connection layer Venmo, Robinhood, and your bank&apos;s own mobile app use. We only receive the transaction data Plaid shares back. Disconnect any bank in one click from Settings, which immediately revokes our access.
+            </p>
           </div>
         </div>
 
+        <!-- 2. Payments — Stripe -->
         <div class="reveal reveal-delay-1 trust-card">
           <div class="trust-card-inner">
-            <div class="w-14 h-14 rounded-2xl bg-accent-blue/10 border border-accent-blue/20 flex items-center justify-center mb-5 mx-auto">
-              <svg class="w-7 h-7 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
-              </svg>
+            <div class="flex items-center gap-3 mb-3">
+              <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-[#635BFF] text-white text-xs font-bold tracking-tight">Stripe</span>
+              <span class="text-xs text-neutral-500 uppercase tracking-wider">Payments</span>
             </div>
-            <h3 class="font-display font-bold text-lg text-white mb-2 text-center">Cancel Anytime</h3>
-            <p class="text-sm text-neutral-400 leading-relaxed text-center">No long-term contracts. No cancellation fees. Leave whenever you want.</p>
+            <h3 class="font-display font-bold text-lg text-white mb-2">We don&apos;t see or store your card number.</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed">
+              Subscriptions are billed through Stripe. We receive a subscription status and the last four digits of your card — nothing more. Manage or cancel any time through your Stripe customer portal (linked from Settings), no support email required.
+            </p>
           </div>
         </div>
 
-        <div class="reveal reveal-delay-2 trust-card">
+        <!-- 3. Your data, yours -->
+        <div class="reveal trust-card">
           <div class="trust-card-inner">
-            <div class="w-14 h-14 rounded-2xl bg-accent-purple/10 border border-accent-purple/20 flex items-center justify-center mb-5 mx-auto">
-              <svg class="w-7 h-7 text-accent-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-              </svg>
+            <div class="flex items-center gap-3 mb-3">
+              <span class="inline-flex items-center w-7 h-7 rounded-md bg-accent-green/15 border border-accent-green/30 justify-center">
+                <svg class="w-4 h-4 text-accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l9 6 9-6"/><rect x="3" y="6" width="18" height="14" rx="2" stroke-width="2"/></svg>
+              </span>
+              <span class="text-xs text-neutral-500 uppercase tracking-wider">Your data</span>
             </div>
-            <h3 class="font-display font-bold text-lg text-white mb-2 text-center">Your Data, Encrypted & Secure</h3>
-            <p class="text-sm text-neutral-400 leading-relaxed text-center">Bank-level encryption keeps your financial data private and protected.</p>
+            <h3 class="font-display font-bold text-lg text-white mb-2">Yours to export. Yours to delete. Yours, full stop.</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed">
+              Export every transaction to CSV from Tax &amp; Reports. Delete your entire account from Settings &rarr; Danger Zone &mdash; no support ticket, no waiting. We don&apos;t sell your data, we don&apos;t share it for advertising, and AI features only process your data when you ask them to.
+            </p>
+          </div>
+        </div>
+
+        <!-- 4. Real company -->
+        <div class="reveal reveal-delay-1 trust-card">
+          <div class="trust-card-inner">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="inline-flex items-center w-7 h-7 rounded-md bg-accent-blue/15 border border-accent-blue/30 justify-center">
+                <svg class="w-4 h-4 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </span>
+              <span class="text-xs text-neutral-500 uppercase tracking-wider">Real company</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-white mb-2">US LLC. Counsel-reviewed legal docs. A real human reads support@.</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed">
+              Black Cat Analytics LLC &mdash; a New Hampshire limited liability company. Our
+              <a href="https://app.tryblackcat.com/privacy" class="text-accent-blue hover:underline">Privacy</a>,
+              <a href="https://app.tryblackcat.com/terms" class="text-accent-blue hover:underline">Terms</a>, and
+              <a href="https://app.tryblackcat.com/policies/data-retention" class="text-accent-blue hover:underline">Data Retention Policy</a>
+              were written by an attorney, not pulled from a template. Email
+              <a href="mailto:support@tryblackcat.com" class="text-accent-blue hover:underline">support@tryblackcat.com</a>
+              &mdash; a person replies.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Founder note. At pre-launch indie scale a face dramatically outperforms
+           anonymous corporate voice on financial-product trust.
+           TODO Sam: drop a real photo at ./sam-headshot.jpg (square crop, ~400px)
+           and swap the initials avatar below for <img src="./sam-headshot.jpg" alt="Sam Swenson">. -->
+      <div class="reveal max-w-3xl mx-auto rounded-2xl border border-neutral-800/60 bg-base-900/50 p-6 sm:p-8">
+        <div class="flex flex-col sm:flex-row items-start gap-5">
+          <div class="flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-accent-green/30 to-accent-blue/30 border border-neutral-700 flex items-center justify-center">
+            <span class="font-display font-bold text-xl text-white">SS</span>
+          </div>
+          <div class="min-w-0 flex-1">
+            <p class="text-sm font-semibold text-white mb-1">Sam Swenson &middot; founder &amp; STR host</p>
+            <p class="text-sm text-neutral-300 leading-relaxed">
+              I host an Airbnb. I built Black Cat because Stessa kept getting my numbers wrong and the property-management tools weren&apos;t built for hosts who actually want to know if a property is profitable. Every line of code in here was written by someone who&apos;s going to use it on their own portfolio. If something&apos;s broken or wrong, email me directly &mdash; I&apos;ll fix it.
+            </p>
           </div>
         </div>
       </div>
