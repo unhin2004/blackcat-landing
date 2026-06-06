@@ -104,6 +104,9 @@
     }
     .calc-input::-webkit-outer-spin-button,
     .calc-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    /* Restore Tailwind padding utilities — .calc-input is defined after Tailwind so equal-specificity rules below would otherwise be overridden by its padding shorthand. */
+    .calc-input.pl-8 { padding-left: 2rem; }
+    .calc-input.pr-8 { padding-right: 2rem; }
     .calc-input:focus {
       outline: none;
       border-color: rgba(59, 130, 246, 0.5);
