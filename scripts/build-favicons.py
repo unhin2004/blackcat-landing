@@ -17,7 +17,7 @@ from PIL import Image
 
 REPO = Path(__file__).resolve().parent.parent
 SRC = REPO / "logo-icon.png"
-BG = (255, 255, 255, 255)  # solid white — works against any container
+BG = (10, 10, 10, 255)  # #0a0a0a — matches the site's bg-base-950
 PAD_FRACTION = 0.08
 
 # Each entry: (output filename, pixel size)
