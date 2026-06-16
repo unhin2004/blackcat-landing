@@ -3,24 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Black Cat Analytics — Airbnb Profit Tracking Made Simple</title>
-  <meta name="description" content="Free Airbnb profit tracking for hosts. Track revenue, expenses, and real profit — not just revenue. AI-powered insights to maximize your rental income. Start free.">
+  <title>Black Cat Analytics — Short-Term Rental Profit Tracking (Airbnb, VRBO, Booking.com)</title>
+  <meta name="description" content="Profit tracking for short-term rental hosts and property managers. Works with Airbnb, VRBO, Booking.com, and direct bookings. Track real net profit, auto-import bank expenses, generate Schedule E reports. Free to start.">
   <link rel="canonical" href="https://www.tryblackcat.com/">
   <meta name="theme-color" content="#0a0a0a">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.tryblackcat.com/">
-  <meta property="og:title" content="Black Cat Analytics — Airbnb Profit Tracking Made Simple">
-  <meta property="og:description" content="Free Airbnb profit tracking for hosts. Track revenue, expenses, and real profit. AI-powered insights to maximize your rental income.">
+  <meta property="og:title" content="Black Cat Analytics — Short-Term Rental Profit Tracking">
+  <meta property="og:description" content="Profit tracking for short-term rental hosts and property managers. Works with Airbnb, VRBO, Booking.com, and direct bookings. AI insights, tax-ready reports.">
   <meta property="og:image" content="https://www.tryblackcat.com/og-image.png">
   <meta property="og:site_name" content="Black Cat Analytics">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@tryblackcat">
   <meta name="twitter:title" content="Black Cat Analytics — Airbnb Profit Tracking Made Simple">
-  <meta name="twitter:description" content="Free Airbnb profit tracking for hosts. Track revenue, expenses, and real profit. AI-powered insights to maximize your rental income.">
+  <meta name="twitter:description" content="Profit tracking for short-term rental hosts and property managers. Airbnb, VRBO, Booking.com, and direct bookings. AI insights, Schedule E tax reports, owner portals. Free to start.">
   <meta name="twitter:image" content="https://www.tryblackcat.com/og-image.png">
 
   <!-- Structured Data -->
@@ -32,7 +31,7 @@
     "url": "https://www.tryblackcat.com",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
-    "description": "AI-powered profit tracking for Airbnb hosts. Track revenue, expenses, occupancy, and get AI-driven insights, chatbot, revenue forecasting, and market benchmarks to maximize your rental income.",
+    "description": "AI-powered profit tracking for short-term rental hosts and property managers. Works with Airbnb, VRBO, Booking.com, Hostaway, and direct bookings. Track revenue, expenses, occupancy, generate Schedule E reports, get AI insights and revenue forecasting.",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -66,7 +65,7 @@
         "name": "Does it connect directly to Airbnb?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We support CSV import from Airbnb and iCal sync for bookings from Airbnb, VRBO, and Booking.com. Direct API integration with Airbnb is on our roadmap."
+          "text": "We support CSV import from Airbnb, iCal sync (Airbnb / VRBO / Booking.com), Hostaway PMS sync, and bank sync via Plaid for automatic expense import. Direct Airbnb API integration is on our roadmap."
         }
       },
       {
@@ -82,7 +81,7 @@
         "name": "Can I track multiple properties?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes! Free and Starter plans support 1 property, Pro supports up to 5, and Business gives you unlimited. Each property gets its own dashboard and reports."
+          "text": "Yes! Free and Starter plans support 1 property, Pro supports up to 5, and Business + Property Management give you unlimited. Each property gets its own dashboard and reports. Property Management tier adds owner statements + an owner portal for STR management companies."
         }
       },
       {
@@ -127,8 +126,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="./dist/output.css">
-  <link rel="icon" type="image/x-icon" href="./favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="./style.css">
     <!-- Microsoft Clarity (session replay + heatmaps) -->
     <script type="text/javascript">
@@ -145,7 +147,7 @@
   <div class="noise-overlay"></div>
 
   <!-- ======================== NAVBAR ======================== -->
-    <!-- NAV-INJECT START -->
+  <!-- NAV-INJECT START -->
   <!-- Generated from _partials/nav.html — edit there, run `npm run build:nav` -->
 <!--
   CANONICAL SITE NAV
@@ -176,7 +178,7 @@
         <a href="/tools/airbnb-profit-calculator.html" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Calculator</a>
         <a href="/tools/airbnb-profit-tracker-spreadsheet.html" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Spreadsheet</a>
         <a href="/blog/" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Blog</a>
-        <a href="https://app.tryblackcat.com/demo" data-cta-location="nav_desktop" class="nav-link text-sm text-accent-green hover:text-green-300 transition-colors duration-200 font-medium">Live Demo</a>
+        <a href="https://app.tryblackcat.com/login" data-cta-location="nav_desktop_signin" class="nav-link text-sm text-neutral-300 hover:text-white transition-colors duration-200 font-medium">Sign in</a>
         <a href="https://app.tryblackcat.com/signup" data-cta-location="nav_desktop" class="cta-button-sm text-sm font-semibold px-5 py-2.5 rounded-full text-white">Get Started Free</a>
       </div>
 
@@ -199,7 +201,7 @@
     <a href="/tools/airbnb-profit-calculator.html" class="mobile-nav-link text-xl font-display font-semibold text-white">Calculator</a>
     <a href="/tools/airbnb-profit-tracker-spreadsheet.html" class="mobile-nav-link text-xl font-display font-semibold text-white">Spreadsheet</a>
     <a href="/blog/" class="mobile-nav-link text-xl font-display font-semibold text-white">Blog</a>
-    <a href="https://app.tryblackcat.com/demo" data-cta-location="nav_mobile" class="mobile-nav-link text-xl font-display font-semibold text-accent-green">Live Demo</a>
+    <a href="https://app.tryblackcat.com/login" data-cta-location="nav_mobile_signin" class="mobile-nav-link text-xl font-display font-semibold text-neutral-300">Sign in</a>
     <a href="https://app.tryblackcat.com/signup" data-cta-location="nav_mobile" class="cta-button-sm text-center text-base font-semibold px-6 py-3 rounded-full text-white mt-4">Get Started Free</a>
   </div>
 </div>
@@ -220,18 +222,37 @@
       <!-- Headline -->
       <h1 class="reveal font-display font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[1.08] mb-6">
         Know Your Real<br>
-        <span class="hero-gradient-text">Airbnb Profit</span>
+        <span class="hero-gradient-text">Rental Profit</span>
       </h1>
+
+      <!-- Platform support — shown right under the H1 so non-Airbnb hosts know
+           they're in the right place. "Tracks income from … & direct/off-
+           platform stays" rather than "direct bookings" — the latter read as
+           if we offer a guest-facing booking engine, which we don't; we track
+           the revenue from bookings you took directly. -->
+      <p class="reveal text-xs sm:text-sm text-neutral-500 mb-5 tracking-wide uppercase">
+        Tracks income from <span class="text-white">Airbnb</span> · <span class="text-white">VRBO</span> · <span class="text-white">Booking.com</span> · <span class="text-white">direct &amp; off-platform stays</span>
+      </p>
 
       <!-- Subheadline -->
       <p class="reveal text-base sm:text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-        Most hosts guess. You'll know. Track every dollar in, every dollar out — and let AI find the money you're leaving on the table.
+        Connect your bookings (CSV, iCal, or Hostaway) and your bank (Plaid) — we auto-categorize every expense, calculate true net profit per property, and generate tax-ready Schedule E reports. AI insights find the money you're leaving on the table.
       </p>
+
+      <!-- Trust line: Plaid + Stripe trust marks right in the hero so the
+           "this is a real financial product, not a side project" signal
+           lands above the fold, not buried in the Trust section. -->
+      <div class="reveal flex flex-wrap items-center justify-center gap-x-4 gap-y-2 mb-5 text-xs text-neutral-500">
+        <span>Powered by</span>
+        <span class="inline-flex items-center px-2 py-0.5 rounded font-bold tracking-tight" style="background:#ffffff;color:#0a0a0a">Plaid</span>
+        <span class="text-neutral-700">+</span>
+        <span class="inline-flex items-center px-2 py-0.5 rounded font-bold tracking-tight" style="background:#635BFF;color:#ffffff">Stripe</span>
+      </div>
 
       <!-- CTA Buttons -->
       <div class="reveal flex flex-col sm:flex-row items-center justify-center gap-3">
         <a href="https://app.tryblackcat.com/signup" data-cta-location="hero" class="cta-button inline-block px-8 py-4 rounded-xl font-semibold text-base text-white">Get Started Free</a>
-        <a href="https://app.tryblackcat.com/demo" data-cta-location="hero" class="inline-block px-8 py-4 rounded-xl font-semibold text-base text-white border border-neutral-600 hover:border-neutral-400 bg-neutral-900/60 hover:bg-neutral-800/80 backdrop-blur-sm transition-all duration-200">Try Live Demo</a>
+        <a href="#features" data-cta-location="hero" class="inline-block px-8 py-4 rounded-xl font-semibold text-base text-white border border-neutral-600 hover:border-neutral-400 bg-neutral-900/60 hover:bg-neutral-800/80 backdrop-blur-sm transition-all duration-200">See what&apos;s inside</a>
       </div>
       <p class="reveal text-xs text-neutral-500 mt-4">Free for your first property · No credit card required</p>
 
@@ -241,7 +262,7 @@
           <span class="text-accent-green">✓</span> Free forever for 1 property
         </div>
         <div class="flex items-center gap-2 text-sm text-neutral-400">
-          <span class="text-accent-green">✓</span> AI-powered insights
+          <span class="text-accent-green">✓</span> Multi-unit properties supported
         </div>
         <div class="flex items-center gap-2 text-sm text-neutral-400">
           <span class="text-accent-green">✓</span> Setup in under 5 minutes
@@ -252,168 +273,30 @@
       </div>
     </div>
 
-    <!-- Dashboard Mockup -->
+    <!-- Hero screenshot: real Overview page from app.tryblackcat.com.
+         Replaced the previous HTML mockup (which used the stale demo
+         dataset and an older layout) with the live product so prospects
+         see what they'll actually get when they sign up. -->
     <div class="reveal reveal-delay-2 relative z-10 w-full max-w-5xl mx-auto mt-12 sm:mt-16 px-2">
-      <div class="dashboard-mockup">
-        <!-- Window chrome -->
-        <div class="flex items-center gap-2 px-5 py-3 border-b border-neutral-800/50">
-          <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
-          <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
-          <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
-          <span class="ml-4 text-xs text-neutral-600 font-mono">tryblackcat.com/dashboard</span>
-        </div>
-
-        <!-- Dashboard content -->
-        <div class="p-4 sm:p-6">
-          <!-- Header -->
-          <div class="flex items-center justify-between mb-5">
-            <div>
-              <h3 class="text-sm font-display font-semibold text-white mb-1">Property Overview</h3>
-              <p class="text-xs text-neutral-500">February 2026 · Downtown Loft</p>
-            </div>
-            <div class="hidden sm:flex items-center gap-2">
-              <span class="px-3 py-1 text-xs rounded-md bg-accent-green/10 text-accent-green border border-accent-green/20">Live</span>
-              <span class="px-3 py-1 text-xs rounded-md bg-base-800 text-neutral-400 border border-neutral-700/30">Export</span>
-            </div>
-          </div>
-
-          <!-- KPI Grid -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
-            <!-- Net Profit -->
-            <div class="kpi-card kpi-green">
-              <div class="kpi-card-inner">
-                <p class="text-xs text-neutral-500 uppercase tracking-wider mb-1">Net Profit</p>
-                <p class="text-lg sm:text-2xl font-display font-bold text-accent-green">$4,280</p>
-                <p class="text-xs text-accent-green/70 mt-1">↑ 12.3% vs last mo</p>
-              </div>
-            </div>
-
-            <!-- Revenue -->
-            <div class="kpi-card kpi-blue">
-              <div class="kpi-card-inner">
-                <p class="text-xs text-neutral-500 uppercase tracking-wider mb-1">Revenue</p>
-                <p class="text-lg sm:text-2xl font-display font-bold text-accent-blue">$8,750</p>
-                <p class="text-xs text-accent-blue/70 mt-1">↑ 8.1% vs last mo</p>
-              </div>
-            </div>
-
-            <!-- Expenses -->
-            <div class="kpi-card kpi-red">
-              <div class="kpi-card-inner">
-                <p class="text-xs text-neutral-500 uppercase tracking-wider mb-1">Expenses</p>
-                <p class="text-lg sm:text-2xl font-display font-bold text-accent-red">$4,470</p>
-                <p class="text-xs text-accent-red/70 mt-1">↓ 3.2% vs last mo</p>
-              </div>
-            </div>
-
-            <!-- Occupancy -->
-            <div class="kpi-card kpi-cyan">
-              <div class="kpi-card-inner">
-                <p class="text-xs text-neutral-500 uppercase tracking-wider mb-1">Occupancy</p>
-                <p class="text-lg sm:text-2xl font-display font-bold text-accent-cyan">87.3%</p>
-                <p class="text-xs text-accent-cyan/70 mt-1">↑ 4.1% vs last mo</p>
-              </div>
-            </div>
-
-            <!-- Profit Margin -->
-            <div class="kpi-card kpi-purple col-span-2 lg:col-span-1">
-              <div class="kpi-card-inner">
-                <p class="text-xs text-neutral-500 uppercase tracking-wider mb-1">Profit Margin</p>
-                <p class="text-lg sm:text-2xl font-display font-bold text-accent-purple">48.9%</p>
-                <p class="text-xs text-accent-purple/70 mt-1">↑ 2.8% vs last mo</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Mini chart area -->
-          <div class="mt-4 grid grid-cols-1 lg:grid-cols-3 gap-3">
-            <!-- Revenue chart mock -->
-            <div class="lg:col-span-2 rounded-xl bg-base-950/60 border border-neutral-800/30 p-4">
-              <div class="flex items-center justify-between mb-3">
-                <p class="text-xs text-neutral-400 font-medium">Revenue vs Expenses</p>
-                <p class="text-[10px] text-neutral-600">Last 7 days</p>
-              </div>
-              <div class="chart-bars flex items-end gap-1.5 sm:gap-2 h-20 sm:h-24">
-                <div class="chart-bar-group">
-                  <div class="chart-bar bg-accent-blue/60" style="height: 65%"></div>
-                  <div class="chart-bar bg-accent-red/40" style="height: 35%"></div>
-                </div>
-                <div class="chart-bar-group">
-                  <div class="chart-bar bg-accent-blue/60" style="height: 80%"></div>
-                  <div class="chart-bar bg-accent-red/40" style="height: 45%"></div>
-                </div>
-                <div class="chart-bar-group">
-                  <div class="chart-bar bg-accent-blue/60" style="height: 55%"></div>
-                  <div class="chart-bar bg-accent-red/40" style="height: 30%"></div>
-                </div>
-                <div class="chart-bar-group">
-                  <div class="chart-bar bg-accent-blue/60" style="height: 90%"></div>
-                  <div class="chart-bar bg-accent-red/40" style="height: 50%"></div>
-                </div>
-                <div class="chart-bar-group">
-                  <div class="chart-bar bg-accent-blue/60" style="height: 72%"></div>
-                  <div class="chart-bar bg-accent-red/40" style="height: 38%"></div>
-                </div>
-                <div class="chart-bar-group">
-                  <div class="chart-bar bg-accent-blue/60" style="height: 95%"></div>
-                  <div class="chart-bar bg-accent-red/40" style="height: 42%"></div>
-                </div>
-                <div class="chart-bar-group">
-                  <div class="chart-bar bg-accent-blue/60" style="height: 85%"></div>
-                  <div class="chart-bar bg-accent-red/40" style="height: 48%"></div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Recent transactions -->
-            <div class="rounded-xl bg-base-950/60 border border-neutral-800/30 p-4">
-              <p class="text-xs text-neutral-400 font-medium mb-3">Recent Transactions</p>
-              <div class="flex flex-col gap-2">
-                <div class="flex items-center justify-between">
-                  <span class="text-xs text-neutral-300">Airbnb Payout</span>
-                  <span class="text-xs text-accent-green font-medium">+$1,240</span>
-                </div>
-                <div class="flex items-center justify-between">
-                  <span class="text-xs text-neutral-300">Cleaning Fee</span>
-                  <span class="text-xs text-accent-red font-medium">-$180</span>
-                </div>
-                <div class="flex items-center justify-between">
-                  <span class="text-xs text-neutral-300">VRBO Payout</span>
-                  <span class="text-xs text-accent-green font-medium">+$890</span>
-                </div>
-                <div class="flex items-center justify-between">
-                  <span class="text-xs text-neutral-300">Maintenance</span>
-                  <span class="text-xs text-accent-red font-medium">-$340</span>
-                </div>
-                <div class="flex items-center justify-between">
-                  <span class="text-xs text-neutral-300">Airbnb Payout</span>
-                  <span class="text-xs text-accent-green font-medium">+$1,650</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Glow effect under mockup -->
+      <img src="./hero_dashboard.png"
+           alt="Black Cat Analytics dashboard — Overview with KPIs, all-time performance, and cash flow status"
+           class="w-full rounded-2xl border border-neutral-800/60 shadow-2xl"
+           loading="eager"
+           decoding="async" />
+      <!-- Glow effect under screenshot — kept from the previous mockup so
+           the hero still has that depth-glow under the surface. -->
       <div class="dashboard-glow"></div>
     </div>
 
-    <!-- Demo Video -->
-    <div class="reveal reveal-delay-2 relative z-10 w-full max-w-3xl mx-auto mt-12 px-2">
-      <div class="text-center mb-5">
-        <p class="text-sm text-neutral-400">See it in action — <span class="text-accent-green font-medium">90 seconds</span></p>
-      </div>
-      <div class="demo-video-wrapper rounded-2xl overflow-hidden border border-neutral-800/50 bg-base-900 aspect-video flex items-center justify-center cursor-pointer group relative" onclick="window.open('https://app.tryblackcat.com/demo', '_blank')">
-        <!-- Thumbnail overlay -->
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-base-950/60"></div>
-        <div class="relative z-10 flex flex-col items-center gap-3">
-          <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-accent-green/20 border border-accent-green/30 flex items-center justify-center group-hover:bg-accent-green/30 group-hover:scale-110 transition-all duration-300">
-            <svg class="w-7 h-7 sm:w-8 sm:h-8 text-accent-green ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-          <p class="text-sm font-medium text-neutral-300 group-hover:text-white transition-colors">Try the interactive demo</p>
-        </div>
-      </div>
-    </div>
+
+    <!-- Demo Video / Live Demo section removed June 2026.
+         The "Try the interactive demo" play button opened /demo on the
+         app, but /demo shows a stale dataset and an older layout than
+         the real product (the screenshot above). Showing two different
+         products on one landing page hurt credibility more than helped
+         conversion. Returns once /demo is rebuilt to mirror the live
+         app (post-launch). The hero CTAs already cover the "see it"
+         intent: "Get Started Free" drops users into the real product. -->
   </section>
 
   <!-- ======================== PROBLEM ======================== -->
@@ -421,8 +304,9 @@
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16">
         <h2 class="reveal font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight mb-4">
-          Airbnb Shows Revenue.<br><span class="text-neutral-500">Not Profit.</span>
+          Booking Platforms Show Revenue.<br><span class="text-neutral-500">Not Profit.</span>
         </h2>
+        <p class="reveal text-sm sm:text-base text-neutral-400 max-w-2xl mx-auto">Whether you host on Airbnb, VRBO, Booking.com, or take direct bookings — your platform shows what guests paid. Not what landed in your pocket after cleaners, utilities, software, supplies, and taxes.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -435,7 +319,7 @@
               </svg>
             </div>
             <h3 class="font-display font-bold text-lg text-white mb-3">Hidden Expenses</h3>
-            <p class="text-sm text-neutral-400 leading-relaxed">The average host underestimates expenses by <span class="text-accent-red font-semibold">$4,200/year</span>. Cleaning fees, maintenance, supplies, mortgage — they add up fast and Airbnb doesn't track them.</p>
+            <p class="text-sm text-neutral-400 leading-relaxed">The average host underestimates expenses by <span class="text-accent-red font-semibold">$4,200/year</span>. Cleaning fees, maintenance, supplies, mortgage — they add up fast and no booking platform tracks them for you.</p>
           </div>
         </div>
 
@@ -482,7 +366,7 @@
         <!-- Feature 1 -->
         <div class="reveal feature-card group">
           <div class="feature-card-inner">
-            <span class="text-2xl mb-4 block">📊</span>
+            <svg class="w-7 h-7 mb-4 text-accent-green" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 20V10m6 10V4m6 16v-7m6 7v-4"/></svg>
             <h3 class="font-display font-bold text-base text-white mb-2">Smart Dashboard</h3>
             <p class="text-xs text-neutral-400 leading-relaxed">See net profit, revenue, expenses, and occupancy at a glance. Filter by property, date range, or booking source.</p>
           </div>
@@ -491,7 +375,7 @@
         <!-- Feature 2 -->
         <div class="reveal reveal-delay-1 feature-card group">
           <div class="feature-card-inner">
-            <span class="text-2xl mb-4 block">📤</span>
+            <svg class="w-7 h-7 mb-4 text-accent-blue" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 4v12m0-12l-4 4m4-4l4 4"/></svg>
             <h3 class="font-display font-bold text-base text-white mb-2">Easy CSV Import</h3>
             <p class="text-xs text-neutral-400 leading-relaxed">Upload your Airbnb earnings CSV and watch your data come to life. Bulk import hundreds of transactions in seconds.</p>
           </div>
@@ -500,7 +384,7 @@
         <!-- Feature 3 -->
         <div class="reveal feature-card group">
           <div class="feature-card-inner">
-            <span class="text-2xl mb-4 block">🔄</span>
+            <svg class="w-7 h-7 mb-4 text-accent-purple" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 12a8 8 0 0114-5.3l2-2v6h-6l2.3-2.3A6 6 0 006 12m12 0a8 8 0 01-14 5.3l-2 2v-6h6l-2.3 2.3A6 6 0 0018 12"/></svg>
             <h3 class="font-display font-bold text-base text-white mb-2">iCal Sync</h3>
             <p class="text-xs text-neutral-400 leading-relaxed">Auto-sync bookings from Airbnb, VRBO, and Booking.com. No manual entry needed.</p>
           </div>
@@ -509,7 +393,7 @@
         <!-- Feature 4 -->
         <div class="reveal reveal-delay-1 feature-card group">
           <div class="feature-card-inner">
-            <span class="text-2xl mb-4 block">🧹</span>
+            <svg class="w-7 h-7 mb-4 text-accent-cyan" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 11l3-8 3 8m-6 0h6m-9 5l-2 5h16l-2-5M5 16h14"/></svg>
             <h3 class="font-display font-bold text-base text-white mb-2">Cleaner Management</h3>
             <p class="text-xs text-neutral-400 leading-relaxed">Assign cleaners, track jobs, detect scheduling conflicts, and manage your cleaning team in one place.</p>
           </div>
@@ -518,16 +402,16 @@
         <!-- Feature 5 -->
         <div class="reveal feature-card group">
           <div class="feature-card-inner">
-            <span class="text-2xl mb-4 block">🤖</span>
+            <svg class="w-7 h-7 mb-4 text-yellow-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>
             <h3 class="font-display font-bold text-base text-white mb-2">AI Profit Autopilot</h3>
-            <p class="text-xs text-neutral-400 leading-relaxed">Get AI-powered insights, revenue forecasts, and actionable recommendations that spot trends you'd miss.</p>
+            <p class="text-xs text-neutral-400 leading-relaxed">Get concrete insights like "cleaning costs jumped 34% at Downtown Loft — your backup cleaner saves $140/mo" and revenue forecasts based on your actual booking pattern. Not generic dashboards.</p>
           </div>
         </div>
 
         <!-- Feature 6 -->
         <div class="reveal reveal-delay-1 feature-card group">
           <div class="feature-card-inner">
-            <span class="text-2xl mb-4 block">💬</span>
+            <svg class="w-7 h-7 mb-4 text-accent-green" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a8 8 0 11-3-6.2L21 3v6h-6"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 11h.01M12 11h.01M16 11h.01"/></svg>
             <h3 class="font-display font-bold text-base text-white mb-2">AI Chatbot</h3>
             <p class="text-xs text-neutral-400 leading-relaxed">Ask questions about your data in plain English. "Why did my profit drop?" — and get real answers in seconds.</p>
           </div>
@@ -536,7 +420,7 @@
         <!-- Feature 7 -->
         <div class="reveal feature-card group">
           <div class="feature-card-inner">
-            <span class="text-2xl mb-4 block">📏</span>
+            <svg class="w-7 h-7 mb-4 text-accent-blue" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18M7 14l4-4 4 4 5-7"/></svg>
             <h3 class="font-display font-bold text-base text-white mb-2">Market Benchmarks</h3>
             <p class="text-xs text-neutral-400 leading-relaxed">Compare your occupancy, ADR, and profit margin against market averages. Know exactly where you stand.</p>
           </div>
@@ -545,7 +429,7 @@
         <!-- Feature 8 -->
         <div class="reveal reveal-delay-1 feature-card group">
           <div class="feature-card-inner">
-            <span class="text-2xl mb-4 block">🔮</span>
+            <svg class="w-7 h-7 mb-4 text-accent-purple" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 17l6-6 4 4 8-8M14 7h7v7"/></svg>
             <h3 class="font-display font-bold text-base text-white mb-2">Revenue Forecasting</h3>
             <p class="text-xs text-neutral-400 leading-relaxed">See projected revenue for next month based on your trends and seasonal patterns. Plan ahead, not behind.</p>
           </div>
@@ -554,16 +438,16 @@
         <!-- Feature 9 -->
         <div class="reveal feature-card group">
           <div class="feature-card-inner">
-            <span class="text-2xl mb-4 block">📋</span>
-            <h3 class="font-display font-bold text-base text-white mb-2">Tax Reports</h3>
-            <p class="text-xs text-neutral-400 leading-relaxed">Generate Schedule E reports at tax time. Export everything your accountant needs in one click.</p>
+            <svg class="w-7 h-7 mb-4 text-accent-cyan" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"/><path stroke-linecap="round" stroke-linejoin="round" d="M14 2v6h6M8 13h8M8 17h8M8 9h2"/></svg>
+            <h3 class="font-display font-bold text-base text-white mb-2">Tax-Ready Schedule E</h3>
+            <p class="text-xs text-neutral-400 leading-relaxed">Generate IRS-ready Schedule E PDFs with depreciation, the 14-day rule, and per-property breakdowns built in. Your CPA can file directly from our export — no re-entry.</p>
           </div>
         </div>
 
         <!-- Feature 10 -->
         <div class="reveal reveal-delay-1 feature-card group">
           <div class="feature-card-inner">
-            <span class="text-2xl mb-4 block">💰</span>
+            <svg class="w-7 h-7 mb-4 text-yellow-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2v20M17 5H9.5a3.5 3.5 0 100 7h5a3.5 3.5 0 010 7H6"/></svg>
             <h3 class="font-display font-bold text-base text-white mb-2">Budget Tracking</h3>
             <p class="text-xs text-neutral-400 leading-relaxed">Set monthly budgets per property and get alerts when you're close to overspending.</p>
           </div>
@@ -572,18 +456,44 @@
         <!-- Feature 11 -->
         <div class="reveal feature-card group">
           <div class="feature-card-inner">
-            <span class="text-2xl mb-4 block">🔗</span>
-            <h3 class="font-display font-bold text-base text-white mb-2">PMS Integration</h3>
-            <p class="text-xs text-neutral-400 leading-relaxed">Connect Hostaway to auto-sync listings, reservations, and financials. More integrations coming soon.</p>
+            <svg class="w-7 h-7 mb-4 text-accent-green" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 13a5 5 0 007 0l3-3a5 5 0 00-7-7l-1 1m-2 9a5 5 0 01-7 0 5 5 0 010-7l3-3a5 5 0 017 0"/></svg>
+            <h3 class="font-display font-bold text-base text-white mb-2">Hostaway PMS Sync</h3>
+            <p class="text-xs text-neutral-400 leading-relaxed">All your listings, reservations, and financials auto-sync daily — no CSV uploads. Built-in support for Airbnb, VRBO, Booking.com via Hostaway. More PMS integrations coming.</p>
+          </div>
+        </div>
+
+        <div class="reveal feature-card group">
+          <div class="feature-card-inner">
+            <svg class="w-7 h-7 mb-4 text-accent-blue" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10l9-7 9 7v1H3v-1zM5 11v8m4-8v8m6-8v8m4-8v8M3 22h18"/></svg>
+            <h3 class="font-display font-bold text-base text-white mb-2">Bank Sync (Plaid)</h3>
+            <p class="text-xs text-neutral-400 leading-relaxed">Connect your bank via Plaid. Every charge — cleaners, repairs, supplies, mortgage, utilities — auto-categorizes and tags to the right property. Duplicates flagged automatically. You never manually enter an expense again.</p>
           </div>
         </div>
 
         <!-- Feature 12 -->
         <div class="reveal reveal-delay-1 feature-card group">
           <div class="feature-card-inner">
-            <span class="text-2xl mb-4 block">🔗</span>
+            <svg class="w-7 h-7 mb-4 text-accent-purple" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3" stroke-linecap="round"/><circle cx="6" cy="12" r="3" stroke-linecap="round"/><circle cx="18" cy="19" r="3" stroke-linecap="round"/><path stroke-linecap="round" stroke-linejoin="round" d="M8.6 10.5l6.8-4M8.6 13.5l6.8 4"/></svg>
             <h3 class="font-display font-bold text-base text-white mb-2">Share Dashboard</h3>
             <p class="text-xs text-neutral-400 leading-relaxed">Generate a public link to share your dashboard with partners, accountants, or property managers — read-only and secure.</p>
+          </div>
+        </div>
+
+        <!-- Feature 13 — PM tier -->
+        <div class="reveal reveal-delay-2 feature-card group">
+          <div class="feature-card-inner">
+            <svg class="w-7 h-7 mb-4 text-accent-cyan" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"/><path stroke-linecap="round" stroke-linejoin="round" d="M14 2v6h6M8 11h8M8 15h6"/><path stroke-linecap="round" d="M15 18l1.5 1.5L20 16"/></svg>
+            <h3 class="font-display font-bold text-base text-white mb-2">Owner Statements (PM tier)</h3>
+            <p class="text-xs text-neutral-400 leading-relaxed">For property managers: generate monthly owner statements with commission, expense breakdowns, and pro-rata splits for shared utilities. Owners get a portal to view their statements securely.</p>
+          </div>
+        </div>
+
+        <!-- Feature 14 — multi-unit -->
+        <div class="reveal reveal-delay-3 feature-card group">
+          <div class="feature-card-inner">
+            <svg class="w-7 h-7 mb-4 text-yellow-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21V9l6-4 6 4v12M15 13l6-3v11h-6"/><path stroke-linecap="round" stroke-linejoin="round" d="M6 13h.01M9 13h.01M6 17h.01M9 17h.01"/></svg>
+            <h3 class="font-display font-bold text-base text-white mb-2">Multi-Unit Properties</h3>
+            <p class="text-xs text-neutral-400 leading-relaxed">Duplexes, triplexes, and apartment buildings: track each unit independently while sharing utilities. Per-unit P&L, per-unit bookings, automatic pro-rata expense splits.</p>
           </div>
         </div>
       </div>
@@ -605,7 +515,7 @@
         <!-- Chat Demo -->
         <div class="reveal rounded-2xl bg-base-900/80 border border-neutral-800/50 p-6 flex flex-col">
           <div class="flex items-center gap-2 mb-4">
-            <div class="w-8 h-8 rounded-lg bg-accent-blue/10 flex items-center justify-center"><span class="text-base">💬</span></div>
+            <div class="w-8 h-8 rounded-lg bg-accent-blue/10 flex items-center justify-center"><svg class="w-4 h-4 text-accent-blue" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a8 8 0 11-3-6.2L21 3v6h-6"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 11h.01M12 11h.01M16 11h.01"/></svg></div>
             <h3 class="font-display font-bold text-sm text-white">Ask Anything</h3>
           </div>
           <div class="flex-1 rounded-xl bg-base-950/60 border border-neutral-800/30 p-4 space-y-3">
@@ -625,7 +535,7 @@
         <!-- Forecast Demo -->
         <div class="reveal reveal-delay-1 rounded-2xl bg-base-900/80 border border-neutral-800/50 p-6 flex flex-col">
           <div class="flex items-center gap-2 mb-4">
-            <div class="w-8 h-8 rounded-lg bg-accent-green/10 flex items-center justify-center"><span class="text-base">🔮</span></div>
+            <div class="w-8 h-8 rounded-lg bg-accent-green/10 flex items-center justify-center"><svg class="w-4 h-4 text-accent-green" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 17l6-6 4 4 8-8M14 7h7v7"/></svg></div>
             <h3 class="font-display font-bold text-sm text-white">Revenue Forecast</h3>
           </div>
           <div class="flex-1 rounded-xl bg-base-950/60 border border-neutral-800/30 p-4">
@@ -652,7 +562,7 @@
         <!-- Benchmark Demo -->
         <div class="reveal reveal-delay-2 rounded-2xl bg-base-900/80 border border-neutral-800/50 p-6 flex flex-col">
           <div class="flex items-center gap-2 mb-4">
-            <div class="w-8 h-8 rounded-lg bg-accent-purple/10 flex items-center justify-center"><span class="text-base">📏</span></div>
+            <div class="w-8 h-8 rounded-lg bg-accent-purple/10 flex items-center justify-center"><svg class="w-4 h-4 text-accent-purple" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18M7 14l4-4 4 4 5-7"/></svg></div>
             <h3 class="font-display font-bold text-sm text-white">Market Comparison</h3>
           </div>
           <div class="flex-1 rounded-xl bg-base-950/60 border border-neutral-800/30 p-4 space-y-3">
@@ -698,7 +608,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <a href="./tools/airbnb-profit-tracker-spreadsheet.html" class="reveal group rounded-xl bg-base-900/60 border border-neutral-800/50 p-6 hover:border-accent-purple/30 transition-all duration-200 block">
           <div class="flex items-center gap-3 mb-3">
-            <div class="w-10 h-10 rounded-lg bg-accent-purple/10 flex items-center justify-center"><span class="text-xl">📊</span></div>
+            <div class="w-10 h-10 rounded-lg bg-accent-purple/10 flex items-center justify-center"><svg class="w-5 h-5 text-accent-purple" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" stroke-linecap="round"/><path stroke-linecap="round" d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></div>
             <span class="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-accent-green/10 text-accent-green border border-accent-green/20">Free Download</span>
           </div>
           <h3 class="font-display font-bold text-base text-white mb-1.5 group-hover:text-accent-purple transition-colors">Profit Tracker Spreadsheet</h3>
@@ -707,7 +617,7 @@
         </a>
         <a href="./tools/airbnb-profit-calculator.html" class="reveal reveal-delay-1 group rounded-xl bg-base-900/60 border border-neutral-800/50 p-6 hover:border-accent-blue/30 transition-all duration-200 block">
           <div class="flex items-center gap-3 mb-3">
-            <div class="w-10 h-10 rounded-lg bg-accent-blue/10 flex items-center justify-center"><span class="text-xl">🧮</span></div>
+            <div class="w-10 h-10 rounded-lg bg-accent-blue/10 flex items-center justify-center"><svg class="w-5 h-5 text-accent-blue" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2" stroke-linecap="round"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 7h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h.01M12 19h.01M16 19h.01"/></svg></div>
             <span class="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-accent-green/10 text-accent-green border border-accent-green/20">Free Tool</span>
           </div>
           <h3 class="font-display font-bold text-base text-white mb-1.5 group-hover:text-accent-blue transition-colors">Airbnb Profit Calculator</h3>
@@ -718,6 +628,114 @@
     </div>
   </section>
 
+  <!-- ======================== COMPARISON ========================
+       Added June 2026. STR hosts comparison-shop us against Stessa and
+       Hostaway. Pretending those don't exist makes us look naïve —
+       acknowledging them with an honest, specific comparison converts
+       comparison-shopping buyers far better than silence. Tone is
+       respectful (not snide) — Stessa is genuinely a great solo-host
+       tool, Hostaway is a real PMS — we just serve a different wedge.
+  -->
+  <section id="comparison" class="relative py-24 sm:py-32 px-4 overflow-hidden">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="reveal font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight mb-4">
+          You&apos;re probably comparing us to<br><span class="hero-gradient-text">Stessa or Hostaway.</span>
+        </h2>
+        <p class="reveal text-base text-neutral-400 max-w-2xl mx-auto">
+          Honest answer: it depends on what you&apos;re trying to do.
+        </p>
+      </div>
+
+      <!-- Mobile: stacked cards (default). Desktop: comparison table. -->
+      <div class="reveal hidden md:block rounded-2xl border border-neutral-800/60 bg-base-900/50 overflow-hidden">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-neutral-800/60 bg-base-950/50">
+              <th class="text-left p-4 font-display font-semibold text-neutral-400 text-xs uppercase tracking-wider">&nbsp;</th>
+              <th class="text-left p-4 font-display font-semibold text-neutral-300">Stessa</th>
+              <th class="text-left p-4 font-display font-semibold text-neutral-300">Hostaway</th>
+              <th class="text-left p-4 font-display font-semibold text-white bg-accent-green/5 border-l border-accent-green/20">Black Cat</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-neutral-800/40">
+            <tr>
+              <td class="p-4 text-neutral-500 align-top">Built for</td>
+              <td class="p-4 text-neutral-300 align-top">Solo long-term-rental hosts. STR is a bolt-on.</td>
+              <td class="p-4 text-neutral-300 align-top">PMS &mdash; channel management &amp; messaging. Finance is a checkbox feature.</td>
+              <td class="p-4 text-white align-top bg-accent-green/5 border-l border-accent-green/20">STR financials specifically. Solo hosts and property managers.</td>
+            </tr>
+            <tr>
+              <td class="p-4 text-neutral-500 align-top">Multi-platform bookings<br><span class="text-[10px] uppercase tracking-wider text-neutral-600">VRBO, Booking.com, direct</span></td>
+              <td class="p-4 text-neutral-300 align-top">Airbnb-first, others limited</td>
+              <td class="p-4 text-neutral-300 align-top">Yes</td>
+              <td class="p-4 text-white align-top bg-accent-green/5 border-l border-accent-green/20">Yes &mdash; unified in one view</td>
+            </tr>
+            <tr>
+              <td class="p-4 text-neutral-500 align-top">Bank sync (Plaid)</td>
+              <td class="p-4 text-neutral-300 align-top">Yes</td>
+              <td class="p-4 text-neutral-300 align-top">Add-on / paid integrations</td>
+              <td class="p-4 text-white align-top bg-accent-green/5 border-l border-accent-green/20">Yes &mdash; deduplicated against CSV uploads so you don&apos;t double-count</td>
+            </tr>
+            <tr>
+              <td class="p-4 text-neutral-500 align-top">Per-property Schedule E</td>
+              <td class="p-4 text-neutral-300 align-top">Exports raw transactions, no Schedule E worksheet</td>
+              <td class="p-4 text-neutral-300 align-top">Not really</td>
+              <td class="p-4 text-white align-top bg-accent-green/5 border-l border-accent-green/20">Worksheet + PDF per property, with depreciation</td>
+            </tr>
+            <tr>
+              <td class="p-4 text-neutral-500 align-top">Property manager tier<br><span class="text-[10px] uppercase tracking-wider text-neutral-600">Owner statements, per-owner tax</span></td>
+              <td class="p-4 text-neutral-300 align-top">No</td>
+              <td class="p-4 text-neutral-300 align-top">Limited</td>
+              <td class="p-4 text-white align-top bg-accent-green/5 border-l border-accent-green/20">Full PM tier &mdash; owner statements + per-owner Schedule E PDFs + commission math</td>
+            </tr>
+            <tr>
+              <td class="p-4 text-neutral-500 align-top">Cleaner management</td>
+              <td class="p-4 text-neutral-300 align-top">No</td>
+              <td class="p-4 text-neutral-300 align-top">Yes</td>
+              <td class="p-4 text-white align-top bg-accent-green/5 border-l border-accent-green/20">Yes &mdash; auto-assign, scheduling-conflict detection, photo verification</td>
+            </tr>
+            <tr>
+              <td class="p-4 text-neutral-500 align-top">AI insights &amp; chat</td>
+              <td class="p-4 text-neutral-300 align-top">No</td>
+              <td class="p-4 text-neutral-300 align-top">No</td>
+              <td class="p-4 text-white align-top bg-accent-green/5 border-l border-accent-green/20">Forecast, benchmarks, plain-English Q&amp;A on your data</td>
+            </tr>
+            <tr>
+              <td class="p-4 text-neutral-500 align-top">Free tier</td>
+              <td class="p-4 text-neutral-300 align-top">Yes (ad-supported)</td>
+              <td class="p-4 text-neutral-300 align-top">No</td>
+              <td class="p-4 text-white align-top bg-accent-green/5 border-l border-accent-green/20">Yes &mdash; 1 property, no ads, no credit card</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Mobile: stacked summary cards (the table doesn't fit on a phone). -->
+      <div class="reveal md:hidden grid grid-cols-1 gap-4">
+        <div class="rounded-2xl border border-neutral-800/60 bg-base-900/50 p-5">
+          <h3 class="font-display font-bold text-white mb-1">Stessa</h3>
+          <p class="text-xs text-neutral-500 uppercase tracking-wider mb-3">Solo long-term-rental hosts</p>
+          <p class="text-sm text-neutral-400 leading-relaxed">Great for SFR landlords doing basic books. STR features (Airbnb categorization, Schedule E, occupancy) are a bolt-on. Free tier is ad-supported. No PM tier.</p>
+        </div>
+        <div class="rounded-2xl border border-neutral-800/60 bg-base-900/50 p-5">
+          <h3 class="font-display font-bold text-white mb-1">Hostaway</h3>
+          <p class="text-xs text-neutral-500 uppercase tracking-wider mb-3">PMS &mdash; channel management</p>
+          <p class="text-sm text-neutral-400 leading-relaxed">Real platform for managing multiple listings across channels. Finance and Schedule E are checkbox features &mdash; not the focus. No free tier.</p>
+        </div>
+        <div class="rounded-2xl border border-accent-green/30 bg-accent-green/5 p-5">
+          <h3 class="font-display font-bold text-white mb-1">Black Cat</h3>
+          <p class="text-xs text-accent-green uppercase tracking-wider mb-3">STR financials, correct</p>
+          <p class="text-sm text-neutral-300 leading-relaxed">Multi-platform bookings unified. Bank sync deduplicated against CSV. Per-property Schedule E. Full PM tier with owner statements + per-owner tax PDFs. Free for 1 property.</p>
+        </div>
+      </div>
+
+      <p class="reveal text-xs text-neutral-500 text-center mt-6 max-w-2xl mx-auto">
+        Comparisons reflect Stessa and Hostaway&apos;s public features as of June 2026. If you&apos;re using either and we got something wrong, email <a href="mailto:support@tryblackcat.com" class="text-accent-blue hover:underline">support@tryblackcat.com</a> &mdash; we&apos;ll fix it.
+      </p>
+    </div>
+  </section>
+
   <!-- ======================== PRICING ======================== -->
   <section id="pricing" class="relative py-24 sm:py-32 px-4 overflow-hidden">
     <div class="max-w-6xl mx-auto">
@@ -725,7 +743,7 @@
         <h2 class="reveal font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight mb-4">
           Simple, Transparent Pricing
         </h2>
-        <p class="reveal text-base text-neutral-400 max-w-lg mx-auto">All plans include a 14-day free trial. No credit card required.</p>
+        <p class="reveal text-base text-neutral-400 max-w-lg mx-auto">Free Forever for 1 property. Paid plans include a 14-day free trial — no credit card required.</p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -735,10 +753,10 @@
             <h3 class="font-display font-bold text-lg text-white mb-1">Free</h3>
             <div class="flex items-baseline gap-1 mb-5">
               <span class="font-display font-extrabold text-3xl text-white">$0</span>
-              <span class="text-sm text-neutral-500">/mo</span>
+              <span class="text-sm text-neutral-500">/forever</span>
             </div>
             <ul class="flex flex-col gap-2.5 mb-6">
-              <li class="pricing-feature">1 property</li>
+              <li class="pricing-feature">1 property — no time limit</li>
               <li class="pricing-feature">Full dashboard & analytics</li>
               <li class="pricing-feature">CSV upload</li>
               <li class="pricing-feature">iCal booking sync</li>
@@ -810,6 +828,40 @@
       </div>
 
       <p class="reveal text-center text-sm text-neutral-500 mt-8">Save 20% with annual billing</p>
+
+      <!-- ============== PROPERTY MANAGEMENT TIER (sales-led, not self-serve) ============== -->
+      <div class="reveal mt-16 sm:mt-20">
+        <div class="max-w-4xl mx-auto rounded-2xl border border-accent-blue/30 bg-gradient-to-br from-accent-blue/5 to-accent-purple/5 p-8 sm:p-10">
+          <div class="flex flex-col lg:flex-row items-start gap-8">
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-xs font-semibold uppercase tracking-wider text-accent-blue">For Property Managers</span>
+                <span class="px-2 py-0.5 rounded-full bg-accent-blue/15 text-accent-blue text-[10px] font-semibold uppercase tracking-wider">Talk to us</span>
+              </div>
+              <h3 class="font-display font-bold text-2xl sm:text-3xl text-white mb-3">Managing properties for other people?</h3>
+              <p class="text-sm sm:text-base text-neutral-400 leading-relaxed mb-5">
+                Running a property management company means spending hours each month compiling owner statements in spreadsheets, tracking commission splits manually, and emailing PDFs to each owner separately. Property Management tier automates the whole stack: per-owner statements with commission + pass-through expenses, secure owner portal where each owner sees only their own properties (never yours, never other owners'), per-owner Schedule E reports at tax time, and team-member accounts so your staff can operate the dashboard without seeing company financials.
+              </p>
+              <ul class="flex flex-col gap-2.5 mb-6">
+                <li class="pricing-feature"><strong class="text-white font-semibold">Owner statements</strong> with commission breakdown, expense pass-through, and pro-rata splits for shared utilities on multi-unit properties</li>
+                <li class="pricing-feature"><strong class="text-white font-semibold">Owner portal</strong> — each owner logs in 24/7 to view their statements + pull their own Schedule E PDF at tax time. Strict isolation: they see only their own properties, never your company books or other owners' data.</li>
+                <li class="pricing-feature"><strong class="text-white font-semibold">Team members</strong> — multiple staff accounts under your organization with role-based access</li>
+                <li class="pricing-feature">Everything in Business tier (unlimited properties, API, white-label reports, advanced cleaner ops)</li>
+              </ul>
+              <p class="text-xs text-neutral-500 mb-5">Starting at $299/mo. Pricing depends on owner count + team size. We'll quote you on a 15-min call — no commitment.</p>
+              <div class="flex flex-col sm:flex-row gap-3">
+                <a href="mailto:support@tryblackcat.com?subject=Property%20Management%20tier%20inquiry&amp;body=Hi%2C%20I%20manage%20%5B%23%5D%20properties%20for%20%5B%23%5D%20owners%20and%20would%20like%20to%20talk%20about%20the%20PM%20tier.%0A%0A-%20Number%20of%20properties%3A%20%0A-%20Number%20of%20owners%3A%20%0A-%20Team%20size%3A%20%0A-%20Current%20software%3A%20%0A%0AThanks%21" data-cta-location="pricing_pm" class="cta-button inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-white">
+                  Talk to us about PM tier
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                </a>
+                <a href="https://app.tryblackcat.com/signup" data-cta-location="pricing_pm_trial" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-neutral-700 text-sm font-medium text-neutral-300 hover:border-neutral-500 hover:text-white transition-colors">
+                  Or try Business first
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -839,7 +891,7 @@
             <svg class="faq-chevron w-5 h-5 text-neutral-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
           <div class="faq-answer">
-            <p class="text-sm text-neutral-400 leading-relaxed pb-4 pt-1 px-5">We support CSV import from Airbnb and iCal sync for bookings from Airbnb, VRBO, and Booking.com. Direct API integration with Airbnb is on our roadmap.</p>
+            <p class="text-sm text-neutral-400 leading-relaxed pb-4 pt-1 px-5">We support CSV import from Airbnb, iCal sync for bookings from Airbnb / VRBO / Booking.com, Hostaway PMS sync, and secure <strong class="text-white">bank sync via Plaid</strong> for automatic expense import. Direct Airbnb API integration is on our roadmap.</p>
           </div>
         </div>
 
@@ -902,6 +954,16 @@
             <p class="text-sm text-neutral-400 leading-relaxed pb-4 pt-1 px-5">Yes! We support iCal sync for bookings from Airbnb, VRBO, and Booking.com. For revenue data, you can import Airbnb CSVs directly and add bookings from other platforms via iCal or manual entry. Hostaway PMS integration brings in everything automatically.</p>
           </div>
         </div>
+
+        <div class="reveal faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="font-display font-semibold text-sm text-white">I'm a property manager — should I be on Business or Property Management tier?</span>
+            <svg class="faq-chevron w-5 h-5 text-neutral-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p class="text-sm text-neutral-400 leading-relaxed pb-4 pt-1 px-5">If you manage properties for <strong class="text-white">other people</strong> (owners who get a cut of revenue + a monthly statement from you), you want <strong class="text-white">Property Management tier</strong>. It adds owner statements, an owner portal, and team members on top of everything in Business. Business is for solo investors who own and manage their own properties. PM tier starts at $299/mo and is sales-led — <a href="mailto:support@tryblackcat.com?subject=Property%20Management%20tier%20inquiry" class="text-accent-blue hover:underline">book a 15-min call</a> to get a quote.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -919,7 +981,7 @@
         <!-- Step 1 -->
         <div class="reveal text-center">
           <div class="w-16 h-16 rounded-2xl bg-accent-blue/10 border border-accent-blue/20 flex items-center justify-center mb-5 mx-auto">
-            <span class="text-2xl">📝</span>
+            <svg class="w-7 h-7 text-accent-blue" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4" stroke-linecap="round"/><path stroke-linecap="round" stroke-linejoin="round" d="M19 8v6M22 11h-6"/></svg>
           </div>
           <div class="inline-block px-2.5 py-0.5 rounded-full bg-accent-blue/10 text-accent-blue text-[10px] font-semibold uppercase tracking-wider mb-3">Step 1</div>
           <h3 class="font-display font-bold text-lg text-white mb-2">Sign Up Free</h3>
@@ -929,7 +991,7 @@
         <!-- Step 2 -->
         <div class="reveal reveal-delay-1 text-center">
           <div class="w-16 h-16 rounded-2xl bg-accent-green/10 border border-accent-green/20 flex items-center justify-center mb-5 mx-auto">
-            <span class="text-2xl">📤</span>
+            <svg class="w-7 h-7 text-accent-green" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 4v12m0-12l-4 4m4-4l4 4"/></svg>
           </div>
           <div class="inline-block px-2.5 py-0.5 rounded-full bg-accent-green/10 text-accent-green text-[10px] font-semibold uppercase tracking-wider mb-3">Step 2</div>
           <h3 class="font-display font-bold text-lg text-white mb-2">Upload Your CSV</h3>
@@ -939,7 +1001,7 @@
         <!-- Step 3 -->
         <div class="reveal reveal-delay-2 text-center">
           <div class="w-16 h-16 rounded-2xl bg-accent-purple/10 border border-accent-purple/20 flex items-center justify-center mb-5 mx-auto">
-            <span class="text-2xl">🎯</span>
+            <svg class="w-7 h-7 text-accent-purple" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke-linecap="round"/><circle cx="12" cy="12" r="6" stroke-linecap="round"/><circle cx="12" cy="12" r="2" stroke-linecap="round"/></svg>
           </div>
           <div class="inline-block px-2.5 py-0.5 rounded-full bg-accent-purple/10 text-accent-purple text-[10px] font-semibold uppercase tracking-wider mb-3">Step 3</div>
           <h3 class="font-display font-bold text-lg text-white mb-2">Know Your Real Profit</h3>
@@ -948,54 +1010,96 @@
       </div>
 
       <div class="reveal text-center mt-12">
-        <a href="https://app.tryblackcat.com/demo" data-cta-location="midpage" class="inline-block px-6 py-3 rounded-xl font-semibold text-sm text-white border border-neutral-600 hover:border-neutral-400 bg-neutral-900/60 hover:bg-neutral-800/80 transition-all duration-200">See the live demo →</a>
+        <a href="https://app.tryblackcat.com/signup" data-cta-location="midpage" class="inline-block px-6 py-3 rounded-xl font-semibold text-sm text-white border border-neutral-600 hover:border-neutral-400 bg-neutral-900/60 hover:bg-neutral-800/80 transition-all duration-200">Start free &mdash; no credit card &rarr;</a>
       </div>
     </div>
   </section>
 
   <!-- ======================== TRUST ======================== -->
+  <!-- ======================== TRUST ========================
+       Rewritten June 2026. The old section was three platitude cards
+       (14-day trial / cancel anytime / "bank-level encryption"). Every
+       SaaS landing page has those — they actively signal "we couldn't
+       think of anything specific." For a FINANCIAL product, trust comes
+       from naming the actual mechanisms: who handles the money paths,
+       who built it, what happens to your data, and what we don't do.
+  -->
   <section id="trust" class="relative py-24 sm:py-32 px-4 overflow-hidden">
     <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-16">
+      <div class="text-center mb-12">
         <h2 class="reveal font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight mb-4">
-          Built for Airbnb Hosts,<br><span class="text-neutral-500">By Someone Who Gets It</span>
+          You&apos;re trusting us with your<br><span class="hero-gradient-text">money data.</span> Here&apos;s the deal.
         </h2>
+        <p class="reveal text-base text-neutral-400 max-w-2xl mx-auto">
+          No vague reassurances. Specific mechanisms.
+        </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <!-- The trust stack: 4 specific cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-12">
+        <!-- 1. Bank connection — Plaid -->
         <div class="reveal trust-card">
           <div class="trust-card-inner">
-            <div class="w-14 h-14 rounded-2xl bg-accent-green/10 border border-accent-green/20 flex items-center justify-center mb-5 mx-auto">
-              <svg class="w-7 h-7 text-accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-              </svg>
+            <div class="flex items-center gap-3 mb-3">
+              <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-bold tracking-tight" style="background:#ffffff;color:#0a0a0a">Plaid</span>
+              <span class="text-xs text-neutral-500 uppercase tracking-wider">Bank connection</span>
             </div>
-            <h3 class="font-display font-bold text-lg text-white mb-2 text-center">14-Day Free Trial</h3>
-            <p class="text-sm text-neutral-400 leading-relaxed text-center">Try everything risk-free. No credit card needed to start.</p>
+            <h3 class="font-display font-bold text-lg text-white mb-2">Your bank password never touches our servers.</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed">
+              Plaid handles the bank login — the same connection layer Venmo, Robinhood, and your bank&apos;s own mobile app use. We only receive the transaction data Plaid shares back. Disconnect any bank in one click from Settings, which immediately revokes our access.
+            </p>
           </div>
         </div>
 
+        <!-- 2. Payments — Stripe -->
         <div class="reveal reveal-delay-1 trust-card">
           <div class="trust-card-inner">
-            <div class="w-14 h-14 rounded-2xl bg-accent-blue/10 border border-accent-blue/20 flex items-center justify-center mb-5 mx-auto">
-              <svg class="w-7 h-7 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
-              </svg>
+            <div class="flex items-center gap-3 mb-3">
+              <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-bold tracking-tight" style="background:#635BFF;color:#ffffff">Stripe</span>
+              <span class="text-xs text-neutral-500 uppercase tracking-wider">Payments</span>
             </div>
-            <h3 class="font-display font-bold text-lg text-white mb-2 text-center">Cancel Anytime</h3>
-            <p class="text-sm text-neutral-400 leading-relaxed text-center">No long-term contracts. No cancellation fees. Leave whenever you want.</p>
+            <h3 class="font-display font-bold text-lg text-white mb-2">We don&apos;t see or store your card number.</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed">
+              Subscriptions are billed through Stripe. We receive a subscription status and the last four digits of your card — nothing more. Manage or cancel any time through your Stripe customer portal (linked from Settings), no support email required.
+            </p>
           </div>
         </div>
 
-        <div class="reveal reveal-delay-2 trust-card">
+        <!-- 3. Your data, yours -->
+        <div class="reveal trust-card">
           <div class="trust-card-inner">
-            <div class="w-14 h-14 rounded-2xl bg-accent-purple/10 border border-accent-purple/20 flex items-center justify-center mb-5 mx-auto">
-              <svg class="w-7 h-7 text-accent-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-              </svg>
+            <div class="flex items-center gap-3 mb-3">
+              <span class="inline-flex items-center w-7 h-7 rounded-md bg-accent-green/15 border border-accent-green/30 justify-center">
+                <svg class="w-4 h-4 text-accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l9 6 9-6"/><rect x="3" y="6" width="18" height="14" rx="2" stroke-width="2"/></svg>
+              </span>
+              <span class="text-xs text-neutral-500 uppercase tracking-wider">Your data</span>
             </div>
-            <h3 class="font-display font-bold text-lg text-white mb-2 text-center">Your Data, Encrypted & Secure</h3>
-            <p class="text-sm text-neutral-400 leading-relaxed text-center">Bank-level encryption keeps your financial data private and protected.</p>
+            <h3 class="font-display font-bold text-lg text-white mb-2">Yours to export. Yours to delete. Yours, full stop.</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed">
+              Export every transaction to CSV from Tax &amp; Reports. Delete your entire account from Settings &rarr; Danger Zone &mdash; no support ticket, no waiting. We don&apos;t sell your data, we don&apos;t share it for advertising, and AI features only process your data when you ask them to.
+            </p>
+          </div>
+        </div>
+
+        <!-- 4. Real company -->
+        <div class="reveal reveal-delay-1 trust-card">
+          <div class="trust-card-inner">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="inline-flex items-center w-7 h-7 rounded-md bg-accent-blue/15 border border-accent-blue/30 justify-center">
+                <svg class="w-4 h-4 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </span>
+              <span class="text-xs text-neutral-500 uppercase tracking-wider">Real company</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-white mb-2">US LLC. Counsel-reviewed legal docs. A real human reads support@.</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed">
+              Black Cat Analytics LLC &mdash; a New Hampshire limited liability company. Our
+              <a href="https://app.tryblackcat.com/privacy" class="text-accent-blue hover:underline">Privacy</a>,
+              <a href="https://app.tryblackcat.com/terms" class="text-accent-blue hover:underline">Terms</a>, and
+              <a href="https://app.tryblackcat.com/policies/data-retention" class="text-accent-blue hover:underline">Data Retention Policy</a>
+              were written by an attorney, not pulled from a template. Email
+              <a href="mailto:support@tryblackcat.com" class="text-accent-blue hover:underline">support@tryblackcat.com</a>
+              &mdash; a person replies.
+            </p>
           </div>
         </div>
       </div>
@@ -1032,7 +1136,6 @@
         <span class="font-display font-semibold text-sm text-neutral-400">© 2026 Black Cat Analytics</span>
       </div>
       <div class="flex items-center gap-6">
-        <a href="https://x.com/tryblackcat" target="_blank" rel="noopener" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">𝕏 @tryblackcat</a>
         <a href="https://app.tryblackcat.com/privacy" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">Privacy Policy</a>
         <a href="https://app.tryblackcat.com/terms" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">Terms of Service</a>
         <a href="https://app.tryblackcat.com/policies/data-retention" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">Data Retention</a>
@@ -1049,7 +1152,6 @@
     "name": "Black Cat Analytics",
     "url": "https://www.tryblackcat.com",
     "logo": "https://www.tryblackcat.com/logo-icon.png",
-    "sameAs": ["https://x.com/tryblackcat"],
     "contactPoint": {
       "@type": "ContactPoint",
       "email": "support@tryblackcat.com",
