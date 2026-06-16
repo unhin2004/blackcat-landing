@@ -276,15 +276,22 @@
     </div>
 
     <!-- Hero screenshot: real Overview page from app.tryblackcat.com.
-         Replaced the previous HTML mockup (which used the stale demo
-         dataset and an older layout) with the live product so prospects
-         see what they'll actually get when they sign up. -->
+         WebP source served to supporting browsers (~52K) with PNG
+         fallback (~183K). 72% smaller payload on the above-the-fold
+         image — meaningful LCP win since this is the largest media
+         element on the homepage. -->
     <div class="reveal reveal-delay-2 relative z-10 w-full max-w-5xl mx-auto mt-12 sm:mt-16 px-2">
-      <img src="./hero_dashboard.png"
-           alt="Black Cat Analytics dashboard — Overview with KPIs, all-time performance, and cash flow status"
-           class="w-full rounded-2xl border border-neutral-800/60 shadow-2xl"
-           loading="eager"
-           decoding="async" />
+      <picture>
+        <source srcset="./hero_dashboard.webp" type="image/webp">
+        <img src="./hero_dashboard.png"
+             alt="Black Cat Analytics dashboard — Overview with KPIs, all-time performance, and cash flow status"
+             class="w-full rounded-2xl border border-neutral-800/60 shadow-2xl"
+             width="1725"
+             height="851"
+             loading="eager"
+             fetchpriority="high"
+             decoding="async" />
+      </picture>
       <!-- Glow effect under screenshot — kept from the previous mockup so
            the hero still has that depth-glow under the surface. -->
       <div class="dashboard-glow"></div>
