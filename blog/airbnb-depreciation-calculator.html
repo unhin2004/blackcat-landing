@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airbnb Depreciation Calculator: 27.5 vs 39 Years, Explained (2026) — Black Cat Analytics</title>
+  <meta name="description" content="Free Airbnb depreciation calculator. Work out your depreciable basis, annual deduction, and first-year mid-month amount — plus an honest look at the 27.5 vs 39-year question for short-term rentals.">
+  <meta name="keywords" content="airbnb depreciation calculator, airbnb depreciation, short term rental depreciation, str depreciation 27.5 or 39, rental property depreciation, depreciable basis, mid-month convention">
+  <link rel="canonical" href="https://www.tryblackcat.com/blog/airbnb-depreciation-calculator.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.tryblackcat.com/blog/airbnb-depreciation-calculator.html">
+  <meta property="og:title" content="Airbnb Depreciation Calculator: 27.5 vs 39 Years, Explained (2026)">
+  <meta property="og:description" content="Calculate your Airbnb's depreciable basis, annual deduction, and first-year mid-month amount — plus an honest look at 27.5 vs 39 years for short-term rentals.">
+  <meta property="og:image" content="https://www.tryblackcat.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Airbnb Depreciation Calculator: 27.5 vs 39 Years, Explained (2026)">
+  <meta name="twitter:description" content="Calculate your Airbnb's depreciable basis, annual deduction, and first-year mid-month amount — plus an honest look at 27.5 vs 39 years for short-term rentals.">
+  <meta name="twitter:image" content="https://www.tryblackcat.com/og-image.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Airbnb Depreciation Calculator: 27.5 vs 39 Years, Explained (2026)",
+    "description": "Free Airbnb depreciation calculator. Work out your depreciable basis, annual deduction, and first-year mid-month amount — plus an honest look at the 27.5 vs 39-year question for short-term rentals.",
+    "url": "https://www.tryblackcat.com/blog/airbnb-depreciation-calculator.html",
+    "publisher": { "@type": "Organization", "name": "Black Cat Analytics", "url": "https://www.tryblackcat.com" },
+    "datePublished": "2026-07-01",
+    "dateModified": "2026-07-01"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Should I depreciate my Airbnb over 27.5 or 39 years?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Residential rental property depreciates over 27.5 years. However, many CPAs treat short-term rentals where the average guest stay is 7 days or less as transient (hotel-like) use and depreciate the building over 39 years instead. Practice genuinely varies, so confirm the right schedule for your property with a CPA before filing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I depreciate my Airbnb if I also use it personally?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, but only the rental-use portion. If you rent the property 200 nights and use it personally 50 nights, roughly 80% of the property's depreciation is deductible. Track rental and personal days carefully — the ratio applies to depreciation just like it applies to shared expenses such as utilities and insurance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if I never claimed depreciation on my rental?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You still lose the basis. The IRS reduces your cost basis at sale by the depreciation that was allowed or allowable — whether or not you actually claimed it. If you skipped depreciation in prior years, ask a CPA about filing Form 3115 to catch up the missed deductions in the current year."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is land depreciable?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Land never wears out in the eyes of the IRS, so it is never depreciable. You must subtract the land's value from your purchase price before calculating depreciation. Your property tax assessment usually splits land from improvements; if it doesn't, allocating roughly 20% of the purchase price to land is a common fallback — but use the best evidence you have."
+        }
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="../dist/output.css">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .calc-input {
+      background: rgba(23, 23, 23, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 12px 16px;
+      color: #fff;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15px;
+      width: 100%;
+      transition: border-color 0.2s, background 0.2s;
+      -moz-appearance: textfield;
+    }
+    .calc-input::-webkit-outer-spin-button,
+    .calc-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    /* Restore Tailwind padding utilities — .calc-input is defined after Tailwind so equal-specificity rules below would otherwise be overridden by its padding shorthand. */
+    .calc-input.pl-8 { padding-left: 2rem; }
+    .calc-input:focus {
+      outline: none;
+      border-color: rgba(59, 130, 246, 0.5);
+      background: rgba(23, 23, 23, 0.95);
+    }
+    .calc-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: #a3a3a3;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .calc-label .hint {
+      font-weight: 400;
+      color: #737373;
+      font-size: 11px;
+    }
+    .result-card {
+      background: rgba(15, 15, 15, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 14px;
+      padding: 16px;
+      text-align: center;
+    }
+    .result-card.selected {
+      border-color: rgba(34, 197, 94, 0.45);
+    }
+    .result-value {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 24px;
+      line-height: 1.2;
+    }
+    .result-label {
+      font-size: 12px;
+      color: #a3a3a3;
+      margin-top: 4px;
+    }
+    .radio-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      cursor: pointer;
+    }
+    .radio-row input { margin-top: 3px; }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0Y5H3YVKT4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0Y5H3YVKT4');
+  </script>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+    <!-- Microsoft Clarity (session replay + heatmaps) -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "wykpb8uzfm");
+    </script>
+</head>
+<body class="bg-base-950 text-white font-body antialiased">
+
+  <div class="noise-overlay"></div>
+
+  <!-- NAV-INJECT START -->
+  <!-- Generated from _partials/nav.html — edit there, run `npm run build:nav` -->
+<!--
+  CANONICAL SITE NAV
+  ==================
+  Edit here, then run:  npm run build:nav
+
+  Pages opt in by including the start/end marker pair (see scripts/build-nav.js
+  and any HTML page for an example). Uses absolute paths so the partial works
+  identically from /, /tools/*, and /blog/*.
+-->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2 group">
+        <picture>
+          <source srcset="/logo-icon.webp" type="image/webp">
+          <img src="/logo-icon.png" alt="Black Cat" class="w-7 h-7 object-contain" width="28" height="28" fetchpriority="high">
+        </picture>
+        <span class="font-display font-bold text-lg tracking-tight text-white">Black Cat <span class="text-accent-green">Analytics</span></span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="/#features" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Features</a>
+        <a href="/#pricing" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Pricing</a>
+        <a href="/#faq" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">FAQ</a>
+        <a href="/tools/airbnb-profit-calculator.html" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Calculator</a>
+        <a href="/tools/airbnb-profit-tracker-spreadsheet.html" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Spreadsheet</a>
+        <a href="/blog/" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Blog</a>
+        <a href="https://app.tryblackcat.com/login" data-cta-location="nav_desktop_signin" class="nav-link text-sm text-neutral-300 hover:text-white transition-colors duration-200 font-medium">Sign in</a>
+        <a href="https://app.tryblackcat.com/signup" data-cta-location="nav_desktop" class="cta-button-sm text-sm font-semibold px-5 py-2.5 rounded-full text-white">Get Started Free</a>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-3 z-[1000] relative" aria-label="Menu">
+        <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+        <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+        <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu (outside nav: navbar's backdrop-filter creates a containing block, so position:fixed; inset:0 inside it collapses to the navbar bounds instead of the viewport) -->
+<div id="mobile-menu" class="mobile-menu md:hidden">
+  <div class="px-6 pt-20 pb-8 flex flex-col gap-6">
+    <a href="/#features" class="mobile-nav-link text-xl font-display font-semibold text-white">Features</a>
+    <a href="/#pricing" class="mobile-nav-link text-xl font-display font-semibold text-white">Pricing</a>
+    <a href="/#faq" class="mobile-nav-link text-xl font-display font-semibold text-white">FAQ</a>
+    <a href="/tools/airbnb-profit-calculator.html" class="mobile-nav-link text-xl font-display font-semibold text-white">Calculator</a>
+    <a href="/tools/airbnb-profit-tracker-spreadsheet.html" class="mobile-nav-link text-xl font-display font-semibold text-white">Spreadsheet</a>
+    <a href="/blog/" class="mobile-nav-link text-xl font-display font-semibold text-white">Blog</a>
+    <a href="https://app.tryblackcat.com/login" data-cta-location="nav_mobile_signin" class="mobile-nav-link text-xl font-display font-semibold text-neutral-300">Sign in</a>
+    <a href="https://app.tryblackcat.com/signup" data-cta-location="nav_mobile" class="cta-button-sm text-center text-base font-semibold px-6 py-3 rounded-full text-white mt-4">Get Started Free</a>
+  </div>
+</div>
+  <!-- NAV-INJECT END -->
+
+  <!-- ARTICLE -->
+  <main class="relative pt-32 sm:pt-40 pb-24 px-4">
+    <article class="max-w-3xl mx-auto prose-custom">
+      <!-- Breadcrumb -->
+      <nav class="text-xs text-neutral-500 mb-6 flex items-center gap-1.5">
+        <a href="../" class="hover:text-white transition-colors">Home</a>
+        <span>/</span>
+        <a href="./" class="hover:text-white transition-colors">Blog</a>
+        <span>/</span>
+        <span class="text-neutral-400">Depreciation Calculator</span>
+      </nav>
+
+      <div class="flex items-center gap-2 mb-6">
+        <span class="px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-accent-purple/10 text-accent-purple border border-accent-purple/20">Taxes</span>
+        <span class="text-xs text-neutral-500">11 min read</span>
+      </div>
+
+      <h1 class="font-display font-extrabold text-3xl sm:text-4xl md:text-[2.75rem] leading-tight tracking-tight mb-6">
+        Airbnb Depreciation Calculator: How Much Can You Actually Deduct?
+      </h1>
+      <p class="text-base sm:text-lg text-neutral-400 mb-4 leading-relaxed">
+        Depreciation is usually the <strong class="text-white">single biggest deduction</strong> an Airbnb host can claim — often five figures a year — and it costs you nothing out of pocket. Yet many first-time hosts skip it entirely, or guess at the numbers. Use the calculator below to estimate your depreciable basis, your annual deduction on both the 27.5-year and 39-year schedules, and your first-year amount under the mid-month convention.
+      </p>
+      <p class="text-sm text-neutral-500 mb-10 leading-relaxed">
+        <em>This article is educational content, not tax advice. Depreciation rules have real edge cases — especially for short-term rentals — so confirm your specific situation with a CPA before filing.</em>
+      </p>
+
+      <!-- CTA Banner -->
+      <div class="rounded-xl bg-gradient-to-r from-accent-blue/10 to-accent-green/10 border border-accent-blue/20 p-5 mb-10">
+        <p class="text-sm text-neutral-300 mb-2"><strong class="text-white">Depreciation is one line on Schedule E. Black Cat handles the rest.</strong></p>
+        <p class="text-sm text-neutral-400 mb-3">Black Cat Analytics syncs your bank via Plaid, auto-categorizes every expense to Schedule E line items, and exports it all at tax time — so the only number left to bring is your depreciation schedule.</p>
+        <a href="https://app.tryblackcat.com/signup" class="inline-block px-4 py-2 text-sm font-semibold rounded-full bg-accent-blue text-white hover:opacity-90 transition-opacity">Start free &rarr;</a>
+      </div>
+
+      <!-- CALCULATOR -->
+      <h2 class="font-display font-bold text-xl sm:text-2xl text-white mt-12 mb-4">The Calculator</h2>
+      <p class="text-[15px] text-neutral-300 leading-relaxed mb-6">
+        Enter your numbers below. Everything updates instantly, and nothing leaves your browser.
+      </p>
+      <div class="bg-base-900 border border-neutral-800/50 rounded-2xl p-6 mb-6">
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Inputs -->
+          <div class="space-y-4">
+            <div>
+              <label class="calc-label" for="purchasePrice">Purchase price</label>
+              <div class="relative">
+                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-500 text-sm">$</span>
+                <input type="number" id="purchasePrice" class="calc-input pl-8" value="400000" min="0" step="5000">
+              </div>
+            </div>
+            <div>
+              <label class="calc-label" for="landValue">Land value</label>
+              <div class="relative">
+                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-500 text-sm">$</span>
+                <input type="number" id="landValue" class="calc-input pl-8" value="80000" min="0" step="5000">
+              </div>
+              <p class="text-[10px] text-neutral-500 mt-1">Check your property tax assessment; land is NOT depreciable. ~20% of purchase price is a common fallback.</p>
+            </div>
+            <div>
+              <label class="calc-label" for="closingCosts">Closing costs added to basis <span class="hint">(optional — title, legal, recording, transfer taxes)</span></label>
+              <div class="relative">
+                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-500 text-sm">$</span>
+                <input type="number" id="closingCosts" class="calc-input pl-8" value="0" min="0" step="500">
+              </div>
+            </div>
+            <div>
+              <label class="calc-label" for="monthService">Month placed in service <span class="hint">(when it was ready and available to rent)</span></label>
+              <select id="monthService" class="calc-input">
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6" selected>June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+              </select>
+            </div>
+            <div>
+              <span class="calc-label">Average guest stay <span class="hint">(see the 27.5 vs 39 section below — confirm with a CPA)</span></span>
+              <div class="space-y-2 mt-2">
+                <label class="radio-row text-sm text-neutral-300">
+                  <input type="radio" name="stayLength" value="long" checked>
+                  <span>More than 7 days &rarr; 27.5-year residential schedule</span>
+                </label>
+                <label class="radio-row text-sm text-neutral-300">
+                  <input type="radio" name="stayLength" value="short">
+                  <span>7 days or less &rarr; 39-year schedule (how many CPAs treat transient STRs)</span>
+                </label>
+              </div>
+            </div>
+            <div>
+              <label class="calc-label" for="taxRate">Your marginal tax rate</label>
+              <select id="taxRate" class="calc-input">
+                <option value="22">22%</option>
+                <option value="24" selected>24%</option>
+                <option value="32">32%</option>
+                <option value="35">35%</option>
+                <option value="37">37%</option>
+              </select>
+            </div>
+          </div>
+          <!-- Results -->
+          <div class="space-y-4">
+            <div class="result-card">
+              <div class="result-value text-white" id="outBasis">$320,000</div>
+              <div class="result-label">Depreciable basis (purchase + closing costs &minus; land)</div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="result-card" id="card275">
+                <div class="result-value text-accent-blue" id="outAnnual275">$11,636</div>
+                <div class="result-label" id="label275">Annual — 27.5-yr</div>
+              </div>
+              <div class="result-card" id="card39">
+                <div class="result-value text-accent-purple" id="outAnnual39">$8,205</div>
+                <div class="result-label" id="label39">Annual — 39-yr</div>
+              </div>
+            </div>
+            <div class="result-card">
+              <div class="result-value text-white" id="outFirstYear">$6,303</div>
+              <div class="result-label" id="firstYearNote">First-year deduction (mid-month convention, June)</div>
+            </div>
+            <div class="result-card">
+              <div class="result-value text-accent-green" id="outSavings">$2,793</div>
+              <div class="result-label" id="savingsNote">Est. annual tax savings at 24% (full years)</div>
+            </div>
+            <p class="text-[10px] text-neutral-500">Straight-line estimate for the building only. Personal-use days, furniture (5-7 yr property), and improvements are calculated separately. Not tax advice.</p>
+          </div>
+        </div>
+      </div>
+      <p class="text-[15px] text-neutral-300 leading-relaxed mb-6">
+        The rest of this guide walks through every number the calculator just produced — where the basis comes from, why there are two schedules, and what the mid-month convention does to year one.
+      </p>
+
+      <!-- Section 1 -->
+      <h2 class="font-display font-bold text-xl sm:text-2xl text-white mt-12 mb-4">What Depreciation Is (and Why Most Hosts Underuse It)</h2>
+      <p class="text-[15px] text-neutral-300 leading-relaxed mb-4">
+        The IRS treats your rental building as an asset that wears out over time, and lets you deduct a slice of its cost every year you rent it out. That's depreciation. Two things make it unusual among deductions:
+      </p>
+      <ul class="space-y-2 mb-6">
+        <li class="text-[15px] text-neutral-300 leading-relaxed pl-4 border-l-2 border-accent-green/30">
+          <strong class="text-white">It's non-cash.</strong> You don't spend anything to claim it. Your property can be appreciating in market value while you deduct thousands per year for its "wear."
+        </li>
+        <li class="text-[15px] text-neutral-300 leading-relaxed pl-4 border-l-2 border-accent-green/30">
+          <strong class="text-white">It applies to the building, never the land.</strong> Land doesn't wear out, so you must strip its value out of your purchase price before you calculate anything.
+        </li>
+      </ul>
+      <p class="text-[15px] text-neutral-300 leading-relaxed mb-4">
+        Here's the worked example we'll use for the rest of this guide. You buy a property for <strong class="text-white">$400,000</strong>. Your county's property tax assessment allocates <strong class="text-white">$80,000</strong> to the land (20%). Your depreciable basis is:
+      </p>
+      <div class="rounded-xl bg-base-900 border border-neutral-800 p-5 mb-6 font-mono text-sm text-accent-green">
+        $400,000 &minus; $80,000 land = $320,000 depreciable basis
+      </div>
+      <p class="text-[15px] text-neutral-300 leading-relaxed mb-6">
+        On the standard 27.5-year residential schedule, that's <strong class="text-white">$320,000 &divide; 27.5 = $11,636 per year</strong>, every year, for over two decades. At a 24% marginal rate, that single line saves roughly <strong class="text-white">$2,793 a year</strong> in tax. Depreciation goes on Form 4562 in the year you place the property in service, then flows to line 18 of Schedule E. IRS Publication 527 (Residential Rental Property) is the primary reference.
+      </p>
+
+      <!-- Section 2 -->
+      <h2 class="font-display font-bold text-xl sm:text-2xl text-white mt-12 mb-4">27.5 or 39 Years? The Short-Term Rental Question</h2>
+      <p class="text-[15px] text-neutral-300 leading-relaxed mb-4">
+        This is where Airbnb hosts hit genuine ambiguity, so let's handle it honestly rather than pretending there's one clean answer.
+      </p>
+      <p class="text-[15px] text-neutral-300 leading-relaxed mb-4">
+        <strong class="text-white">Residential rental property depreciates over 27.5 years.</strong> That's the schedule most landlords use, and it's what Publication 527 describes. But "residential" has a meaning: people living in the property as a dwelling. Many CPAs take the position that a short-term rental where the <strong class="text-white">average guest stay is 7 days or less</strong> is transient use — functionally closer to a hotel than a home — and depreciate the building as nonresidential property over <strong class="text-white">39 years</strong> instead.
+      </p>
+      <p class="text-[15px] text-neutral-300 leading-relaxed mb-4">
+        On our $320,000 basis, the difference is real money:
+      </p>
+      <div class="rounded-xl bg-base-900 border border-neutral-800 p-5 mb-6 font-mono text-sm text-accent-green">
+        27.5 years: $320,000 &divide; 27.5 = $11,636/yr<br>
+        39 years: &nbsp;&nbsp;$320,000 &divide; 39 &nbsp;&nbsp;= $8,205/yr
+      </div>
+      <p class="text-[15px] text-neutral-300 leading-relaxed mb-4">
+        That's about <strong class="text-white">$3,431 per year</strong> of deduction riding on the classification. And here's the honest part: <strong class="text-white">this is unsettled terrain in practice.</strong> Reasonable, competent tax professionals disagree about when the 39-year treatment applies to a given STR, and the answer can turn on your average stay length, whether the property is a dwelling unit, and how your activity is characterized overall. Do not take either schedule from a blog post — including this one — as universally correct.
+      </p>
+      <div class="rounded-xl bg-gradient-to-r from-accent-purple/10 to-accent-blue/10 border border-accent-purple/20 p-5 mb-6">
+        <p class="text-sm font-semibold text-white mb-2">What to actually do</p>
+        <p class="text-sm text-neutral-400">Calculate your average guest stay (total booked nights &divide; number of bookings), bring it to a CPA who works with short-term rentals, and let them pick the schedule. If your average stay is comfortably above 7 days, you're likely in ordinary 27.5-year territory; if it's below, expect a conversation.</p>
+      </div>
+
+      <!-- Section 3 -->
+      <h2 class="font-display font-bold text-xl sm:text-2xl text-white mt-12 mb-4">Year One: The Mid-Month Convention</h2>
+      <p class="text-[15px] text-neutral-300 leading-relaxed mb-4">
+        You don't get a full year of depreciation in the year you start renting. Real property uses the <strong class="text-white">mid-month convention</strong>: whatever month you place the property in service, the IRS treats it as placed in service at the <em>middle</em> of that month. The first-year fraction is:
+      </p>
+      <div class="rounded-xl bg-base-900 border border-neutral-800 p-5 mb-6 font-mono text-sm text-accent-green">
+        First year = (basis &divide; recovery years) &times; (12 &minus; month + 0.5) &divide; 12
+      </div>
+      <p class="text-[15px] text-neutral-300 leading-relaxed mb-4">
+        <strong class="text-white">Worked example:</strong> your listing goes live and is available for booking in June (month 6). You get credit for 6.5 months of the year — half of June plus July through December. On the 27.5-year schedule:
+      </p>
+      <div class="rounded-xl bg-base-900 border border-neutral-800 p-5 mb-6 font-mono text-sm text-accent-green">
+        $11,636 &times; 6.5 &divide; 12 = $6,303 first-year deduction
+      </div>
+      <p class="text-[15px] text-neutral-300 leading-relaxed mb-6">
+        On the 39-year schedule the same June start gives you $8,205 &times; 6.5 &divide; 12 = <strong class="text-white">$4,444</strong>. Note that "placed in service" means <em>ready and available</em> to rent — the day your listing could take a booking — not the day your first guest checks in, and not the day you closed. From year two onward you claim the full annual amount.
+      </p>
+
+      <!-- Section 4 -->
+      <h2 class="font-display font-bold text-xl sm:text-2xl text-white mt-12 mb-4">What Adds to Basis vs. What You Deduct This Year</h2>
+      <p class="text-[15px] text-neutral-300 leading-relaxed mb-4">
+        Your depreciable basis isn't just the purchase price minus land. Some costs get added to it, and knowing the difference between an improvement (depreciated) and a repair (deducted now) matters:
+      </p>
+      <ul class="space-y-2 mb-6">
+        <li class="text-[15px] text-neutral-300 leading-relaxed pl-4 border-l-2 border-accent-green/30">
+          <strong class="text-white">Adds to basis:</strong> closing costs like title fees, legal fees, recording fees, transfer taxes, and surveys — plus improvements that add value or extend the property's life: a new roof, an addition, a full kitchen renovation, a new HVAC system. If you paid $6,000 in qualifying closing costs on our example property, your basis becomes $326,000 and the annual numbers scale up accordingly.
+        </li>
+        <li class="text-[15px] text-neutral-300 leading-relaxed pl-4 border-l-2 border-accent-green/30">
+          <strong class="text-white">Current-year expense:</strong> repairs that keep the property in operating condition — fixing a faucet, patching drywall, servicing the furnace. These go straight on Schedule E in the year you pay them, no depreciation required.
+        </li>
+      </ul>
+      <p class="text-[15px] text-neutral-300 leading-relaxed mb-6">
+        Furniture and appliances are their own category — typically depreciated over 5-7 years rather than folded into the building. For the full repairs-vs-improvements breakdown and 50+ deductible categories, see our guide to <a href="./airbnb-tax-deductions-2026.html" class="text-accent-green hover:underline">every Airbnb tax deduction you can claim in 2026</a>.
+      </p>
+
+      <!-- Section 5 -->
+      <h2 class="font-display font-bold text-xl sm:text-2xl text-white mt-12 mb-4">"Allowed or Allowable": Why Skipping Depreciation Is Pure Loss</h2>
+      <p class="text-[15px] text-neutral-300 leading-relaxed mb-4">
+        Some hosts deliberately skip depreciation because they've heard about recapture tax at sale and figure they'll avoid it. Here's the problem: <strong class="text-white">depreciation is effectively not optional.</strong> When you sell, the IRS reduces your cost basis by the depreciation that was <em>allowed or allowable</em> — whether or not you actually claimed it. Skip the deduction and you get the worst of both worlds: no tax savings along the way, and the same reduced basis (and bigger taxable gain) at sale.
+      </p>
+      <p class="text-[15px] text-neutral-300 leading-relaxed mb-4">
+        So what is recapture? When you sell, the portion of your gain attributable to depreciation you took on the building — called <strong class="text-white">unrecaptured &sect;1250 gain</strong> — is taxed at up to 25%, rather than at the lower long-term capital gains rates. If you claimed $11,636 a year for ten years, that's roughly $116,364 of gain taxed at up to 25% when you sell.
+      </p>
+      <p class="text-[15px] text-neutral-300 leading-relaxed mb-4">
+        That sounds scary until you look at the full trade honestly:
+      </p>
+      <ul class="space-y-2 mb-6">
+        <li class="text-[15px] text-neutral-300 leading-relaxed pl-4 border-l-2 border-accent-green/30">
+          <strong class="text-white">Deferral has value.</strong> A dollar of tax saved this year is worth more than a dollar of tax paid at sale years from now.
+        </li>
+        <li class="text-[15px] text-neutral-300 leading-relaxed pl-4 border-l-2 border-accent-green/30">
+          <strong class="text-white">Rate arbitrage often works in your favor.</strong> If your marginal rate is 32-37%, you're deducting at that rate and recapturing at no more than 25%. At 22-24% it's closer to a wash on rates — but deferral still wins, and remember the basis reduction happens either way.
+        </li>
+        <li class="text-[15px] text-neutral-300 leading-relaxed pl-4 border-l-2 border-accent-green/30">
+          <strong class="text-white">You may never pay it.</strong> Certain exit strategies (like a 1031 exchange, or holding until death when heirs receive a stepped-up basis) can defer or eliminate recapture entirely — talk to a CPA about what fits your plans.
+        </li>
+      </ul>
+      <p class="text-[15px] text-neutral-300 leading-relaxed mb-6">
+        Bottom line: recapture is real, but declining to claim depreciation doesn't protect you from it. Claim what you're entitled to.
+      </p>
+
+      <!-- Section 6 -->
+      <h2 class="font-display font-bold text-xl sm:text-2xl text-white mt-12 mb-4">Cost Segregation and Bonus Depreciation: Worth Knowing About</h2>
+      <p class="text-[15px] text-neutral-300 leading-relaxed mb-4">
+        Everything above is <strong class="text-white">straight-line</strong> depreciation — the same amount every year. Two advanced strategies can front-load deductions for STR owners:
+      </p>
+      <p class="text-[15px] text-neutral-300 leading-relaxed mb-4">
+        <strong class="text-white">Cost segregation</strong> is an engineering-based study that breaks your building into components — flooring, cabinetry, appliances, land improvements like fencing and driveways — and reclassifies them onto much shorter 5, 7, and 15-year schedules instead of 27.5 or 39 years. That pulls a significant chunk of your total depreciation into the first few years of ownership.
+      </p>
+      <p class="text-[15px] text-neutral-300 leading-relaxed mb-6">
+        <strong class="text-white">Bonus depreciation</strong> can then let you deduct a large share of those short-life components immediately in year one. We're deliberately not quoting a bonus percentage here, because the allowed percentage has been changing year to year — check the current rules with a professional rather than trusting any blog post's snapshot. Both strategies require a proper cost segregation study (typically a few thousand dollars) and genuinely benefit from professional guidance, since they interact with recapture and with how your rental activity is classified. For hosts with larger properties or high W-2 income, the math can be compelling — but it's a "hire someone" move, not a DIY one.
+      </p>
+
+      <!-- FAQ -->
+      <h2 class="font-display font-bold text-xl sm:text-2xl text-white mt-12 mb-4">Frequently Asked Questions</h2>
+      <div class="space-y-4 mb-10">
+        <div class="bg-base-900 border border-neutral-800/50 rounded-xl p-5">
+          <h3 class="font-display font-semibold text-sm text-white">Should I depreciate my Airbnb over 27.5 or 39 years?</h3>
+          <p class="text-sm text-neutral-400 mt-2">Residential rental property depreciates over 27.5 years. However, many CPAs treat short-term rentals where the average guest stay is 7 days or less as transient (hotel-like) use and depreciate the building over 39 years instead. Practice genuinely varies, so confirm the right schedule for your property with a CPA before filing.</p>
+        </div>
+        <div class="bg-base-900 border border-neutral-800/50 rounded-xl p-5">
+          <h3 class="font-display font-semibold text-sm text-white">Can I depreciate my Airbnb if I also use it personally?</h3>
+          <p class="text-sm text-neutral-400 mt-2">Yes, but only the rental-use portion. If you rent the property 200 nights and use it personally 50 nights, roughly 80% of the property's depreciation is deductible. Track rental and personal days carefully — the ratio applies to depreciation just like it applies to shared expenses such as utilities and insurance.</p>
+        </div>
+        <div class="bg-base-900 border border-neutral-800/50 rounded-xl p-5">
+          <h3 class="font-display font-semibold text-sm text-white">What happens if I never claimed depreciation?</h3>
+          <p class="text-sm text-neutral-400 mt-2">You still lose the basis. The IRS reduces your cost basis at sale by the depreciation that was allowed or allowable — whether or not you actually claimed it. If you skipped depreciation in prior years, ask a CPA about filing Form 3115 to catch up the missed deductions in the current year.</p>
+        </div>
+        <div class="bg-base-900 border border-neutral-800/50 rounded-xl p-5">
+          <h3 class="font-display font-semibold text-sm text-white">Is land depreciable?</h3>
+          <p class="text-sm text-neutral-400 mt-2">No. Land never wears out in the eyes of the IRS, so it is never depreciable. You must subtract the land's value from your purchase price before calculating depreciation. Your property tax assessment usually splits land from improvements; if it doesn't, allocating roughly 20% of the purchase price to land is a common fallback — but use the best evidence you have.</p>
+        </div>
+      </div>
+
+      <p class="text-sm text-neutral-500 mb-10 leading-relaxed">
+        <em>Reminder: this article and calculator are educational content, not tax advice. Depreciation touches basis, recapture, and entity questions that depend on your facts — have a CPA review your numbers before you file.</em>
+      </p>
+
+      <!-- Bottom CTA -->
+      <div class="rounded-xl bg-gradient-to-r from-accent-green/10 to-accent-blue/10 border border-accent-green/20 p-6 my-10">
+        <h3 class="font-display font-bold text-lg text-white mb-2">Get Everything Else on Schedule E Right, Automatically</h3>
+        <p class="text-sm text-neutral-400 mb-4">Depreciation is one number your CPA sets once. The other 20+ Schedule E lines change every month. Black Cat Analytics syncs your bank, auto-categorizes expenses to Schedule E categories, attaches receipt photos, and exports it all at tax time.</p>
+        <a href="https://app.tryblackcat.com/signup" class="inline-block px-5 py-2.5 text-sm font-semibold rounded-full bg-accent-green text-white hover:opacity-90 transition-opacity">Start tracking for free &rarr;</a>
+      </div>
+
+      <!-- Related -->
+      <div class="mt-12 pt-8 border-t border-neutral-800/50">
+        <h4 class="font-display font-semibold text-sm text-neutral-400 mb-4">Related Articles</h4>
+        <div class="flex flex-col gap-3">
+          <a href="./airbnb-tax-deductions-2026.html" class="text-sm text-accent-blue hover:underline">Every Airbnb Tax Deduction You Can Claim in 2026 &rarr;</a>
+          <a href="./airbnb-schedule-e-guide.html" class="text-sm text-accent-blue hover:underline">Airbnb Schedule E: How to File Rental Income on Your Tax Return &rarr;</a>
+          <a href="./airbnb-bookkeeping-guide.html" class="text-sm text-accent-blue hover:underline">Airbnb Bookkeeping: A Practical Guide for Hosts &rarr;</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-neutral-800/50 py-10 px-4">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="text-lg">🐈‍⬛</span>
+        <span class="font-display font-semibold text-sm text-neutral-400">&copy; 2026 Black Cat Analytics</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="../privacy.html" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">Privacy Policy</a>
+        <a href="../terms.html" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">Terms of Service</a>
+        <a href="mailto:support@tryblackcat.com" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">support@tryblackcat.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../app.js"></script>
+  <script>
+  (function() {
+    const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    const purchaseEl = document.getElementById('purchasePrice');
+    const landEl = document.getElementById('landValue');
+    const closingEl = document.getElementById('closingCosts');
+    const monthEl = document.getElementById('monthService');
+    const rateEl = document.getElementById('taxRate');
+    const stayEls = document.querySelectorAll('input[name="stayLength"]');
+
+    function fmt(num) {
+      return '$' + Math.round(num).toLocaleString('en-US');
+    }
+
+    function calculate() {
+      const purchase = Math.max(0, parseFloat(purchaseEl.value) || 0);
+      const land = Math.max(0, parseFloat(landEl.value) || 0);
+      const closing = Math.max(0, parseFloat(closingEl.value) || 0);
+      const month = parseInt(monthEl.value, 10) || 1;
+      const rate = (parseFloat(rateEl.value) || 24) / 100;
+      let stay = 'long';
+      stayEls.forEach(el => { if (el.checked) stay = el.value; });
+
+      const basis = Math.max(0, purchase + closing - land);
+      const annual275 = basis / 27.5;
+      const annual39 = basis / 39;
+      const midMonthFactor = (12 - month + 0.5) / 12;
+
+      const selectedYears = stay === 'short' ? 39 : 27.5;
+      const selectedAnnual = stay === 'short' ? annual39 : annual275;
+      const firstYear = selectedAnnual * midMonthFactor;
+      const savings = selectedAnnual * rate;
+
+      document.getElementById('outBasis').textContent = fmt(basis);
+      document.getElementById('outAnnual275').textContent = fmt(annual275);
+      document.getElementById('outAnnual39').textContent = fmt(annual39);
+      document.getElementById('outFirstYear').textContent = fmt(firstYear);
+      document.getElementById('outSavings').textContent = fmt(savings);
+
+      // Highlight the selected schedule
+      const card275 = document.getElementById('card275');
+      const card39 = document.getElementById('card39');
+      card275.classList.toggle('selected', stay === 'long');
+      card39.classList.toggle('selected', stay === 'short');
+      document.getElementById('label275').textContent = 'Annual — 27.5-yr' + (stay === 'long' ? ' (selected)' : '');
+      document.getElementById('label39').textContent = 'Annual — 39-yr' + (stay === 'short' ? ' (selected)' : '');
+      document.getElementById('firstYearNote').textContent = 'First-year deduction (mid-month convention, ' + MONTHS[month - 1] + ', ' + selectedYears + '-yr)';
+      document.getElementById('savingsNote').textContent = 'Est. annual tax savings at ' + Math.round(rate * 100) + '% (full years, ' + selectedYears + '-yr)';
+    }
+
+    [purchaseEl, landEl, closingEl].forEach(el => el.addEventListener('input', calculate));
+    [monthEl, rateEl].forEach(el => el.addEventListener('change', calculate));
+    stayEls.forEach(el => el.addEventListener('change', calculate));
+
+    calculate();
+  })();
+  </script>
+</body>
+</html>

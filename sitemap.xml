@@ -7,6 +7,24 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://www.tryblackcat.com/blog/airbnb-depreciation-calculator.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.tryblackcat.com/blog/track-airbnb-expenses-without-spreadsheet.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.tryblackcat.com/blog/stessa-vs-hostbook-vs-black-cat.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.tryblackcat.com/blog/</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>weekly</changefreq>
