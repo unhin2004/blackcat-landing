@@ -121,7 +121,7 @@ async function generate() {
     ['OUTGROWN THE SPREADSHEET?'],
     ['Black Cat Analytics auto-imports your Airbnb CSV, tracks profit in real-time,'],
     ['generates tax reports, and gives you AI-powered insights.'],
-    ['→ https://app.tryblackcat.com/signup (Free to start)'],
+    ['→ https://app.tryblackcat.com/signup?utm_source=tryblackcat&utm_medium=spreadsheet&utm_content=xlsx_instructions (Free to start)'],
     [''],
     ['Questions? support@tryblackcat.com'],
   ];
