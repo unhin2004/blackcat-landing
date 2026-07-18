@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airbnb's New 15.5% Host Fee: The Exact Math (Repricing, Profit, Taxes) — Black Cat Analytics</title>
+  <meta name="description" content="Airbnb's host-only fee becomes mandatory September 15, 2026. The exact repricing formula (+14.8% to keep your payout, not the +18% you've seen quoted), what it does to your profit if you do nothing, and the 1099-K tax change nobody is talking about.">
+  <meta name="keywords" content="airbnb 15.5 host fee, airbnb host only fee 2026, airbnb fee change september 2026, airbnb host fee increase, airbnb simplified pricing mandatory, how much to raise airbnb price host fee">
+  <link rel="canonical" href="https://www.tryblackcat.com/blog/airbnb-15-5-percent-host-fee-explained.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.tryblackcat.com/blog/airbnb-15-5-percent-host-fee-explained.html">
+  <meta property="og:title" content="Airbnb's New 15.5% Host Fee: The Exact Math (Repricing, Profit, Taxes)">
+  <meta property="og:description" content="The host-only fee is mandatory September 15, 2026. The exact repricing formula, the do-nothing cost, and the 1099-K change nobody is covering.">
+  <meta property="og:image" content="https://www.tryblackcat.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@try_blackcat">
+  <meta name="twitter:title" content="Airbnb's New 15.5% Host Fee: The Exact Math (Repricing, Profit, Taxes)">
+  <meta name="twitter:description" content="The host-only fee is mandatory September 15, 2026. The exact repricing formula, the do-nothing cost, and the 1099-K change nobody is covering.">
+  <meta name="twitter:image" content="https://www.tryblackcat.com/og-image.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Airbnb's New 15.5% Host Fee: The Exact Math (Repricing, Profit, Taxes)",
+    "description": "Airbnb's host-only fee becomes mandatory September 15, 2026. The exact repricing formula to keep your payout flat, the cost of doing nothing, and what the change does to your 1099-K and Schedule E.",
+    "url": "https://www.tryblackcat.com/blog/airbnb-15-5-percent-host-fee-explained.html",
+    "publisher": { "@type": "Organization", "name": "Black Cat Analytics", "url": "https://www.tryblackcat.com" },
+    "datePublished": "2026-07-18",
+    "dateModified": "2026-07-18"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much should I raise my Airbnb price when the 15.5% host fee starts?",
+        "acceptedAnswer": { "@type": "Answer", "text": "To keep your current payout exactly flat, raise your nightly price by about 14.8% — divide your current payout per night by 0.845 to get your new price. The +18.3% figure widely shared online is the increase that nets you your full current listed rate (recouping the old 3% fee too), which is a raise, not break-even. Raising by only 15.5% slightly overshoots break-even as well." }
+      },
+      {
+        "@type": "Question",
+        "name": "When does Airbnb's host-only fee become mandatory?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Airbnb has announced the single host-only service fee becomes mandatory for hosts outside the European Economic Area on September 15, 2026, and for EEA hosts on October 13, 2026. Before the deadline, hosts can adjust prices so payouts stay the same. Details can change — check Airbnb's official announcement for your account's exact terms." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the 15.5% host fee change my taxes?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The economics are similar if you reprice correctly, but the reporting changes materially. Your 1099-K reports gross earnings — the amount guests paid — while your bank receives payouts after the 15.5% fee. That gap grows roughly five-fold versus the old 3% host fee, so reporting only your deposits will increasingly mismatch IRS records. Report gross rents and deduct the service fees as an expense; the fee deduction becomes one of your largest line items." }
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="../dist/output.css">
+  <link rel="stylesheet" href="../style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0Y5H3YVKT4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0Y5H3YVKT4');
+  </script>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+    <!-- Microsoft Clarity (session replay + heatmaps) -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "wykpb8uzfm");
+    </script>
+</head>
+<body class="bg-base-950 text-white font-body antialiased">
+
+  <div class="noise-overlay"></div>
+
+  <!-- NAV-INJECT START -->
+  <!-- Generated from _partials/nav.html — edit there, run `npm run build:nav` -->
+<!--
+  CANONICAL SITE NAV
+  ==================
+  Edit here, then run:  npm run build:nav
+
+  Pages opt in by including the start/end marker pair (see scripts/build-nav.js
+  and any HTML page for an example). Uses absolute paths so the partial works
+  identically from /, /tools/*, and /blog/*.
+-->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2 group">
+        <picture>
+          <source srcset="/logo-icon.webp" type="image/webp">
+          <img src="/logo-icon.png" alt="Black Cat" class="w-7 h-7 object-contain" width="28" height="28" fetchpriority="high">
+        </picture>
+        <span class="font-display font-bold text-lg tracking-tight text-white">Black Cat <span class="text-accent-green">Analytics</span></span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="/#features" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Features</a>
+        <a href="/#pricing" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Pricing</a>
+        <a href="/#faq" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">FAQ</a>
+        <a href="/tools/airbnb-profit-calculator.html" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Calculator</a>
+        <a href="/tools/airbnb-profit-tracker-spreadsheet.html" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Spreadsheet</a>
+        <a href="/blog/" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Blog</a>
+        <a href="https://app.tryblackcat.com/login" data-cta-location="nav_desktop_signin" class="nav-link text-sm text-neutral-300 hover:text-white transition-colors duration-200 font-medium">Sign in</a>
+        <a href="https://app.tryblackcat.com/signup?utm_source=tryblackcat&utm_medium=cta&utm_content=nav_desktop" data-cta-location="nav_desktop" class="cta-button-sm text-sm font-semibold px-5 py-2.5 rounded-full text-white">Get Started Free</a>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-3 z-[1000] relative" aria-label="Menu">
+        <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+        <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+        <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu (outside nav: navbar's backdrop-filter creates a containing block, so position:fixed; inset:0 inside it collapses to the navbar bounds instead of the viewport) -->
+<div id="mobile-menu" class="mobile-menu md:hidden">
+  <div class="px-6 pt-20 pb-8 flex flex-col gap-6">
+    <a href="/#features" class="mobile-nav-link text-xl font-display font-semibold text-white">Features</a>
+    <a href="/#pricing" class="mobile-nav-link text-xl font-display font-semibold text-white">Pricing</a>
+    <a href="/#faq" class="mobile-nav-link text-xl font-display font-semibold text-white">FAQ</a>
+    <a href="/tools/airbnb-profit-calculator.html" class="mobile-nav-link text-xl font-display font-semibold text-white">Calculator</a>
+    <a href="/tools/airbnb-profit-tracker-spreadsheet.html" class="mobile-nav-link text-xl font-display font-semibold text-white">Spreadsheet</a>
+    <a href="/blog/" class="mobile-nav-link text-xl font-display font-semibold text-white">Blog</a>
+    <a href="https://app.tryblackcat.com/login" data-cta-location="nav_mobile_signin" class="mobile-nav-link text-xl font-display font-semibold text-neutral-300">Sign in</a>
+    <a href="https://app.tryblackcat.com/signup?utm_source=tryblackcat&utm_medium=cta&utm_content=nav_mobile" data-cta-location="nav_mobile" class="cta-button-sm text-center text-base font-semibold px-6 py-3 rounded-full text-white mt-4">Get Started Free</a>
+  </div>
+</div>
+  <!-- NAV-INJECT END -->
+
+  <!-- ARTICLE -->
+  <main class="relative pt-32 sm:pt-40 pb-24 px-4">
+    <article class="max-w-3xl mx-auto prose-custom">
+      <!-- Breadcrumb -->
+      <nav class="text-xs text-neutral-500 mb-6 flex items-center gap-1.5">
+        <a href="../" class="hover:text-white transition-colors">Home</a>
+        <span>/</span>
+        <a href="./" class="hover:text-white transition-colors">Blog</a>
+        <span>/</span>
+        <span class="text-neutral-400">Airbnb's 15.5% Host Fee</span>
+      </nav>
+
+      <div class="flex items-center gap-2 mb-6">
+        <span class="px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-accent-green/10 text-accent-green border border-accent-green/20">Fees &amp; Pricing</span>
+        <span class="text-xs text-neutral-500">8 min read</span>
+        <span class="text-xs text-neutral-500">Updated July 18, 2026</span>
+      </div>
+
+      <h1 class="font-display font-extrabold text-3xl sm:text-4xl md:text-[2.75rem] leading-tight tracking-tight mb-6">
+        Airbnb's New 15.5% Host Fee: The Exact Math on Repricing, Profit, and Taxes
+      </h1>
+      <p class="text-base sm:text-lg text-neutral-400 mb-4 leading-relaxed">
+        Starting <strong class="text-white">September 15, 2026</strong>, Airbnb is retiring the split-fee model for US hosts: instead of you paying ~3% and your guests paying a ~14–16% service fee at checkout, one <strong class="text-white">15.5% host-only fee</strong> comes out of your payout, and guests see no Airbnb service fee at all. The host forums are on fire about it — and most of the math being shared there is wrong in both directions. Here are the actual numbers: what happens if you do nothing, the exact price increase that keeps your payout flat (it's smaller than the +18% figure going around), and the tax reporting change that almost nobody is covering.
+      </p>
+      <p class="text-sm text-neutral-500 mb-10 leading-relaxed">
+        Primary source: <a href="https://www.airbnb.com/resources/hosting-homes/a/simplifying-service-fees-on-airbnb-771" target="_blank" rel="noopener" class="text-accent-green hover:underline">Airbnb's official announcement</a>. Dates and percentages reflect what Airbnb has communicated as of July 2026 — check your own host dashboard for your account's exact terms, and note EEA hosts have an October 13 deadline instead.
+      </p>
+
+      <!-- CTA Banner -->
+      <div class="rounded-xl bg-gradient-to-r from-accent-blue/10 to-accent-green/10 border border-accent-blue/20 p-5 mb-10">
+        <p class="text-sm text-neutral-300 mb-2"><strong class="text-white">Know your actual numbers before September.</strong></p>
+        <p class="text-sm text-neutral-400 mb-3">Black Cat Analytics tracks your real per-property profit — gross, fees, and expenses separated — so you can see exactly what this change does to you and reprice with data instead of forum math.</p>
+        <a href="https://app.tryblackcat.com/signup?utm_source=tryblackcat&utm_medium=cta&utm_content=airbnb-15-5-percent-host-fee-explained_inline" class="inline-block px-4 py-2 text-sm font-semibold rounded-full bg-accent-blue text-white hover:opacity-90 transition-opacity">Start free &rarr;</a>
+      </div>
+
+      <!-- Section 1 -->
+      <h2 class="font-display font-bold text-xl sm:text-2xl text-white mt-12 mb-4">What's Actually Changing</h2>
+      <ul class="space-y-2 mb-6">
+        <li class="text-[15px] text-neutral-300 leading-relaxed pl-4 border-l-2 border-accent-green/30">
+          <strong class="text-white">Old model (most US hosts today):</strong> you pay a ~3% host service fee; your guest pays a service fee of roughly 14–16% on top of your price at checkout.
+        </li>
+        <li class="text-[15px] text-neutral-300 leading-relaxed pl-4 border-l-2 border-accent-green/30">
+          <strong class="text-white">New model (mandatory September 15, 2026 for US hosts):</strong> one 15.5% fee deducted from your payout. Your guest pays your listed price, period — no Airbnb service fee line. This "host-only fee" has existed for years for hosts using property-management software; what's new is that it becomes mandatory for everyone.
+        </li>
+        <li class="text-[15px] text-neutral-300 leading-relaxed pl-4 border-l-2 border-accent-green/30">
+          <strong class="text-white">The window that matters:</strong> between now and your switch date, you can adjust prices so your payout doesn't change. After the switch, an unadjusted price is a ~12-point pay cut. That's the whole game: reprice before September 15.
+        </li>
+      </ul>
+
+      <!-- Section 2 -->
+      <h2 class="font-display font-bold text-xl sm:text-2xl text-white mt-12 mb-4">The Do-Nothing Cost, In Dollars</h2>
+      <p class="text-[15px] text-neutral-300 leading-relaxed mb-4">
+        Take a listing at <strong class="text-white">$200/night, 100 booked nights a year</strong> — $20,000 gross:
+      </p>
+      <ul class="space-y-2 mb-6">
+        <li class="text-[15px] text-neutral-300 leading-relaxed pl-4 border-l-2 border-accent-green/30">
+          <strong class="text-white">Today:</strong> Airbnb takes 3% ($600). Your payout: <strong class="text-white">$19,400</strong>. Your guest actually pays about $228/night after their service fee.
+        </li>
+        <li class="text-[15px] text-neutral-300 leading-relaxed pl-4 border-l-2 border-accent-green/30">
+          <strong class="text-white">After September 15, same $200 price:</strong> Airbnb takes 15.5% ($3,100). Your payout: <strong class="text-white">$16,900</strong>. Doing nothing costs this host <strong class="text-white">$2,500 a year</strong> — and your guest, meanwhile, pays <em>less</em> than before ($200 vs ~$228).
+        </li>
+      </ul>
+      <p class="text-[15px] text-neutral-300 leading-relaxed mb-6">
+        That second bullet is why the anger, while understandable, is aimed slightly wrong. If you do nothing, you're not just absorbing a fee increase — you're also handing your guests a discount. The fix is not to leave the platform in a rage; it's to reprice, correctly, before the deadline.
+      </p>
+
+      <!-- Section 3 -->
+      <h2 class="font-display font-bold text-xl sm:text-2xl text-white mt-12 mb-4">The Repricing Math — and Why "+18%" Is Not Break-Even</h2>
+      <p class="text-[15px] text-neutral-300 leading-relaxed mb-4">
+        The formula for your new price is simple:
+      </p>
+      <p class="text-[15px] text-neutral-300 leading-relaxed mb-4 pl-4 border-l-2 border-accent-green/30">
+        <strong class="text-white">New nightly price = the payout you want to keep &divide; 0.845</strong>
+      </p>
+      <ul class="space-y-2 mb-6">
+        <li class="text-[15px] text-neutral-300 leading-relaxed pl-4 border-l-2 border-accent-green/30">
+          <strong class="text-white">To keep your current payout exactly flat: raise prices ~14.8%.</strong> Your payout today is your price minus 3%. Our $200 host nets $194/night; $194 &divide; 0.845 = <strong class="text-white">$229.59</strong>, a 14.8% increase. Payout after the new fee: $194. Identical.
+        </li>
+        <li class="text-[15px] text-neutral-300 leading-relaxed pl-4 border-l-2 border-accent-green/30">
+          <strong class="text-white">The "+18.3%" figure you've seen shared is a different target.</strong> $200 &divide; 0.845 = $236.69 (+18.3%) nets you the full $200 — your old listed price with no fee at all. That's a genuine raise of ~$6/night over today's payout, not break-even. Nothing wrong with taking it if your market bears it — just know which number you're aiming at.
+        </li>
+        <li class="text-[15px] text-neutral-300 leading-relaxed pl-4 border-l-2 border-accent-green/30">
+          <strong class="text-white">And your guests? They barely notice a correct repricing.</strong> At $229.59 with no guest service fee, your guest pays within about a dollar of the ~$228 they effectively pay today. The sticker price in search results looks higher, but the total at checkout — which is what Airbnb increasingly displays — is essentially unchanged.
+        </li>
+      </ul>
+      <p class="text-[15px] text-neutral-300 leading-relaxed mb-6">
+        One honest caveat: this math holds if bookings hold. Nobody — including Airbnb — knows exactly how search behavior shifts when every US listing's sticker price jumps ~15% at once while checkout totals stay flat. Watch your occupancy in the weeks after you reprice, and judge with real numbers rather than one slow weekend. (Our <a href="./how-to-calculate-airbnb-profit.html" class="text-accent-green hover:underline">guide to calculating real Airbnb profit</a> covers the framework.)
+      </p>
+
+      <!-- Section 4 -->
+      <h2 class="font-display font-bold text-xl sm:text-2xl text-white mt-12 mb-4">The Tax Change Nobody Is Talking About</h2>
+      <p class="text-[15px] text-neutral-300 leading-relaxed mb-4">
+        Here's the part the repricing posts skip. Your <strong class="text-white">1099-K reports gross earnings</strong> — what guests paid — while your bank account receives payouts after Airbnb's cut. Today that gap is about 3%. In September it becomes <strong class="text-white">15.5% — five times larger</strong>:
+      </p>
+      <ul class="space-y-2 mb-6">
+        <li class="text-[15px] text-neutral-300 leading-relaxed pl-4 border-l-2 border-accent-green/30">
+          <strong class="text-white">If your bookkeeping is "whatever hit the bank," your return will mismatch IRS records — by a lot.</strong> Our example host's 1099-K will show ~$22,959 while deposits total ~$19,400. Report the deposits as income and you've understated gross by $3,559 against a number the IRS has on file. That gap was small enough to slide by at 3%; at 15.5% it's automated-notice territory. The correct treatment: report gross rents (Schedule E Line 3), deduct the service fees (typically as commissions, Line 8). Same tax owed — no red flag.
+        </li>
+        <li class="text-[15px] text-neutral-300 leading-relaxed pl-4 border-l-2 border-accent-green/30">
+          <strong class="text-white">Your fee deduction becomes one of your biggest line items.</strong> $600/year in host fees was easy to forget; $3,500+ is real money. Hosts who track only net payouts never see this number — and hosts who report gross but forget the deduction pay tax on money they never received.
+        </li>
+        <li class="text-[15px] text-neutral-300 leading-relaxed pl-4 border-l-2 border-accent-green/30">
+          <strong class="text-white">Mid-September makes 2026 a split year.</strong> Your 2026 records will have ~8.5 months of 3%-fee bookings and ~3.5 months of 15.5%-fee bookings. Gross-vs-fees needs to be tracked per booking, not estimated with one annual percentage. Getting this right is exactly the kind of thing to hand your CPA cleanly — our <a href="./airbnb-cpa-tax-prep-checklist.html" class="text-accent-green hover:underline">CPA tax-prep checklist</a> covers the full package.
+        </li>
+      </ul>
+
+      <!-- Section 5 -->
+      <h2 class="font-display font-bold text-xl sm:text-2xl text-white mt-12 mb-4">Thinking of Leaving for Direct Booking? Decide With Numbers</h2>
+      <p class="text-[15px] text-neutral-300 leading-relaxed mb-4">
+        A lot of hosts are threatening to move to direct booking or other platforms over this. Diversifying is genuinely reasonable — but do the comparison honestly, because direct booking isn't fee-free either:
+      </p>
+      <ul class="space-y-2 mb-6">
+        <li class="text-[15px] text-neutral-300 leading-relaxed pl-4 border-l-2 border-accent-green/30">
+          <strong class="text-white">Direct booking's real cost stack:</strong> payment processing (~3%), a booking-engine or website subscription, your own marketing to replace Airbnb's demand, guest-vetting and damage protection you currently get bundled, and your time. For many small hosts that adds up to more than 15.5% — for others with strong repeat guests, less. The point is it's a number, not a feeling.
+        </li>
+        <li class="text-[15px] text-neutral-300 leading-relaxed pl-4 border-l-2 border-accent-green/30">
+          <strong class="text-white">If you do diversify, your bookkeeping fragments.</strong> Airbnb's dashboard stops being your source of truth the day you add VRBO or direct bookings — revenue and fees now live in three places with three different fee structures. Whatever you use to track profit needs to consolidate all of it per property. (Full disclosure: that's what <a href="https://app.tryblackcat.com/signup?utm_source=tryblackcat&utm_medium=cta&utm_content=airbnb-15-5-percent-host-fee-explained_inline" class="text-accent-green hover:underline">Black Cat Analytics</a> is built for — bank sync catches every source's deposits, and imports keep gross-vs-fees straight per platform.)
+        </li>
+      </ul>
+
+      <!-- Section 6 -->
+      <h2 class="font-display font-bold text-xl sm:text-2xl text-white mt-12 mb-4">Your Before-September-15 Checklist</h2>
+      <ul class="space-y-2 mb-6">
+        <li class="text-[15px] text-neutral-300 leading-relaxed pl-4 border-l-2 border-accent-green/30">
+          <strong class="text-white">1. Compute your break-even price for every listing:</strong> current payout per night &divide; 0.845. Decide deliberately whether to price at break-even (+14.8%) or full-rate recovery (+18.3%).
+        </li>
+        <li class="text-[15px] text-neutral-300 leading-relaxed pl-4 border-l-2 border-accent-green/30">
+          <strong class="text-white">2. Update prices before your switch date</strong> — including seasonal pricing rules and anything your dynamic-pricing tool controls (check what your tool is doing about the transition; most are publishing guidance).
+        </li>
+        <li class="text-[15px] text-neutral-300 leading-relaxed pl-4 border-l-2 border-accent-green/30">
+          <strong class="text-white">3. Make sure your books track gross and fees separately</strong> — from September onward, payout-only records will both misstate your income to the IRS and hide a four-figure deduction.
+        </li>
+        <li class="text-[15px] text-neutral-300 leading-relaxed pl-4 border-l-2 border-accent-green/30">
+          <strong class="text-white">4. Watch occupancy for 4–6 weeks after repricing</strong> and adjust with data. One listing's slow week is noise; a real trend is information.
+        </li>
+      </ul>
+
+      <!-- FAQ -->
+      <h2 class="font-display font-bold text-xl sm:text-2xl text-white mt-12 mb-4">Frequently Asked Questions</h2>
+      <div class="space-y-5 mb-6">
+        <div>
+          <h3 class="font-display font-semibold text-lg text-white mb-2">How much should I raise my price when the 15.5% fee starts?</h3>
+          <p class="text-[15px] text-neutral-300 leading-relaxed">To keep your current payout exactly flat: about +14.8% (your current payout &divide; 0.845). The +18.3% figure circulating online nets you your full current listed price — that's a raise beyond break-even, not the minimum. Compute it per listing rather than applying one percentage blindly.</p>
+        </div>
+        <div>
+          <h3 class="font-display font-semibold text-lg text-white mb-2">When does the host-only fee become mandatory?</h3>
+          <p class="text-[15px] text-neutral-300 leading-relaxed">September 15, 2026 for hosts outside the European Economic Area; October 13, 2026 inside the EEA, per Airbnb's announcement. Your dashboard and email from Airbnb are authoritative for your account's exact date.</p>
+        </div>
+        <div>
+          <h3 class="font-display font-semibold text-lg text-white mb-2">Does this change my taxes?</h3>
+          <p class="text-[15px] text-neutral-300 leading-relaxed">The reporting does: the gap between your 1099-K gross and your bank deposits grows about five-fold, so payout-only bookkeeping will increasingly mismatch IRS records. Report gross rents, deduct the service fees — and track them per booking, since 2026 will contain both fee structures.</p>
+        </div>
+      </div>
+
+      <!-- Bottom CTA -->
+      <div class="rounded-xl bg-gradient-to-r from-accent-green/10 to-accent-blue/10 border border-accent-green/20 p-6 my-10">
+        <h3 class="font-display font-bold text-lg text-white mb-2">Reprice With Your Real Numbers, Not Forum Math</h3>
+        <p class="text-sm text-neutral-400 mb-4">Black Cat Analytics shows your true per-property payout, fees, and profit — gross and service fees tracked separately, so September's change (and your 1099-K) reconciles to the penny. Free to start.</p>
+        <a href="https://app.tryblackcat.com/signup?utm_source=tryblackcat&utm_medium=cta&utm_content=airbnb-15-5-percent-host-fee-explained_inline" class="inline-block px-5 py-2.5 text-sm font-semibold rounded-full bg-accent-green text-white hover:opacity-90 transition-opacity">See your real numbers free &rarr;</a>
+      </div>
+
+      <!-- Related -->
+      <div class="mt-12 pt-8 border-t border-neutral-800/50">
+        <h4 class="font-display font-semibold text-sm text-neutral-400 mb-4">Related Articles</h4>
+        <div class="flex flex-col gap-3">
+          <a href="./how-to-calculate-airbnb-profit.html" class="text-sm text-accent-blue hover:underline">How to Calculate Your Real Airbnb Profit &rarr;</a>
+          <a href="./airbnb-cpa-tax-prep-checklist.html" class="text-sm text-accent-blue hover:underline">Airbnb Tax Prep Checklist: What Your CPA Actually Needs From You &rarr;</a>
+          <a href="/tools/airbnb-profit-calculator.html" class="text-sm text-accent-blue hover:underline">Free Airbnb Profit Calculator &rarr;</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-neutral-800/50 py-10 px-4">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="text-lg">🐈‍⬛</span>
+        <span class="font-display font-semibold text-sm text-neutral-400">&copy; 2026 Black Cat Analytics</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="../privacy.html" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">Privacy Policy</a>
+        <a href="../terms.html" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">Terms of Service</a>
+        <a href="mailto:support@tryblackcat.com" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">support@tryblackcat.com</a>
+        <a href="https://www.instagram.com/blackcat.analytics/" target="_blank" rel="noopener" aria-label="Black Cat Analytics on Instagram" class="text-neutral-500 hover:text-neutral-300 transition-colors"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+        <a href="https://x.com/try_blackcat" target="_blank" rel="noopener" aria-label="Black Cat Analytics on X" class="text-neutral-500 hover:text-neutral-300 transition-colors"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../app.js"></script>
+</body>
+</html>
