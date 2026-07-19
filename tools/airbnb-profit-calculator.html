@@ -62,7 +62,7 @@
         "name": "What expenses do most Airbnb hosts forget?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The most commonly forgotten Airbnb expenses are: Airbnb's host service fee (14-16%), maintenance reserves (1-2% of property value per year), income tax provisions, supplies and consumables ($50-100/month), and the opportunity cost of your own time managing the property."
+          "text": "The most commonly forgotten Airbnb expenses are: Airbnb's 15.5% host service fee (the host-only fee that becomes mandatory in September 2026), maintenance reserves (1-2% of property value per year), income tax provisions, supplies and consumables ($50-100/month), and the opportunity cost of your own time managing the property."
         }
       },
       {
@@ -471,7 +471,7 @@
       <div class="blog-content">
         <h2>How to Use This Airbnb Profit Calculator</h2>
         <p>This calculator takes your actual hosting numbers — nightly rate, occupancy, and real expenses — and shows you what you're <strong>actually keeping</strong> after everything is deducted.</p>
-        <p>Most Airbnb dashboards show gross revenue. That number feels good but it's not your profit. This calculator accounts for Airbnb's 14-16% host service fee, cleaning costs (net of what guests pay), utilities, insurance, maintenance, and taxes.</p>
+        <p>Most Airbnb dashboards show gross revenue. That number feels good but it's not your profit. This calculator accounts for Airbnb's 15.5% host service fee (the host-only fee that is mandatory for US hosts from September 15, 2026 — see <a href="/blog/airbnb-15-5-percent-host-fee-explained.html" class="text-accent-green hover:underline">the exact math on the fee change</a>), cleaning costs (net of what guests pay), utilities, insurance, maintenance, and taxes.</p>
 
         <h2>What Is a Good Airbnb Profit Margin?</h2>
         <p>Based on industry data, here's how to interpret your margin:</p>
@@ -485,7 +485,7 @@
         <h2>Expenses Most Hosts Forget</h2>
         <p>The most common reason hosts overestimate their profit: they forget expenses. Here are the ones that slip through the cracks most often:</p>
         <ul>
-          <li><strong>Airbnb's host service fee</strong> (14-16% of every booking)</li>
+          <li><strong>Airbnb's host service fee</strong> (15.5% of every booking under the host-only fee, mandatory from Sept 2026 — <a href="/blog/airbnb-15-5-percent-host-fee-explained.html" class="text-accent-green hover:underline">repricing math here</a>)</li>
           <li><strong>Income taxes</strong> on rental income (20-35% depending on bracket)</li>
           <li><strong>Maintenance reserve</strong> (budget 1-2% of property value per year)</li>
           <li><strong>Supplies and consumables</strong> (toiletries, coffee, paper products)</li>
@@ -514,7 +514,7 @@
           </div>
           <div class="bg-base-900 border border-neutral-800/50 rounded-xl p-5">
             <h3 class="font-display font-semibold text-sm text-white">What expenses do most Airbnb hosts forget?</h3>
-            <p class="text-sm text-neutral-400 mt-2">The most commonly forgotten expenses are Airbnb's host service fee (14-16%), maintenance reserves, income tax provisions, supplies and consumables, and the opportunity cost of your own time.</p>
+            <p class="text-sm text-neutral-400 mt-2">The most commonly forgotten expenses are Airbnb's 15.5% host service fee, maintenance reserves, income tax provisions, supplies and consumables, and the opportunity cost of your own time.</p>
           </div>
           <div class="bg-base-900 border border-neutral-800/50 rounded-xl p-5">
             <h3 class="font-display font-semibold text-sm text-white">How much does an average Airbnb host make?</h3>
@@ -590,8 +590,8 @@
       const cleaningRevenue = cleanFeeGuest * bookingsPerMonth;
       const totalRevenue = grossRevenue + cleaningRevenue;
 
-      // Airbnb host fee (15% average)
-      const airbnbFee = grossRevenue * 0.15;
+      // Airbnb host-only fee (15.5%, mandatory for US hosts from Sept 15, 2026)
+      const airbnbFee = grossRevenue * 0.155;
 
       // Cleaning expense
       const cleaningExpense = cleanCost * bookingsPerMonth;
@@ -633,7 +633,7 @@
 
       // Expense breakdown
       const expenses = [
-        { name: 'Airbnb host fee (15%)', amount: airbnbFee },
+        { name: 'Airbnb host fee (15.5%)', amount: airbnbFee },
         { name: 'Net cleaning cost', amount: netCleaning },
         { name: 'Mortgage / Rent', amount: mortgageVal, hide: mortgageVal === 0 },
         { name: 'Utilities', amount: util },

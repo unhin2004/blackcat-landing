@@ -194,9 +194,9 @@ async function generate() {
     ['2026-01-25', 'Expense', 'Utilities', 'Beach Bungalow', 'Electric + water + internet', 195, 'Yes', ''],
     ['2026-01-28', 'Revenue', 'Airbnb Payout', 'Lakeside Cabin', 'Payout — 7 night stay (Davis)', 2100, 'No', ''],
     ['2026-01-28', 'Expense', 'Cleaning', 'Lakeside Cabin', 'Deep clean after Davis (7 night)', 140, 'Yes', ''],
-    ['2026-01-31', 'Expense', 'Platform Fees', 'Downtown Loft', 'Airbnb host fee — January', 67, 'Yes', '3% of gross'],
-    ['2026-01-31', 'Expense', 'Platform Fees', 'Lakeside Cabin', 'Airbnb host fee — January', 90, 'Yes', '3% of gross'],
-    ['2026-01-31', 'Expense', 'Platform Fees', 'Beach Bungalow', 'Airbnb host fee — January', 47, 'Yes', '3% of gross'],
+    ['2026-01-31', 'Expense', 'Platform Fees', 'Downtown Loft', 'Airbnb host fee — January', 67, 'Yes', '3% of gross (15.5% from Sept 15, 2026)'],
+    ['2026-01-31', 'Expense', 'Platform Fees', 'Lakeside Cabin', 'Airbnb host fee — January', 90, 'Yes', '3% of gross (15.5% from Sept 15, 2026)'],
+    ['2026-01-31', 'Expense', 'Platform Fees', 'Beach Bungalow', 'Airbnb host fee — January', 47, 'Yes', '3% of gross (15.5% from Sept 15, 2026)'],
   ];
 
   sampleData.forEach((data, i) => {
