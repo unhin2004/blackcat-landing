@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airbnb Fee Calculator: Old 3% vs New 15.5% Host Fee — See Your Take-Home Side by Side</title>
+  <meta name="description" content="Free Airbnb fee calculator for the September 2026 host-only fee change. See your take-home under the old 3% fee vs the new 15.5% fee side by side — and what happens to your payout (and your guest's price) when you reprice.">
+  <meta name="keywords" content="airbnb fee calculator, airbnb host fee calculator, airbnb 15.5 fee calculator, airbnb service fee calculator, airbnb host only fee calculator, airbnb payout calculator">
+  <link rel="canonical" href="https://www.tryblackcat.com/tools/airbnb-fee-calculator.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.tryblackcat.com/tools/airbnb-fee-calculator.html">
+  <meta property="og:title" content="Airbnb Fee Calculator: Old 3% vs New 15.5% Host Fee, Side by Side">
+  <meta property="og:description" content="See exactly what the September 2026 fee change does to your payout — and what price increase keeps you whole. Free, no signup.">
+  <meta property="og:image" content="https://www.tryblackcat.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@try_blackcat">
+  <meta name="twitter:title" content="Airbnb Fee Calculator: Old 3% vs New 15.5% Host Fee, Side by Side">
+  <meta name="twitter:description" content="See exactly what the September 2026 fee change does to your payout — and what price increase keeps you whole. Free, no signup.">
+  <meta name="twitter:image" content="https://www.tryblackcat.com/og-image.png">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Airbnb Fee Calculator (3% vs 15.5% Host-Only Fee)",
+    "url": "https://www.tryblackcat.com/tools/airbnb-fee-calculator.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "description": "Compare your Airbnb take-home pay under the old 3% host fee vs the mandatory 15.5% host-only fee starting September 15, 2026 — and model the price increase that keeps your payout whole.",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "creator": { "@type": "Organization", "name": "Black Cat Analytics", "url": "https://www.tryblackcat.com" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much will Airbnb's new 15.5% host fee cost me?",
+        "acceptedAnswer": { "@type": "Answer", "text": "If you keep your current price, roughly 12.5 percentage points more of your revenue than today: the host fee rises from 3% to 15.5% of your booking price. On $20,000 of annual bookings that's about $2,500 less in payouts per year. Repricing before September 15, 2026 avoids the cut — the calculator on this page shows your exact numbers." }
+      },
+      {
+        "@type": "Question",
+        "name": "How much should I raise my Airbnb price to break even after the fee change?",
+        "acceptedAnswer": { "@type": "Answer", "text": "About +14.8% keeps your payout exactly flat (new price = current payout ÷ 0.845). Raising +15.5% slightly overshoots break-even, and the widely shared +18.3% figure nets you your full current listed rate — a raise, not break-even." }
+      },
+      {
+        "@type": "Question",
+        "name": "Will my guests pay more after the host-only fee change?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Barely, if you reprice correctly. Guests currently pay a roughly 14% service fee on top of your price; under the host-only fee that guest fee disappears. If you raise your price ~14.8% to protect your payout, the guest's checkout total lands within about a dollar of what they effectively pay today." }
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="../dist/output.css">
+  <link rel="stylesheet" href="../style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0Y5H3YVKT4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0Y5H3YVKT4');
+  </script>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+    <!-- Microsoft Clarity (session replay + heatmaps) -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "wykpb8uzfm");
+    </script>
+</head>
+<body class="bg-base-950 text-white font-body antialiased">
+
+  <div class="noise-overlay"></div>
+
+  <!-- NAV-INJECT START -->
+  <!-- Generated from _partials/nav.html — edit there, run `npm run build:nav` -->
+<!--
+  CANONICAL SITE NAV
+  ==================
+  Edit here, then run:  npm run build:nav
+
+  Pages opt in by including the start/end marker pair (see scripts/build-nav.js
+  and any HTML page for an example). Uses absolute paths so the partial works
+  identically from /, /tools/*, and /blog/*.
+-->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2 group">
+        <picture>
+          <source srcset="/logo-icon.webp" type="image/webp">
+          <img src="/logo-icon.png" alt="Black Cat" class="w-7 h-7 object-contain" width="28" height="28" fetchpriority="high">
+        </picture>
+        <span class="font-display font-bold text-lg tracking-tight text-white">Black Cat <span class="text-accent-green">Analytics</span></span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="/#features" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Features</a>
+        <a href="/#pricing" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Pricing</a>
+        <a href="/#faq" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">FAQ</a>
+        <a href="/tools/airbnb-profit-calculator.html" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Calculator</a>
+        <a href="/tools/airbnb-profit-tracker-spreadsheet.html" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Spreadsheet</a>
+        <a href="/blog/" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Blog</a>
+        <a href="https://app.tryblackcat.com/login" data-cta-location="nav_desktop_signin" class="nav-link text-sm text-neutral-300 hover:text-white transition-colors duration-200 font-medium">Sign in</a>
+        <a href="https://app.tryblackcat.com/signup?utm_source=tryblackcat&utm_medium=cta&utm_content=nav_desktop" data-cta-location="nav_desktop" class="cta-button-sm text-sm font-semibold px-5 py-2.5 rounded-full text-white">Get Started Free</a>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-3 z-[1000] relative" aria-label="Menu">
+        <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+        <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+        <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu (outside nav: navbar's backdrop-filter creates a containing block, so position:fixed; inset:0 inside it collapses to the navbar bounds instead of the viewport) -->
+<div id="mobile-menu" class="mobile-menu md:hidden">
+  <div class="px-6 pt-20 pb-8 flex flex-col gap-6">
+    <a href="/#features" class="mobile-nav-link text-xl font-display font-semibold text-white">Features</a>
+    <a href="/#pricing" class="mobile-nav-link text-xl font-display font-semibold text-white">Pricing</a>
+    <a href="/#faq" class="mobile-nav-link text-xl font-display font-semibold text-white">FAQ</a>
+    <a href="/tools/airbnb-profit-calculator.html" class="mobile-nav-link text-xl font-display font-semibold text-white">Calculator</a>
+    <a href="/tools/airbnb-profit-tracker-spreadsheet.html" class="mobile-nav-link text-xl font-display font-semibold text-white">Spreadsheet</a>
+    <a href="/blog/" class="mobile-nav-link text-xl font-display font-semibold text-white">Blog</a>
+    <a href="https://app.tryblackcat.com/login" data-cta-location="nav_mobile_signin" class="mobile-nav-link text-xl font-display font-semibold text-neutral-300">Sign in</a>
+    <a href="https://app.tryblackcat.com/signup?utm_source=tryblackcat&utm_medium=cta&utm_content=nav_mobile" data-cta-location="nav_mobile" class="cta-button-sm text-center text-base font-semibold px-6 py-3 rounded-full text-white mt-4">Get Started Free</a>
+  </div>
+</div>
+  <!-- NAV-INJECT END -->
+
+  <!-- HERO -->
+  <section class="relative pt-32 sm:pt-40 pb-8 px-4">
+    <div class="hero-gradient"></div>
+    <div class="relative z-10 max-w-3xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-neutral-700/50 bg-neutral-900/60 backdrop-blur-sm mb-6">
+        <span class="text-xs font-medium text-accent-green tracking-wide uppercase">Fee change: September 15, 2026</span>
+      </div>
+      <h1 class="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight leading-tight mb-4">
+        Airbnb Fee Calculator: <span class="hero-gradient-text">3% vs 15.5%</span>, Side by Side
+      </h1>
+      <p class="text-base sm:text-lg text-neutral-400 max-w-2xl mx-auto leading-relaxed">
+        Airbnb's host-only fee becomes mandatory for US hosts on September 15, 2026. Enter your numbers to see what you take home today, what happens if you change nothing, and what the right price increase does — including what your <em>guest</em> ends up paying.
+      </p>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section class="relative pb-16 px-4">
+    <div class="relative z-10 max-w-5xl mx-auto">
+
+      <!-- Inputs -->
+      <div class="bg-base-900 border border-neutral-800/50 rounded-2xl p-6 mb-8 max-w-3xl mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
+          <div>
+            <label for="rate" class="block text-sm font-medium text-neutral-300 mb-1.5">Your current nightly price ($)</label>
+            <input id="rate" type="number" min="1" value="195" class="w-full px-4 py-2.5 rounded-lg bg-base-950 border border-neutral-700 text-white focus:outline-none focus:border-accent-green">
+          </div>
+          <div>
+            <label for="nights" class="block text-sm font-medium text-neutral-300 mb-1.5">Booked nights per month</label>
+            <input id="nights" type="number" min="1" max="31" value="21" class="w-full px-4 py-2.5 rounded-lg bg-base-950 border border-neutral-700 text-white focus:outline-none focus:border-accent-green">
+          </div>
+        </div>
+        <div>
+          <label for="increase" class="block text-sm font-medium text-neutral-300 mb-1.5">Price increase to model: <span id="incLabel" class="text-accent-green font-semibold">+14.8%</span></label>
+          <input id="increase" type="range" min="0" max="25" step="0.1" value="14.8" class="w-full accent-emerald-500">
+          <div class="flex flex-wrap gap-2 mt-3">
+            <button type="button" data-inc="14.8" class="preset px-3 py-1.5 text-xs font-semibold rounded-full border border-accent-green/40 text-accent-green hover:bg-accent-green/10 transition-colors">Break-even (+14.8%)</button>
+            <button type="button" data-inc="15.5" class="preset px-3 py-1.5 text-xs font-semibold rounded-full border border-neutral-700 text-neutral-300 hover:border-neutral-500 transition-colors">Match the fee (+15.5%)</button>
+            <button type="button" data-inc="18.3" class="preset px-3 py-1.5 text-xs font-semibold rounded-full border border-neutral-700 text-neutral-300 hover:border-neutral-500 transition-colors">Full recovery (+18.3%)</button>
+            <button type="button" data-inc="0" class="preset px-3 py-1.5 text-xs font-semibold rounded-full border border-neutral-700 text-neutral-300 hover:border-neutral-500 transition-colors">No change (0%)</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Comparison Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-4">
+
+        <!-- TODAY -->
+        <div class="rounded-2xl bg-base-900 border border-neutral-800/60 p-6">
+          <div class="text-[11px] font-semibold uppercase tracking-wider text-neutral-400 mb-1">Today</div>
+          <div class="font-display font-bold text-lg text-white mb-4">Old model &middot; 3% host fee</div>
+          <div class="text-[13px] text-neutral-500 mb-1">Your monthly take-home</div>
+          <div id="p1payout" class="font-display font-extrabold text-3xl text-white mb-1">$0</div>
+          <div id="p1annual" class="text-xs text-neutral-500 mb-4">$0 / year</div>
+          <div class="h-2 rounded-full bg-neutral-800 overflow-hidden mb-4"><div id="p1bar" class="h-full bg-emerald-500" style="width:97%"></div></div>
+          <div class="space-y-1.5 text-[13px]">
+            <div class="flex justify-between"><span class="text-neutral-500">Your price / night</span><span id="p1rate" class="text-neutral-300">$0</span></div>
+            <div class="flex justify-between"><span class="text-neutral-500">Airbnb's fee (3%)</span><span id="p1fee" class="text-neutral-300">$0/mo</span></div>
+            <div class="flex justify-between border-t border-neutral-800 pt-1.5"><span class="text-neutral-500">Guest pays / night*</span><span id="p1guest" class="text-neutral-300">$0</span></div>
+          </div>
+        </div>
+
+        <!-- DO NOTHING -->
+        <div class="rounded-2xl bg-base-900 border border-red-500/25 p-6">
+          <div class="text-[11px] font-semibold uppercase tracking-wider text-red-400 mb-1">After Sept 15 — same price</div>
+          <div class="font-display font-bold text-lg text-white mb-4">New model &middot; 15.5% host fee</div>
+          <div class="text-[13px] text-neutral-500 mb-1">Your monthly take-home</div>
+          <div id="p2payout" class="font-display font-extrabold text-3xl text-white mb-1">$0</div>
+          <div class="text-xs mb-4"><span id="p2delta" class="text-red-400 font-semibold">-$0 / year vs today</span></div>
+          <div class="h-2 rounded-full bg-neutral-800 overflow-hidden mb-4"><div id="p2bar" class="h-full bg-red-500" style="width:84.5%"></div></div>
+          <div class="space-y-1.5 text-[13px]">
+            <div class="flex justify-between"><span class="text-neutral-500">Your price / night</span><span id="p2rate" class="text-neutral-300">$0</span></div>
+            <div class="flex justify-between"><span class="text-neutral-500">Airbnb's fee (15.5%)</span><span id="p2fee" class="text-neutral-300">$0/mo</span></div>
+            <div class="flex justify-between border-t border-neutral-800 pt-1.5"><span class="text-neutral-500">Guest pays / night</span><span id="p2guest" class="text-neutral-300">$0</span></div>
+          </div>
+          <div id="p2note" class="mt-3 text-xs text-red-400/90 leading-snug">Doing nothing is a pay cut — and your guest actually pays <em>less</em> than before.</div>
+        </div>
+
+        <!-- REPRICED -->
+        <div class="rounded-2xl bg-base-900 border border-accent-green/30 p-6">
+          <div class="text-[11px] font-semibold uppercase tracking-wider text-accent-green mb-1">After Sept 15 — repriced</div>
+          <div id="p3title" class="font-display font-bold text-lg text-white mb-4">15.5% fee &middot; price +14.8%</div>
+          <div class="text-[13px] text-neutral-500 mb-1">Your monthly take-home</div>
+          <div id="p3payout" class="font-display font-extrabold text-3xl text-white mb-1">$0</div>
+          <div class="text-xs mb-4"><span id="p3delta" class="font-semibold text-accent-green">$0 / year vs today</span></div>
+          <div class="h-2 rounded-full bg-neutral-800 overflow-hidden mb-4"><div id="p3bar" class="h-full bg-emerald-500" style="width:84.5%"></div></div>
+          <div class="space-y-1.5 text-[13px]">
+            <div class="flex justify-between"><span class="text-neutral-500">Your new price / night</span><span id="p3rate" class="text-neutral-300">$0</span></div>
+            <div class="flex justify-between"><span class="text-neutral-500">Airbnb's fee (15.5%)</span><span id="p3fee" class="text-neutral-300">$0/mo</span></div>
+            <div class="flex justify-between border-t border-neutral-800 pt-1.5"><span class="text-neutral-500">Guest pays / night</span><span id="p3guest" class="text-neutral-300">$0</span></div>
+          </div>
+          <div id="p3note" class="mt-3 text-xs text-neutral-400 leading-snug"></div>
+        </div>
+      </div>
+
+      <p class="text-xs text-neutral-600 text-center max-w-2xl mx-auto mb-10">*Guest total today estimated using a typical ~14% guest service fee, before taxes. Under the host-only fee, guests see no Airbnb service fee line. Fees per Airbnb's announced host-only fee model, mandatory for US hosts Sept 15, 2026 (EEA: Oct 13).</p>
+
+      <!-- CTA -->
+      <div class="max-w-2xl mx-auto rounded-xl bg-gradient-to-r from-accent-green/10 to-accent-blue/10 border border-accent-green/20 p-6 mb-12 text-center">
+        <h2 class="font-display font-bold text-lg text-white mb-2">Repricing is step one. Knowing your real profit is the job.</h2>
+        <p class="text-sm text-neutral-400 mb-4">Black Cat Analytics tracks your actual payouts, fees, and expenses per property — so September's change (and your 1099-K) reconciles to the penny, automatically.</p>
+        <a href="https://app.tryblackcat.com/signup?utm_source=tryblackcat&utm_medium=cta&utm_content=airbnb-fee-calculator_inline" data-cta-location="fee_calculator" class="cta-button inline-block px-6 py-3 rounded-xl font-semibold text-sm text-white">Track your real numbers free &rarr;</a>
+      </div>
+
+      <!-- Explainer + links -->
+      <div class="max-w-3xl mx-auto text-[15px] text-neutral-300 leading-relaxed space-y-4">
+        <h2 class="font-display font-bold text-xl sm:text-2xl text-white">How This Calculator Works</h2>
+        <p><strong class="text-white">Today:</strong> Airbnb deducts a 3% host fee from your payout, and your guest pays a ~14% service fee on top of your price at checkout. <strong class="text-white">From September 15, 2026:</strong> one 15.5% fee comes out of your payout and the guest-side fee disappears — so an unchanged price is a ~12-point pay cut that also hands your guests a discount. The break-even price increase is <strong class="text-white">+14.8%</strong> (your payout &divide; 0.845), not the +18.3% often shared online — that larger figure nets you your full current listed price, which is a raise. The full math, including what the change does to your 1099-K and Schedule E, is in our <a href="/blog/airbnb-15-5-percent-host-fee-explained.html" class="text-accent-green hover:underline">15.5% host fee explainer</a>.</p>
+        <p>One honest caveat: these numbers hold if your occupancy holds. Nobody knows exactly how demand shifts when every US listing's sticker price rises at once while checkout totals stay flat — watch your bookings for a few weeks after repricing and adjust with data, not vibes. To model your full picture including expenses, use the <a href="/tools/airbnb-profit-calculator.html" class="text-accent-green hover:underline">Airbnb profit &amp; income calculator</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-neutral-800/50 py-10 px-4">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="text-lg">🐈‍⬛</span>
+        <span class="font-display font-semibold text-sm text-neutral-400">&copy; 2026 Black Cat Analytics</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="../privacy.html" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">Privacy Policy</a>
+        <a href="../terms.html" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">Terms of Service</a>
+        <a href="mailto:support@tryblackcat.com" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">support@tryblackcat.com</a>
+        <a href="https://www.instagram.com/blackcat.analytics/" target="_blank" rel="noopener" aria-label="Black Cat Analytics on Instagram" class="text-neutral-500 hover:text-neutral-300 transition-colors"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+        <a href="https://x.com/try_blackcat" target="_blank" rel="noopener" aria-label="Black Cat Analytics on X" class="text-neutral-500 hover:text-neutral-300 transition-colors"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../app.js"></script>
+  <script>
+  (function() {
+    const OLD_HOST_FEE = 0.03, NEW_HOST_FEE = 0.155, GUEST_FEE_EST = 0.14;
+    const $ = id => document.getElementById(id);
+    const fmt = n => '$' + Math.round(n).toLocaleString('en-US');
+    const fmt2 = n => '$' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+    function calc() {
+      const rate = Math.max(1, parseFloat($('rate').value) || 0);
+      const nights = Math.min(31, Math.max(1, parseFloat($('nights').value) || 0));
+      const inc = parseFloat($('increase').value) || 0;
+      $('incLabel').textContent = '+' + inc.toFixed(1) + '%';
+
+      const gross = rate * nights;
+
+      // Panel 1: today, 3% host fee, guest pays rate * (1 + est guest fee)
+      const p1 = gross * (1 - OLD_HOST_FEE);
+      $('p1payout').textContent = fmt(p1) + '/mo';
+      $('p1annual').textContent = fmt(p1 * 12) + ' / year';
+      $('p1rate').textContent = fmt2(rate);
+      $('p1fee').textContent = fmt(gross * OLD_HOST_FEE) + '/mo';
+      $('p1guest').textContent = '~' + fmt2(rate * (1 + GUEST_FEE_EST));
+
+      // Panel 2: after, same price, 15.5% fee
+      const p2 = gross * (1 - NEW_HOST_FEE);
+      $('p2payout').textContent = fmt(p2) + '/mo';
+      $('p2delta').textContent = '−' + fmt((p1 - p2) * 12) + ' / year vs today';
+      $('p2rate').textContent = fmt2(rate);
+      $('p2fee').textContent = fmt(gross * NEW_HOST_FEE) + '/mo';
+      $('p2guest').textContent = fmt2(rate);
+
+      // Panel 3: after, repriced
+      const newRate = rate * (1 + inc / 100);
+      const gross3 = newRate * nights;
+      const p3 = gross3 * (1 - NEW_HOST_FEE);
+      const deltaYr = (p3 - p1) * 12;
+      $('p3title').textContent = '15.5% fee · price +' + inc.toFixed(1) + '%';
+      $('p3payout').textContent = fmt(p3) + '/mo';
+      const d3 = $('p3delta');
+      if (Math.abs(deltaYr) < 60) {
+        d3.textContent = 'break-even vs today';
+        d3.className = 'font-semibold text-accent-green';
+      } else if (deltaYr > 0) {
+        d3.textContent = '+' + fmt(deltaYr) + ' / year vs today';
+        d3.className = 'font-semibold text-accent-green';
+      } else {
+        d3.textContent = '−' + fmt(-deltaYr) + ' / year vs today';
+        d3.className = 'font-semibold text-red-400';
+      }
+      $('p3rate').textContent = fmt2(newRate);
+      $('p3fee').textContent = fmt(gross3 * NEW_HOST_FEE) + '/mo';
+      $('p3guest').textContent = fmt2(newRate);
+
+      const guestToday = rate * (1 + GUEST_FEE_EST);
+      const guestDiff = newRate - guestToday;
+      $('p3note').textContent = Math.abs(guestDiff) < 2
+        ? 'Your guest pays about the same as today — the fee just moved.'
+        : (guestDiff < 0
+          ? 'Your guest still pays ' + fmt2(-guestDiff) + '/night LESS than today.'
+          : 'Your guest pays ' + fmt2(guestDiff) + '/night more than their effective total today.');
+
+      // Bars: payout share of max gross for visual comparison
+      const maxGross = Math.max(gross, gross3);
+      $('p1bar').style.width = (p1 / maxGross * 100) + '%';
+      $('p2bar').style.width = (p2 / maxGross * 100) + '%';
+      $('p3bar').style.width = (p3 / maxGross * 100) + '%';
+    }
+
+    ['rate', 'nights', 'increase'].forEach(id => $(id).addEventListener('input', calc));
+    document.querySelectorAll('.preset').forEach(btn => btn.addEventListener('click', () => {
+      $('increase').value = btn.dataset.inc;
+      document.querySelectorAll('.preset').forEach(b => b.className = b.className.replace('border-accent-green/40 text-accent-green hover:bg-accent-green/10', 'border-neutral-700 text-neutral-300 hover:border-neutral-500'));
+      btn.className = btn.className.replace('border-neutral-700 text-neutral-300 hover:border-neutral-500', 'border-accent-green/40 text-accent-green hover:bg-accent-green/10');
+      calc();
+    }));
+    calc();
+  })();
+  </script>
+</body>
+</html>
