@@ -345,6 +345,8 @@
       $('p1bar').style.width = (p1 / maxGross * 100) + '%';
       $('p2bar').style.width = (p2 / maxGross * 100) + '%';
       $('p3bar').style.width = (p3 / maxGross * 100) + '%';
+      // Bar color follows the verdict: red when this scenario loses money vs today
+      $('p3bar').style.background = (deltaYr < -60) ? '#ef4444' : '#22c55e';
     }
 
     ['rate', 'nights', 'increase'].forEach(id => $(id).addEventListener('input', calc));
