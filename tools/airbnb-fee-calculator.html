@@ -179,6 +179,10 @@
             <label for="nights" class="block text-sm font-medium text-neutral-300 mb-1.5">Booked nights per month</label>
             <input id="nights" type="number" min="1" max="31" value="21" class="w-full px-4 py-2.5 rounded-lg bg-base-950 border border-neutral-700 text-white focus:outline-none focus:border-accent-green">
           </div>
+          <div class="sm:col-span-2">
+            <label for="otherFees" class="block text-sm font-medium text-neutral-300 mb-1.5">Cleaning, pet &amp; extra-guest fees collected per month ($) <span class="text-neutral-500">— optional, Airbnb's fee applies to these too</span></label>
+            <input id="otherFees" type="number" min="0" value="0" class="w-full px-4 py-2.5 rounded-lg bg-base-950 border border-neutral-700 text-white focus:outline-none focus:border-accent-green">
+          </div>
         </div>
         <div>
           <label for="increase" class="block text-sm font-medium text-neutral-300 mb-1.5">Price increase to model: <span id="incLabel" class="text-accent-green font-semibold">+14.8%</span></label>
@@ -243,7 +247,7 @@
         </div>
       </div>
 
-      <p class="text-xs text-neutral-600 text-center max-w-2xl mx-auto mb-10">*Guest total today estimated using a typical ~14% guest service fee, before taxes. Under the host-only fee, guests see no Airbnb service fee line. Fees per Airbnb's announced host-only fee model, mandatory for US hosts Sept 15, 2026 (EEA: Oct 13).</p>
+      <p class="text-xs text-neutral-600 text-center max-w-2xl mx-auto mb-10">*Guest total today estimated using a typical ~14% guest service fee, before taxes; per-night guest rows reflect your nightly rate only. Airbnb's host fee applies to your whole booking subtotal — nightly rate plus cleaning, pet, and extra-guest fees (taxes excluded) — so include those fees above for accurate dollars. The repriced scenario assumes you raise those fees by the same percentage as your rate. Fees per Airbnb's announced host-only fee model, mandatory for US hosts Sept 15, 2026 (EEA: Oct 13).</p>
 
       <!-- CTA -->
       <div class="max-w-2xl mx-auto rounded-xl bg-gradient-to-r from-accent-green/10 to-accent-blue/10 border border-accent-green/20 p-6 mb-12 text-center">
@@ -289,10 +293,11 @@
     function calc() {
       const rate = Math.max(1, parseFloat($('rate').value) || 0);
       const nights = Math.min(31, Math.max(1, parseFloat($('nights').value) || 0));
+      const fees = Math.max(0, parseFloat($('otherFees').value) || 0);
       const inc = parseFloat($('increase').value) || 0;
       $('incLabel').textContent = '+' + inc.toFixed(1) + '%';
 
-      const gross = rate * nights;
+      const gross = rate * nights + fees;
 
       // Panel 1: today, 3% host fee, guest pays rate * (1 + est guest fee)
       const p1 = gross * (1 - OLD_HOST_FEE);
@@ -312,7 +317,7 @@
 
       // Panel 3: after, repriced
       const newRate = rate * (1 + inc / 100);
-      const gross3 = newRate * nights;
+      const gross3 = gross * (1 + inc / 100);
       const p3 = gross3 * (1 - NEW_HOST_FEE);
       const deltaYr = (p3 - p1) * 12;
       $('p3title').textContent = '15.5% fee · price +' + inc.toFixed(1) + '%';
@@ -349,7 +354,7 @@
       $('p3bar').style.background = (deltaYr < -60) ? '#ef4444' : '#22c55e';
     }
 
-    ['rate', 'nights', 'increase'].forEach(id => $(id).addEventListener('input', calc));
+    ['rate', 'nights', 'otherFees', 'increase'].forEach(id => $(id).addEventListener('input', calc));
     document.querySelectorAll('.preset').forEach(btn => btn.addEventListener('click', () => {
       $('increase').value = btn.dataset.inc;
       document.querySelectorAll('.preset').forEach(b => b.className = b.className.replace('border-accent-green/40 text-accent-green hover:bg-accent-green/10', 'border-neutral-700 text-neutral-300 hover:border-neutral-500'));
