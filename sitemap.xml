@@ -7,6 +7,12 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://www.tryblackcat.com/tools/airbnb-fee-calculator.html</loc>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.tryblackcat.com/blog/airbnb-15-5-percent-host-fee-explained.html</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
