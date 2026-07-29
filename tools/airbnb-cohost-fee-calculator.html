@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airbnb Co-Host Fee Calculator: Is 20% a Fair Rate? (2026)</title>
+  <meta name="description" content="Free co-host fee calculator: benchmark your co-hosting percentage against typical 2026 ranges by service scope and unit count — see the verdict in dollars, not vibes.">
+  <meta name="keywords" content="airbnb co-host fee calculator, co-host percentage airbnb, how much do co-hosts charge, airbnb co-hosting fees, co-host rates 2026, property manager percentage airbnb, cohost fee">
+  <link rel="canonical" href="https://www.tryblackcat.com/tools/airbnb-cohost-fee-calculator.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.tryblackcat.com/tools/airbnb-cohost-fee-calculator.html">
+  <meta property="og:title" content="Airbnb Co-Host Fee Calculator: Is 20% a Fair Rate?">
+  <meta property="og:description" content="Benchmark a co-hosting fee against typical ranges by service scope and unit count — and see what it costs in dollars per year.">
+  <meta property="og:image" content="https://www.tryblackcat.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@try_blackcat">
+  <meta name="twitter:title" content="Airbnb Co-Host Fee Calculator: Is 20% a Fair Rate?">
+  <meta name="twitter:description" content="Benchmark a co-hosting fee against typical ranges by service scope and unit count — in dollars, not vibes.">
+  <meta name="twitter:image" content="https://www.tryblackcat.com/og-image.png">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Airbnb Co-Host Fee Calculator",
+    "url": "https://www.tryblackcat.com/tools/airbnb-cohost-fee-calculator.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "description": "Benchmark an Airbnb co-hosting fee against typical 2026 ranges by service scope and unit count, and see the arrangement priced in monthly and annual dollars.",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "creator": { "@type": "Organization", "name": "Black Cat Analytics", "url": "https://www.tryblackcat.com" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What percentage do Airbnb co-hosts typically charge?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Published co-host and small property-manager listings typically cluster at 15-25% of rental revenue for full-service management (guest communication, cleaning coordination, pricing, and maintenance), 10-15% for guest communication plus turnover coordination, and 8-12% for guest-communication-only arrangements. Hosts with 5 or more units often negotiate 2-5 percentage points below these ranges." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is 20% a fair co-host fee?",
+        "acceptedAnswer": { "@type": "Answer", "text": "For genuine full-service management of one or two units, 20% sits in the middle of the typical 15-25% range — fair if the co-host truly handles guests, turnovers, pricing, and maintenance. If they only answer messages, 20% is roughly double the typical rate for that scope. The scope of work matters more than the number." }
+      },
+      {
+        "@type": "Question",
+        "name": "Should a co-host charge a percentage of revenue or a flat fee?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Percentage of revenue is the dominant model because it aligns incentives — the co-host earns more when the listing earns more. Flat monthly fees appear at the low-scope end (for example, messaging-only arrangements) and for very high-revenue listings where a percentage would overshoot the value of the work. Some arrangements combine a lower percentage with per-turnover fees." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is included in full-service co-hosting?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Full-service typically covers guest communication and screening, calendar and pricing management, cleaner scheduling and turnover quality checks, restocking, maintenance coordination, listing optimization, and review management. If any major pillar is missing — most commonly pricing or maintenance — the arrangement is partial service and typically prices below the full-service range." }
+      },
+      {
+        "@type": "Question",
+        "name": "How does Airbnb's 15.5% host-only fee affect co-host arrangements?",
+        "acceptedAnswer": { "@type": "Answer", "text": "From September 15, 2026, Airbnb's 15.5% host-only fee comes out of the same revenue that most co-host percentages are calculated on. If the host doesn't reprice, their payout drops about 12.5 points while the co-host's cut of gross stays the same — meaning the host absorbs the entire change. Well-structured agreements are explicit about whether the percentage applies to gross booking revenue or to the host payout after Airbnb's fee." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do co-hosts get a 1099 from Airbnb?",
+        "acceptedAnswer": { "@type": "Answer", "text": "If the co-host is paid directly through Airbnb's co-host payout split, Airbnb reports their share on their own 1099-K. If the host collects all revenue and pays the co-host outside the platform, the host may need to issue a 1099-NEC for payments of $600 or more in a year, and the full booking revenue lands on the host's 1099-K — one more reason clean per-property books matter to both sides." }
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="../dist/output.css">
+  <link rel="stylesheet" href="../style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0Y5H3YVKT4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0Y5H3YVKT4');
+  </script>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+    <!-- Microsoft Clarity (session replay + heatmaps) -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "wykpb8uzfm");
+    </script>
+</head>
+<body class="bg-base-950 text-white font-body antialiased">
+
+  <div class="noise-overlay"></div>
+
+  <!-- NAV-INJECT START -->
+  <!-- Generated from _partials/nav.html — edit there, run `npm run build:nav` -->
+<!--
+  CANONICAL SITE NAV
+  ==================
+  Edit here, then run:  npm run build:nav
+
+  Pages opt in by including the start/end marker pair (see scripts/build-nav.js
+  and any HTML page for an example). Uses absolute paths so the partial works
+  identically from /, /tools/*, and /blog/*.
+-->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2 group">
+        <picture>
+          <source srcset="/logo-icon.webp" type="image/webp">
+          <img src="/logo-icon.png" alt="Black Cat" class="w-7 h-7 object-contain" width="28" height="28" fetchpriority="high">
+        </picture>
+        <span class="font-display font-bold text-lg tracking-tight text-white">Black Cat <span class="text-accent-green">Analytics</span></span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="/#features" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Features</a>
+        <a href="/#pricing" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Pricing</a>
+        <a href="/#faq" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">FAQ</a>
+        <!-- Free Tools dropdown. CSS-only (group-hover + focus-within) so it
+             works without page JS; the pt-3 bridge keeps hover alive across
+             the gap between trigger and panel. -->
+        <div class="relative group">
+          <button type="button" class="nav-link flex items-center gap-1 text-sm text-neutral-400 group-hover:text-white group-focus-within:text-white transition-colors duration-200" aria-haspopup="true">
+            Free Tools
+            <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="absolute left-1/2 -translate-x-1/2 top-full pt-3 hidden group-hover:block group-focus-within:block">
+            <div class="w-72 rounded-2xl border border-neutral-800 bg-base-900 shadow-2xl p-2">
+              <a href="/tools/airbnb-profit-calculator.html" class="block rounded-xl px-4 py-3 hover:bg-base-800 transition-colors">
+                <span class="block text-sm font-semibold text-white">Profit &amp; Income Calculator</span>
+                <span class="block text-xs text-neutral-500">What your listing really nets</span>
+              </a>
+              <a href="/tools/airbnb-fee-calculator.html" class="block rounded-xl px-4 py-3 hover:bg-base-800 transition-colors">
+                <span class="block text-sm font-semibold text-white">15.5% Fee Calculator</span>
+                <span class="block text-xs text-neutral-500">Old vs new Airbnb fee, side by side</span>
+              </a>
+              <a href="/tools/airbnb-cohost-fee-calculator.html" class="block rounded-xl px-4 py-3 hover:bg-base-800 transition-colors">
+                <span class="block text-sm font-semibold text-white">Co-Host Fee Calculator</span>
+                <span class="block text-xs text-neutral-500">Is that 20% cut a fair rate?</span>
+              </a>
+              <a href="/tools/airbnb-profit-tracker-spreadsheet.html" class="block rounded-xl px-4 py-3 hover:bg-base-800 transition-colors">
+                <span class="block text-sm font-semibold text-white">Free Profit Spreadsheet</span>
+                <span class="block text-xs text-neutral-500">Downloadable tracker template</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <a href="/blog/" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Blog</a>
+        <a href="https://app.tryblackcat.com/login" data-cta-location="nav_desktop_signin" class="nav-link text-sm text-neutral-300 hover:text-white transition-colors duration-200 font-medium">Sign in</a>
+        <a href="https://app.tryblackcat.com/signup?utm_source=tryblackcat&utm_medium=cta&utm_content=nav_desktop" data-cta-location="nav_desktop" class="cta-button-sm text-sm font-semibold px-5 py-2.5 rounded-full text-white">Get Started Free</a>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-3 z-[1000] relative" aria-label="Menu">
+        <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+        <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+        <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu (outside nav: navbar's backdrop-filter creates a containing block, so position:fixed; inset:0 inside it collapses to the navbar bounds instead of the viewport) -->
+<div id="mobile-menu" class="mobile-menu md:hidden">
+  <div class="px-6 pt-20 pb-8 flex flex-col gap-6">
+    <a href="/#features" class="mobile-nav-link text-xl font-display font-semibold text-white">Features</a>
+    <a href="/#pricing" class="mobile-nav-link text-xl font-display font-semibold text-white">Pricing</a>
+    <a href="/#faq" class="mobile-nav-link text-xl font-display font-semibold text-white">FAQ</a>
+    <span class="text-xs font-semibold uppercase tracking-wider text-neutral-500 -mb-3">Free Tools</span>
+    <a href="/tools/airbnb-profit-calculator.html" class="mobile-nav-link text-lg font-display font-semibold text-white">Profit &amp; Income Calculator</a>
+    <a href="/tools/airbnb-fee-calculator.html" class="mobile-nav-link text-lg font-display font-semibold text-white">15.5% Fee Calculator</a>
+    <a href="/tools/airbnb-cohost-fee-calculator.html" class="mobile-nav-link text-lg font-display font-semibold text-white">Co-Host Fee Calculator</a>
+    <a href="/tools/airbnb-profit-tracker-spreadsheet.html" class="mobile-nav-link text-lg font-display font-semibold text-white">Free Spreadsheet</a>
+    <a href="/blog/" class="mobile-nav-link text-xl font-display font-semibold text-white">Blog</a>
+    <a href="https://app.tryblackcat.com/login" data-cta-location="nav_mobile_signin" class="mobile-nav-link text-xl font-display font-semibold text-neutral-300">Sign in</a>
+    <a href="https://app.tryblackcat.com/signup?utm_source=tryblackcat&utm_medium=cta&utm_content=nav_mobile" data-cta-location="nav_mobile" class="cta-button-sm text-center text-base font-semibold px-6 py-3 rounded-full text-white mt-4">Get Started Free</a>
+  </div>
+</div>
+  <!-- NAV-INJECT END -->
+
+  <!-- HERO -->
+  <section class="relative pt-28 lg:pt-36 pb-10 px-4">
+    <div class="relative z-10 max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 rounded-full border border-accent-green/30 bg-accent-green/10 px-4 py-1.5 mb-6">
+        <span class="text-xs font-semibold text-accent-green">Free tool · No signup</span>
+      </div>
+      <h1 class="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight leading-tight mb-4">
+        Airbnb Co-Host Fee Calculator
+      </h1>
+      <p class="text-base sm:text-lg text-neutral-400 max-w-2xl mx-auto leading-relaxed">
+        Hiring a co-host — or pricing your own co-hosting services? Benchmark the percentage against typical ranges for the actual scope of work, and see what it means in dollars per month and per year.
+      </p>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section class="relative pb-16 px-4">
+    <div class="relative z-10 max-w-5xl mx-auto">
+
+      <!-- Inputs -->
+      <div class="bg-base-900 border border-neutral-800/50 rounded-2xl p-6 mb-8 max-w-3xl mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
+          <div>
+            <label for="revenue" class="block text-sm font-medium text-neutral-300 mb-1.5">Monthly rental revenue ($)</label>
+            <input id="revenue" type="number" min="1" value="6000" class="w-full px-4 py-2.5 rounded-lg bg-base-950 border border-neutral-700 text-white focus:outline-none focus:border-accent-green">
+          </div>
+          <div>
+            <label for="units" class="block text-sm font-medium text-neutral-300 mb-1.5">Units managed</label>
+            <input id="units" type="number" min="1" max="100" value="2" class="w-full px-4 py-2.5 rounded-lg bg-base-950 border border-neutral-700 text-white focus:outline-none focus:border-accent-green">
+          </div>
+          <div class="sm:col-span-2">
+            <label for="scope" class="block text-sm font-medium text-neutral-300 mb-1.5">Service scope</label>
+            <select id="scope" class="w-full px-4 py-2.5 rounded-lg bg-base-950 border border-neutral-700 text-white focus:outline-none focus:border-accent-green">
+              <option value="full" selected>Full-service — guests, turnovers, pricing, maintenance</option>
+              <option value="standard">Standard — guest communication + turnover coordination</option>
+              <option value="comms">Guest communication only</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label for="fee" class="block text-sm font-medium text-neutral-300 mb-1.5">Co-host fee being charged or quoted: <span id="feeLabel" class="text-accent-green font-semibold">20%</span> of revenue</label>
+          <input id="fee" type="range" min="0" max="35" step="0.5" value="20" class="w-full" style="accent-color:#22c55e">
+          <div class="flex justify-between text-[11px] text-neutral-600 mt-1"><span>0%</span><span>35%</span></div>
+        </div>
+      </div>
+
+      <!-- Verdict -->
+      <div id="verdictBox" class="max-w-3xl mx-auto rounded-2xl bg-base-900 border p-6 mb-6 text-center" style="border-color:rgba(34,197,94,0.3)">
+        <div id="verdictHead" class="font-display font-extrabold text-2xl sm:text-3xl mb-1" style="color:#22c55e">Within the typical range</div>
+        <div id="verdictSub" class="text-sm text-neutral-400"></div>
+      </div>
+
+      <!-- Range visual -->
+      <div class="max-w-3xl mx-auto rounded-2xl bg-base-900 border border-neutral-800/50 p-6 mb-8">
+        <div class="flex items-baseline justify-between mb-3">
+          <div class="text-[11px] font-semibold uppercase tracking-wider text-neutral-400">Typical range · <span id="rangeScopeLabel">Full-service</span></div>
+          <div id="rangeLabel" class="text-sm font-semibold text-white">15–25%</div>
+        </div>
+        <div class="relative h-4 rounded-full bg-neutral-800 mb-2">
+          <div id="rangeBand" class="absolute top-0 h-4 rounded-full" style="left:42.9%;width:28.6%;background:rgba(34,197,94,0.25)"></div>
+          <div id="feeMarker" class="absolute -top-1 h-6 w-1.5 rounded-full" style="left:57.1%;background:#22c55e"></div>
+        </div>
+        <div class="flex justify-between text-[11px] text-neutral-600 mb-4"><span>0%</span><span>35%</span></div>
+        <div id="scaleNote" class="text-xs text-neutral-500 hidden">Managing 5+ units: typical ranges run a few points lower at scale — the band above is adjusted down 2.5 points.</div>
+      </div>
+
+      <!-- Dollar cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-4 max-w-3xl mx-auto">
+        <div class="rounded-2xl bg-base-900 border border-neutral-800/60 p-6">
+          <div class="text-[11px] font-semibold uppercase tracking-wider text-neutral-400 mb-1">This arrangement</div>
+          <div id="yourFeeTitle" class="font-display font-bold text-lg text-white mb-4">20% of revenue</div>
+          <div class="text-[13px] text-neutral-500 mb-1">Co-host earns / host pays</div>
+          <div id="yourMonthly" class="font-display font-extrabold text-3xl text-white mb-1">$0/mo</div>
+          <div id="yourAnnual" class="text-xs text-neutral-500 mb-4">$0 / year</div>
+          <div class="space-y-1.5 text-[13px]">
+            <div class="flex justify-between"><span class="text-neutral-500">Per unit / month</span><span id="yourPerUnit" class="text-neutral-300">$0</span></div>
+            <div class="flex justify-between"><span class="text-neutral-500">Host keeps (before expenses)</span><span id="hostKeeps" class="text-neutral-300">$0/mo</span></div>
+          </div>
+        </div>
+        <div class="rounded-2xl bg-base-900 border border-neutral-800/60 p-6">
+          <div class="text-[11px] font-semibold uppercase tracking-wider text-neutral-400 mb-1">Typical range, same revenue</div>
+          <div id="benchTitle" class="font-display font-bold text-lg text-white mb-4">15–25% of revenue</div>
+          <div class="text-[13px] text-neutral-500 mb-1">Co-host earns / host pays</div>
+          <div id="benchMonthly" class="font-display font-extrabold text-3xl text-white mb-1">$0–$0/mo</div>
+          <div id="benchAnnual" class="text-xs text-neutral-500 mb-4">$0–$0 / year</div>
+          <div class="space-y-1.5 text-[13px]">
+            <div class="flex justify-between"><span class="text-neutral-500">Vs. this arrangement</span><span id="benchDelta" class="text-neutral-300">—</span></div>
+            <div class="flex justify-between"><span class="text-neutral-500">Scope</span><span id="benchScope" class="text-neutral-300">Full-service</span></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-xs text-neutral-600 text-center max-w-2xl mx-auto mb-10">Ranges reflect typical published co-host and small property-manager rates by service scope as of 2026 — they are honest industry benchmarks, not market-by-market data. Individual markets, luxury properties, and unusual scopes legitimately price outside them. Percentages here are applied to rental revenue; agreements should state explicitly whether the base is gross booking revenue or the host payout after Airbnb's fee.</p>
+
+      <!-- Sept 15 callout -->
+      <div class="max-w-3xl mx-auto rounded-xl bg-base-900 border border-accent-red/25 p-5 mb-10">
+        <p class="text-sm text-neutral-300 leading-relaxed"><strong class="text-white">Renegotiating soon anyway?</strong> From <strong class="text-white">September 15, 2026</strong>, Airbnb's 15.5% host-only fee comes out of the same revenue most co-host percentages are calculated on. If the host doesn't reprice, the payout shrinks while a gross-based co-host cut stays flat — the host eats the entire change. Run the <a href="/tools/airbnb-fee-calculator.html" class="text-accent-green hover:underline">15.5% fee calculator</a> first, then agree on the base (gross vs. payout) in writing.</p>
+      </div>
+
+      <!-- CTAs -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl mx-auto mb-12">
+        <div class="rounded-xl bg-gradient-to-r from-accent-green/10 to-accent-blue/10 border border-accent-green/20 p-6 text-center">
+          <h2 class="font-display font-bold text-base text-white mb-2">Hiring a co-host?</h2>
+          <p class="text-sm text-neutral-400 mb-4">Know what your property actually nets before you give up 20% of it. Black Cat tracks revenue, expenses, and true profit per property.</p>
+          <a href="https://app.tryblackcat.com/signup?utm_source=tryblackcat&utm_medium=cta&utm_content=cohost_calculator_host" data-cta-location="cohost_calculator_host" class="cta-button inline-block px-5 py-2.5 rounded-xl font-semibold text-sm text-white">Track your real profit free &rarr;</a>
+        </div>
+        <div class="rounded-xl bg-gradient-to-r from-accent-purple/10 to-accent-blue/10 border border-accent-purple/20 p-6 text-center">
+          <h2 class="font-display font-bold text-base text-white mb-2">You're the co-host?</h2>
+          <p class="text-sm text-neutral-400 mb-4">Owner statements, cleaner scheduling, and per-property reporting — the back office that makes your percentage defensible.</p>
+          <a href="https://app.tryblackcat.com/signup?utm_source=tryblackcat&utm_medium=cta&utm_content=cohost_calculator_pm" data-cta-location="cohost_calculator_pm" class="cta-button inline-block px-5 py-2.5 rounded-xl font-semibold text-sm text-white">Run your co-host business free &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Explainer -->
+      <div class="max-w-3xl mx-auto text-[15px] text-neutral-300 leading-relaxed space-y-4">
+        <h2 class="font-display font-bold text-xl sm:text-2xl text-white">What Co-Hosts Actually Charge</h2>
+        <p>Co-hosting fees are quoted as a percentage of rental revenue, and the honest answer to "what's normal?" depends almost entirely on scope. Published co-host and small property-manager rates cluster in three bands: <strong class="text-white">15–25% for full-service</strong> (guest communication, cleaner scheduling and turnover checks, pricing and calendar management, maintenance coordination), <strong class="text-white">10–15% for standard arrangements</strong> (guests plus turnovers, but the owner keeps pricing and maintenance), and <strong class="text-white">8–12% for messaging-only</strong> help. Portfolios of five or more units usually negotiate a few points below these bands, because the co-host's fixed effort spreads across more revenue.</p>
+        <p>Two structural questions matter as much as the number. First, <strong class="text-white">what base does the percentage apply to</strong> — gross booking revenue (nightly rate plus cleaning fees) or the host's payout after Airbnb's cut? On $70,000 of annual revenue that ambiguity is worth over $2,000, and it becomes sharper after September 2026 when Airbnb's host-side fee jumps to 15.5%. Second, <strong class="text-white">who pays for cleaning</strong> — a 20% fee where the host also pays cleaners directly is a very different deal from 25% with cleaning included.</p>
+        <h2 class="font-display font-bold text-xl sm:text-2xl text-white">If You're the Host: Questions Before You Sign</h2>
+        <p>Ask exactly which of the four pillars (guests, turnovers, pricing, maintenance) the fee covers, what response times they commit to, whether the percentage applies to gross or payout, who holds the platform login, and how either side exits. A quote above the typical band isn't automatically wrong — but the co-host should be able to name what justifies the premium (higher review scores, dynamic pricing gains, a market they know cold). And insist on monthly numbers you can verify: revenue, fees, expenses, per property.</p>
+        <h2 class="font-display font-bold text-xl sm:text-2xl text-white">If You're the Co-Host: Pricing Your Services</h2>
+        <p>Underpricing is the classic new-co-host mistake — 10% for full-service work is a fast route to resentment and churn. Price the scope honestly against the bands above, put the revenue base in writing, and send owners a clean monthly statement they don't have to question. The co-hosts who defend 20%+ aren't the ones who message fastest; they're the ones whose owners see exactly what they earned, spent, and netted every month without asking.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-neutral-800/50 py-10 px-4">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="text-lg">🐈‍⬛</span>
+        <span class="font-display font-semibold text-sm text-neutral-400">&copy; 2026 Black Cat Analytics</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="../privacy.html" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">Privacy Policy</a>
+        <a href="../terms.html" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">Terms of Service</a>
+        <a href="mailto:support@tryblackcat.com" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">support@tryblackcat.com</a>
+        <a href="https://www.instagram.com/blackcat.analytics/" target="_blank" rel="noopener" aria-label="Black Cat Analytics on Instagram" class="text-neutral-500 hover:text-neutral-300 transition-colors"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+        <a href="https://x.com/try_blackcat" target="_blank" rel="noopener" aria-label="Black Cat Analytics on X" class="text-neutral-500 hover:text-neutral-300 transition-colors"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../app.js"></script>
+  <script>
+  (function() {
+    // Typical published ranges by service scope (see on-page methodology note).
+    const BENCH = {
+      full:     { lo: 15, hi: 25, label: 'Full-service' },
+      standard: { lo: 10, hi: 15, label: 'Guests + turnovers' },
+      comms:    { lo: 8,  hi: 12, label: 'Guest comms only' },
+    };
+    const SCALE_MAX = 35;           // slider + visual bar both run 0–35%
+    const SCALE_ADJ = 2.5;          // 5+ units: ranges run a few points lower
+    const GREEN = '#22c55e', AMBER = '#f59e0b', BLUE = '#3b82f6';
+    const $ = id => document.getElementById(id);
+    const fmt = n => '$' + Math.round(n).toLocaleString('en-US');
+    const pct = n => (n % 1 ? n.toFixed(1) : n.toFixed(0)) + '%';
+
+    function calc() {
+      const revenue = Math.max(1, parseFloat($('revenue').value) || 0);
+      const units = Math.min(100, Math.max(1, parseInt($('units').value, 10) || 1));
+      const scope = BENCH[$('scope').value] || BENCH.full;
+      const fee = parseFloat($('fee').value) || 0;
+      $('feeLabel').textContent = pct(fee);
+
+      const adj = units >= 5 ? SCALE_ADJ : 0;
+      const lo = scope.lo - adj, hi = scope.hi - adj;
+      $('scaleNote').classList.toggle('hidden', adj === 0);
+
+      // Verdict
+      const box = $('verdictBox'), head = $('verdictHead'), sub = $('verdictSub');
+      let color;
+      if (fee > hi) {
+        color = AMBER;
+        head.textContent = 'Above the typical range';
+        sub.textContent = 'Hosts: ask what justifies the premium — pricing expertise, review scores, included cleaning? Co-hosts: a premium is fine if you can name what earns it.';
+      } else if (fee < lo) {
+        color = BLUE;
+        head.textContent = 'Below the typical range';
+        sub.textContent = 'Hosts: a bargain — or a co-host who will burn out or cut corners at this scope. Co-hosts: you are likely underpricing this scope of work.';
+      } else {
+        color = GREEN;
+        head.textContent = 'Within the typical range';
+        sub.textContent = 'The rate matches what this scope typically costs. The details that remain: gross vs. payout base, and who pays for cleaning.';
+      }
+      head.style.color = color;
+      box.style.borderColor = color + '4d';
+
+      // Range visual
+      $('rangeScopeLabel').textContent = scope.label + (adj ? ' · 5+ units' : '');
+      $('rangeLabel').textContent = pct(lo) + '–' + pct(hi);
+      $('rangeBand').style.left = (lo / SCALE_MAX * 100) + '%';
+      $('rangeBand').style.width = ((hi - lo) / SCALE_MAX * 100) + '%';
+      const marker = $('feeMarker');
+      marker.style.left = 'calc(' + (Math.min(fee, SCALE_MAX) / SCALE_MAX * 100) + '% - 3px)';
+      marker.style.background = color;
+
+      // Dollars
+      const monthly = revenue * fee / 100;
+      $('yourFeeTitle').textContent = pct(fee) + ' of revenue';
+      $('yourMonthly').textContent = fmt(monthly) + '/mo';
+      $('yourAnnual').textContent = fmt(monthly * 12) + ' / year';
+      $('yourPerUnit').textContent = fmt(monthly / units);
+      $('hostKeeps').textContent = fmt(revenue - monthly) + '/mo';
+
+      const bLo = revenue * lo / 100, bHi = revenue * hi / 100;
+      $('benchTitle').textContent = pct(lo) + '–' + pct(hi) + ' of revenue';
+      $('benchMonthly').textContent = fmt(bLo) + '–' + fmt(bHi) + '/mo';
+      $('benchAnnual').textContent = fmt(bLo * 12) + '–' + fmt(bHi * 12) + ' / year';
+      $('benchScope').textContent = scope.label;
+      const d = $('benchDelta');
+      if (monthly > bHi) { d.textContent = '+' + fmt((monthly - bHi) * 12) + '/yr above range top'; d.style.color = AMBER; }
+      else if (monthly < bLo) { d.textContent = fmt((bLo - monthly) * 12) + '/yr below range bottom'; d.style.color = BLUE; }
+      else { d.textContent = 'inside the range'; d.style.color = GREEN; }
+    }
+
+    ['revenue', 'units', 'scope', 'fee'].forEach(id => {
+      $(id).addEventListener('input', calc);
+      $(id).addEventListener('change', calc);
+    });
+    calc();
+  })();
+  </script>
+</body>
+</html>

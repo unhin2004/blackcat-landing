@@ -112,8 +112,35 @@
         <a href="/#features" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Features</a>
         <a href="/#pricing" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Pricing</a>
         <a href="/#faq" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">FAQ</a>
-        <a href="/tools/airbnb-profit-calculator.html" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Calculator</a>
-        <a href="/tools/airbnb-profit-tracker-spreadsheet.html" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Spreadsheet</a>
+        <!-- Free Tools dropdown. CSS-only (group-hover + focus-within) so it
+             works without page JS; the pt-3 bridge keeps hover alive across
+             the gap between trigger and panel. -->
+        <div class="relative group">
+          <button type="button" class="nav-link flex items-center gap-1 text-sm text-neutral-400 group-hover:text-white group-focus-within:text-white transition-colors duration-200" aria-haspopup="true">
+            Free Tools
+            <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="absolute left-1/2 -translate-x-1/2 top-full pt-3 hidden group-hover:block group-focus-within:block">
+            <div class="w-72 rounded-2xl border border-neutral-800 bg-base-900 shadow-2xl p-2">
+              <a href="/tools/airbnb-profit-calculator.html" class="block rounded-xl px-4 py-3 hover:bg-base-800 transition-colors">
+                <span class="block text-sm font-semibold text-white">Profit &amp; Income Calculator</span>
+                <span class="block text-xs text-neutral-500">What your listing really nets</span>
+              </a>
+              <a href="/tools/airbnb-fee-calculator.html" class="block rounded-xl px-4 py-3 hover:bg-base-800 transition-colors">
+                <span class="block text-sm font-semibold text-white">15.5% Fee Calculator</span>
+                <span class="block text-xs text-neutral-500">Old vs new Airbnb fee, side by side</span>
+              </a>
+              <a href="/tools/airbnb-cohost-fee-calculator.html" class="block rounded-xl px-4 py-3 hover:bg-base-800 transition-colors">
+                <span class="block text-sm font-semibold text-white">Co-Host Fee Calculator</span>
+                <span class="block text-xs text-neutral-500">Is that 20% cut a fair rate?</span>
+              </a>
+              <a href="/tools/airbnb-profit-tracker-spreadsheet.html" class="block rounded-xl px-4 py-3 hover:bg-base-800 transition-colors">
+                <span class="block text-sm font-semibold text-white">Free Profit Spreadsheet</span>
+                <span class="block text-xs text-neutral-500">Downloadable tracker template</span>
+              </a>
+            </div>
+          </div>
+        </div>
         <a href="/blog/" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Blog</a>
         <a href="https://app.tryblackcat.com/login" data-cta-location="nav_desktop_signin" class="nav-link text-sm text-neutral-300 hover:text-white transition-colors duration-200 font-medium">Sign in</a>
         <a href="https://app.tryblackcat.com/signup?utm_source=tryblackcat&utm_medium=cta&utm_content=nav_desktop" data-cta-location="nav_desktop" class="cta-button-sm text-sm font-semibold px-5 py-2.5 rounded-full text-white">Get Started Free</a>
@@ -135,8 +162,11 @@
     <a href="/#features" class="mobile-nav-link text-xl font-display font-semibold text-white">Features</a>
     <a href="/#pricing" class="mobile-nav-link text-xl font-display font-semibold text-white">Pricing</a>
     <a href="/#faq" class="mobile-nav-link text-xl font-display font-semibold text-white">FAQ</a>
-    <a href="/tools/airbnb-profit-calculator.html" class="mobile-nav-link text-xl font-display font-semibold text-white">Calculator</a>
-    <a href="/tools/airbnb-profit-tracker-spreadsheet.html" class="mobile-nav-link text-xl font-display font-semibold text-white">Spreadsheet</a>
+    <span class="text-xs font-semibold uppercase tracking-wider text-neutral-500 -mb-3">Free Tools</span>
+    <a href="/tools/airbnb-profit-calculator.html" class="mobile-nav-link text-lg font-display font-semibold text-white">Profit &amp; Income Calculator</a>
+    <a href="/tools/airbnb-fee-calculator.html" class="mobile-nav-link text-lg font-display font-semibold text-white">15.5% Fee Calculator</a>
+    <a href="/tools/airbnb-cohost-fee-calculator.html" class="mobile-nav-link text-lg font-display font-semibold text-white">Co-Host Fee Calculator</a>
+    <a href="/tools/airbnb-profit-tracker-spreadsheet.html" class="mobile-nav-link text-lg font-display font-semibold text-white">Free Spreadsheet</a>
     <a href="/blog/" class="mobile-nav-link text-xl font-display font-semibold text-white">Blog</a>
     <a href="https://app.tryblackcat.com/login" data-cta-location="nav_mobile_signin" class="mobile-nav-link text-xl font-display font-semibold text-neutral-300">Sign in</a>
     <a href="https://app.tryblackcat.com/signup?utm_source=tryblackcat&utm_medium=cta&utm_content=nav_mobile" data-cta-location="nav_mobile" class="cta-button-sm text-center text-base font-semibold px-6 py-3 rounded-full text-white mt-4">Get Started Free</a>
