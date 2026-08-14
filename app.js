@@ -79,6 +79,17 @@
     });
   });
 
+  // Download clicks (free spreadsheet, checklists). Named 'download_click'
+  // (not GA4's auto 'file_download') so it can't collide with Enhanced
+  // Measurement if that's enabled on the property. These are the strongest
+  // intent signal the landing site produces short of a signup click.
+  document.querySelectorAll('a[download], a[href*="/downloads/"]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var file = (a.getAttribute('href') || '').split('/').pop().split('?')[0] || 'unknown';
+      trackEvent('download_click', { file_name: file, page_path: window.location.pathname });
+    });
+  });
+
   // Scroll-depth milestones (one-shot each) — tells us if the hero is failing.
   var scrollMilestones = [25, 50, 75, 100];
   var firedMilestones = {};
