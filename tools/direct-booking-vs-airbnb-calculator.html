@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Direct Booking vs Airbnb Calculator: Is Leaving the 15.5% Fee Worth It? (2026)</title>
+  <meta name="description" content="Free calculator: compare what you'd really keep taking bookings direct vs paying Airbnb's 15.5% host fee — card processing, website costs, marketing, and the lost-nights risk nobody models.">
+  <meta name="keywords" content="direct booking vs airbnb calculator, direct booking website airbnb, is direct booking worth it, airbnb 15.5 fee direct booking, leave airbnb direct booking, direct booking cost calculator, airbnb direct booking savings">
+  <link rel="canonical" href="https://www.tryblackcat.com/tools/direct-booking-vs-airbnb-calculator.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.tryblackcat.com/tools/direct-booking-vs-airbnb-calculator.html">
+  <meta property="og:title" content="Direct Booking vs Airbnb: Is Leaving the 15.5% Fee Worth It?">
+  <meta property="og:description" content="The honest math on going direct: fee savings vs the real cost stack — and how many lost nights erase the whole advantage.">
+  <meta property="og:image" content="https://www.tryblackcat.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@try_blackcat">
+  <meta name="twitter:title" content="Direct Booking vs Airbnb: Is Leaving the 15.5% Fee Worth It?">
+  <meta name="twitter:description" content="Fee savings vs the real direct-booking cost stack — computed for your numbers, not vibes.">
+  <meta name="twitter:image" content="https://www.tryblackcat.com/og-image.png">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Direct Booking vs Airbnb Calculator",
+    "url": "https://www.tryblackcat.com/tools/direct-booking-vs-airbnb-calculator.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "Requires JavaScript",
+    "description": "Compare the annual cost of taking short-term rental bookings direct (card processing, booking software, marketing) against Airbnb's 15.5% host-only fee, including the break-even share of direct bookings and the lost-nights tolerance.",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "creator": { "@type": "Organization", "name": "Black Cat Analytics", "url": "https://www.tryblackcat.com" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is direct booking worth it after Airbnb's 15.5% host fee?",
+        "acceptedAnswer": { "@type": "Answer", "text": "It depends on how much demand you can genuinely move off-platform. Each direct booking saves roughly 12.5 points of fees (15.5% Airbnb fee minus ~3% card processing) before fixed costs — booking software, a website, and marketing — which typically run $50–$150+ per month. For most hosts the math works only above a break-even volume of direct revenue, and it collapses quickly if direct nights fail to materialize: one un-rebooked night costs roughly eight nights' worth of fee savings." }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does a direct booking website actually cost?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Booking-engine platforms commonly run $25–$100+ per month depending on features, plus card processing around 2.9% + 30¢ per transaction. The larger, less visible costs are marketing to replace Airbnb's demand funnel, your time handling inquiries and payments, and the guest-vetting and damage-protection coverage that platforms bundle and direct bookings don't." }
+      },
+      {
+        "@type": "Question",
+        "name": "What share of bookings can a host realistically take direct?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Honest starting points: repeat guests, personal referrals, and any social or email audience you already have. For most small hosts that is 10–30% of bookings in the first year; established hosts with strong repeat business or a niche audience do better. Assuming Airbnb-level demand will simply follow you to your own website is the most common way the math fails." }
+      },
+      {
+        "@type": "Question",
+        "name": "How does going direct change my rental bookkeeping and taxes?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Revenue now arrives from multiple sources with different fee structures: Airbnb reports gross on a 1099-K, while your card processor reports direct-booking volume on its own 1099-K. Platform dashboards stop being a complete picture of your business, so gross revenue and fees need tracking per channel — otherwise Schedule E reporting mismatches IRS records and deductible processing fees get missed." }
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="../dist/output.css">
+  <link rel="stylesheet" href="../style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0Y5H3YVKT4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0Y5H3YVKT4');
+  </script>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+    <!-- Microsoft Clarity (session replay + heatmaps) -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "wykpb8uzfm");
+    </script>
+</head>
+<body class="bg-base-950 text-white font-body antialiased">
+
+  <div class="noise-overlay"></div>
+
+  <!-- NAV-INJECT START -->
+  <!-- Generated from _partials/nav.html — edit there, run `npm run build:nav` -->
+<!--
+  CANONICAL SITE NAV
+  ==================
+  Edit here, then run:  npm run build:nav
+
+  Pages opt in by including the start/end marker pair (see scripts/build-nav.js
+  and any HTML page for an example). Uses absolute paths so the partial works
+  identically from /, /tools/*, and /blog/*.
+-->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2 group">
+        <picture>
+          <source srcset="/logo-icon.webp" type="image/webp">
+          <img src="/logo-icon.png" alt="Black Cat" class="w-7 h-7 object-contain" width="28" height="28" fetchpriority="high">
+        </picture>
+        <span class="font-display font-bold text-lg tracking-tight text-white">Black Cat <span class="text-accent-green">Analytics</span></span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="/#features" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Features</a>
+        <a href="/#pricing" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Pricing</a>
+        <a href="/#faq" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">FAQ</a>
+        <!-- Free Tools dropdown. CSS-only (group-hover + focus-within) so it
+             works without page JS; the pt-3 bridge keeps hover alive across
+             the gap between trigger and panel. -->
+        <div class="relative group">
+          <button type="button" class="nav-link flex items-center gap-1 text-sm text-neutral-400 group-hover:text-white group-focus-within:text-white transition-colors duration-200" aria-haspopup="true">
+            Free Tools
+            <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="absolute left-1/2 -translate-x-1/2 top-full pt-3 hidden group-hover:block group-focus-within:block">
+            <div class="w-72 rounded-2xl border border-neutral-800 bg-base-900 shadow-2xl p-2">
+              <a href="/tools/airbnb-profit-calculator.html" class="block rounded-xl px-4 py-3 hover:bg-base-800 transition-colors">
+                <span class="block text-sm font-semibold text-white">Profit &amp; Income Calculator</span>
+                <span class="block text-xs text-neutral-500">What your listing really nets</span>
+              </a>
+              <a href="/tools/airbnb-fee-calculator.html" class="block rounded-xl px-4 py-3 hover:bg-base-800 transition-colors">
+                <span class="block text-sm font-semibold text-white">15.5% Fee Calculator</span>
+                <span class="block text-xs text-neutral-500">Old vs new Airbnb fee, side by side</span>
+              </a>
+              <a href="/tools/airbnb-cohost-fee-calculator.html" class="block rounded-xl px-4 py-3 hover:bg-base-800 transition-colors">
+                <span class="block text-sm font-semibold text-white">Co-Host Fee Calculator</span>
+                <span class="block text-xs text-neutral-500">Is that 20% cut a fair rate?</span>
+              </a>
+              <a href="/tools/direct-booking-vs-airbnb-calculator.html" class="block rounded-xl px-4 py-3 hover:bg-base-800 transition-colors">
+                <span class="block text-sm font-semibold text-white">Direct Booking Calculator</span>
+                <span class="block text-xs text-neutral-500">Worth leaving the 15.5% fee?</span>
+              </a>
+              <a href="/tools/airbnb-profit-tracker-spreadsheet.html" class="block rounded-xl px-4 py-3 hover:bg-base-800 transition-colors">
+                <span class="block text-sm font-semibold text-white">Free Profit Spreadsheet</span>
+                <span class="block text-xs text-neutral-500">Downloadable tracker template</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <a href="/blog/" class="nav-link text-sm text-neutral-400 hover:text-white transition-colors duration-200">Blog</a>
+        <a href="https://app.tryblackcat.com/login" data-cta-location="nav_desktop_signin" class="nav-link text-sm text-neutral-300 hover:text-white transition-colors duration-200 font-medium">Sign in</a>
+        <a href="https://app.tryblackcat.com/signup?utm_source=tryblackcat&utm_medium=cta&utm_content=nav_desktop" data-cta-location="nav_desktop" class="cta-button-sm text-sm font-semibold px-5 py-2.5 rounded-full text-white">Get Started Free</a>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-3 z-[1000] relative" aria-label="Menu">
+        <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+        <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+        <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu (outside nav: navbar's backdrop-filter creates a containing block, so position:fixed; inset:0 inside it collapses to the navbar bounds instead of the viewport) -->
+<div id="mobile-menu" class="mobile-menu md:hidden">
+  <div class="px-6 pt-20 pb-8 flex flex-col gap-6">
+    <a href="/#features" class="mobile-nav-link text-xl font-display font-semibold text-white">Features</a>
+    <a href="/#pricing" class="mobile-nav-link text-xl font-display font-semibold text-white">Pricing</a>
+    <a href="/#faq" class="mobile-nav-link text-xl font-display font-semibold text-white">FAQ</a>
+    <span class="text-xs font-semibold uppercase tracking-wider text-neutral-500 -mb-3">Free Tools</span>
+    <a href="/tools/airbnb-profit-calculator.html" class="mobile-nav-link text-lg font-display font-semibold text-white">Profit &amp; Income Calculator</a>
+    <a href="/tools/airbnb-fee-calculator.html" class="mobile-nav-link text-lg font-display font-semibold text-white">15.5% Fee Calculator</a>
+    <a href="/tools/airbnb-cohost-fee-calculator.html" class="mobile-nav-link text-lg font-display font-semibold text-white">Co-Host Fee Calculator</a>
+    <a href="/tools/direct-booking-vs-airbnb-calculator.html" class="mobile-nav-link text-lg font-display font-semibold text-white">Direct Booking Calculator</a>
+    <a href="/tools/airbnb-profit-tracker-spreadsheet.html" class="mobile-nav-link text-lg font-display font-semibold text-white">Free Spreadsheet</a>
+    <a href="/blog/" class="mobile-nav-link text-xl font-display font-semibold text-white">Blog</a>
+    <a href="https://app.tryblackcat.com/login" data-cta-location="nav_mobile_signin" class="mobile-nav-link text-xl font-display font-semibold text-neutral-300">Sign in</a>
+    <a href="https://app.tryblackcat.com/signup?utm_source=tryblackcat&utm_medium=cta&utm_content=nav_mobile" data-cta-location="nav_mobile" class="cta-button-sm text-center text-base font-semibold px-6 py-3 rounded-full text-white mt-4">Get Started Free</a>
+  </div>
+</div>
+  <!-- NAV-INJECT END -->
+
+  <!-- HERO -->
+  <section class="relative pt-28 lg:pt-36 pb-10 px-4">
+    <div class="relative z-10 max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 rounded-full border border-accent-green/30 bg-accent-green/10 px-4 py-1.5 mb-6">
+        <span class="text-xs font-semibold text-accent-green">Free tool · No signup</span>
+      </div>
+      <h1 class="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight leading-tight mb-4">
+        Direct Booking vs Airbnb Calculator
+      </h1>
+      <p class="text-base sm:text-lg text-neutral-400 max-w-2xl mx-auto leading-relaxed">
+        Thinking of taking bookings on your own website to escape Airbnb's 15.5% host fee? Direct isn't fee-free — run your numbers against the real cost stack, and see how many lost nights it takes to erase the savings.
+      </p>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section class="relative pb-16 px-4">
+    <div class="relative z-10 max-w-5xl mx-auto">
+
+      <!-- Inputs -->
+      <div class="bg-base-900 border border-neutral-800/50 rounded-2xl p-6 mb-8 max-w-3xl mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
+          <div>
+            <label for="rate" class="block text-sm font-medium text-neutral-300 mb-1.5">Average nightly rate ($)</label>
+            <input id="rate" type="number" min="1" value="195" class="w-full px-4 py-2.5 rounded-lg bg-base-950 border border-neutral-700 text-white focus:outline-none focus:border-accent-green">
+          </div>
+          <div>
+            <label for="nights" class="block text-sm font-medium text-neutral-300 mb-1.5">Booked nights per year</label>
+            <input id="nights" type="number" min="1" max="365" value="150" class="w-full px-4 py-2.5 rounded-lg bg-base-950 border border-neutral-700 text-white focus:outline-none focus:border-accent-green">
+          </div>
+          <div>
+            <label for="software" class="block text-sm font-medium text-neutral-300 mb-1.5">Booking software + website ($/mo)</label>
+            <input id="software" type="number" min="0" value="35" class="w-full px-4 py-2.5 rounded-lg bg-base-950 border border-neutral-700 text-white focus:outline-none focus:border-accent-green">
+          </div>
+          <div>
+            <label for="marketing" class="block text-sm font-medium text-neutral-300 mb-1.5">Marketing to drive direct demand ($/mo)</label>
+            <input id="marketing" type="number" min="0" value="50" class="w-full px-4 py-2.5 rounded-lg bg-base-950 border border-neutral-700 text-white focus:outline-none focus:border-accent-green">
+          </div>
+        </div>
+        <div>
+          <label for="share" class="block text-sm font-medium text-neutral-300 mb-1.5">Bookings you could realistically take direct — repeat guests, referrals, your own audience: <span id="shareLabel" class="text-accent-green font-semibold">25%</span></label>
+          <input id="share" type="range" min="0" max="60" step="1" value="25" class="w-full" style="accent-color:#22c55e">
+          <div class="flex justify-between text-[11px] text-neutral-600 mt-1"><span>0%</span><span>60%</span></div>
+        </div>
+      </div>
+
+      <!-- Verdict -->
+      <div id="verdictBox" class="max-w-3xl mx-auto rounded-2xl bg-base-900 border p-6 mb-6 text-center" style="border-color:rgba(34,197,94,0.3)">
+        <div id="verdictHead" class="font-display font-extrabold text-2xl sm:text-3xl mb-1" style="color:#22c55e">&nbsp;</div>
+        <div id="verdictSub" class="text-sm text-neutral-400"></div>
+      </div>
+
+      <!-- Dollar cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6 max-w-3xl mx-auto">
+        <div class="rounded-2xl bg-base-900 border border-neutral-800/60 p-6">
+          <div class="text-[11px] font-semibold uppercase tracking-wider text-neutral-400 mb-1">Staying all-Airbnb</div>
+          <div class="font-display font-bold text-lg text-white mb-4">15.5% host-only fee</div>
+          <div class="text-[13px] text-neutral-500 mb-1">Platform fees per year</div>
+          <div id="airbnbFees" class="font-display font-extrabold text-3xl text-white mb-1">$0</div>
+          <div id="airbnbRev" class="text-xs text-neutral-500 mb-4">on $0 gross</div>
+          <div class="space-y-1.5 text-[13px]">
+            <div class="flex justify-between"><span class="text-neutral-500">Fee cost per booked night</span><span id="airbnbPerNight" class="text-neutral-300">$0</span></div>
+            <div class="flex justify-between"><span class="text-neutral-500">Extra costs, subscriptions, marketing</span><span class="text-neutral-300">$0</span></div>
+          </div>
+        </div>
+        <div class="rounded-2xl bg-base-900 border border-neutral-800/60 p-6">
+          <div class="text-[11px] font-semibold uppercase tracking-wider text-neutral-400 mb-1">Hybrid — <span id="hybridShareLabel">25%</span> direct</div>
+          <div class="font-display font-bold text-lg text-white mb-4">Your cost stack per year</div>
+          <div class="text-[13px] text-neutral-500 mb-1">Total fees + direct-booking costs</div>
+          <div id="hybridTotal" class="font-display font-extrabold text-3xl text-white mb-1">$0</div>
+          <div id="hybridDelta" class="text-xs mb-4" style="color:#22c55e">$0 / year vs all-Airbnb</div>
+          <div class="space-y-1.5 text-[13px]">
+            <div class="flex justify-between"><span class="text-neutral-500">Airbnb fees (remaining bookings)</span><span id="hFees" class="text-neutral-300">$0</span></div>
+            <div class="flex justify-between"><span class="text-neutral-500">Card processing (~3% on direct)</span><span id="hProc" class="text-neutral-300">$0</span></div>
+            <div class="flex justify-between"><span class="text-neutral-500">Software + marketing</span><span id="hFixed" class="text-neutral-300">$0</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- The fragile assumption -->
+      <div class="max-w-3xl mx-auto rounded-2xl bg-base-900 border border-accent-red/25 p-6 mb-4">
+        <div class="text-[11px] font-semibold uppercase tracking-wider text-neutral-400 mb-2">The fragile assumption</div>
+        <p class="text-sm text-neutral-300 leading-relaxed mb-3">These savings assume every direct night you plan for actually books. Airbnb's fee buys demand — your website doesn't come with any. At your numbers:</p>
+        <div class="flex flex-wrap items-baseline gap-x-6 gap-y-2">
+          <div><span id="tolNights" class="font-display font-extrabold text-3xl text-white">0</span> <span class="text-sm text-neutral-400">lost nights erase the entire annual savings</span></div>
+          <div class="text-xs text-neutral-500">(each un-rebooked direct night costs ~<span id="perNightLoss">$0</span> — about <span id="tolRatio">8</span> nights of fee savings)</div>
+        </div>
+      </div>
+
+      <p class="text-xs text-neutral-600 text-center max-w-2xl mx-auto mb-10">Assumes Airbnb's 15.5% host-only fee (mandatory for US hosts from Sept 15, 2026) and ~3% card processing on direct bookings. Not modeled: your time handling inquiries and payments, guest-vetting and damage-protection coverage that platforms bundle, or local lodging-tax collection you may need to handle yourself when booking direct — all of which push direct's true cost higher than shown.</p>
+
+      <!-- Sept 15 callout -->
+      <div class="max-w-3xl mx-auto rounded-xl bg-base-900 border border-accent-red/25 p-5 mb-10">
+        <p class="text-sm text-neutral-300 leading-relaxed"><strong class="text-white">Before you leave over the fee:</strong> repricing usually beats rage-quitting. Raising your Airbnb price ~14.8% keeps your payout identical after the Sept 15 change — and your guests' checkout total barely moves, because their old service fee disappears. Run the <a href="/tools/airbnb-fee-calculator.html" class="text-accent-green hover:underline">15.5% fee calculator</a> before deciding the platform is the problem.</p>
+      </div>
+
+      <!-- CTA -->
+      <div class="max-w-3xl mx-auto rounded-xl bg-gradient-to-r from-accent-green/10 to-accent-blue/10 border border-accent-green/20 p-6 text-center mb-12">
+        <h2 class="font-display font-bold text-base text-white mb-2">Going direct splits your books in two</h2>
+        <p class="text-sm text-neutral-400 mb-4">Airbnb payouts, Stripe deposits, two 1099-Ks, different fee structures — the moment you diversify, no single platform dashboard shows your real numbers. Black Cat tracks revenue, fees, and profit per property across every channel: Airbnb, VRBO, and direct.</p>
+        <a href="https://app.tryblackcat.com/signup?utm_source=tryblackcat&utm_medium=cta&utm_content=direct_booking_calculator" data-cta-location="direct_booking_calculator" class="cta-button inline-block px-5 py-2.5 rounded-xl font-semibold text-sm text-white">Track every channel free &rarr;</a>
+      </div>
+
+      <!-- Explainer -->
+      <div class="max-w-3xl mx-auto text-[15px] text-neutral-300 leading-relaxed space-y-4">
+        <h2 class="font-display font-bold text-xl sm:text-2xl text-white">The Real Cost Stack of Direct Booking</h2>
+        <p>Direct booking replaces one visible fee with several quieter ones. <strong class="text-white">Card processing</strong> takes roughly 3% of every direct dollar. <strong class="text-white">Booking software and a website</strong> typically run $25&ndash;$100+ per month. <strong class="text-white">Marketing</strong> is the honest wildcard: Airbnb's fee is largely a payment for demand — millions of travelers searching one place — and when you go direct, generating that demand becomes your job and your budget. Then come the costs nobody puts on a pricing page: your time answering inquiries and chasing payments, the <strong class="text-white">guest vetting and damage protection</strong> platforms bundle that direct bookings lack, and in many jurisdictions, <strong class="text-white">lodging-tax collection</strong> that platforms handle automatically but direct hosts must manage themselves.</p>
+        <p>None of this makes direct booking wrong. Hosts with strong repeat guests, a genuine audience, or unique properties routinely beat the math above. It makes direct booking <em>a number</em> — one worth computing before building a website out of frustration with a fee.</p>
+
+        <h2 class="font-display font-bold text-xl sm:text-2xl text-white">The Number Nobody Models: Lost Nights</h2>
+        <p>Each direct booking saves you about <strong class="text-white">12.5 points</strong> — Airbnb's 15.5% minus ~3% processing. But if a night you planned to book direct simply doesn't book, you don't lose 12.5% of that night — you lose <strong class="text-white">the whole night</strong>. That asymmetry is roughly 8-to-1: one empty night that Airbnb's demand engine would have filled wipes out the fee savings from about eight successfully direct-booked nights. The calculator surfaces your exact tolerance above. If your realistic direct demand comes from guests who already know you — repeat visitors, referrals — the risk is small, because those bookings were never Airbnb's to lose. If your plan is "build it and they will come," price in the empty nights.</p>
+
+        <h2 class="font-display font-bold text-xl sm:text-2xl text-white">If You Do Go Direct</h2>
+        <p>Start hybrid, not cold-turkey: keep the listing live, move your repeat guests first, and grow the direct share as real demand shows up. Watch occupancy honestly for a couple of months — judge the experiment on data, not on the fee resentment that started it. And expect your bookkeeping to fragment: Airbnb reports gross revenue on its 1099-K while your card processor files a second one for direct volume, each channel carries different fees, and no single dashboard shows the whole business anymore. Track gross revenue and fees per channel from day one — it's the difference between a clean <a href="/blog/airbnb-schedule-e-guide.html">Schedule E</a> and an April spent reverse-engineering deposits. The full fee math, including the repricing alternative, is in our <a href="/blog/airbnb-15-5-percent-host-fee-explained.html">15.5% host-fee explainer</a>.</p>
+
+        <h2 class="font-display font-bold text-xl sm:text-2xl text-white">Frequently Asked Questions</h2>
+        <h3 class="font-display font-semibold text-base text-white">Is direct booking worth it after the 15.5% fee?</h3>
+        <p>Only above a break-even volume of direct revenue that covers your fixed costs — and only to the extent the direct demand is real. The calculator shows both numbers for your situation. For many small hosts, repricing on Airbnb (+14.8% keeps your payout flat) beats the cost and risk of going direct; for hosts with strong repeat business, hybrid direct genuinely pays.</p>
+        <h3 class="font-display font-semibold text-base text-white">What's a realistic direct-booking share to start?</h3>
+        <p>Count only the demand you already own: past guests who'd rebook, personal referrals, any email list or social following. For most small hosts that's 10&ndash;30% in year one. Treat anything above that as an aspiration to earn, not an input to assume.</p>
+        <h3 class="font-display font-semibold text-base text-white">Do I still need Airbnb if I have a direct site?</h3>
+        <p>Almost every successful direct-booking host runs hybrid — the platform fills the calendar gaps their own demand can't. The strategic question isn't "leave or stay"; it's what share of your calendar each channel earns.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-neutral-800/50 py-10 px-4">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="text-lg">🐈‍⬛</span>
+        <span class="font-display font-semibold text-sm text-neutral-400">&copy; 2026 Black Cat Analytics</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="../privacy.html" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">Privacy Policy</a>
+        <a href="../terms.html" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">Terms of Service</a>
+        <a href="mailto:support@tryblackcat.com" class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">support@tryblackcat.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../app.js"></script>
+  <script>
+  (function() {
+    const AIRBNB_FEE = 0.155;   // host-only fee, mandatory US Sept 15 2026
+    const PROC_FEE = 0.03;      // ~2.9% + 30c card processing on direct
+    const GREEN = '#22c55e', AMBER = '#f59e0b', BLUE = '#3b82f6';
+    const $ = id => document.getElementById(id);
+    const fmt = n => '$' + Math.round(n).toLocaleString('en-US');
+
+    function calc() {
+      const rate = Math.max(1, parseFloat($('rate').value) || 0);
+      const nights = Math.min(365, Math.max(1, parseInt($('nights').value, 10) || 1));
+      const software = Math.max(0, parseFloat($('software').value) || 0);
+      const marketing = Math.max(0, parseFloat($('marketing').value) || 0);
+      const share = (parseFloat($('share').value) || 0) / 100;
+      $('shareLabel').textContent = Math.round(share * 100) + '%';
+      $('hybridShareLabel').textContent = Math.round(share * 100) + '%';
+
+      const annualRev = rate * nights;
+      const directRev = annualRev * share;
+      const fixed = 12 * (software + marketing);
+
+      const allAirbnbFees = annualRev * AIRBNB_FEE;
+      const hFees = (annualRev - directRev) * AIRBNB_FEE;
+      const hProc = directRev * PROC_FEE;
+      const hybridTotal = hFees + hProc + fixed;
+      const savings = allAirbnbFees - hybridTotal; // = directRev*0.125 - fixed
+
+      // All-Airbnb card
+      $('airbnbFees').textContent = fmt(allAirbnbFees);
+      $('airbnbRev').textContent = 'on ' + fmt(annualRev) + ' gross';
+      $('airbnbPerNight').textContent = fmt(rate * AIRBNB_FEE);
+
+      // Hybrid card
+      $('hybridTotal').textContent = fmt(hybridTotal);
+      $('hFees').textContent = fmt(hFees);
+      $('hProc').textContent = fmt(hProc);
+      $('hFixed').textContent = fmt(fixed);
+      const delta = $('hybridDelta');
+      if (savings >= 0) { delta.textContent = 'saves ' + fmt(savings) + ' / year vs all-Airbnb'; delta.style.color = GREEN; }
+      else { delta.textContent = 'costs ' + fmt(-savings) + ' / year MORE than all-Airbnb'; delta.style.color = AMBER; }
+
+      // Lost-nights tolerance: an un-rebooked direct night nets out at ~ -0.97*rate.
+      const perNightLoss = rate * (1 - PROC_FEE);
+      const tol = savings > 0 ? savings / perNightLoss : 0;
+      $('tolNights').textContent = savings > 0 ? (tol < 10 ? tol.toFixed(1) : Math.round(tol)) : '0';
+      $('perNightLoss').textContent = fmt(perNightLoss);
+      $('tolRatio').textContent = Math.round((1 - PROC_FEE) / (AIRBNB_FEE - PROC_FEE));
+
+      // Verdict
+      const box = $('verdictBox'), head = $('verdictHead'), sub = $('verdictSub');
+      const breakEvenNights = fixed / (rate * (AIRBNB_FEE - PROC_FEE));
+      let color;
+      if (share === 0) {
+        color = BLUE;
+        head.textContent = 'All-Airbnb: ' + fmt(allAirbnbFees) + '/yr in fees';
+        sub.textContent = 'Drag the slider to model taking some bookings direct. Break-even at your costs: about ' + Math.ceil(breakEvenNights) + ' direct nights/year.';
+      } else if (savings > 250) {
+        color = GREEN;
+        head.textContent = 'Direct pays: ' + fmt(savings) + '/yr at these numbers';
+        sub.textContent = 'If the direct demand is real. Your margin of error is ' + (tol < 10 ? tol.toFixed(1) : Math.round(tol)) + ' lost nights/year — build the direct share from repeat guests first, keep the listing live.';
+      } else if (savings >= -250) {
+        color = AMBER;
+        head.textContent = 'Roughly break-even at these numbers';
+        sub.textContent = 'The fee savings and the cost stack cancel out. Unless your direct demand is guests you already own, the effort likely isn’t paying for itself yet. Break-even: ~' + Math.ceil(breakEvenNights) + ' direct nights/year.';
+      } else {
+        color = AMBER;
+        head.textContent = 'All-Airbnb is cheaper by ' + fmt(-savings) + '/yr';
+        sub.textContent = 'At this direct share, fixed costs outweigh the fee savings. You’d need about ' + Math.ceil(breakEvenNights) + ' direct nights/year to break even — or lower software/marketing costs.';
+      }
+      head.style.color = color;
+      box.style.borderColor = color + '4d';
+    }
+
+    ['rate', 'nights', 'software', 'marketing', 'share'].forEach(id => {
+      $(id).addEventListener('input', calc);
+      $(id).addEventListener('change', calc);
+    });
+    calc();
+  })();
+  </script>
+</body>
+</html>
