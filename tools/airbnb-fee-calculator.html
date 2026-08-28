@@ -291,6 +291,64 @@
         <a href="https://app.tryblackcat.com/signup?utm_source=tryblackcat&utm_medium=cta&utm_content=airbnb-fee-calculator_inline" data-cta-location="fee_calculator" class="cta-button inline-block px-6 py-3 rounded-xl font-semibold text-sm text-white">Track your real numbers free &rarr;</a>
       </div>
 
+      <!-- Sept 15 repricing checklist — email capture (lead magnet).
+           POSTs cross-origin to the app; CORS is allowlisted server-side. -->
+      <div class="max-w-2xl mx-auto rounded-xl border border-accent-green/25 bg-neutral-900 p-6 mb-12">
+        <div class="flex items-start gap-3">
+          <span class="text-2xl" aria-hidden="true">&#128203;</span>
+          <div class="flex-1 min-w-0">
+            <h2 class="font-display font-bold text-lg text-white mb-1">Get the free Sept 15 repricing checklist</h2>
+            <p class="text-sm text-neutral-400 mb-4">One page, seven steps: the break-even math, the fees hosts forget to raise, and the bookkeeping change almost nobody is covering. We&rsquo;ll email you the PDF.</p>
+            <form id="checklist-form" class="flex flex-col sm:flex-row gap-3">
+              <label for="checklist-email" class="sr-only">Email address</label>
+              <input type="email" id="checklist-email" required placeholder="you@example.com" autocomplete="email" class="flex-1 min-w-0 rounded-lg bg-neutral-800 border border-neutral-700 px-4 py-2.5 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-accent-green" />
+              <button type="submit" id="checklist-btn" class="cta-button-sm text-sm font-semibold px-5 py-2.5 rounded-lg text-white whitespace-nowrap">Send me the checklist</button>
+            </form>
+            <p id="checklist-msg" class="hidden mt-3 text-sm"></p>
+            <p class="mt-3 text-xs text-neutral-600">One email with the PDF now, plus a single heads-up when the fee goes live. Unsubscribe anytime.</p>
+          </div>
+        </div>
+      </div>
+      <script>
+      (function () {
+        var form = document.getElementById('checklist-form');
+        if (!form) return;
+        var msg = document.getElementById('checklist-msg');
+        var btn = document.getElementById('checklist-btn');
+        function fail(text) {
+          btn.disabled = false; btn.textContent = 'Send me the checklist';
+          msg.className = 'mt-3 text-sm text-red-400';
+          msg.textContent = text || 'Something went wrong \u2014 please try again.';
+        }
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var email = document.getElementById('checklist-email').value.trim();
+          if (!email) return;
+          btn.disabled = true; btn.textContent = 'Sending\u2026';
+          fetch('https://app.tryblackcat.com/api/leads/checklist', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email, source: window.location.pathname })
+          }).then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+            .then(function (res) {
+              if (res.ok && res.d && res.d.ok) {
+                if (typeof gtag === 'function') gtag('event', 'checklist_email_submit', { page_path: window.location.pathname });
+                form.classList.add('hidden');
+                msg.className = 'mt-3 text-sm text-accent-green';
+                msg.innerHTML = 'Sent \u2014 check your inbox. Or grab it right now: <a href="/downloads/airbnb-sept-15-repricing-checklist.pdf" target="_blank" rel="noopener" class="underline font-semibold" id="checklist-direct">download the PDF</a>.';
+                var direct = document.getElementById('checklist-direct');
+                if (direct) direct.addEventListener('click', function () {
+                  if (typeof gtag === 'function') gtag('event', 'download_click', { file_name: 'airbnb-sept-15-repricing-checklist.pdf', page_path: window.location.pathname });
+                });
+              } else {
+                fail(res.d && res.d.error);
+              }
+            })
+            .catch(function () { fail(); });
+        });
+      })();
+      </script>
+
       <!-- Explainer + links -->
       <div class="max-w-3xl mx-auto text-[15px] text-neutral-300 leading-relaxed space-y-4">
         <h2 class="font-display font-bold text-xl sm:text-2xl text-white">How This Calculator Works</h2>
