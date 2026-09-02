@@ -293,17 +293,36 @@
       </div>
       <p class="reveal text-xs text-neutral-500 mt-4">Free for your first property · No credit card required</p>
 
-      <!-- Product screenshot: the strongest 3-second argument we have.
+      <!-- Product video (Sept 2026): replaced the static Analytics screenshot.
            Clarity scroll data (Jul 2026) showed 60% of mobile visitors gone
            by 10% depth on a text-only hero — show them the product before
-           they decide. Sample data from the demo portfolio, per the
-           approved-claims rules (never presented as a real customer). -->
+           they decide. 45s silent feature tour rendered from the demo
+           portfolio (sources in /_video-src); every caption is a verified
+           product claim and the video carries a "Sample data" label, per the
+           approved-claims rules (never presented as a real customer).
+           Autoplays muted + loops; the poster frame stands in for users who
+           prefer reduced motion or whose browser blocks autoplay. -->
       <div class="reveal mt-12 mx-auto max-w-5xl">
         <div class="rounded-2xl border border-neutral-800 bg-neutral-900/60 p-1.5 sm:p-2 shadow-2xl" style="box-shadow: 0 0 80px rgba(34,197,94,0.07), 0 25px 50px -12px rgba(0,0,0,0.6)">
-          <img src="/images/app-analytics.webp" alt="Black Cat Analytics dashboard showing year-to-date revenue, expenses, net profit, expense breakdown, and per-property performance for a three-property short-term rental portfolio" width="1920" height="1497" class="w-full h-auto rounded-xl" fetchpriority="high" decoding="async">
+          <video id="hero-video" class="w-full h-auto rounded-xl" width="1920" height="1080" autoplay muted loop playsinline preload="metadata" poster="/videos/blackcat-product-video-poster.jpg" aria-label="Product tour of Black Cat Analytics: overview net profit, bank sync expense review, occupancy calendar, Schedule E tax reports, and analytics charts for a three-property short-term rental portfolio (sample data)">
+            <source src="/videos/blackcat-product-video.mp4" type="video/mp4">
+            <img src="/videos/blackcat-product-video-poster.jpg" alt="Black Cat Analytics overview showing year-to-date net profit, revenue, expenses, occupancy and margin for a three-property short-term rental portfolio" width="1920" height="1080" class="w-full h-auto rounded-xl">
+          </video>
         </div>
-        <p class="text-[11px] text-neutral-600 mt-2">Inside Black Cat — sample portfolio data</p>
+        <p class="text-[11px] text-neutral-600 mt-2">Inside Black Cat — 45-second tour, sample portfolio data</p>
       </div>
+      <script>
+        (function () {
+          var v = document.getElementById('hero-video');
+          if (!v) return;
+          if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            v.removeAttribute('autoplay'); v.pause(); v.setAttribute('controls', '');
+            return;
+          }
+          var p = v.play && v.play();
+          if (p && p.catch) p.catch(function () { v.setAttribute('controls', ''); });
+        })();
+      </script>
 
       <!-- Timely: Sept 15 fee change callout -->
       <a href="/tools/airbnb-fee-calculator.html" data-cta-location="hero_fee_banner" class="reveal mt-8 mx-auto max-w-2xl block rounded-xl border border-accent-red/20 bg-neutral-900/70 backdrop-blur-sm px-5 py-4 hover:border-accent-red/40 transition-colors text-left">
@@ -333,15 +352,16 @@
     </div>
 
     <!-- The older Overview screenshot that lived here was removed July 2026:
-         the hero now carries a current-UI Analytics screenshot, and two
-         stacked dashboard shots (one showing a stale layout + trial banner)
-         read as two different products. -->
+         two stacked dashboard shots (one showing a stale layout + trial
+         banner) read as two different products. The hero carried a single
+         Analytics screenshot until Sept 2026, when the product video above
+         replaced it. -->
 
 
     <!-- Demo Video / Live Demo section removed June 2026.
          The "Try the interactive demo" play button opened /demo on the
          app, but /demo shows a stale dataset and an older layout than
-         the real product (the screenshot above). Showing two different
+         the real product (the video above). Showing two different
          products on one landing page hurt credibility more than helped
          conversion. Returns once /demo is rebuilt to mirror the live
          app (post-launch). The hero CTAs already cover the "see it"
