@@ -127,13 +127,26 @@
   const mobileMenu = document.getElementById('mobile-menu');
   const mobileNavLinks = document.querySelectorAll('.mobile-nav-link, .mobile-menu .cta-button-sm');
 
+  const navbarEl = document.getElementById('navbar');
+
   function toggleMobileMenu() {
-    mobileMenuBtn.classList.toggle('active');
-    mobileMenu.classList.toggle('open');
-    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    const open = !mobileMenu.classList.contains('open');
+    mobileMenuBtn.classList.toggle('active', open);
+    mobileMenu.classList.toggle('open', open);
+    if (navbarEl) navbarEl.classList.toggle('menu-open', open);
+    mobileMenuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    mobileMenuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Menu');
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+
+  function closeMobileMenu() {
+    if (mobileMenu.classList.contains('open')) toggleMobileMenu();
   }
 
   mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMobileMenu(); });
+  // Tapping the logo while the menu is open should get you back to the page, not stay trapped.
+  if (navbarEl) navbarEl.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileMenu));
 
   mobileNavLinks.forEach(link => {
     link.addEventListener('click', () => {

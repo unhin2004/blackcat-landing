@@ -64,6 +64,14 @@ body {
   transform: translateX(0);
 }
 
+/* While the menu is open, lift the navbar above it so the hamburger's
+   X state stays visible and tappable. The button's own z-[1000] can't
+   escape the navbar's stacking context (z-50 + backdrop-filter), which
+   is why the menu (z-999) used to cover it and left no way back. */
+#navbar.menu-open {
+  z-index: 1000;
+}
+
 /* Hamburger animation */
 #mobile-menu-btn.active .hamburger-line:nth-child(1) {
   transform: translateY(4px) rotate(45deg);
