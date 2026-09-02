@@ -55,10 +55,10 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Is Black Cat Analytics available now?",
+        "name": "Does it handle Airbnb's new 15.5% host fee?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes! Black Cat Analytics is live and free to use for your first property. Sign up at app.tryblackcat.com to get started in minutes."
+          "text": "Yes. When you import your Airbnb CSV (or sync Hostaway), Black Cat records your gross booking revenue and books the host service fee as its own expense line. Your profit reflects the 15.5% from day one, and your revenue still matches the gross figure Airbnb reports on your 1099-K. The fee is host-only from September 15, 2026 for US hosts (October 13 in the EEA). Use the free fee calculator to see the price that keeps your payout whole."
         }
       },
       {
@@ -249,11 +249,16 @@
     <div class="hero-gradient"></div>
 
     <div class="relative z-10 max-w-4xl mx-auto text-center">
-      <!-- Badge -->
-      <div class="reveal inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-neutral-700/50 bg-neutral-900/60 backdrop-blur-sm mb-8">
-        <span class="w-2 h-2 bg-accent-green rounded-full animate-pulse"></span>
-        <span class="text-xs font-medium text-neutral-300 tracking-wide uppercase">Now Live — Start Free Today</span>
-      </div>
+      <!-- Timely bar (Sept 2026): the Airbnb 15.5% host-only fee is the
+           reason strangers arrive this month, so it sits above the H1 rather
+           than below the video. Replaced the pre-launch "Now Live" pill.
+           RETIRE after Oct 1, 2026 — restore nothing; the hero reads fine
+           without a badge. -->
+      <a href="/tools/airbnb-fee-calculator.html" data-cta-location="hero_fee_bar" class="reveal inline-flex flex-wrap items-center justify-center gap-x-2 gap-y-1 px-4 py-2 rounded-full border border-accent-red/30 bg-neutral-900/70 backdrop-blur-sm mb-8 text-xs sm:text-sm text-neutral-300 hover:border-accent-red/60 transition-colors">
+        <span class="font-semibold text-accent-red">Sept 15:</span>
+        <span>Airbnb&apos;s host fee jumps 3% &rarr; 15.5%.</span>
+        <span class="font-semibold text-accent-green whitespace-nowrap">Free fee calculator &rarr;</span>
+      </a>
 
       <!-- Headline -->
       <h1 class="reveal font-display font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[1.08] mb-6">
@@ -272,7 +277,7 @@
 
       <!-- Subheadline -->
       <p class="reveal text-base sm:text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-        Connect your bookings (CSV, iCal, or Hostaway) and your bank (Plaid) — we auto-categorize every expense, calculate true net profit per property, and generate tax-ready Schedule E reports. AI insights find the money you're leaving on the table.
+        Connect your bookings and your bank. See real net profit per property, and hand your CPA a Schedule&nbsp;E worksheet at tax time.
       </p>
 
       <!-- Trust line: Plaid + Stripe trust marks right in the hero so the
@@ -319,18 +324,19 @@
             v.removeAttribute('autoplay'); v.pause(); v.setAttribute('controls', '');
             return;
           }
+          // Phones get the 720p encode (~1/3 the bytes); the <source> above is
+          // the 1080p default for everyone else and for browsers without JS.
+          if (window.matchMedia && window.matchMedia('(max-width: 767px)').matches) {
+            v.src = '/videos/blackcat-product-video-720.mp4';
+            v.load();
+          }
           var p = v.play && v.play();
           if (p && p.catch) p.catch(function () { v.setAttribute('controls', ''); });
         })();
       </script>
 
-      <!-- Timely: Sept 15 fee change callout -->
-      <a href="/tools/airbnb-fee-calculator.html" data-cta-location="hero_fee_banner" class="reveal mt-8 mx-auto max-w-2xl block rounded-xl border border-accent-red/20 bg-neutral-900/70 backdrop-blur-sm px-5 py-4 hover:border-accent-red/40 transition-colors text-left">
-        <div class="flex flex-wrap items-center justify-between gap-2">
-          <div class="text-sm text-neutral-300"><span class="font-semibold text-accent-red">Sept 15:</span> Airbnb's host fee jumps 3% &rarr; 15.5%. See your take-home before &amp; after — and the price that keeps you whole.</div>
-          <span class="text-sm font-semibold text-accent-green whitespace-nowrap">Free Fee Calculator &rarr;</span>
-        </div>
-      </a>
+      <!-- The Sept 15 callout that sat here moved above the H1 (hero_fee_bar)
+           on Sept 2, 2026 — on phones this spot was 2.5 screens down. -->
 
       <!-- Value Props Bar — leads with bank-sync to differentiate against
            HostBook (Apple-only, manual entry, no Plaid). Schedule E export
@@ -431,140 +437,55 @@
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <!-- Feature 1 -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <div class="reveal feature-card group">
           <div class="feature-card-inner">
-            <svg class="w-7 h-7 mb-4 text-accent-green" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 20V10m6 10V4m6 16v-7m6 7v-4"/></svg>
-            <h3 class="font-display font-bold text-base text-white mb-2">Smart Dashboard</h3>
-            <p class="text-xs text-neutral-400 leading-relaxed">See net profit, revenue, expenses, and occupancy at a glance. Filter by property, date range, or booking source.</p>
+            <svg class="w-7 h-7 mb-4 text-accent-green" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10l9-7 9 7v1H3v-1zM5 11v8m4-8v8m6-8v8m4-8v8M3 22h18"/></svg>
+            <h3 class="font-display font-bold text-base text-white mb-2">Bank Sync (Plaid)</h3>
+            <p class="text-xs text-neutral-400 leading-relaxed">Connect your bank. Every charge — cleaners, repairs, supplies, mortgage, utilities — is grouped by merchant, matched to what you approved before, and tagged to the right property. Duplicates flagged. You never type an expense again.</p>
           </div>
         </div>
-
-        <!-- Feature 2 -->
         <div class="reveal reveal-delay-1 feature-card group">
           <div class="feature-card-inner">
-            <svg class="w-7 h-7 mb-4 text-accent-blue" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 4v12m0-12l-4 4m4-4l4 4"/></svg>
-            <h3 class="font-display font-bold text-base text-white mb-2">Easy CSV Import</h3>
-            <p class="text-xs text-neutral-400 leading-relaxed">Upload your Airbnb earnings CSV and watch your data come to life. Bulk import hundreds of transactions in seconds.</p>
+            <svg class="w-7 h-7 mb-4 text-accent-blue" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 20V10m6 10V4m6 16v-7m6 7v-4"/></svg>
+            <h3 class="font-display font-bold text-base text-white mb-2">Real Profit, Per Property</h3>
+            <p class="text-xs text-neutral-400 leading-relaxed">Revenue minus every tracked expense, for any date range, across the whole portfolio or one listing. Cash-flow status and month-over-month change on one screen.</p>
           </div>
         </div>
-
-        <!-- Feature 3 -->
-        <div class="reveal feature-card group">
-          <div class="feature-card-inner">
-            <svg class="w-7 h-7 mb-4 text-accent-purple" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 12a8 8 0 0114-5.3l2-2v6h-6l2.3-2.3A6 6 0 006 12m12 0a8 8 0 01-14 5.3l-2 2v-6h6l-2.3 2.3A6 6 0 0018 12"/></svg>
-            <h3 class="font-display font-bold text-base text-white mb-2">iCal Sync</h3>
-            <p class="text-xs text-neutral-400 leading-relaxed">Booking dates sync automatically from Airbnb, VRBO, and Booking.com. Full financials import via Airbnb CSV or Hostaway.</p>
-          </div>
-        </div>
-
-        <!-- Feature 4 -->
-        <div class="reveal reveal-delay-1 feature-card group">
-          <div class="feature-card-inner">
-            <svg class="w-7 h-7 mb-4 text-accent-cyan" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 11l3-8 3 8m-6 0h6m-9 5l-2 5h16l-2-5M5 16h14"/></svg>
-            <h3 class="font-display font-bold text-base text-white mb-2">Cleaner Management</h3>
-            <p class="text-xs text-neutral-400 leading-relaxed">Assign cleaners, track jobs, detect scheduling conflicts, and manage your cleaning team in one place.</p>
-          </div>
-        </div>
-
-        <!-- Feature 5 -->
-        <div class="reveal feature-card group">
-          <div class="feature-card-inner">
-            <svg class="w-7 h-7 mb-4 text-yellow-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>
-            <h3 class="font-display font-bold text-base text-white mb-2">AI Profit Autopilot</h3>
-            <p class="text-xs text-neutral-400 leading-relaxed">Get concrete insights like "cleaning costs jumped 34% at Downtown Loft — your backup cleaner saves $140/mo" and revenue forecasts based on your actual booking pattern. Not generic dashboards.</p>
-          </div>
-        </div>
-
-        <!-- Feature 6 -->
-        <div class="reveal reveal-delay-1 feature-card group">
-          <div class="feature-card-inner">
-            <svg class="w-7 h-7 mb-4 text-accent-green" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a8 8 0 11-3-6.2L21 3v6h-6"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 11h.01M12 11h.01M16 11h.01"/></svg>
-            <h3 class="font-display font-bold text-base text-white mb-2">AI Chatbot</h3>
-            <p class="text-xs text-neutral-400 leading-relaxed">Ask questions about your data in plain English. "Why did my profit drop?" — and get real answers in seconds.</p>
-          </div>
-        </div>
-
-        <!-- Feature 7 -->
-        <div class="reveal feature-card group">
-          <div class="feature-card-inner">
-            <svg class="w-7 h-7 mb-4 text-accent-blue" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18M7 14l4-4 4 4 5-7"/></svg>
-            <h3 class="font-display font-bold text-base text-white mb-2">Market Benchmarks</h3>
-            <p class="text-xs text-neutral-400 leading-relaxed">Compare your occupancy, ADR, and profit margin against market averages. Know exactly where you stand.</p>
-          </div>
-        </div>
-
-        <!-- Feature 8 -->
-        <div class="reveal reveal-delay-1 feature-card group">
-          <div class="feature-card-inner">
-            <svg class="w-7 h-7 mb-4 text-accent-purple" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 17l6-6 4 4 8-8M14 7h7v7"/></svg>
-            <h3 class="font-display font-bold text-base text-white mb-2">Revenue Forecasting</h3>
-            <p class="text-xs text-neutral-400 leading-relaxed">See projected revenue for next month based on your trends and seasonal patterns. Plan ahead, not behind.</p>
-          </div>
-        </div>
-
-        <!-- Feature 9 -->
-        <div class="reveal feature-card group">
+        <div class="reveal reveal-delay-2 feature-card group">
           <div class="feature-card-inner">
             <svg class="w-7 h-7 mb-4 text-accent-cyan" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"/><path stroke-linecap="round" stroke-linejoin="round" d="M14 2v6h6M8 13h8M8 17h8M8 9h2"/></svg>
             <h3 class="font-display font-bold text-base text-white mb-2">Tax-Ready Schedule E</h3>
-            <p class="text-xs text-neutral-400 leading-relaxed">Generate Schedule E&ndash;organized PDFs with depreciation, the 14-day rule, and per-property breakdowns built in — a clean, review-ready package for you or your tax professional.</p>
+            <p class="text-xs text-neutral-400 leading-relaxed">A Schedule E&ndash;organized worksheet with depreciation, the 14-day rule, and per-property breakdowns built in, plus a 1099 recipient summary — a clean, review-ready package for you or your tax professional.</p>
           </div>
         </div>
-
-        <!-- Feature 10 -->
-        <div class="reveal reveal-delay-1 feature-card group">
-          <div class="feature-card-inner">
-            <svg class="w-7 h-7 mb-4 text-yellow-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2v20M17 5H9.5a3.5 3.5 0 100 7h5a3.5 3.5 0 010 7H6"/></svg>
-            <h3 class="font-display font-bold text-base text-white mb-2">Budget Tracking</h3>
-            <p class="text-xs text-neutral-400 leading-relaxed">Set monthly budgets per property and get alerts when you're close to overspending.</p>
-          </div>
-        </div>
-
-        <!-- Feature 11 -->
         <div class="reveal feature-card group">
           <div class="feature-card-inner">
-            <svg class="w-7 h-7 mb-4 text-accent-green" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 13a5 5 0 007 0l3-3a5 5 0 00-7-7l-1 1m-2 9a5 5 0 01-7 0 5 5 0 010-7l3-3a5 5 0 017 0"/></svg>
-            <h3 class="font-display font-bold text-base text-white mb-2">Hostaway PMS Sync</h3>
-            <p class="text-xs text-neutral-400 leading-relaxed">All your listings, reservations, and financials auto-sync daily — no CSV uploads. Built-in support for Airbnb, VRBO, Booking.com via Hostaway. More PMS integrations coming.</p>
+            <svg class="w-7 h-7 mb-4 text-accent-purple" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2" stroke-linecap="round"/><path stroke-linecap="round" d="M3 9h18M8 2v4m8-4v4"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 14h.01M12 14h.01M16 14h.01M8 17h.01M12 17h.01"/></svg>
+            <h3 class="font-display font-bold text-base text-white mb-2">Booking Calendar &amp; Occupancy</h3>
+            <p class="text-xs text-neutral-400 leading-relaxed">Upload your Airbnb CSV and past stays fill the calendar. iCal keeps future bookings from Airbnb, VRBO, and Booking.com in sync. Occupancy rate, nights booked, and average stay per property.</p>
           </div>
         </div>
-
-        <div class="reveal feature-card group">
-          <div class="feature-card-inner">
-            <svg class="w-7 h-7 mb-4 text-accent-blue" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10l9-7 9 7v1H3v-1zM5 11v8m4-8v8m6-8v8m4-8v8M3 22h18"/></svg>
-            <h3 class="font-display font-bold text-base text-white mb-2">Bank Sync (Plaid)</h3>
-            <p class="text-xs text-neutral-400 leading-relaxed">Connect your bank via Plaid. Every charge — cleaners, repairs, supplies, mortgage, utilities — auto-categorizes and tags to the right property. Duplicates flagged automatically. You never manually enter an expense again.</p>
-          </div>
-        </div>
-
-        <!-- Feature 12 -->
         <div class="reveal reveal-delay-1 feature-card group">
           <div class="feature-card-inner">
-            <svg class="w-7 h-7 mb-4 text-accent-purple" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3" stroke-linecap="round"/><circle cx="6" cy="12" r="3" stroke-linecap="round"/><circle cx="18" cy="19" r="3" stroke-linecap="round"/><path stroke-linecap="round" stroke-linejoin="round" d="M8.6 10.5l6.8-4M8.6 13.5l6.8 4"/></svg>
-            <h3 class="font-display font-bold text-base text-white mb-2">Share Dashboard</h3>
-            <p class="text-xs text-neutral-400 leading-relaxed">Generate a public link to share your dashboard with partners, accountants, or property managers — read-only and secure.</p>
+            <svg class="w-7 h-7 mb-4 text-yellow-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+            <h3 class="font-display font-bold text-base text-white mb-2">AI Profit Insights</h3>
+            <p class="text-xs text-neutral-400 leading-relaxed">Concrete findings like &ldquo;cleaning costs jumped 34% at Downtown Loft&rdquo;, a next-month revenue forecast from your own booking pattern, and a chat that answers &ldquo;why did my profit drop?&rdquo; in plain English.</p>
           </div>
         </div>
-
-        <!-- Feature 13 — PM tier -->
         <div class="reveal reveal-delay-2 feature-card group">
           <div class="feature-card-inner">
-            <svg class="w-7 h-7 mb-4 text-accent-cyan" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"/><path stroke-linecap="round" stroke-linejoin="round" d="M14 2v6h6M8 11h8M8 15h6"/><path stroke-linecap="round" d="M15 18l1.5 1.5L20 16"/></svg>
-            <h3 class="font-display font-bold text-base text-white mb-2">Owner Statements (PM tier)</h3>
-            <p class="text-xs text-neutral-400 leading-relaxed">For property managers: generate monthly owner statements with commission, expense breakdowns, and pro-rata splits for shared utilities. Owners get a portal to view their statements securely.</p>
+            <svg class="w-7 h-7 mb-4 text-accent-green" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 4v12m0-12l-4 4m4-4l4 4"/></svg>
+            <h3 class="font-display font-bold text-base text-white mb-2">Every Booking Source</h3>
+            <p class="text-xs text-neutral-400 leading-relaxed">Airbnb CSV, Hostaway PMS sync, iCal from VRBO and Booking.com, and direct or off-platform stays entered once. One view of what guests paid and what you actually kept.</p>
           </div>
         </div>
-
-        <!-- Feature 14 — multi-unit -->
-        <div class="reveal reveal-delay-3 feature-card group">
-          <div class="feature-card-inner">
-            <svg class="w-7 h-7 mb-4 text-yellow-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21V9l6-4 6 4v12M15 13l6-3v11h-6"/><path stroke-linecap="round" stroke-linejoin="round" d="M6 13h.01M9 13h.01M6 17h.01M9 17h.01"/></svg>
-            <h3 class="font-display font-bold text-base text-white mb-2">Multi-Unit Properties</h3>
-            <p class="text-xs text-neutral-400 leading-relaxed">Duplexes, triplexes, and apartment buildings: track each unit independently while sharing utilities. Per-unit P&L, per-unit bookings, automatic pro-rata expense splits.</p>
-          </div>
-        </div>
+      </div>
+      <!-- Trimmed from 15 cards to 6 on Sept 2, 2026 (mobile page was ~20
+           screens long; four of them were feature cards). The rest are listed
+           here in one line; the PM tier block under Pricing sells the PM
+           features to the people who care about them. -->
+      <p class="reveal text-center text-xs text-neutral-500 mt-8 leading-relaxed max-w-3xl mx-auto">Also included: cleaner management &middot; budgets &amp; overspend alerts &middot; market benchmarks &middot; multi-unit properties &middot; shareable read-only dashboard &middot; owner statements &amp; owner portal (PM tier)</p>
       </div>
     </div>
   </section>
@@ -674,26 +595,89 @@
         <span class="reveal inline-block px-3 py-1 text-[11px] font-semibold uppercase tracking-wider rounded-full bg-accent-purple/10 text-accent-purple border border-accent-purple/20 mb-4">Free Tools</span>
         <h2 class="reveal font-display font-bold text-2xl sm:text-3xl tracking-tight">Start tracking today — <span class="hero-gradient-text">no signup needed</span></h2>
       </div>
+      <!-- Sept 2026: the fee-change tools are the pages doing the work this
+           month, so they lead here; the spreadsheet and the older profit
+           calculator drop to a one-line mention below. Checklist capture is
+           the same block/script as on the blog post and both calculators
+           (POSTs cross-origin to the app; CORS allowlisted server-side). -->
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        <a href="./tools/airbnb-profit-tracker-spreadsheet.html" class="reveal group rounded-xl bg-base-900/60 border border-neutral-800/50 p-6 hover:border-accent-purple/30 transition-all duration-200 block">
+        <a href="./tools/airbnb-fee-calculator.html" data-cta-location="home_tools_fee" class="reveal group rounded-xl bg-base-900/60 border border-neutral-800/50 p-6 hover:border-accent-red/30 transition-all duration-200 block">
           <div class="flex items-center gap-3 mb-3">
-            <div class="w-10 h-10 rounded-lg bg-accent-purple/10 flex items-center justify-center"><svg class="w-5 h-5 text-accent-purple" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" stroke-linecap="round"/><path stroke-linecap="round" d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></div>
-            <span class="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-accent-green/10 text-accent-green border border-accent-green/20">Free Download</span>
+            <div class="w-10 h-10 rounded-lg bg-accent-red/10 flex items-center justify-center"><svg class="w-5 h-5 text-accent-red" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2" stroke-linecap="round"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 7h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h.01M12 19h.01M16 19h.01"/></svg></div>
+            <span class="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-accent-red/10 text-accent-red border border-accent-red/20">Sept 15</span>
           </div>
-          <h3 class="font-display font-bold text-base text-white mb-1.5 group-hover:text-accent-purple transition-colors">Profit Tracker Spreadsheet</h3>
-          <p class="text-xs text-neutral-400 leading-relaxed mb-3">Revenue/expense log, monthly dashboard, per-property profit, Schedule E tax report, and cleaning cost tracker. Works in Excel &amp; Google Sheets.</p>
-          <span class="text-xs text-accent-blue font-medium group-hover:underline">Download free &rarr;</span>
+          <h3 class="font-display font-bold text-base text-white mb-1.5 group-hover:text-accent-red transition-colors">Airbnb 15.5% Fee Calculator</h3>
+          <p class="text-xs text-neutral-400 leading-relaxed mb-3">Your take-home before and after the host-only fee, side by side — and the nightly price that keeps your payout exactly where it is.</p>
+          <span class="text-xs text-accent-blue font-medium group-hover:underline">Run your numbers &rarr;</span>
         </a>
-        <a href="./tools/airbnb-profit-calculator.html" class="reveal reveal-delay-1 group rounded-xl bg-base-900/60 border border-neutral-800/50 p-6 hover:border-accent-blue/30 transition-all duration-200 block">
+        <a href="./tools/direct-booking-vs-airbnb-calculator.html" data-cta-location="home_tools_direct" class="reveal reveal-delay-1 group rounded-xl bg-base-900/60 border border-neutral-800/50 p-6 hover:border-accent-blue/30 transition-all duration-200 block">
           <div class="flex items-center gap-3 mb-3">
-            <div class="w-10 h-10 rounded-lg bg-accent-blue/10 flex items-center justify-center"><svg class="w-5 h-5 text-accent-blue" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2" stroke-linecap="round"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 7h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h.01M12 19h.01M16 19h.01"/></svg></div>
+            <div class="w-10 h-10 rounded-lg bg-accent-blue/10 flex items-center justify-center"><svg class="w-5 h-5 text-accent-blue" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h10M4 17h7"/><path stroke-linecap="round" stroke-linejoin="round" d="M17 14l3 3-3 3"/></svg></div>
             <span class="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-accent-green/10 text-accent-green border border-accent-green/20">Free Tool</span>
           </div>
-          <h3 class="font-display font-bold text-base text-white mb-1.5 group-hover:text-accent-blue transition-colors">Airbnb Profit Calculator</h3>
-          <p class="text-xs text-neutral-400 leading-relaxed mb-3">Enter your nightly rate, occupancy, and expenses to instantly see your real profit margin — not just revenue.</p>
-          <span class="text-xs text-accent-blue font-medium group-hover:underline">Try calculator &rarr;</span>
+          <h3 class="font-display font-bold text-base text-white mb-1.5 group-hover:text-accent-blue transition-colors">Direct Booking vs Airbnb</h3>
+          <p class="text-xs text-neutral-400 leading-relaxed mb-3">Is it worth leaving the 15.5% fee? Compare what a direct stay nets you after payment processing, your own marketing, and the bookings you might lose.</p>
+          <span class="text-xs text-accent-blue font-medium group-hover:underline">Compare &rarr;</span>
         </a>
       </div>
+
+      <div class="reveal reveal-delay-2 mt-5 rounded-xl border border-accent-green/25 bg-neutral-900 p-6">
+        <div class="flex items-start gap-3">
+          <span class="text-2xl" aria-hidden="true">&#128203;</span>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-display font-bold text-lg text-white mb-1">Get the free Sept 15 repricing checklist</h3>
+            <p class="text-sm text-neutral-400 mb-4">One page, seven steps: the break-even math, the fees hosts forget to raise, and the bookkeeping change almost nobody is covering. We&rsquo;ll email you the PDF.</p>
+            <form id="checklist-form" class="flex flex-col sm:flex-row gap-3">
+              <label for="checklist-email" class="sr-only">Email address</label>
+              <input type="email" id="checklist-email" required placeholder="you@example.com" autocomplete="email" class="flex-1 min-w-0 rounded-lg bg-neutral-800 border border-neutral-700 px-4 py-2.5 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-accent-green" />
+              <button type="submit" id="checklist-btn" class="cta-button-sm text-sm font-semibold px-5 py-2.5 rounded-lg text-white whitespace-nowrap">Send me the checklist</button>
+            </form>
+            <p id="checklist-msg" class="hidden mt-3 text-sm"></p>
+            <p class="mt-3 text-xs text-neutral-600">One email with the PDF now, plus a single heads-up when the fee goes live. Unsubscribe anytime.</p>
+          </div>
+        </div>
+      </div>
+      <script>
+      (function () {
+        var form = document.getElementById('checklist-form');
+        if (!form) return;
+        var msg = document.getElementById('checklist-msg');
+        var btn = document.getElementById('checklist-btn');
+        function fail(text) {
+          btn.disabled = false; btn.textContent = 'Send me the checklist';
+          msg.className = 'mt-3 text-sm text-red-400';
+          msg.textContent = text || 'Something went wrong \u2014 please try again.';
+        }
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var email = document.getElementById('checklist-email').value.trim();
+          if (!email) return;
+          btn.disabled = true; btn.textContent = 'Sending\u2026';
+          fetch('https://app.tryblackcat.com/api/leads/checklist', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email, source: window.location.pathname })
+          }).then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+            .then(function (res) {
+              if (res.ok && res.d && res.d.ok) {
+                if (typeof gtag === 'function') gtag('event', 'checklist_email_submit', { page_path: window.location.pathname });
+                form.classList.add('hidden');
+                msg.className = 'mt-3 text-sm text-accent-green';
+                msg.innerHTML = 'Sent \u2014 check your inbox. Or grab it right now: <a href="/downloads/airbnb-sept-15-repricing-checklist.pdf" target="_blank" rel="noopener" class="underline font-semibold" id="checklist-direct">download the PDF</a>.';
+                var direct = document.getElementById('checklist-direct');
+                if (direct) direct.addEventListener('click', function () {
+                  if (typeof gtag === 'function') gtag('event', 'download_click', { file_name: 'airbnb-sept-15-repricing-checklist.pdf', page_path: window.location.pathname });
+                });
+              } else {
+                fail(res.d && res.d.error);
+              }
+            })
+            .catch(function () { fail(); });
+        });
+      })();
+      </script>
+
+      <p class="reveal text-center text-xs text-neutral-500 mt-6">Also free: <a href="./tools/airbnb-profit-tracker-spreadsheet.html" class="text-neutral-300 hover:text-white underline underline-offset-2">Profit Tracker Spreadsheet</a> &middot; <a href="./tools/airbnb-profit-calculator.html" class="text-neutral-300 hover:text-white underline underline-offset-2">Airbnb Profit Calculator</a></p>
     </div>
   </section>
 
@@ -802,6 +786,144 @@
       <p class="reveal text-xs text-neutral-500 text-center mt-6 max-w-2xl mx-auto">
         Comparisons reflect Stessa and Hostaway&apos;s public features as of June 2026. If you&apos;re using either and we got something wrong, email <a href="mailto:support@tryblackcat.com" class="text-accent-blue hover:underline">support@tryblackcat.com</a> &mdash; we&apos;ll fix it.
       </p>
+    </div>
+  </section>
+
+  <!-- ======================== HOW IT WORKS ======================== -->
+  <section id="how-it-works" class="relative py-24 sm:py-32 px-4 overflow-hidden">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="reveal font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight mb-4">
+          See Your Real Profit<br><span class="hero-gradient-text">in 3 Steps</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Step 1 -->
+        <div class="reveal text-center">
+          <div class="w-16 h-16 rounded-2xl bg-accent-blue/10 border border-accent-blue/20 flex items-center justify-center mb-5 mx-auto">
+            <svg class="w-7 h-7 text-accent-blue" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4" stroke-linecap="round"/><path stroke-linecap="round" stroke-linejoin="round" d="M19 8v6M22 11h-6"/></svg>
+          </div>
+          <div class="inline-block px-2.5 py-0.5 rounded-full bg-accent-blue/10 text-accent-blue text-[10px] font-semibold uppercase tracking-wider mb-3">Step 1</div>
+          <h3 class="font-display font-bold text-lg text-white mb-2">Sign Up Free</h3>
+          <p class="text-sm text-neutral-400 leading-relaxed">Create your account and add your first property. Takes less than a minute — no credit card needed.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="reveal reveal-delay-1 text-center">
+          <div class="w-16 h-16 rounded-2xl bg-accent-green/10 border border-accent-green/20 flex items-center justify-center mb-5 mx-auto">
+            <svg class="w-7 h-7 text-accent-green" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 4v12m0-12l-4 4m4-4l4 4"/></svg>
+          </div>
+          <div class="inline-block px-2.5 py-0.5 rounded-full bg-accent-green/10 text-accent-green text-[10px] font-semibold uppercase tracking-wider mb-3">Step 2</div>
+          <h3 class="font-display font-bold text-lg text-white mb-2">Upload Your CSV</h3>
+          <p class="text-sm text-neutral-400 leading-relaxed">Export your earnings CSV from Airbnb and upload it. We auto-map columns — no reformatting needed.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="reveal reveal-delay-2 text-center">
+          <div class="w-16 h-16 rounded-2xl bg-accent-purple/10 border border-accent-purple/20 flex items-center justify-center mb-5 mx-auto">
+            <svg class="w-7 h-7 text-accent-purple" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke-linecap="round"/><circle cx="12" cy="12" r="6" stroke-linecap="round"/><circle cx="12" cy="12" r="2" stroke-linecap="round"/></svg>
+          </div>
+          <div class="inline-block px-2.5 py-0.5 rounded-full bg-accent-purple/10 text-accent-purple text-[10px] font-semibold uppercase tracking-wider mb-3">Step 3</div>
+          <h3 class="font-display font-bold text-lg text-white mb-2">Know Your Real Profit</h3>
+          <p class="text-sm text-neutral-400 leading-relaxed">Instantly see your net profit, expense breakdown, and AI-powered insights to find money you're leaving on the table.</p>
+        </div>
+      </div>
+
+      <div class="reveal text-center mt-12">
+        <a href="https://app.tryblackcat.com/signup?utm_source=tryblackcat&utm_medium=cta&utm_content=midpage" data-cta-location="midpage" class="inline-block px-6 py-3 rounded-xl font-semibold text-sm text-white border border-neutral-600 hover:border-neutral-400 bg-neutral-900/60 hover:bg-neutral-800/80 transition-all duration-200">Start free &mdash; no credit card &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== TRUST ======================== -->
+  <!-- ======================== TRUST ========================
+       Rewritten June 2026. The old section was three platitude cards
+       (14-day trial / cancel anytime / "bank-level encryption"). Every
+       SaaS landing page has those — they actively signal "we couldn't
+       think of anything specific." For a FINANCIAL product, trust comes
+       from naming the actual mechanisms: who handles the money paths,
+       who built it, what happens to your data, and what we don't do.
+  -->
+  <section id="trust" class="relative py-24 sm:py-32 px-4 overflow-hidden">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="reveal font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight mb-4">
+          You&apos;re trusting us with your<br><span class="hero-gradient-text">money data.</span> Here&apos;s the deal.
+        </h2>
+        <p class="reveal text-base text-neutral-400 max-w-2xl mx-auto">
+          No vague reassurances. Specific mechanisms.
+        </p>
+      </div>
+
+      <!-- The trust stack: 4 specific cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-12">
+        <!-- 1. Bank connection — Plaid -->
+        <div class="reveal trust-card">
+          <div class="trust-card-inner">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-bold tracking-tight" style="background:#ffffff;color:#0a0a0a">Plaid</span>
+              <span class="text-xs text-neutral-500 uppercase tracking-wider">Bank connection</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-white mb-2">Your bank password never touches our servers.</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed">
+              Plaid handles the bank login — the same connection layer Venmo, Robinhood, and your bank&apos;s own mobile app use. We only receive the transaction data Plaid shares back. Disconnect any bank in one click from Settings, which immediately revokes our access.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2. Payments — Stripe -->
+        <div class="reveal reveal-delay-1 trust-card">
+          <div class="trust-card-inner">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-bold tracking-tight" style="background:#635BFF;color:#ffffff">Stripe</span>
+              <span class="text-xs text-neutral-500 uppercase tracking-wider">Payments</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-white mb-2">We don&apos;t see or store your card number.</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed">
+              Subscriptions are billed through Stripe. We receive a subscription status and the last four digits of your card — nothing more. Manage or cancel any time through your Stripe customer portal (linked from Settings), no support email required.
+            </p>
+          </div>
+        </div>
+
+        <!-- 3. Your data, yours -->
+        <div class="reveal trust-card">
+          <div class="trust-card-inner">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="inline-flex items-center w-7 h-7 rounded-md bg-accent-green/15 border border-accent-green/30 justify-center">
+                <svg class="w-4 h-4 text-accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l9 6 9-6"/><rect x="3" y="6" width="18" height="14" rx="2" stroke-width="2"/></svg>
+              </span>
+              <span class="text-xs text-neutral-500 uppercase tracking-wider">Your data</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-white mb-2">Yours to export. Yours to delete. Yours, full stop.</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed">
+              Export every transaction to CSV from Tax &amp; Reports. Delete your entire account from Settings &rarr; Danger Zone &mdash; no support ticket, no waiting. We don&apos;t sell your data, we don&apos;t share it for advertising, and AI features only process your data when you ask them to.
+            </p>
+          </div>
+        </div>
+
+        <!-- 4. Real company -->
+        <div class="reveal reveal-delay-1 trust-card">
+          <div class="trust-card-inner">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="inline-flex items-center w-7 h-7 rounded-md bg-accent-blue/15 border border-accent-blue/30 justify-center">
+                <svg class="w-4 h-4 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </span>
+              <span class="text-xs text-neutral-500 uppercase tracking-wider">Real company</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-white mb-2">US LLC. Counsel-reviewed legal docs. A real human reads support@.</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed">
+              Black Cat Analytics LLC &mdash; a New Hampshire limited liability company. Our
+              <a href="https://app.tryblackcat.com/privacy" class="text-accent-blue hover:underline">Privacy</a>,
+              <a href="https://app.tryblackcat.com/terms" class="text-accent-blue hover:underline">Terms</a>, and
+              <a href="https://app.tryblackcat.com/policies/data-retention" class="text-accent-blue hover:underline">Data Retention Policy</a>
+              were written by an attorney, not pulled from a template. Email
+              <a href="mailto:support@tryblackcat.com" class="text-accent-blue hover:underline">support@tryblackcat.com</a>
+              &mdash; a person replies.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -951,11 +1073,11 @@
       <div class="flex flex-col gap-3">
         <div class="reveal faq-item">
           <button class="faq-trigger" aria-expanded="false">
-            <span class="font-display font-semibold text-sm text-white">Is Black Cat Analytics available now?</span>
+            <span class="font-display font-semibold text-sm text-white">Does it handle Airbnb&apos;s new 15.5% host fee?</span>
             <svg class="faq-chevron w-5 h-5 text-neutral-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
           <div class="faq-answer">
-            <p class="text-sm text-neutral-400 leading-relaxed pb-4 pt-1 px-5">Yes! Black Cat Analytics is live and free to use for your first property. Sign up at <a href="https://app.tryblackcat.com/signup?utm_source=tryblackcat&utm_medium=cta&utm_content=index_inline" class="text-accent-green hover:underline">app.tryblackcat.com</a> to get started in minutes.</p>
+            <p class="text-sm text-neutral-400 leading-relaxed pb-4 pt-1 px-5">Yes. When you import your Airbnb CSV (or sync Hostaway), Black Cat records your <strong class="text-white">gross booking revenue</strong> and books the host service fee as its own expense line. Your profit reflects the 15.5% from day one, and your revenue still matches the gross figure Airbnb reports on your 1099-K. The fee is host-only from <strong class="text-white">September 15, 2026</strong> for US hosts (October 13 in the EEA). Use the <a href="/tools/airbnb-fee-calculator.html" class="text-accent-green hover:underline">free fee calculator</a> to see the price that keeps your payout whole.</p>
           </div>
         </div>
 
@@ -1036,144 +1158,6 @@
           </button>
           <div class="faq-answer">
             <p class="text-sm text-neutral-400 leading-relaxed pb-4 pt-1 px-5">If you manage properties for <strong class="text-white">other people</strong> (owners who get a cut of revenue + a monthly statement from you), you want <strong class="text-white">Property Management tier</strong>. It adds owner statements, an owner portal, and team members on top of everything in Business. Business is for solo investors who own and manage their own properties. PM tier starts at $299/mo and is sales-led — <a href="mailto:support@tryblackcat.com?subject=Property%20Management%20tier%20inquiry" class="text-accent-blue hover:underline">book a 15-min call</a> to get a quote.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================== HOW IT WORKS ======================== -->
-  <section id="how-it-works" class="relative py-24 sm:py-32 px-4 overflow-hidden">
-    <div class="max-w-4xl mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="reveal font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight mb-4">
-          See Your Real Profit<br><span class="hero-gradient-text">in 3 Steps</span>
-        </h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Step 1 -->
-        <div class="reveal text-center">
-          <div class="w-16 h-16 rounded-2xl bg-accent-blue/10 border border-accent-blue/20 flex items-center justify-center mb-5 mx-auto">
-            <svg class="w-7 h-7 text-accent-blue" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4" stroke-linecap="round"/><path stroke-linecap="round" stroke-linejoin="round" d="M19 8v6M22 11h-6"/></svg>
-          </div>
-          <div class="inline-block px-2.5 py-0.5 rounded-full bg-accent-blue/10 text-accent-blue text-[10px] font-semibold uppercase tracking-wider mb-3">Step 1</div>
-          <h3 class="font-display font-bold text-lg text-white mb-2">Sign Up Free</h3>
-          <p class="text-sm text-neutral-400 leading-relaxed">Create your account and add your first property. Takes less than a minute — no credit card needed.</p>
-        </div>
-
-        <!-- Step 2 -->
-        <div class="reveal reveal-delay-1 text-center">
-          <div class="w-16 h-16 rounded-2xl bg-accent-green/10 border border-accent-green/20 flex items-center justify-center mb-5 mx-auto">
-            <svg class="w-7 h-7 text-accent-green" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 4v12m0-12l-4 4m4-4l4 4"/></svg>
-          </div>
-          <div class="inline-block px-2.5 py-0.5 rounded-full bg-accent-green/10 text-accent-green text-[10px] font-semibold uppercase tracking-wider mb-3">Step 2</div>
-          <h3 class="font-display font-bold text-lg text-white mb-2">Upload Your CSV</h3>
-          <p class="text-sm text-neutral-400 leading-relaxed">Export your earnings CSV from Airbnb and upload it. We auto-map columns — no reformatting needed.</p>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="reveal reveal-delay-2 text-center">
-          <div class="w-16 h-16 rounded-2xl bg-accent-purple/10 border border-accent-purple/20 flex items-center justify-center mb-5 mx-auto">
-            <svg class="w-7 h-7 text-accent-purple" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke-linecap="round"/><circle cx="12" cy="12" r="6" stroke-linecap="round"/><circle cx="12" cy="12" r="2" stroke-linecap="round"/></svg>
-          </div>
-          <div class="inline-block px-2.5 py-0.5 rounded-full bg-accent-purple/10 text-accent-purple text-[10px] font-semibold uppercase tracking-wider mb-3">Step 3</div>
-          <h3 class="font-display font-bold text-lg text-white mb-2">Know Your Real Profit</h3>
-          <p class="text-sm text-neutral-400 leading-relaxed">Instantly see your net profit, expense breakdown, and AI-powered insights to find money you're leaving on the table.</p>
-        </div>
-      </div>
-
-      <div class="reveal text-center mt-12">
-        <a href="https://app.tryblackcat.com/signup?utm_source=tryblackcat&utm_medium=cta&utm_content=midpage" data-cta-location="midpage" class="inline-block px-6 py-3 rounded-xl font-semibold text-sm text-white border border-neutral-600 hover:border-neutral-400 bg-neutral-900/60 hover:bg-neutral-800/80 transition-all duration-200">Start free &mdash; no credit card &rarr;</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================== TRUST ======================== -->
-  <!-- ======================== TRUST ========================
-       Rewritten June 2026. The old section was three platitude cards
-       (14-day trial / cancel anytime / "bank-level encryption"). Every
-       SaaS landing page has those — they actively signal "we couldn't
-       think of anything specific." For a FINANCIAL product, trust comes
-       from naming the actual mechanisms: who handles the money paths,
-       who built it, what happens to your data, and what we don't do.
-  -->
-  <section id="trust" class="relative py-24 sm:py-32 px-4 overflow-hidden">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="reveal font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight mb-4">
-          You&apos;re trusting us with your<br><span class="hero-gradient-text">money data.</span> Here&apos;s the deal.
-        </h2>
-        <p class="reveal text-base text-neutral-400 max-w-2xl mx-auto">
-          No vague reassurances. Specific mechanisms.
-        </p>
-      </div>
-
-      <!-- The trust stack: 4 specific cards -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-12">
-        <!-- 1. Bank connection — Plaid -->
-        <div class="reveal trust-card">
-          <div class="trust-card-inner">
-            <div class="flex items-center gap-3 mb-3">
-              <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-bold tracking-tight" style="background:#ffffff;color:#0a0a0a">Plaid</span>
-              <span class="text-xs text-neutral-500 uppercase tracking-wider">Bank connection</span>
-            </div>
-            <h3 class="font-display font-bold text-lg text-white mb-2">Your bank password never touches our servers.</h3>
-            <p class="text-sm text-neutral-400 leading-relaxed">
-              Plaid handles the bank login — the same connection layer Venmo, Robinhood, and your bank&apos;s own mobile app use. We only receive the transaction data Plaid shares back. Disconnect any bank in one click from Settings, which immediately revokes our access.
-            </p>
-          </div>
-        </div>
-
-        <!-- 2. Payments — Stripe -->
-        <div class="reveal reveal-delay-1 trust-card">
-          <div class="trust-card-inner">
-            <div class="flex items-center gap-3 mb-3">
-              <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-bold tracking-tight" style="background:#635BFF;color:#ffffff">Stripe</span>
-              <span class="text-xs text-neutral-500 uppercase tracking-wider">Payments</span>
-            </div>
-            <h3 class="font-display font-bold text-lg text-white mb-2">We don&apos;t see or store your card number.</h3>
-            <p class="text-sm text-neutral-400 leading-relaxed">
-              Subscriptions are billed through Stripe. We receive a subscription status and the last four digits of your card — nothing more. Manage or cancel any time through your Stripe customer portal (linked from Settings), no support email required.
-            </p>
-          </div>
-        </div>
-
-        <!-- 3. Your data, yours -->
-        <div class="reveal trust-card">
-          <div class="trust-card-inner">
-            <div class="flex items-center gap-3 mb-3">
-              <span class="inline-flex items-center w-7 h-7 rounded-md bg-accent-green/15 border border-accent-green/30 justify-center">
-                <svg class="w-4 h-4 text-accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l9 6 9-6"/><rect x="3" y="6" width="18" height="14" rx="2" stroke-width="2"/></svg>
-              </span>
-              <span class="text-xs text-neutral-500 uppercase tracking-wider">Your data</span>
-            </div>
-            <h3 class="font-display font-bold text-lg text-white mb-2">Yours to export. Yours to delete. Yours, full stop.</h3>
-            <p class="text-sm text-neutral-400 leading-relaxed">
-              Export every transaction to CSV from Tax &amp; Reports. Delete your entire account from Settings &rarr; Danger Zone &mdash; no support ticket, no waiting. We don&apos;t sell your data, we don&apos;t share it for advertising, and AI features only process your data when you ask them to.
-            </p>
-          </div>
-        </div>
-
-        <!-- 4. Real company -->
-        <div class="reveal reveal-delay-1 trust-card">
-          <div class="trust-card-inner">
-            <div class="flex items-center gap-3 mb-3">
-              <span class="inline-flex items-center w-7 h-7 rounded-md bg-accent-blue/15 border border-accent-blue/30 justify-center">
-                <svg class="w-4 h-4 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              </span>
-              <span class="text-xs text-neutral-500 uppercase tracking-wider">Real company</span>
-            </div>
-            <h3 class="font-display font-bold text-lg text-white mb-2">US LLC. Counsel-reviewed legal docs. A real human reads support@.</h3>
-            <p class="text-sm text-neutral-400 leading-relaxed">
-              Black Cat Analytics LLC &mdash; a New Hampshire limited liability company. Our
-              <a href="https://app.tryblackcat.com/privacy" class="text-accent-blue hover:underline">Privacy</a>,
-              <a href="https://app.tryblackcat.com/terms" class="text-accent-blue hover:underline">Terms</a>, and
-              <a href="https://app.tryblackcat.com/policies/data-retention" class="text-accent-blue hover:underline">Data Retention Policy</a>
-              were written by an attorney, not pulled from a template. Email
-              <a href="mailto:support@tryblackcat.com" class="text-accent-blue hover:underline">support@tryblackcat.com</a>
-              &mdash; a person replies.
-            </p>
           </div>
         </div>
       </div>
