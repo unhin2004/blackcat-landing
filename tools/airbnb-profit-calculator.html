@@ -288,10 +288,13 @@
       </div>
 
       <!-- Mobile Hamburger -->
-      <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-3 z-[1000] relative" aria-label="Menu">
-        <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
-        <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
-        <span class="hamburger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+      <!-- Two explicit icons (hamburger / X) swapped by #mobile-menu-btn.active.
+           The old version animated three rotated <span> lines into an X;
+           iOS Safari clipped the rotated lines at the button's content box,
+           so the X rendered half cut off. Inline SVGs can't be clipped. -->
+      <button id="mobile-menu-btn" type="button" class="md:hidden flex items-center justify-center w-11 h-11 -mr-2 rounded-lg text-white z-[1000] relative" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg class="menu-icon-open w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="menu-icon-close w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
       </button>
     </div>
   </div>

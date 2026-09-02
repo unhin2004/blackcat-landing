@@ -70,18 +70,13 @@ body {
    is why the menu (z-999) used to cover it and left no way back. */
 #navbar.menu-open {
   z-index: 1000;
+  background: #0a0a0a; /* opaque over the menu so the top band doesn't read as a lighter strip */
 }
 
-/* Hamburger animation */
-#mobile-menu-btn.active .hamburger-line:nth-child(1) {
-  transform: translateY(4px) rotate(45deg);
-}
-#mobile-menu-btn.active .hamburger-line:nth-child(2) {
-  opacity: 0;
-}
-#mobile-menu-btn.active .hamburger-line:nth-child(3) {
-  transform: translateY(-4px) rotate(-45deg);
-}
+/* Hamburger / close icon swap (see _partials/nav.html) */
+#mobile-menu-btn .menu-icon-close { display: none; }
+#mobile-menu-btn.active .menu-icon-open { display: none; }
+#mobile-menu-btn.active .menu-icon-close { display: block; }
 
 /* ---------- CTA Buttons ---------- */
 .cta-button {
