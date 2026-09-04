@@ -201,7 +201,7 @@
   <main class="relative pt-32 sm:pt-40 pb-24 px-4">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-12">
-        <span class="reveal inline-block px-3 py-1 text-[11px] font-semibold uppercase tracking-wider rounded-full bg-accent-green/10 text-accent-green border border-accent-green/20 mb-6">Free Download</span>
+        <span class="reveal inline-block px-3 py-1 text-[11px] font-semibold uppercase tracking-wider rounded-full bg-accent-green/10 text-accent-green border border-accent-green/20 mb-6">Free Download &middot; Updated for the Sept 15 fee</span>
         <h1 class="reveal font-display font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight mb-5">
           The Free Airbnb <span class="hero-gradient-text">Spreadsheet</span> for Profit &amp; Expenses
         </h1>
@@ -213,10 +213,11 @@
           Download Free Spreadsheet
         </a>
         <p class="reveal text-xs text-neutral-500 mt-3">Downloads as a regular .xlsx file — your own private copy, nothing shared or tracked. Works in Excel, Google Sheets, and LibreOffice. No signup, no email required.</p>
+        <p class="reveal text-xs text-neutral-400 mt-2"><span class="font-semibold text-accent-green">Updated Sept 2026:</span> instructions and sample rows for Airbnb&rsquo;s new 15.5% host-only fee, including how to log gross vs. net so your books match your 1099-K.</p>
       </div>
 
       <!-- What's Inside -->
-      <div class="reveal grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
+      <div class="reveal grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
         <!-- Sheet 1 -->
         <div class="rounded-xl bg-base-900/60 border border-neutral-800/50 p-5 hover:border-accent-blue/30 transition-colors duration-200">
           <div class="w-9 h-9 rounded-lg bg-accent-blue/10 flex items-center justify-center mb-3">
@@ -283,6 +284,72 @@
           <p class="text-xs text-neutral-400 leading-relaxed">Pre-filled with realistic 3-property sample data so you can see exactly how everything works before entering your own.</p>
         </div>
       </div>
+
+      <!-- Sept 15 fee change: this page converts ~3 of 4 visitors to a download
+           (GA, week of Aug 30), so the fee-change tools live here too. Same
+           checklist block + script as the calculators and homepage. -->
+      <a href="/tools/airbnb-fee-calculator.html" data-cta-location="spreadsheet_fee_callout" class="reveal block max-w-2xl mx-auto rounded-xl border border-accent-red/20 bg-neutral-900/70 px-5 py-4 hover:border-accent-red/40 transition-colors mb-6">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div class="text-sm text-neutral-300"><span class="font-semibold text-accent-red">Sept 15:</span> Airbnb&rsquo;s host fee jumps 3% &rarr; 15.5%. See your take-home before and after, and the price that keeps you whole.</div>
+          <span class="text-sm font-semibold text-accent-green whitespace-nowrap">Free Fee Calculator &rarr;</span>
+        </div>
+      </a>
+
+      <div class="reveal max-w-2xl mx-auto rounded-xl border border-accent-green/25 bg-neutral-900 p-6 mb-16">
+        <div class="flex items-start gap-3">
+          <span class="text-2xl" aria-hidden="true">&#128203;</span>
+          <div class="flex-1 min-w-0">
+            <h2 class="font-display font-bold text-lg text-white mb-1">Get the free Sept 15 repricing checklist</h2>
+            <p class="text-sm text-neutral-400 mb-4">One page, seven steps: the break-even math, the fees hosts forget to raise, and the bookkeeping change almost nobody is covering. We&rsquo;ll email you the PDF.</p>
+            <form id="checklist-form" class="flex flex-col sm:flex-row gap-3">
+              <label for="checklist-email" class="sr-only">Email address</label>
+              <input type="email" id="checklist-email" required placeholder="you@example.com" autocomplete="email" class="flex-1 min-w-0 rounded-lg bg-neutral-800 border border-neutral-700 px-4 py-2.5 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-accent-green" />
+              <button type="submit" id="checklist-btn" class="cta-button-sm text-sm font-semibold px-5 py-2.5 rounded-lg text-white whitespace-nowrap">Send me the checklist</button>
+            </form>
+            <p id="checklist-msg" class="hidden mt-3 text-sm"></p>
+            <p class="mt-3 text-xs text-neutral-600">One email with the PDF now, plus a single heads-up when the fee goes live. Unsubscribe anytime.</p>
+          </div>
+        </div>
+      </div>
+      <script>
+      (function () {
+        var form = document.getElementById('checklist-form');
+        if (!form) return;
+        var msg = document.getElementById('checklist-msg');
+        var btn = document.getElementById('checklist-btn');
+        function fail(text) {
+          btn.disabled = false; btn.textContent = 'Send me the checklist';
+          msg.className = 'mt-3 text-sm text-red-400';
+          msg.textContent = text || 'Something went wrong \u2014 please try again.';
+        }
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var email = document.getElementById('checklist-email').value.trim();
+          if (!email) return;
+          btn.disabled = true; btn.textContent = 'Sending\u2026';
+          fetch('https://app.tryblackcat.com/api/leads/checklist', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email, source: window.location.pathname })
+          }).then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+            .then(function (res) {
+              if (res.ok && res.d && res.d.ok) {
+                if (typeof gtag === 'function') gtag('event', 'checklist_email_submit', { page_path: window.location.pathname });
+                form.classList.add('hidden');
+                msg.className = 'mt-3 text-sm text-accent-green';
+                msg.innerHTML = 'Sent \u2014 check your inbox. Or grab it right now: <a href="/downloads/airbnb-sept-15-repricing-checklist.pdf" target="_blank" rel="noopener" class="underline font-semibold" id="checklist-direct">download the PDF</a>.';
+                var direct = document.getElementById('checklist-direct');
+                if (direct) direct.addEventListener('click', function () {
+                  if (typeof gtag === 'function') gtag('event', 'download_click', { file_name: 'airbnb-sept-15-repricing-checklist.pdf', page_path: window.location.pathname });
+                });
+              } else {
+                fail(res.d && res.d.error);
+              }
+            })
+            .catch(function () { fail(); });
+        });
+      })();
+      </script>
 
       <!-- Comparison: Spreadsheet vs App -->
       <div class="reveal max-w-3xl mx-auto mb-16">

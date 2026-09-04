@@ -23,6 +23,7 @@
   "homepage": "https://github.com/unhin2004/blackcat-landing#readme",
   "devDependencies": {
     "@tailwindcss/cli": "^4.2.2",
+    "exceljs": "^4.4.0",
     "tailwindcss": "^4.2.2"
   }
 }

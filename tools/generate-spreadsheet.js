@@ -88,7 +88,7 @@ async function generate() {
   wsInstr.getColumn('A').width = 80;
 
   const instructions = [
-    ['Black Cat Analytics — Airbnb Profit Tracker'],
+    ['Black Cat Analytics — Airbnb Profit Tracker (updated Sept 2026 for the 15.5% host fee)'],
     [''],
     ['GETTING STARTED'],
     ['1. Go to the "Revenue & Expenses" tab and log every booking payout and expense.'],
@@ -103,6 +103,14 @@ async function generate() {
     ['• Use the Category dropdown in the Revenue & Expenses tab for consistency.'],
     ['• The Monthly Dashboard updates automatically as you add entries.'],
     ['• Back up this file regularly — save a copy each month.'],
+    [''],
+    ['SEPT 15, 2026 — AIRBNB\'S NEW 15.5% HOST FEE'],
+    ['• From Sept 15, 2026 (Oct 13 in the EEA) Airbnb charges hosts one 15.5% fee and drops the guest service fee. Before that, hosts paid 3%.'],
+    ['• Log the GROSS booking amount (what the guest paid before Airbnb\'s cut) as revenue, then log the 15.5% as its own "Platform Fees" expense.'],
+    ['• Why it matters: the 1099-K Airbnb sends the IRS reports GROSS. Logging only your net payout under-reports revenue and hides a deduction.'],
+    ['• Break-even repricing: raise prices about 14.8% (price ÷ 0.845) to keep your payout unchanged. +18.3% nets your full old sticker price.'],
+    ['• Free side-by-side calculator: https://www.tryblackcat.com/tools/airbnb-fee-calculator.html'],
+    ['• See the September sample rows in the Revenue & Expenses tab for the gross + fee pattern.'],
     [''],
     ['EXPENSE CATEGORIES (mapped to IRS Schedule E)'],
     ['  Cleaning → Line 7'],
@@ -132,7 +140,7 @@ async function generate() {
     if (i === 0) {
       cell.font = { bold: true, size: 18, color: { argb: BRAND.dark }, name: 'Calibri' };
       wsInstr.getRow(1).height = 40;
-    } else if (['GETTING STARTED', 'TIPS', 'EXPENSE CATEGORIES (mapped to IRS Schedule E)', 'OUTGROWN THE SPREADSHEET?'].includes(row[0])) {
+    } else if (['GETTING STARTED', 'TIPS', 'SEPT 15, 2026 — AIRBNB\'S NEW 15.5% HOST FEE', 'EXPENSE CATEGORIES (mapped to IRS Schedule E)', 'OUTGROWN THE SPREADSHEET?'].includes(row[0])) {
       cell.font = { bold: true, size: 12, color: { argb: BRAND.green.replace('#', '') }, name: 'Calibri' };
     } else {
       cell.font = { size: 11, color: { argb: BRAND.darkGray }, name: 'Calibri' };
@@ -176,27 +184,31 @@ async function generate() {
 
   // Add sample data rows
   const sampleData = [
-    ['2026-01-05', 'Revenue', 'Airbnb Payout', 'Downtown Loft', 'Payout — 4 night stay (Martinez)', 1240, 'No', ''],
+    ['2026-01-05', 'Revenue', 'Airbnb Payout', 'Downtown Loft', 'Gross booking — 4 night stay (Martinez)', 1240, 'No', ''],
     ['2026-01-07', 'Expense', 'Cleaning', 'Downtown Loft', 'Turnover clean after Martinez', 150, 'Yes', ''],
-    ['2026-01-10', 'Revenue', 'Airbnb Payout', 'Lakeside Cabin', 'Payout — 3 night stay (Chen)', 890, 'No', ''],
+    ['2026-01-10', 'Revenue', 'Airbnb Payout', 'Lakeside Cabin', 'Gross booking — 3 night stay (Chen)', 890, 'No', ''],
     ['2026-01-10', 'Expense', 'Cleaning', 'Lakeside Cabin', 'Turnover clean after Chen', 120, 'Yes', ''],
     ['2026-01-12', 'Expense', 'Supplies', 'Downtown Loft', 'Guest toiletries restock', 45, 'Yes', ''],
-    ['2026-01-15', 'Revenue', 'Airbnb Payout', 'Beach Bungalow', 'Payout — 5 night stay (Johnson)', 1560, 'No', ''],
+    ['2026-01-15', 'Revenue', 'Airbnb Payout', 'Beach Bungalow', 'Gross booking — 5 night stay (Johnson)', 1560, 'No', ''],
     ['2026-01-15', 'Expense', 'Cleaning', 'Beach Bungalow', 'Deep clean after Johnson', 180, 'Yes', ''],
     ['2026-01-18', 'Expense', 'Maintenance & Repairs', 'Downtown Loft', 'HVAC filter replacement', 340, 'Yes', ''],
     ['2026-01-20', 'Expense', 'Insurance', 'Downtown Loft', 'Monthly property insurance', 225, 'Yes', 'STR rider'],
     ['2026-01-20', 'Expense', 'Insurance', 'Lakeside Cabin', 'Monthly property insurance', 195, 'Yes', ''],
     ['2026-01-20', 'Expense', 'Insurance', 'Beach Bungalow', 'Monthly property insurance', 210, 'Yes', ''],
-    ['2026-01-22', 'Revenue', 'Airbnb Payout', 'Downtown Loft', 'Payout — 3 night stay (Williams)', 980, 'No', ''],
+    ['2026-01-22', 'Revenue', 'Airbnb Payout', 'Downtown Loft', 'Gross booking — 3 night stay (Williams)', 980, 'No', ''],
     ['2026-01-22', 'Expense', 'Cleaning', 'Downtown Loft', 'Turnover clean after Williams', 150, 'Yes', ''],
     ['2026-01-25', 'Expense', 'Utilities', 'Downtown Loft', 'Electric + internet', 185, 'Yes', ''],
     ['2026-01-25', 'Expense', 'Utilities', 'Lakeside Cabin', 'Electric + water + internet', 210, 'Yes', ''],
     ['2026-01-25', 'Expense', 'Utilities', 'Beach Bungalow', 'Electric + water + internet', 195, 'Yes', ''],
-    ['2026-01-28', 'Revenue', 'Airbnb Payout', 'Lakeside Cabin', 'Payout — 7 night stay (Davis)', 2100, 'No', ''],
+    ['2026-01-28', 'Revenue', 'Airbnb Payout', 'Lakeside Cabin', 'Gross booking — 7 night stay (Davis)', 2100, 'No', ''],
     ['2026-01-28', 'Expense', 'Cleaning', 'Lakeside Cabin', 'Deep clean after Davis (7 night)', 140, 'Yes', ''],
-    ['2026-01-31', 'Expense', 'Platform Fees', 'Downtown Loft', 'Airbnb host fee — January', 67, 'Yes', '3% of gross (15.5% from Sept 15, 2026)'],
-    ['2026-01-31', 'Expense', 'Platform Fees', 'Lakeside Cabin', 'Airbnb host fee — January', 90, 'Yes', '3% of gross (15.5% from Sept 15, 2026)'],
-    ['2026-01-31', 'Expense', 'Platform Fees', 'Beach Bungalow', 'Airbnb host fee — January', 47, 'Yes', '3% of gross (15.5% from Sept 15, 2026)'],
+    ['2026-01-31', 'Expense', 'Platform Fees', 'Downtown Loft', 'Airbnb host fee — January', 67, 'Yes', '3% of gross — the old fee, before Sept 15, 2026'],
+    ['2026-01-31', 'Expense', 'Platform Fees', 'Lakeside Cabin', 'Airbnb host fee — January', 90, 'Yes', '3% of gross — the old fee, before Sept 15, 2026'],
+    ['2026-01-31', 'Expense', 'Platform Fees', 'Beach Bungalow', 'Airbnb host fee — January', 47, 'Yes', '3% of gross — the old fee, before Sept 15, 2026'],
+    // After Sept 15, 2026: log the GROSS booking as revenue and the 15.5% host fee as its own expense.
+    ['2026-09-18', 'Revenue', 'Airbnb Payout', 'Downtown Loft', 'Gross booking — 4 night stay (Nguyen)', 1000, 'No', 'Gross amount, before Airbnb\'s 15.5% fee — matches your 1099-K'],
+    ['2026-09-18', 'Expense', 'Platform Fees', 'Downtown Loft', 'Airbnb host fee — 15.5% (new fee from Sept 15, 2026)', 155, 'Yes', '15.5% of gross → Schedule E Line 8'],
+    ['2026-09-19', 'Expense', 'Cleaning', 'Downtown Loft', 'Turnover clean after Nguyen', 150, 'Yes', ''],
   ];
 
   sampleData.forEach((data, i) => {
