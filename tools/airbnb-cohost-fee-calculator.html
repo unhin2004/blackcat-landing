@@ -78,25 +78,39 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="../dist/output.css">
   <link rel="stylesheet" href="../style.css">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0Y5H3YVKT4"></script>
+  <!-- Google Analytics (Consent Mode v2: denied until the visitor accepts) -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    try { if (localStorage.getItem('cookie-consent') === 'accepted') { gtag('consent', 'update', { analytics_storage: 'granted' }); } } catch (e) {}
     gtag('js', new Date());
     gtag('config', 'G-0Y5H3YVKT4');
   </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0Y5H3YVKT4"></script>
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-    <!-- Microsoft Clarity (session replay + heatmaps) -->
+    <!-- Microsoft Clarity (session replay + heatmaps) — loaded only after consent -->
     <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "wykpb8uzfm");
+        window.__bcLoadClarity = function () {
+            if (window.__bcClarityLoaded) return;
+            window.__bcClarityLoaded = true;
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "wykpb8uzfm");
+        };
+        try { if (localStorage.getItem('cookie-consent') === 'accepted') { window.__bcLoadClarity(); } } catch (e) {}
     </script>
 </head>
 <body class="bg-base-950 text-white font-body antialiased">

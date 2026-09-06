@@ -113,14 +113,22 @@
   }
   </script>
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0Y5H3YVKT4"></script>
+  <!-- Google Analytics (Consent Mode v2: denied until the visitor accepts) -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    try { if (localStorage.getItem('cookie-consent') === 'accepted') { gtag('consent', 'update', { analytics_storage: 'granted' }); } } catch (e) {}
     gtag('js', new Date());
     gtag('config', 'G-0Y5H3YVKT4');
   </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0Y5H3YVKT4"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -133,13 +141,18 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="./style.css">
-    <!-- Microsoft Clarity (session replay + heatmaps) -->
+    <!-- Microsoft Clarity (session replay + heatmaps) — loaded only after consent -->
     <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "wykpb8uzfm");
+        window.__bcLoadClarity = function () {
+            if (window.__bcClarityLoaded) return;
+            window.__bcClarityLoaded = true;
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "wykpb8uzfm");
+        };
+        try { if (localStorage.getItem('cookie-consent') === 'accepted') { window.__bcLoadClarity(); } } catch (e) {}
     </script>
 </head>
 <body class="bg-base-950 text-white font-body antialiased">
@@ -504,6 +517,7 @@
         <p class="reveal text-base text-neutral-400 max-w-lg mx-auto">Ask questions, get forecasts, compare to market — all powered by AI that understands your actual financial data.</p>
       </div>
 
+      <p class="text-xs text-neutral-500 text-center mb-4">Illustrative sample data — not a real account.</p>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Chat Demo -->
         <div class="reveal rounded-2xl bg-base-900/80 border border-neutral-800/50 p-6 flex flex-col">
@@ -1243,7 +1257,7 @@
   <!-- Cookie Consent Banner -->
   <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 p-4 bg-neutral-900 border-t border-neutral-800 transform translate-y-full transition-transform duration-300" style="display:none">
     <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
-      <p class="text-xs text-neutral-400 text-center sm:text-left">We use cookies and analytics to improve your experience. By continuing, you agree to our <a href="https://app.tryblackcat.com/privacy" class="text-blue-400 hover:underline">Privacy Policy</a>.</p>
+      <p class="text-xs text-neutral-400 text-center sm:text-left">We use Google Analytics and Microsoft Clarity (session replay) to see how the site is used. Nothing loads until you accept; Decline keeps them off. <a href="https://app.tryblackcat.com/privacy" class="text-blue-400 hover:underline">Privacy Policy</a>.</p>
       <div class="flex gap-2 shrink-0">
         <button id="cookie-accept" class="px-4 py-1.5 text-xs font-medium bg-blue-600 hover:bg-blue-700 text-white rounded-full transition-colors">Accept</button>
         <button id="cookie-decline" class="px-4 py-1.5 text-xs font-medium bg-neutral-800 hover:bg-neutral-700 text-neutral-300 rounded-full border border-neutral-700 transition-colors">Decline</button>

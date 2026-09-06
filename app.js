@@ -320,6 +320,12 @@
   if (cookieAccept) {
     cookieAccept.addEventListener('click', () => {
       localStorage.setItem('cookie-consent', 'accepted');
+      // Consent Mode v2: analytics was 'denied' at page load; upgrade now
+      // and start Clarity (session replay) only from this point.
+      if (typeof window.gtag === 'function') {
+        window.gtag('consent', 'update', { analytics_storage: 'granted' });
+      }
+      if (typeof window.__bcLoadClarity === 'function') window.__bcLoadClarity();
       hideBanner();
     });
   }

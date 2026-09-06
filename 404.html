@@ -45,13 +45,18 @@
     .links a { color: #6b7280; font-size: 0.8rem; text-decoration: none; transition: color 0.2s; }
     .links a:hover { color: #d1d5db; }
   </style>
-    <!-- Microsoft Clarity (session replay + heatmaps) -->
+    <!-- Microsoft Clarity (session replay + heatmaps) — loaded only after consent -->
     <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "wykpb8uzfm");
+        window.__bcLoadClarity = function () {
+            if (window.__bcClarityLoaded) return;
+            window.__bcClarityLoaded = true;
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "wykpb8uzfm");
+        };
+        try { if (localStorage.getItem('cookie-consent') === 'accepted') { window.__bcLoadClarity(); } } catch (e) {}
     </script>
 </head>
 <body>
