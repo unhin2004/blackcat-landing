@@ -467,18 +467,26 @@
         <p class="text-[11px] text-neutral-600 mt-2">Bank sync review queue — sample portfolio data</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      <!-- One screen per row at the video's width so the UI text is readable on a
+           laptop; phones get real phone-sized captures of the same screens. -->
+      <div class="flex flex-col gap-10 max-w-4xl mx-auto">
         <div class="reveal">
-          <div class="rounded-2xl border border-neutral-800 bg-neutral-900/60 p-1.5 shadow-2xl" style="box-shadow: 0 0 60px rgba(34,197,94,0.05), 0 20px 40px -12px rgba(0,0,0,0.6)">
-            <img src="/images/app-bank-sync.webp" alt="Bank sync review queue grouping repeat merchants with one-click bulk approve and duplicate detection" width="1920" height="1206" class="w-full h-auto rounded-xl" loading="lazy" decoding="async">
+          <div class="rounded-2xl border border-neutral-800 bg-neutral-900/60 p-1.5 sm:p-2 shadow-2xl mx-auto max-w-sm sm:max-w-none" style="box-shadow: 0 0 60px rgba(34,197,94,0.05), 0 20px 40px -12px rgba(0,0,0,0.6)">
+            <picture>
+              <source media="(max-width: 639px)" srcset="/images/app-bank-sync-phone.jpg" width="780" height="1688">
+              <img src="/images/app-bank-sync-desktop.jpg" alt="Bank sync review queue grouping repeat merchants with one-click bulk approve and duplicate detection" width="1095" height="650" class="w-full h-auto rounded-xl" loading="lazy" decoding="async">
+            </picture>
           </div>
-          <p class="text-[11px] text-neutral-600 mt-2">Repeat merchants collapse into one decision — sample data</p>
+          <p class="text-[11px] text-neutral-600 mt-2 text-center sm:text-left">Repeat merchants collapse into one decision — sample data</p>
         </div>
         <div class="reveal reveal-delay-1">
-          <div class="rounded-2xl border border-neutral-800 bg-neutral-900/60 p-1.5 shadow-2xl" style="box-shadow: 0 0 60px rgba(34,197,94,0.05), 0 20px 40px -12px rgba(0,0,0,0.6)">
-            <img src="/images/app-tax-reports.webp" alt="Schedule E worksheet generator with per-property breakdown, depreciation, and 1099 recipient summary" width="1920" height="1206" class="w-full h-auto rounded-xl" loading="lazy" decoding="async">
+          <div class="rounded-2xl border border-neutral-800 bg-neutral-900/60 p-1.5 sm:p-2 shadow-2xl mx-auto max-w-sm sm:max-w-none" style="box-shadow: 0 0 60px rgba(34,197,94,0.05), 0 20px 40px -12px rgba(0,0,0,0.6)">
+            <picture>
+              <source media="(max-width: 639px)" srcset="/images/app-tax-reports-phone.jpg" width="780" height="1688">
+              <img src="/images/app-tax-reports-desktop.jpg" alt="Schedule E worksheet generator with per-property breakdown, depreciation, and a 1099 recipient summary" width="1525" height="705" class="w-full h-auto rounded-xl" loading="lazy" decoding="async">
+            </picture>
           </div>
-          <p class="text-[11px] text-neutral-600 mt-2">Tax season, pre-assembled — sample data</p>
+          <p class="text-[11px] text-neutral-600 mt-2 text-center sm:text-left">Tax season, pre-assembled — sample data</p>
         </div>
       </div>
 
