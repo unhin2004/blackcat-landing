@@ -712,12 +712,16 @@
       const cleaningRevenue = cleanFeeGuest * bookingsPerMonth;
       const totalRevenue = grossRevenue + cleaningRevenue;
 
-      // Airbnb host-only fee (15.5%, mandatory for US hosts from Sept 15, 2026)
-      const airbnbFee = grossRevenue * 0.155;
+      // Airbnb host-only fee (15.5%, mandatory for US hosts from Sept 15, 2026).
+      // The fee applies to the whole booking subtotal — nightly rate PLUS the
+      // cleaning fee the guest pays — same basis as the fee calculator.
+      const airbnbFee = totalRevenue * 0.155;
 
-      // Cleaning expense
+      // Cleaning expense: what you pay the cleaner. The guest cleaning fee is
+      // already counted in totalRevenue, so it is not netted here (netting and
+      // clamping at 0 silently dropped any cleaning-fee profit).
       const cleaningExpense = cleanCost * bookingsPerMonth;
-      const netCleaning = Math.max(0, cleaningExpense - cleaningRevenue);
+      const netCleaning = cleaningExpense;
 
       // Fixed monthly expenses
       const fixedExpenses = mortgageVal + util + ins + sup + maint + mgmt + hoaVal + other;
@@ -726,19 +730,20 @@
       const preTaxExpenses = airbnbFee + netCleaning + fixedExpenses;
 
       // Tax (on pre-expense income approximation)
-      const taxableIncome = Math.max(0, grossRevenue - preTaxExpenses);
+      const taxableIncome = Math.max(0, totalRevenue - preTaxExpenses);
       const taxExpense = taxableIncome * taxPct;
 
       // Total expenses
       const totalExpenses = preTaxExpenses + taxExpense;
 
       // Profit
-      const profit = grossRevenue - totalExpenses;
-      const margin = grossRevenue > 0 ? (profit / grossRevenue) * 100 : 0;
+      // Profit and margin on the full revenue the fee and cleaning cost were taken from.
+      const profit = totalRevenue - totalExpenses;
+      const margin = totalRevenue > 0 ? (profit / totalRevenue) * 100 : 0;
       const annual = profit * 12;
 
       // Update results
-      document.getElementById('resRevenue').textContent = formatCurrency(grossRevenue);
+      document.getElementById('resRevenue').textContent = formatCurrency(totalRevenue);
       document.getElementById('resProfit').textContent = formatCurrency(profit);
       document.getElementById('resProfit').className = 'result-value ' + (profit >= 0 ? 'text-accent-green' : 'text-accent-red');
       document.getElementById('resMargin').textContent = margin.toFixed(1) + '%';
