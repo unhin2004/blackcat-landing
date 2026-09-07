@@ -797,7 +797,13 @@
       const title = document.getElementById('verdictTitle');
       const text = document.getElementById('verdictText');
 
-      if (margin >= 30) {
+      if (!(totalRevenue > 0)) {
+        icon.textContent = '❌';
+        title.textContent = 'No revenue at these numbers';
+        text.textContent = totalExpenses > 0
+          ? 'With no bookings this property costs you ' + formatCurrency(totalExpenses) + ' a month. Enter a nightly rate and occupancy to see the picture.'
+          : 'Enter a nightly rate and occupancy to see your profit.';
+      } else if (margin >= 30) {
         icon.textContent = '✅';
         title.textContent = 'Healthy margin';
         text.textContent = 'Your profit margin is above 30%. You\'re running a solid operation.';

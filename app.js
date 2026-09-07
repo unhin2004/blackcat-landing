@@ -22,14 +22,24 @@
   function captureUtmFromUrl() {
     try {
       var params = new URLSearchParams(window.location.search);
-      var existing = sessionStorage.getItem(UTM_STORE);
-      if (existing) return; // first-touch wins
       var payload = {};
       var hasAny = false;
       UTM_KEYS.forEach(function (k) {
         var v = params.get(k);
         if (v) { payload[k] = v.slice(0, 200); hasAny = true; }
       });
+      // First-touch wins for UTM-tagged visits. A referrer-only visit must
+      // not lock the store: a later UTM-tagged landing in the same tab
+      // (ad click after a search visit) was never captured.
+      var existingRaw = sessionStorage.getItem(UTM_STORE);
+      if (existingRaw) {
+        try {
+          var existing = JSON.parse(existingRaw);
+          var existingHasUtm = UTM_KEYS.some(function (k) { return !!existing[k]; });
+          if (existingHasUtm || !hasAny) return;
+          if (existing.referrer && !payload.referrer) payload.referrer = existing.referrer;
+        } catch (e) { /* overwrite unparseable */ }
+      }
       if (document.referrer && document.referrer.indexOf(window.location.origin) !== 0) {
         payload.referrer = document.referrer.slice(0, 500);
         hasAny = true;
