@@ -111,6 +111,7 @@
   let lastScroll = 0;
 
   function handleNavbarScroll() {
+    if (!navbar) return; // welcome.html has no navbar
     const scrollY = window.scrollY;
     if (scrollY > 40) {
       navbar.classList.add('scrolled');
@@ -140,10 +141,12 @@
   }
 
   function closeMobileMenu() {
-    if (mobileMenu.classList.contains('open')) toggleMobileMenu();
+    if (mobileMenu && mobileMenu.classList.contains('open')) toggleMobileMenu();
   }
 
-  mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+  // Pages without the shared nav (welcome.html) used to throw here, which
+  // aborted everything below it — including the cookie banner wiring.
+  if (mobileMenuBtn && mobileMenu) mobileMenuBtn.addEventListener('click', toggleMobileMenu);
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMobileMenu(); });
   // Tapping the logo while the menu is open should get you back to the page, not stay trapped.
   if (navbarEl) navbarEl.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileMenu));
