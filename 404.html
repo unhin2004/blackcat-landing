@@ -58,6 +58,8 @@
         };
         try { if (localStorage.getItem('cookie-consent') === 'accepted') { window.__bcLoadClarity(); } } catch (e) {}
     </script>
+  <!-- Vercel Web Analytics: cookieless, aggregate page views; no consent needed -->
+  <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
   <div class="container">
