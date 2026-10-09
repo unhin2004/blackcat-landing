@@ -58,7 +58,7 @@
         "name": "Does it handle Airbnb's new 15.5% host fee?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. When you import your Airbnb CSV (or sync Hostaway), Black Cat records your gross booking revenue and books the host service fee as its own expense line. Your profit reflects the 15.5% from day one, and your revenue still matches the gross figure Airbnb reports on your 1099-K. The fee is host-only from September 15, 2026 for US hosts (October 13 in the EEA). Use the free fee calculator to see the price that keeps your payout whole."
+          "text": "Yes. When you import your Airbnb CSV (or sync Hostaway), Black Cat records your gross booking revenue and books the host service fee as its own expense line. Your profit reflects the 15.5% from day one, and your revenue still matches the gross figure Airbnb reports on your 1099-K. The fee has been host-only for US hosts since September 15, 2026, and applies to EEA hosts from October 13, 2026. Use the free fee calculator to see the price that keeps your payout whole."
         }
       },
       {
@@ -268,13 +268,15 @@
 
     <div class="relative z-10 max-w-4xl mx-auto text-center">
       <!-- Timely bar (Sept 2026): the Airbnb 15.5% host-only fee is the
-           reason strangers arrive this month, so it sits above the H1 rather
-           than below the video. Replaced the pre-launch "Now Live" pill.
-           RETIRE after Oct 1, 2026 — restore nothing; the hero reads fine
-           without a badge. -->
+           reason strangers arrive, so it sits above the H1 rather than
+           below the video. Replaced the pre-launch "Now Live" pill.
+           Reworded 9 Oct 2026 for the after-the-15th reader: fee-change
+           queries were still growing in the 6 Oct Search Console pull.
+           RETIRE when the 1 Nov pull shows them fading — restore nothing;
+           the hero reads fine without a badge. -->
       <a href="/tools/airbnb-fee-calculator.html" data-cta-location="hero_fee_bar" class="reveal inline-flex flex-wrap items-center justify-center gap-x-2 gap-y-1 px-4 py-2 rounded-full border border-accent-red/30 bg-neutral-900/70 backdrop-blur-sm mb-8 text-xs sm:text-sm text-neutral-300 hover:border-accent-red/60 transition-colors">
-        <span class="font-semibold text-accent-red">Sept 15:</span>
-        <span>Airbnb&apos;s host fee jumps 3% &rarr; 15.5%. <a href="/blog/airbnb-15-5-percent-host-fee-explained.html" class="underline hover:text-white">The exact math</a>.</span>
+        <span class="font-semibold text-accent-red">Since Sept 15:</span>
+        <span>Airbnb&apos;s host fee is 15.5%, not 3%. <a href="/blog/airbnb-15-5-percent-host-fee-explained.html" class="underline hover:text-white">The exact math</a>.</span>
         <span class="font-semibold text-accent-green whitespace-nowrap">Free fee calculator &rarr;</span>
       </a>
 
@@ -562,7 +564,6 @@
            here in one line; the PM tier block under Pricing sells the PM
            features to the people who care about them. -->
       <p class="reveal text-center text-xs text-neutral-500 mt-8 leading-relaxed max-w-3xl mx-auto">Also included: cleaner management &middot; budgets &amp; overspend alerts &middot; multi-unit properties &middot; shareable read-only dashboard &middot; owner statements &amp; owner portal (PM tier)</p>
-      </div>
     </div>
   </section>
 
@@ -670,7 +671,7 @@
         <a href="./tools/airbnb-fee-calculator.html" data-cta-location="home_tools_fee" class="reveal group rounded-xl bg-base-900/60 border border-neutral-800/50 p-6 hover:border-accent-red/30 transition-all duration-200 block">
           <div class="flex items-center gap-3 mb-3">
             <div class="w-10 h-10 rounded-lg bg-accent-red/10 flex items-center justify-center"><svg class="w-5 h-5 text-accent-red" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2" stroke-linecap="round"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 7h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h.01M12 19h.01M16 19h.01"/></svg></div>
-            <span class="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-accent-red/10 text-accent-red border border-accent-red/20">Sept 15</span>
+            <span class="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-accent-red/10 text-accent-red border border-accent-red/20">Since Sept 15</span>
           </div>
           <h3 class="font-display font-bold text-base text-white mb-1.5 group-hover:text-accent-red transition-colors">Airbnb 15.5% Fee Calculator</h3>
           <p class="text-xs text-neutral-400 leading-relaxed mb-3">Your take-home before and after the host-only fee, side by side — and the nightly price that keeps your payout exactly where it is.</p>
@@ -691,7 +692,7 @@
         <div class="flex items-start gap-3">
           <span class="text-2xl" aria-hidden="true">&#128203;</span>
           <div class="flex-1 min-w-0">
-            <h3 class="font-display font-bold text-lg text-white mb-1">Get the free Sept 15 repricing checklist</h3>
+            <h3 class="font-display font-bold text-lg text-white mb-1">Get the free 15.5% repricing checklist</h3>
             <p class="text-sm text-neutral-400 mb-4">One page, seven steps: the break-even math, the fees hosts forget to raise, and the bookkeeping change almost nobody is covering. We&rsquo;ll email you the PDF.</p>
             <form id="checklist-form" class="flex flex-col sm:flex-row gap-3">
               <label for="checklist-email" class="sr-only">Email address</label>
@@ -699,7 +700,7 @@
               <button type="submit" id="checklist-btn" class="cta-button-sm text-sm font-semibold px-5 py-2.5 rounded-lg text-white whitespace-nowrap">Send me the checklist</button>
             </form>
             <p id="checklist-msg" class="hidden mt-3 text-sm"></p>
-            <p class="mt-3 text-xs text-neutral-600">One email with the PDF now, plus a single heads-up when the fee goes live. Unsubscribe anytime.</p>
+            <p class="mt-3 text-xs text-neutral-600">One email with the PDF. Unsubscribe anytime.</p>
           </div>
         </div>
       </div>
@@ -1143,7 +1144,7 @@
             <svg class="faq-chevron w-5 h-5 text-neutral-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
           <div class="faq-answer">
-            <p class="text-sm text-neutral-400 leading-relaxed pb-4 pt-1 px-5">Yes. When you import your Airbnb CSV (or sync Hostaway), Black Cat records your <strong class="text-white">gross booking revenue</strong> and books the host service fee as its own expense line. Your profit reflects the 15.5% from day one, and your revenue still matches the gross figure Airbnb reports on your 1099-K. The fee is host-only from <strong class="text-white">September 15, 2026</strong> for US hosts (October 13 in the EEA). Use the <a href="/tools/airbnb-fee-calculator.html" class="text-accent-green hover:underline">free fee calculator</a> to see the price that keeps your payout whole.</p>
+            <p class="text-sm text-neutral-400 leading-relaxed pb-4 pt-1 px-5">Yes. When you import your Airbnb CSV (or sync Hostaway), Black Cat records your <strong class="text-white">gross booking revenue</strong> and books the host service fee as its own expense line. Your profit reflects the 15.5% from day one, and your revenue still matches the gross figure Airbnb reports on your 1099-K. The fee has been host-only for US hosts since <strong class="text-white">September 15, 2026</strong>, and applies to EEA hosts from October 13, 2026. Use the <a href="/tools/airbnb-fee-calculator.html" class="text-accent-green hover:underline">free fee calculator</a> to see the price that keeps your payout whole.</p>
           </div>
         </div>
 
