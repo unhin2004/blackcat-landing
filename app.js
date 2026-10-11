@@ -14,6 +14,16 @@
     } catch (e) { /* noop */ }
   }
 
+  // Vercel Web Analytics custom event. Cookieless, so it counts every visitor
+  // rather than only those who accepted the cookie banner; the queue shim is
+  // Vercel's documented pattern for calls made before its script has loaded.
+  function trackVercel(name, data) {
+    try {
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+      window.va('event', { name: name, data: data || {} });
+    } catch (e) { /* noop */ }
+  }
+
   // Persist first-touch UTM params for cross-domain attribution into the app.
   // Stored in sessionStorage; appended to every outbound link to app.tryblackcat.com.
   var UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
@@ -97,6 +107,7 @@
     a.addEventListener('click', function () {
       var file = (a.getAttribute('href') || '').split('/').pop().split('?')[0] || 'unknown';
       trackEvent('download_click', { file_name: file, page_path: window.location.pathname });
+      trackVercel('download_click', { file: file, page: window.location.pathname });
     });
   });
 

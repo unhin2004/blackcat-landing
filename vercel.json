@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/tools/black-cat-airbnb-profit-tracker-spreadsheet.html",
+      "destination": "/tools/airbnb-profit-tracker-spreadsheet.html",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

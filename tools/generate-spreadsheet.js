@@ -129,15 +129,17 @@ async function generate() {
     ['OUTGROWN THE SPREADSHEET?'],
     ['Black Cat Analytics auto-imports your Airbnb CSV, tracks profit in real-time,'],
     ['generates tax reports, and gives you AI-powered insights.'],
-    ['→ https://app.tryblackcat.com/signup?utm_source=tryblackcat&utm_medium=spreadsheet&utm_content=xlsx_instructions (Free to start)'],
+    ['→ Start free at app.tryblackcat.com (1 property, no card needed)', 'https://app.tryblackcat.com/signup?utm_source=tryblackcat&utm_medium=spreadsheet&utm_content=xlsx_instructions'],
     [''],
     ['Questions? support@tryblackcat.com'],
   ];
 
   instructions.forEach((row, i) => {
     const cell = wsInstr.getCell(`A${i + 1}`);
-    cell.value = row[0];
-    if (i === 0) {
+    cell.value = row[1] ? { text: row[0], hyperlink: row[1] } : row[0];
+    if (row[1]) {
+      cell.font = { size: 11, name: 'Calibri', color: { argb: 'FF1D4ED8' }, underline: true };
+    } else if (i === 0) {
       cell.font = { bold: true, size: 18, color: { argb: BRAND.dark }, name: 'Calibri' };
       wsInstr.getRow(1).height = 40;
     } else if (['GETTING STARTED', 'TIPS', 'SEPT 15, 2026 — AIRBNB\'S NEW 15.5% HOST FEE', 'EXPENSE CATEGORIES (mapped to IRS Schedule E)', 'OUTGROWN THE SPREADSHEET?'].includes(row[0])) {
@@ -338,6 +340,13 @@ async function generate() {
     }
   });
 
+  // App bridge on the tab a host opens every month. Free tier covers one property.
+  {
+    const bridge = wsDash.getCell(`A${wsDash.rowCount + 2}`);
+    bridge.value = { text: 'Black Cat builds this dashboard from your Airbnb export automatically. Free for 1 property →', hyperlink: 'https://app.tryblackcat.com/signup?utm_source=tryblackcat&utm_medium=spreadsheet&utm_content=xlsx_dashboard' };
+    bridge.font = { size: 11, name: 'Calibri', color: { argb: 'FF1D4ED8' }, underline: true };
+  }
+
   wsDash.views = [{ state: 'frozen', ySplit: 4, xSplit: 1, activeCell: 'B5' }];
 
   // ═══════════════════════════════════════════
@@ -535,6 +544,13 @@ async function generate() {
   // ═══════════════════════════════════════════
   // SHEET 6: Cleaning Cost Tracker
   // ═══════════════════════════════════════════
+  // App bridge on the tax tab. The Schedule E report is a Starter-plan feature, so say so.
+  {
+    const bridge = wsTax.getCell(`A${wsTax.rowCount + 2}`);
+    bridge.value = { text: 'Black Cat prepares this Schedule E worksheet from your imported transactions. Starter plan, $29/mo, 14-day free trial →', hyperlink: 'https://app.tryblackcat.com/signup?utm_source=tryblackcat&utm_medium=spreadsheet&utm_content=xlsx_schedule_e' };
+    bridge.font = { size: 11, name: 'Calibri', color: { argb: 'FF1D4ED8' }, underline: true };
+  }
+
   const wsClean = wb.addWorksheet('Cleaning Tracker', { tabColor: { argb: BRAND.cyan } });
   addBranding(wsClean, wb, 'Cleaning Cost Tracker', 'Track per-turnover cleaning costs by property. Spot overcharges and optimize your biggest variable expense.');
 
