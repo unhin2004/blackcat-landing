@@ -1,0 +1,10 @@
+# Build-time and authoring files that have no business being served from
+# www.tryblackcat.com. The pages embed the generated nav, dist/output.css is
+# committed, and the PDF is committed; nothing here is fetched at runtime.
+_video-src/
+_partials/
+scripts/
+tools/_fix-pages.js
+tools/generate-spreadsheet.js
+downloads/src/
+node_modules/
